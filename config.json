@@ -1,0 +1,14 @@
+{
+  "contractPackages": {
+    "debtLocker": {
+      "repo": "@maplelabs/debt-locker",
+      "alias": ["debtLockerV1", "debtLockerV2"],
+      "versions": ["v1.0.0", "v2.0.0"]
+    },
+    "loan": {
+      "repo": "@maplelabs/loan",
+      "alias": ["LoanV1", "LoanV2"],
+      "versions": ["v1.0.0", "v2.0.0"]
+    }
+  }
+}
