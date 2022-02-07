@@ -1,18 +1,18 @@
-import { Loan__factory } from '../typechain/LoanV1/factories/Loan__factory';
-import { CallOverrides, Signer } from 'ethers';
+import { Loan__factory } from '../typechain/LoanV1/factories/Loan__factory'
+import { CallOverrides, Signer } from 'ethers'
 
 interface GetFoo {
-  signer: Signer;
-  poolAddress: string;
-  overrides?: CallOverrides;
+  signer: Signer
+  poolAddress: string
+  overrides?: CallOverrides
 }
 
 const getFoo = async ({ signer, poolAddress }: GetFoo) => {
-  const loan = Loan__factory.connect(poolAddress, signer);
+  const loan = Loan__factory.connect(poolAddress, signer)
 
-  const amountLiquidated = loan.amountLiquidated();
+  const amountLiquidated = loan.amountLiquidated()
 
-  return amountLiquidated;
-};
+  return amountLiquidated
+}
 
-export { getFoo };
+export { getFoo }

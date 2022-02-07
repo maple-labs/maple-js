@@ -1,3 +1,3 @@
-import FooService from './services/foo';
+import FooService from './services/foo'
 
-export { FooService };
+export { FooService }
