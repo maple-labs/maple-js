@@ -1,5 +1,5 @@
 {
-  "include": ["src", "types", "scripts"],
+  "include": ["src", "types"],
   "compilerOptions": {
     "target": "ES6",
     "module": "ESNext",
@@ -25,6 +25,6 @@
     "noEmit": true, // `tsdx build` ignores this option, but it is commonly used when type-checking separately with `tsc`
     "paths": {
       "*": ["src/*", "node_modules/*"]
-    },
+    }
   }
 }
