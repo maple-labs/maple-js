@@ -14,7 +14,7 @@ export default class FooService {
   readonly config: any
 
   constructor({ network, injectedProvider, defaultProviderKeys }: FooConfig) {
-    let [provider, chainId] = getProvider(injectedProvider, defaultProviderKeys, network)
+    const [provider, chainId] = getProvider(injectedProvider, defaultProviderKeys, network)
 
     this.config = { provider, chainId }
   }
