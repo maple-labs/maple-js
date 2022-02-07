@@ -3,14 +3,14 @@
 import { getFoo } from '../helpers/foo'
 import { getProvider } from '../helpers/config'
 
-interface FooConfig {
+export interface FooConfig {
   network: string
   injectedProvider?: string
   defaultProviderKeys?: string
   config?: any
 }
 
-export default class FooService {
+export class FooService {
   readonly config: any
 
   constructor({ network, injectedProvider, defaultProviderKeys }: FooConfig) {
@@ -18,6 +18,7 @@ export default class FooService {
 
     this.config = { provider, chainId }
   }
+
   public async getLoanFoo(poolAddress: string, overrides?: any) {
     const balance = await getFoo({
       signer: this.config.provider,
