@@ -74,6 +74,6 @@ async function buildTypechain() {
 
 buildTypechain()
   .then(() => console.log('buildTypechain:done'))
-  .catch(e => {
+  .catch((e) => {
     console.error('buildTypechain', e);
   });
