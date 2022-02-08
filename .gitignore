@@ -6,3 +6,6 @@
 node_modules
 typechain
 dist
+
+# Test
+coverage

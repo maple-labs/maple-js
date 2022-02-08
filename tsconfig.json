@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "ESNext",
-    "types": ["node"],
+    "types": ["node", "jest"],
     "importHelpers": true,
     "rootDir": "/", // match output dir to input dir. e.g. dist/index instead of dist/src/index
     "outDir": "dist",
