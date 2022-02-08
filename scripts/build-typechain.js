@@ -3,13 +3,13 @@
 const path = require('path')
 const shell = require('shelljs')
 const typechain = require('typechain')
-const fs = require('fs')
+const { readFileSync } = require('fs')
 
 const artifactsOutputDir = path.join(__dirname, '../src/typechain')
 
 const getParsedConfig = () => {
   const configPath = path.join(__dirname, '../config.json')
-  const file = fs.readFileSync(configPath)
+  const file = readFileSync(configPath)
   return JSON.parse(file)
 }
 
@@ -51,13 +51,14 @@ const generateTypechainBindings = async (config) => {
 }
 
 async function buildTypechain() {
+  console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
-  await installPackages(config)
+  // await installPackages(config)
   await generateTypechainBindings(config)
 }
 
 buildTypechain()
-  .then(() => console.log('buildTypechain:done'))
+  .then(() => console.log('✅  Built Typechain'))
   .catch((e) => {
-    console.error('buildTypechain', e)
+    console.error('❌ Typechain build failed!', e)
   })
