@@ -2,6 +2,7 @@ import * as debtLockerV1Imports from './typechain/debtLockerV1'
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as loanV1Imports from './typechain/LoanV1'
 import * as loanV2Imports from './typechain/LoanV2'
+import * as mapleGlobalsImports from './typechain/mapleGlobals'
 
 const debtLockerV1 = {
   factory: debtLockerV1Imports.DebtLockerFactory__factory,
@@ -27,4 +28,8 @@ const loanV2 = {
   refinancer: loanV2Imports.Refinancer__factory // ⚠️ Is this needed for webapp?
 }
 
-export { loanV1, loanV2, debtLockerV1, debtLockerV2 }
+const mapleGlobals = {
+  core: mapleGlobalsImports.MapleGlobals__factory
+}
+
+export { debtLockerV1, debtLockerV2, loanV1, loanV2, mapleGlobals }
