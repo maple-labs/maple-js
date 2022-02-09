@@ -35,7 +35,7 @@
       "alias": ["mapleGlobals"],
       "versions": ["v1.0.0"]
     },
-    "mapleRewards": {
+    "mplRewards": {
       "repo": "@maplelabs/mpl-rewards",
       "alias": ["mplRewards"],
       "versions": ["v1.0.0"]
