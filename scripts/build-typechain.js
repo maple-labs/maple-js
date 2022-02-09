@@ -13,14 +13,15 @@ const getParsedConfig = () => {
   return JSON.parse(file)
 }
 
-const installPackages = async (config) => {
-  for (const key in config.contractPackages) {
-    const { repo, versions, alias } = config.contractPackages[key]
-    for (let i = 0; i < versions.length; i++) {
-      await shell.exec(`yarn add --dev @maplelabs/${alias[i]}@npm:${repo}@${versions[i]}`)
-    }
-  }
-}
+// const installPackages = async (config) => {
+//   for (const key in config.contractPackages) {
+//     const { repo, versions, alias } = config.contractPackages[key]
+//     for (let i = 0; i < versions.length; i++) {
+//       console.log('👀 Currently installing:', alias[i]);
+//       await shell.exec(`yarn add --dev @maplelabs/${alias[i]}@npm:${repo}@${versions[i]}`)
+//     }
+//   }
+// }
 
 const generateTypechainBindings = async (config) => {
   const cwd = process.cwd()
