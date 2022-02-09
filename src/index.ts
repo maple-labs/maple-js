@@ -1,7 +1,30 @@
-export * as debtLockerV1 from './typechain/debtLockerV1/factories/DebtLocker__factory'
-export * as debtLockerV2 from './typechain/debtLockerV2/factories/DebtLocker__factory'
+import * as debtLockerV1Imports from './typechain/debtLockerV1'
+import * as debtLockerV2Imports from './typechain/debtLockerV2'
+import * as loanV1Imports from './typechain/LoanV1'
+import * as loanV2Imports from './typechain/LoanV2'
 
-export * as loanV1 from './typechain/LoanV1/factories/Loan__factory'
-export * as loanV2 from './typechain/LoanV2/factories/MapleLoan__factory'
+const debtLockerV1 = {
+  factory: debtLockerV1Imports.DebtLockerFactory__factory,
+  core: debtLockerV1Imports.DebtLocker__factory // ⚠️ Is this needed for webapp?
+}
 
-export * from './services'
+const debtLockerV2 = {
+  factory: debtLockerV2Imports.DebtLockerFactory__factory,
+  core: debtLockerV2Imports.DebtLocker__factory, // ⚠️ Is this needed for webapp?
+  initializer: debtLockerV2Imports.DebtLockerInitializer__factory // ⚠️ Is this needed for webapp?
+}
+
+const loanV1 = {
+  factory: loanV1Imports.LoanFactory__factory,
+  core: loanV1Imports.Loan__factory,
+  lib: loanV1Imports.LoanLib__factory // ⚠️ Is this needed for webapp?
+}
+
+const loanV2 = {
+  factory: loanV2Imports.MapleLoanFactory__factory,
+  core: loanV2Imports.MapleLoan__factory,
+  lib: loanV2Imports.MapleLoanInitializer__factory,
+  refinancer: loanV2Imports.Refinancer__factory // ⚠️ Is this needed for webapp?
+}
+
+export { loanV1, loanV2, debtLockerV1, debtLockerV2 }
