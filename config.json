@@ -57,7 +57,7 @@
     },
     "stakeLocker": {
       "repo": "@maplelabs/stake-locker",
-      "alias": ["repaymentCalculator"],
+      "alias": ["stakeLocker"],
       "versions": ["v1.0.0"]
     }
   }
