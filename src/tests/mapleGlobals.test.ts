@@ -1,4 +1,4 @@
-import { mapleGlobals } from 'maple-js'
+import { mapleGlobals } from '../../dist'
 import { ethers } from 'ethers'
 
 const kovan = {
