@@ -12,6 +12,7 @@ import * as poolImports from './typechain/pool'
 import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
+import * as environmentMocksImports from './typechain/environment-mocks'
 
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
@@ -84,10 +85,31 @@ const stakeLocker = {
   factory: stakeLockerImports.StakeLockerFactory__factory
 }
 
+const bPool = {
+  core: environmentMocksImports.BPool__factory,
+  factory: environmentMocksImports.BFactory__factory
+}
+
+const erc20 = {
+  core: environmentMocksImports.MintSpecialToken__factory
+}
+
+const chainlink = {
+  core: environmentMocksImports.ChainLinkEmulator__factory,
+  factory: environmentMocksImports.ChainLinkEmulatorFactory__factory
+}
+
+const uniswapRouterV2 = {
+  core: environmentMocksImports.UniswapV2Router02__factory
+}
+
 export {
+  bPool,
   collateralLocker,
+  chainlink,
   debtLockerV1,
   debtLockerV2,
+  erc20,
   fundingLocker,
   lateFeeCalc,
   liquidityLocker,
@@ -98,5 +120,6 @@ export {
   pool,
   premiumCalc,
   repaymentCalculator,
-  stakeLocker
+  stakeLocker,
+  uniswapRouterV2
 }

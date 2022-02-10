@@ -59,6 +59,11 @@
       "repo": "@maplelabs/stake-locker",
       "alias": ["stakeLocker"],
       "versions": ["v1.0.0"]
+    },
+    "external": {
+      "repo": "@maplelabs/environment-mocks",
+      "alias": ["environment-mocks"],
+      "versions": ["v1.0.0"]
     }
   }
 }

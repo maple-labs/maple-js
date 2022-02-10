@@ -880,6 +880,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/debt-locker/-/debt-locker-2.0.0.tgz#861aac87a87dd5ff8583a3a47764e99d2f6585a9"
   integrity sha512-CkCgeTPWw8cdPf5fUEX3QX0mYJl/5Yqc+HNY52VjUtDBve0hKhNvpOqJl0ztSSXCDwXIkkIDscU93+WRaCx0Qw==
 
+"@maplelabs/environment-mocks@npm:@maplelabs/environment-mocks@v1.0.0":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/environment-mocks/-/environment-mocks-0.0.1.tgz#c1e788a8945491d9c5dcd88cea649fa43d5d0218"
+  integrity sha512-tK3LNpu5L16KsOLOohIHX0J2z+01SQcbl48sxs9IkROXoM2Dipdp+pJT1an7KTCdye8kWoeAmzwS+9BeJLZZyQ==
+
 "@maplelabs/fundingLocker@npm:@maplelabs/funding-locker@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/funding-locker/-/funding-locker-1.0.0.tgz#e41a8f9870fa6c8930d266ccbafa08cea69acc15"
@@ -1106,11 +1111,6 @@
   version "7.0.9"
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
-
-"@types/mocha@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.npmjs.org/@types/mocha/-/mocha-9.1.0.tgz#baf17ab2cca3fcce2d322ebc30454bff487efad5"
-  integrity sha512-QCWHkbMv4Y5U9oW10Uxbr45qMMSzl4OzijsozynUAgx3kEHUdXB00udx2dWDQ7f2TU2a2uuiFaRZjCe3unPpeg==
 
 "@types/node@*", "@types/node@^17.0.12":
   version "17.0.15"
@@ -1729,6 +1729,11 @@ domexception@^2.0.1:
   integrity sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==
   dependencies:
     webidl-conversions "^5.0.0"
+
+dotenv@^16.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.0.tgz#c619001253be89ebb638d027b609c75c26e47411"
+  integrity sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==
 
 electron-to-chromium@^1.4.17:
   version "1.4.65"
