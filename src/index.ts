@@ -14,6 +14,12 @@ import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as environmentMocksImports from './typechain/environment-mocks'
 
+import kovanAddresses from './addresses/kovan'
+import kovanDevAddresses from './addresses/kovan-dev'
+import rinkebyAddresses from './addresses/rinkeby'
+import rinkebyDevAddresses from './addresses/rinkeby-dev'
+import mainnetAddresses from './addresses/mainnet'
+
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
   factory: collateralLockerImports.CollateralLockerFactory__factory
@@ -103,7 +109,16 @@ const uniswapRouterV2 = {
   core: environmentMocksImports.UniswapV2Router02__factory
 }
 
+const addresses = {
+  kovan: kovanAddresses,
+  kovanDev: kovanDevAddresses,
+  rinkeby: rinkebyAddresses,
+  rinkebyDev: rinkebyDevAddresses,
+  mainnet: mainnetAddresses
+}
+
 export {
+  addresses,
   bPool,
   collateralLocker,
   chainlink,

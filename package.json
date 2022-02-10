@@ -1,7 +1,7 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
-  "name": "maple-js",
+  "name": "@maplelabs/maple-js",
   "description": "Maple SDK for JavaScript",
   "author": "Maple Labs",
   "main": "dist/index.js",
@@ -15,8 +15,7 @@
     "test": "jest --collectCoverage",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet",
     "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
-    "format": "prettier --write '*/**/*.ts'",
-    "postinstall": "yarn build-typechain"
+    "format": "prettier --write '*/**/*.ts'"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -50,6 +49,7 @@
     "@maplelabs/premiumCalculator": "npm:@maplelabs/premium-calculator@v1.0.0",
     "@maplelabs/repaymentCalculator": "npm:@maplelabs/repayment-calculator@v1.0.0",
     "@maplelabs/stakeLocker": "npm:@maplelabs/stake-locker@v1.0.0",
+    "@maplelabs/util": "npm:@maplelabs/util@v1.0.0",
     "@typechain/ethers-v5": "^9.0.0",
     "ethers": "^5.5.3",
     "shelljs": "^0.8.5",
