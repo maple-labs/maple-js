@@ -865,25 +865,75 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@maplelabs/LoanV1@npm:@maplelabs/loan@v1.0.0":
+"@maplelabs/collateralLocker@npm:@maplelabs/collateral-locker@v1.0.0":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-1.0.0.tgz#4511019284c3cade989de81ab38d6054005a007c"
-  integrity sha512-SQ3Zk8WD38ZFxHBBHU0qY7vmDEXvA14cBuYzuAVrd4x70y7x/lc9F9eDVCqtVe3gdWcVCMU8OGjWshkeTtkcWQ==
-
-"@maplelabs/LoanV2@npm:@maplelabs/loan@v2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-2.0.0.tgz#c7ae112482cb45c5815bcae1f85afd9d3d39b8d9"
-  integrity sha512-cDE4dzEB2pjL4zJXPX8PRXtYwYLj2CX9hePPI8xygS61hNN0KTw0cuaM2PVc+dFBja9Ejpc2+uaap3SEvpi0vw==
+  resolved "https://registry.npmjs.org/@maplelabs/collateral-locker/-/collateral-locker-1.0.0.tgz#b6fa245fc88f8efbcd6f3e4b570e91382f36ce29"
+  integrity sha512-WbC0fJhHHL17jXiZWiR2SK6ly0Qyd8ZQO87eT7VC18mhhvKdSDZOe5sGGui0/R/aPaEmEV1WF85Q/hmpbQJF+w==
 
 "@maplelabs/debtLockerV1@npm:@maplelabs/debt-locker@v1.0.0":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/debt-locker/-/debt-locker-1.0.0.tgz#2752faec875c334a57eed15454b06b29bc3cc6d5"
+  resolved "https://registry.npmjs.org/@maplelabs/debt-locker/-/debt-locker-1.0.0.tgz#2752faec875c334a57eed15454b06b29bc3cc6d5"
   integrity sha512-Wjen5ARWgNcEvx6nrVOko0CZiBXhVmy2KPHgM8rFJy3O5DofzjgKDtTkzbVbKqM9KgHs07sZ7E3u24R4sd/Tvw==
 
 "@maplelabs/debtLockerV2@npm:@maplelabs/debt-locker@v2.0.0":
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/debt-locker/-/debt-locker-2.0.0.tgz#861aac87a87dd5ff8583a3a47764e99d2f6585a9"
+  resolved "https://registry.npmjs.org/@maplelabs/debt-locker/-/debt-locker-2.0.0.tgz#861aac87a87dd5ff8583a3a47764e99d2f6585a9"
   integrity sha512-CkCgeTPWw8cdPf5fUEX3QX0mYJl/5Yqc+HNY52VjUtDBve0hKhNvpOqJl0ztSSXCDwXIkkIDscU93+WRaCx0Qw==
+
+"@maplelabs/fundingLocker@npm:@maplelabs/funding-locker@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/funding-locker/-/funding-locker-1.0.0.tgz#e41a8f9870fa6c8930d266ccbafa08cea69acc15"
+  integrity sha512-oyWpqaJuyG5cYFV1OYaAFvmhCQd3GGs8RxqFZWx4mb+Xk3bviDyzWVi09Obs3gJh0OI7X/Yfzedr45VBXDcy4g==
+
+"@maplelabs/lateFeeCalculator@npm:@maplelabs/late-fee-calculator@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/late-fee-calculator/-/late-fee-calculator-1.0.0.tgz#7001474936ae9821490a423737c08d8edafcd1a4"
+  integrity sha512-dMLCRUirNOnmJgifbarltHlAZOgJ0qM39uutADqJqWsvbcOSx7jvqwoT/gfMFCPHaqhbc/rQquXVDX5C069mvw==
+
+"@maplelabs/liquidityLocker@npm:@maplelabs/liquidity-locker@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/liquidity-locker/-/liquidity-locker-1.0.0.tgz#89f94cadc0a20317885a4fd3da642359d12ca270"
+  integrity sha512-l6+dTPOtlmhmvULm9G+qPxL+sb3NNLDXCUtIRDdtmD8DZxhn8Kzj83m2lO3dH4+7MYqatGmjHY5ac2bg7c0yhw==
+
+"@maplelabs/loanV1@npm:@maplelabs/loan@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-1.0.0.tgz#4511019284c3cade989de81ab38d6054005a007c"
+  integrity sha512-SQ3Zk8WD38ZFxHBBHU0qY7vmDEXvA14cBuYzuAVrd4x70y7x/lc9F9eDVCqtVe3gdWcVCMU8OGjWshkeTtkcWQ==
+
+"@maplelabs/loanV2@npm:@maplelabs/loan@v2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-2.0.0.tgz#c7ae112482cb45c5815bcae1f85afd9d3d39b8d9"
+  integrity sha512-cDE4dzEB2pjL4zJXPX8PRXtYwYLj2CX9hePPI8xygS61hNN0KTw0cuaM2PVc+dFBja9Ejpc2+uaap3SEvpi0vw==
+
+"@maplelabs/mapleGlobals@npm:@maplelabs/globals@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/globals/-/globals-1.0.0.tgz#85fd3e667cdb5cd26e5882951e8a7cf7426645fe"
+  integrity sha512-pNqeltNI03JD0PdvZinJKP9UE9Xu8jFRzVxXm3mHMmLFkJmsEgwh2J8Sr8+2HSKouS9eX9RiH6vCh+nUwo45ug==
+
+"@maplelabs/mplRewards@npm:@maplelabs/mpl-rewards@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/mpl-rewards/-/mpl-rewards-1.0.0.tgz#7915e10bd59bd80374784f0f8772817ca87e45ad"
+  integrity sha512-QQyPyUVNg0ZCfG/sU72CplMC1Us0N3bPYPspZJctsSdSPYgG/Mblbtbof77aGlZoddmHTFnxuWN+5RY+T7b2Rg==
+
+"@maplelabs/pool@npm:@maplelabs/pool@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/pool/-/pool-1.0.0.tgz#7b04e9aee854d941a60445adb2f5cd54ab78d434"
+  integrity sha512-2X2Q+IfLgkGRO4aeEXeWnaTzEKW2bMAJW/140tnw+YG4thbZloyYRI2hrrplTzjFaWkB6MvZgAOhSiHfrie0nQ==
+
+"@maplelabs/premiumCalculator@npm:@maplelabs/premium-calculator@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/premium-calculator/-/premium-calculator-1.0.0.tgz#8b3ca39bac61748cbf7c9f01309c0080dd277dc5"
+  integrity sha512-FACaqadSiwBfAhMVarfn3/b1scE2K9p0d2P+kmIGBf6d4pEGmTmSSLHVrmH73C1NRx9TLdy/GIHg7KPhT1Q4Hg==
+
+"@maplelabs/repaymentCalculator@npm:@maplelabs/repayment-calculator@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/repayment-calculator/-/repayment-calculator-1.0.0.tgz#3d971df97add5c07685feaff10433ce0ab0dd817"
+  integrity sha512-ibTJs4NqSYlnuY4dhH1F81zEc3mHq/KYVa5UDX1qYnYmXeDNt8fZ/Gu+S7fneabd/froeUBd6wrQ/iREkPy2Ow==
+
+"@maplelabs/stakeLocker@npm:@maplelabs/stake-locker@v1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/stake-locker/-/stake-locker-1.0.0.tgz#ea24815c50d68d2490f9e5851493732976182c00"
+  integrity sha512-kU6veFILrHJp8uJgf6XDWVvQCVlwSbPJTEIYYG1Z6SM9C5UuIAcau6r30HRAG0g7/Pk+oorH9bZPUm3ow8SGNw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1046,7 +1096,7 @@
 
 "@types/jest@^27.4.0":
   version "27.4.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.4.0.tgz#037ab8b872067cae842a320841693080f9cb84ed"
+  resolved "https://registry.npmjs.org/@types/jest/-/jest-27.4.0.tgz#037ab8b872067cae842a320841693080f9cb84ed"
   integrity sha512-gHl8XuC1RZ8H2j5sHv/JqsaxXkDDM9iDOgu0Wp8sjs4u/snb2PVehyWXJPr+ORA0RPpgw231mnutWI1+0hgjIQ==
   dependencies:
     jest-diff "^27.0.0"
@@ -1056,6 +1106,11 @@
   version "7.0.9"
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
+
+"@types/mocha@^9.1.0":
+  version "9.1.0"
+  resolved "https://registry.npmjs.org/@types/mocha/-/mocha-9.1.0.tgz#baf17ab2cca3fcce2d322ebc30454bff487efad5"
+  integrity sha512-QCWHkbMv4Y5U9oW10Uxbr45qMMSzl4OzijsozynUAgx3kEHUdXB00udx2dWDQ7f2TU2a2uuiFaRZjCe3unPpeg==
 
 "@types/node@*", "@types/node@^17.0.12":
   version "17.0.15"
