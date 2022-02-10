@@ -1,8 +1,22 @@
+import * as collateralLockerImports from './typechain/collateralLocker'
 import * as debtLockerV1Imports from './typechain/debtLockerV1'
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
+import * as fundingLockerImports from './typechain/fundingLocker'
+import * as lateFeeCalcImports from './typechain/lateFeeCalculator'
+import * as liquidityLockerImports from './typechain/liquidityLocker'
 import * as loanV1Imports from './typechain/LoanV1'
 import * as loanV2Imports from './typechain/LoanV2'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
+import * as mapleRewardsImports from './typechain/mplRewards'
+import * as poolImports from './typechain/pool'
+import * as premiumCalcImports from './typechain/premiumCalculator'
+import * as repaymentCalcImports from './typechain/repaymentCalculator'
+import * as stakeLockerImports from './typechain/stakeLocker'
+
+const collateralLocker = {
+  core: collateralLockerImports.CollateralLocker__factory,
+  factory: collateralLockerImports.CollateralLockerFactory__factory
+}
 
 const debtLockerV1 = {
   factory: debtLockerV1Imports.DebtLockerFactory__factory,
@@ -13,6 +27,20 @@ const debtLockerV2 = {
   factory: debtLockerV2Imports.DebtLockerFactory__factory,
   core: debtLockerV2Imports.DebtLocker__factory, // ⚠️ Is this needed for webapp?
   initializer: debtLockerV2Imports.DebtLockerInitializer__factory // ⚠️ Is this needed for webapp?
+}
+
+const fundingLocker = {
+  core: fundingLockerImports.FundingLocker__factory,
+  factory: fundingLockerImports.FundingLockerFactory__factory
+}
+
+const lateFeeCalc = {
+  core: lateFeeCalcImports.LateFeeCalc__factory
+}
+
+const liquidityLocker = {
+  core: liquidityLockerImports.LiquidityLocker__factory,
+  factory: liquidityLockerImports.LiquidityLockerFactory__factory
 }
 
 const loanV1 = {
@@ -32,4 +60,43 @@ const mapleGlobals = {
   core: mapleGlobalsImports.MapleGlobals__factory
 }
 
-export { debtLockerV1, debtLockerV2, loanV1, loanV2, mapleGlobals }
+const mapleRewards = {
+  core: mapleRewardsImports.MplRewards__factory,
+  factory: mapleRewardsImports.MplRewardsFactory__factory
+}
+
+const pool = {
+  core: poolImports.Pool__factory,
+  factory: poolImports.PoolFactory__factory,
+  lib: poolImports.PoolLib__factory
+}
+
+const premiumCalc = {
+  core: premiumCalcImports.PremiumCalc__factory
+}
+
+const repaymentCalculator = {
+  core: repaymentCalcImports.RepaymentCalc__factory
+}
+
+const stakeLocker = {
+  core: stakeLockerImports.StakeLocker__factory,
+  factory: stakeLockerImports.StakeLockerFactory__factory
+}
+
+export {
+  collateralLocker,
+  debtLockerV1,
+  debtLockerV2,
+  fundingLocker,
+  lateFeeCalc,
+  liquidityLocker,
+  loanV1,
+  loanV2,
+  mapleGlobals,
+  mapleRewards,
+  pool,
+  premiumCalc,
+  repaymentCalculator,
+  stakeLocker
+}
