@@ -17,9 +17,12 @@ foo.getLoanFoo('0x0000000000000000000000000000000000000000')
 To interface directly with the contracts you can use the typechain interface.
 
 ```js
-import { loanV2 } from 'maple-js'
+import { mapleGlobals } from 'maple-js'
 
-const loanFactory = new loanV2.MapleLoan__factory()
+const contractAddress = '0x'
+const signer = null // you need to provide your signer to connect
 
-loanFactory.contractName
+const contract = mapleGlobals.core.connect(contractAddress, signer)
+const poolDelegateAddress = '0x'
+const method = await contract.isValidPoolDelegate(poolDelegateAddress)
 ```
