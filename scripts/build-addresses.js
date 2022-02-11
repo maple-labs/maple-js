@@ -43,6 +43,13 @@ const build = (network) => ({
   BPool: require(`../artifacts/${network}/addresses/BPool.address.js`),
   UniswapV2Router02: require(`../artifacts/${network}/addresses/UniswapV2Router02.address.js`),
 
+  // oracles
+  PriceOracleWETH: require(`../artifacts/${network}/addresses/PriceOracleWETH.address.js`),
+  PriceOracleWBTC: require(`../artifacts/${network}/addresses/PriceOracleWBTC.address.js`),
+  PriceOracleUSDC: require(`../artifacts/${network}/addresses/PriceOracleUSDC.address.js`),
+  PriceOracleAAVE: require(`../artifacts/${network}/addresses/PriceOracleAAVE.address.js`),
+  PriceOracleLINK: require(`../artifacts/${network}/addresses/PriceOracleLINK.address.js`),
+
   // tokens
   DAI: require(`../artifacts/${network}/addresses/DAI.address.js`),
   USDC: require(`../artifacts/${network}/addresses/USDC.address.js`),
