@@ -63,7 +63,7 @@
     "external": {
       "repo": "@maplelabs/environment-mocks",
       "alias": ["environment-mocks"],
-      "versions": ["v1.0.0"]
+      "versions": ["v0.0.1"]
     }
   }
 }
