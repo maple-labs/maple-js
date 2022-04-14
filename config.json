@@ -2,68 +2,133 @@
   "contractPackages": {
     "collateralLocker": {
       "repo": "@maplelabs/collateral-locker",
-      "alias": ["collateralLocker"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "collateralLocker"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "debtLocker": {
       "repo": "@maplelabs/debt-locker",
-      "alias": ["debtLockerV1", "debtLockerV2"],
-      "versions": ["v1.0.0", "v2.0.0"]
+      "alias": [
+        "debtLockerV1",
+        "debtLockerV2"
+      ],
+      "versions": [
+        "v1.0.0",
+        "v2.0.0"
+      ]
     },
     "fundingLocker": {
       "repo": "@maplelabs/funding-locker",
-      "alias": ["fundingLocker"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "fundingLocker"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "lateFeeCalculator": {
       "repo": "@maplelabs/late-fee-calculator",
-      "alias": ["lateFeeCalculator"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "lateFeeCalculator"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "liquidityLocker": {
       "repo": "@maplelabs/liquidity-locker",
-      "alias": ["liquidityLocker"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "liquidityLocker"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "loan": {
       "repo": "@maplelabs/loan",
-      "alias": ["loanV1", "loanV2"],
-      "versions": ["v1.0.0", "v2.0.0"]
+      "alias": [
+        "loanV1",
+        "loanV2"
+      ],
+      "versions": [
+        "v1.0.0",
+        "v2.0.0"
+      ]
     },
     "mapleGlobals": {
       "repo": "@maplelabs/globals",
-      "alias": ["mapleGlobals"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "mapleGlobals"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "mplRewards": {
       "repo": "@maplelabs/mpl-rewards",
-      "alias": ["mplRewards"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "mplRewards"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "pool": {
       "repo": "@maplelabs/pool",
-      "alias": ["pool"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "pool"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "premiumCalculator": {
       "repo": "@maplelabs/premium-calculator",
-      "alias": ["premiumCalculator"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "premiumCalculator"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "repaymentCalculator": {
       "repo": "@maplelabs/repayment-calculator",
-      "alias": ["repaymentCalculator"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "repaymentCalculator"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     },
     "stakeLocker": {
       "repo": "@maplelabs/stake-locker",
-      "alias": ["stakeLocker"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "stakeLocker"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
+    },
+    "xmpl": {
+      "repo": "@maplelabs/xmpl",
+      "alias": [
+        "xmpl"
+      ],
+      "versions": [
+        "v1.1.0"
+      ]
     },
     "external": {
       "repo": "@maplelabs/environment-mocks",
-      "alias": ["environment-mocks"],
-      "versions": ["v1.0.0"]
+      "alias": [
+        "environment-mocks"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
     }
   }
 }

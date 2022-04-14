@@ -940,6 +940,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/stake-locker/-/stake-locker-1.0.0.tgz#ea24815c50d68d2490f9e5851493732976182c00"
   integrity sha512-kU6veFILrHJp8uJgf6XDWVvQCVlwSbPJTEIYYG1Z6SM9C5UuIAcau6r30HRAG0g7/Pk+oorH9bZPUm3ow8SGNw==
 
+"@maplelabs/xmpl@npm:@maplelabs/xmpl@v1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@maplelabs/xmpl/-/xmpl-1.0.1.tgz#3d90df79f56e1105b1dbce9a3557d916afe2ea19"
+  integrity sha512-kVg7Aq5o2l9C1JgI7OQIETjmNox5CqRxg/QS9lV/k2pkp95KJKsSCMQOfh4Asp5e4zu248iMLHEakWOhr7pCgQ==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
