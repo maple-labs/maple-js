@@ -12,6 +12,7 @@ import * as poolImports from './typechain/pool'
 import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
+import * as xmplImports from './typechain/xmpl'
 import * as environmentMocksImports from './typechain/environment-mocks'
 
 const collateralLocker = {
@@ -103,6 +104,10 @@ const uniswapRouterV2 = {
   core: environmentMocksImports.UniswapV2Router02__factory
 }
 
+const xmpl = {
+  factory: xmplImports.XMPL__factory
+}
+
 export {
   bPool,
   collateralLocker,
@@ -121,5 +126,6 @@ export {
   premiumCalc,
   repaymentCalculator,
   stakeLocker,
-  uniswapRouterV2
+  uniswapRouterV2,
+  xmpl
 }
