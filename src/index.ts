@@ -6,6 +6,7 @@ import * as lateFeeCalcImports from './typechain/lateFeeCalculator'
 import * as liquidityLockerImports from './typechain/liquidityLocker'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
+import * as mapleTokenImports from './typechain/mapleToken'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as poolImports from './typechain/pool'
@@ -67,6 +68,10 @@ const mapleRewards = {
   factory: mapleRewardsImports.MplRewardsFactory__factory
 }
 
+const mapleToken = {
+  factory: mapleTokenImports.MapleToken__factory
+}
+
 const pool = {
   core: poolImports.Pool__factory,
   factory: poolImports.PoolFactory__factory,
@@ -122,6 +127,7 @@ export {
   loanV2,
   mapleGlobals,
   mapleRewards,
+  mapleToken,
   pool,
   premiumCalc,
   repaymentCalculator,

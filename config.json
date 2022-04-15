@@ -121,6 +121,15 @@
         "v1.0.1"
       ]
     },
+    "mapleToken": {
+      "repo": "@maplelabs/maple-token",
+      "alias": [
+        "mapleToken"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
+    },
     "external": {
       "repo": "@maplelabs/environment-mocks",
       "alias": [

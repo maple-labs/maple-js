@@ -44,6 +44,7 @@
     "@maplelabs/liquidityLocker": "npm:@maplelabs/liquidity-locker@v1.0.0",
     "@maplelabs/loanV1": "npm:@maplelabs/loan@v1.0.0",
     "@maplelabs/loanV2": "npm:@maplelabs/loan@v2.0.0",
+    "@maplelabs/mapleToken": "npm:@maplelabs/maple-token@1.0.0 ",
     "@maplelabs/mapleGlobals": "npm:@maplelabs/globals@v1.0.0",
     "@maplelabs/mplRewards": "npm:@maplelabs/mpl-rewards@v1.0.0",
     "@maplelabs/pool": "npm:@maplelabs/pool@v1.0.0",
