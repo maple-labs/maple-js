@@ -915,6 +915,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/globals/-/globals-1.0.0.tgz#85fd3e667cdb5cd26e5882951e8a7cf7426645fe"
   integrity sha512-pNqeltNI03JD0PdvZinJKP9UE9Xu8jFRzVxXm3mHMmLFkJmsEgwh2J8Sr8+2HSKouS9eX9RiH6vCh+nUwo45ug==
 
+"@maplelabs/mapleToken@npm:@maplelabs/maple-token@1.0.0 ":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@maplelabs/maple-token/-/maple-token-1.0.0.tgz#c160531e3be688d4cd90c524a1baa2d585da772c"
+  integrity sha512-WiJFk15Xic43gnqKC8u6Fnl11AfCADbtcY1668PswnMMIC08RJJgDlwlDy5dq1bYqyWFpMfPem6Ye/McMNua+A==
+
 "@maplelabs/mplRewards@npm:@maplelabs/mpl-rewards@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/mpl-rewards/-/mpl-rewards-1.0.0.tgz#7915e10bd59bd80374784f0f8772817ca87e45ad"
@@ -939,6 +944,11 @@
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/stake-locker/-/stake-locker-1.0.0.tgz#ea24815c50d68d2490f9e5851493732976182c00"
   integrity sha512-kU6veFILrHJp8uJgf6XDWVvQCVlwSbPJTEIYYG1Z6SM9C5UuIAcau6r30HRAG0g7/Pk+oorH9bZPUm3ow8SGNw==
+
+"@maplelabs/xmpl@npm:@maplelabs/xmpl@v1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@maplelabs/xmpl/-/xmpl-1.0.1.tgz#3d90df79f56e1105b1dbce9a3557d916afe2ea19"
+  integrity sha512-kVg7Aq5o2l9C1JgI7OQIETjmNox5CqRxg/QS9lV/k2pkp95KJKsSCMQOfh4Asp5e4zu248iMLHEakWOhr7pCgQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

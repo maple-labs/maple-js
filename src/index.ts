@@ -6,12 +6,14 @@ import * as lateFeeCalcImports from './typechain/lateFeeCalculator'
 import * as liquidityLockerImports from './typechain/liquidityLocker'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
+import * as mapleTokenImports from './typechain/mapleToken'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as poolImports from './typechain/pool'
 import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
+import * as xmplImports from './typechain/xmpl'
 import * as environmentMocksImports from './typechain/environment-mocks'
 
 const collateralLocker = {
@@ -66,6 +68,10 @@ const mapleRewards = {
   factory: mapleRewardsImports.MplRewardsFactory__factory
 }
 
+const mapleToken = {
+  factory: mapleTokenImports.MapleToken__factory
+}
+
 const pool = {
   core: poolImports.Pool__factory,
   factory: poolImports.PoolFactory__factory,
@@ -103,6 +109,10 @@ const uniswapRouterV2 = {
   core: environmentMocksImports.UniswapV2Router02__factory
 }
 
+const xmpl = {
+  factory: xmplImports.XMPL__factory
+}
+
 export {
   bPool,
   collateralLocker,
@@ -117,9 +127,11 @@ export {
   loanV2,
   mapleGlobals,
   mapleRewards,
+  mapleToken,
   pool,
   premiumCalc,
   repaymentCalculator,
   stakeLocker,
-  uniswapRouterV2
+  uniswapRouterV2,
+  xmpl
 }
