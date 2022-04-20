@@ -113,8 +113,8 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
-interface Types {
-  xmplfactory: xmplImports.XMPL
+interface ContractTypes {
+  xmpl: xmplImports.XMPL
   mapleToken: mapleTokenImports.MapleToken
 }
 
@@ -139,5 +139,5 @@ export {
   stakeLocker,
   uniswapRouterV2,
   xmpl,
-  Types
+  ContractTypes
 }
