@@ -113,6 +113,11 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
+interface Types {
+  xmplfactory: xmplImports.XMPL
+  mapleToken: mapleTokenImports.MapleToken
+}
+
 export {
   bPool,
   collateralLocker,
@@ -133,5 +138,6 @@ export {
   repaymentCalculator,
   stakeLocker,
   uniswapRouterV2,
-  xmpl
+  xmpl,
+  Types
 }
