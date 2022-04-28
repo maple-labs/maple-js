@@ -1,7 +1,7 @@
 {
   "version": "0.0.3",
   "license": "MIT",
-  "name": "maple-js",
+  "name": "@maplelabs/maple-js",
   "description": "Maple SDK for JavaScript",
   "author": "Maple Labs",
   "main": "dist/index.js",
