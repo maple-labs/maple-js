@@ -6,7 +6,9 @@
   "author": "Maple Labs",
   "main": "dist/index.js",
   "files": [
-    "dist/"
+    "dist/",
+    "scripts/",
+    "config.json"
   ],
   "scripts": {
     "dev": "rollup -c -w",
