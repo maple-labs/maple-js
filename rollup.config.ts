@@ -24,5 +24,13 @@ export default [
     input: 'src/index.ts',
     output: [{ file: 'dist/index.d.ts', format: 'es', sourcemap: !production }],
     plugins: [dts(), typescript({ sourceMap: !production })]
+  },
+  {
+    input: 'scripts/build-typechain.js',
+    output: [
+      {
+        file: 'dist/scripts/build-typechain.js'
+      }
+    ]
   }
 ]
