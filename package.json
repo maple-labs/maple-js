@@ -38,7 +38,7 @@
     "@maplelabs/collateralLocker": "npm:@maplelabs/collateral-locker@v1.0.0",
     "@maplelabs/debtLockerV1": "npm:@maplelabs/debt-locker@v1.0.0",
     "@maplelabs/debtLockerV2": "npm:@maplelabs/debt-locker@v2.0.0",
-    "@maplelabs/environment-mocks": "npm:@maplelabs/environment-mocks@v1.0.0",
+    "@maplelabs/environment-mocks": "npm:@maplelabs/environment-mocks@v0.0.1",
     "@maplelabs/fundingLocker": "npm:@maplelabs/funding-locker@v1.0.0",
     "@maplelabs/lateFeeCalculator": "npm:@maplelabs/late-fee-calculator@v1.0.0",
     "@maplelabs/liquidityLocker": "npm:@maplelabs/liquidity-locker@v1.0.0",
