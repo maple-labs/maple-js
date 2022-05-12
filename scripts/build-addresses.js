@@ -70,7 +70,7 @@ const ordered = (unordered) =>
     }, {})
 
 try {
-  console.log(ordered(build('mainnet-stage')))
+  console.log(ordered(build(process.argv[2])))
 } catch (err) {
   console.log(err)
 }
