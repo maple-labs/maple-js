@@ -1,11 +1,13 @@
 import * as collateralLockerImports from './typechain/collateralLocker'
 import * as debtLockerV1Imports from './typechain/debtLockerV1'
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
+import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as fundingLockerImports from './typechain/fundingLocker'
 import * as lateFeeCalcImports from './typechain/lateFeeCalculator'
 import * as liquidityLockerImports from './typechain/liquidityLocker'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
+import * as loanV3Imports from './typechain/loanV3'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleRewardsImports from './typechain/mplRewards'
@@ -30,6 +32,12 @@ const debtLockerV2 = {
   factory: debtLockerV2Imports.DebtLockerFactory__factory,
   core: debtLockerV2Imports.DebtLocker__factory, // ⚠️ Is this needed for webapp?
   initializer: debtLockerV2Imports.DebtLockerInitializer__factory // ⚠️ Is this needed for webapp?
+}
+
+const debtLockerV3 = {
+  factory: debtLockerV3Imports.DebtLockerFactory__factory,
+  core: debtLockerV3Imports.DebtLocker__factory,
+  initializer: debtLockerV3Imports.DebtLockerInitializer__factory
 }
 
 const fundingLocker = {
@@ -57,6 +65,13 @@ const loanV2 = {
   core: loanV2Imports.MapleLoan__factory,
   lib: loanV2Imports.MapleLoanInitializer__factory,
   refinancer: loanV2Imports.Refinancer__factory // ⚠️ Is this needed for webapp?
+}
+
+const loanV3 = {
+  factory: loanV3Imports.MapleLoanFactory__factory,
+  initializer: loanV3Imports.MapleLoanInitializer__factory,
+  core: loanV3Imports.MapleLoan__factory,
+  refinancer: loanV3Imports.Refinancer__factory
 }
 
 const mapleGlobals = {
@@ -114,8 +129,19 @@ const xmpl = {
 }
 
 interface ContractTypes {
+  debtLockerV3: {
+    core: debtLockerV3Imports.DebtLocker,
+    factory: debtLockerV3Imports.DebtLockerFactory,
+    initializer: debtLockerV3Imports.DebtLockerInitializer
+  },
+  loanV3: {
+    factory: loanV3Imports.MapleLoanFactory,
+    initializer: loanV3Imports.MapleLoanInitializer,
+    core: loanV3Imports.MapleLoan,
+    refinancer: loanV3Imports.Refinancer
+  }
+  mapleToken: mapleTokenImports.MapleToken,
   xmpl: xmplImports.XMPL
-  mapleToken: mapleTokenImports.MapleToken
 }
 
 export {
@@ -124,12 +150,14 @@ export {
   chainlink,
   debtLockerV1,
   debtLockerV2,
+  debtLockerV3,
   erc20,
   fundingLocker,
   lateFeeCalc,
   liquidityLocker,
   loanV1,
   loanV2,
+  loanV3,
   mapleGlobals,
   mapleRewards,
   mapleToken,
