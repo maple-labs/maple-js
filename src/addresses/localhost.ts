@@ -42,7 +42,7 @@ export default {
   WETH: '0x1FEa817089FfE74D50815496d6Ae15da6bC1ce41',
   manifest: {
     network: 'localhost',
-    blockheight: 27670616,
+    blockheight: 0,
     date: '2021-10-13T18:41:17.405Z'
   },
   xMPL: '0xEeD22F7AD37939da184dEe0C2671Ce1939C3FFf3'
