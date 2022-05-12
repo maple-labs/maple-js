@@ -129,17 +129,13 @@ const xmpl = {
 }
 
 interface ContractTypes {
-  debtLockerV3: {
-    core: debtLockerV3Imports.DebtLocker,
-    factory: debtLockerV3Imports.DebtLockerFactory,
-    initializer: debtLockerV3Imports.DebtLockerInitializer
-  },
-  loanV3: {
-    factory: loanV3Imports.MapleLoanFactory,
-    initializer: loanV3Imports.MapleLoanInitializer,
-    core: loanV3Imports.MapleLoan,
-    refinancer: loanV3Imports.Refinancer
-  }
+  debtLockerV3: debtLockerV3Imports.DebtLocker,
+  debtLockerV3Factory: debtLockerV3Imports.DebtLockerFactory,
+  debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer,
+  loanV3: loanV3Imports.MapleLoan,
+  loanV3Factory: loanV3Imports.MapleLoanFactory,
+  loanV3Initializer: loanV3Imports.MapleLoanInitializer,
+  loanV3Refinancer: loanV3Imports.Refinancer,
   mapleToken: mapleTokenImports.MapleToken,
   xmpl: xmplImports.XMPL
 }
