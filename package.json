@@ -1,5 +1,5 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "name": "@maplelabs/maple-js",
   "description": "Maple SDK for JavaScript",
@@ -43,6 +43,7 @@
     "@maplelabs/liquidityLocker": "npm:@maplelabs/liquidity-locker@v1.0.0",
     "@maplelabs/loanV1": "npm:@maplelabs/loan@v1.0.0",
     "@maplelabs/loanV2": "npm:@maplelabs/loan@v2.0.0",
+    "@maplelabs/mapleToken": "npm:@maplelabs/maple-token@1.0.0 ",
     "@maplelabs/mapleGlobals": "npm:@maplelabs/globals@v1.0.0",
     "@maplelabs/mplRewards": "npm:@maplelabs/mpl-rewards@v1.0.0",
     "@maplelabs/pool": "npm:@maplelabs/pool@v1.0.0",
@@ -50,6 +51,7 @@
     "@maplelabs/repaymentCalculator": "npm:@maplelabs/repayment-calculator@v1.0.0",
     "@maplelabs/stakeLocker": "npm:@maplelabs/stake-locker@v1.0.0",
     "@maplelabs/util": "npm:@maplelabs/util@v1.0.0",
+    "@maplelabs/xmpl": "npm:@maplelabs/xmpl@v1.0.1",
     "@typechain/ethers-v5": "^9.0.0",
     "ethers": "^5.5.3",
     "shelljs": "^0.8.5",
