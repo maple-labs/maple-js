@@ -1,3 +1,4 @@
+// Typechain entities
 import * as collateralLockerImports from './typechain/collateralLocker'
 import * as debtLockerV1Imports from './typechain/debtLockerV1'
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
@@ -16,11 +17,13 @@ import * as stakeLockerImports from './typechain/stakeLocker'
 import * as xmplImports from './typechain/xmpl'
 import * as environmentMocksImports from './typechain/environmentMocks'
 
+// Addresses
 import kovanAddresses from './addresses/kovan'
 import kovanDevAddresses from './addresses/kovan-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
 import mainnetAddresses from './addresses/mainnet'
+import localhostAddresses from './addresses/localhost'
 
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
@@ -124,7 +127,8 @@ const addresses = {
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
   rinkebyDev: rinkebyDevAddresses,
-  mainnet: mainnetAddresses
+  mainnet: mainnetAddresses,
+  localhost: localhostAddresses
 }
 
 interface ContractTypes {
