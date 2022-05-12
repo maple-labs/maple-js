@@ -14,7 +14,7 @@ import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as xmplImports from './typechain/xmpl'
-import * as environmentMocksImports from './typechain/environment-mocks'
+import * as environmentMocksImports from './typechain/environmentMocks'
 
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
