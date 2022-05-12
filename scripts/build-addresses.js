@@ -41,6 +41,7 @@ const build = (network) => ({
   // external
   BFactory: require(`../artifacts/${network}/addresses/BFactory.address.js`),
   BPool: require(`../artifacts/${network}/addresses/BPool.address.js`),
+  BPoolWETH: require(`../artifacts/${network}/addresses/BPoolWETH.address.js`),
   UniswapV2Router02: require(`../artifacts/${network}/addresses/UniswapV2Router02.address.js`),
 
   // oracles
@@ -56,7 +57,8 @@ const build = (network) => ({
   WETH: require(`../artifacts/${network}/addresses/WETH9.address.js`),
   WBTC: require(`../artifacts/${network}/addresses/WBTC.address.js`),
   LINK: require(`../artifacts/${network}/addresses/LINK.address.js`),
-  AAVE: require(`../artifacts/${network}/addresses/AAVE.address.js`)
+  AAVE: require(`../artifacts/${network}/addresses/AAVE.address.js`),
+  xMPL: require(`../artifacts/${network}/addresses/xMPL.address.js`)
 })
 
 const ordered = (unordered) =>
@@ -68,7 +70,7 @@ const ordered = (unordered) =>
     }, {})
 
 try {
-  console.log(ordered(build(process.argv.slice(2))))
+  console.log(ordered(build('mainnet-stage')))
 } catch (err) {
   console.log(err)
 }
