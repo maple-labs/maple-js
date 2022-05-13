@@ -1,12 +1,14 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.6",
   "license": "MIT",
   "name": "@maplelabs/maple-js",
   "description": "Maple SDK for JavaScript",
   "author": "Maple Labs",
   "main": "dist/index.js",
   "files": [
-    "dist/"
+    "dist/",
+    "scripts/",
+    "config.json"
   ],
   "scripts": {
     "dev": "rollup -c -w",
