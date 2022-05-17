@@ -1,22 +1,25 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.6",
   "license": "MIT",
   "name": "@maplelabs/maple-js",
   "description": "Maple SDK for JavaScript",
   "author": "Maple Labs",
   "main": "dist/index.js",
   "files": [
-    "dist/"
+    "dist/",
+    "scripts/",
+    "config.json"
   ],
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rm -rf dist/ && rollup -c",
     "build-typechain": "node ./scripts/build-typechain.js",
+    "build-addresses": "node ./scripts/build-addresses.js",
     "test": "jest --collectCoverage",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet",
     "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
     "format": "prettier --write '*/**/*.ts'",
-    "postinstall": "yarn build-typechain"
+    "postinstall": "yarn build-addresses && yarn build-typechain"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -39,7 +42,7 @@
     "@maplelabs/debtLockerV1": "npm:@maplelabs/debt-locker@v1.0.0",
     "@maplelabs/debtLockerV2": "npm:@maplelabs/debt-locker@v2.0.0",
     "@maplelabs/debtLockerV3": "npm:@maplelabs/debt-locker@v3.0.0-rc.0",
-    "@maplelabs/environment-mocks": "npm:@maplelabs/environment-mocks@v1.0.0",
+    "@maplelabs/environmentMocks": "npm:@maplelabs/environment-mocks@v0.0.1",
     "@maplelabs/fundingLocker": "npm:@maplelabs/funding-locker@v1.0.0",
     "@maplelabs/lateFeeCalculator": "npm:@maplelabs/late-fee-calculator@v1.0.0",
     "@maplelabs/liquidityLocker": "npm:@maplelabs/liquidity-locker@v1.0.0",
@@ -53,6 +56,7 @@
     "@maplelabs/premiumCalculator": "npm:@maplelabs/premium-calculator@v1.0.0",
     "@maplelabs/repaymentCalculator": "npm:@maplelabs/repayment-calculator@v1.0.0",
     "@maplelabs/stakeLocker": "npm:@maplelabs/stake-locker@v1.0.0",
+    "@maplelabs/util": "npm:@maplelabs/util@v1.0.0",
     "@maplelabs/xmpl": "npm:@maplelabs/xmpl@v1.0.1",
     "@typechain/ethers-v5": "^9.0.0",
     "ethers": "^5.5.3",
