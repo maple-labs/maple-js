@@ -150,6 +150,8 @@ interface ContractTypes {
   debtLockerV3: debtLockerV3Imports.DebtLocker,
   debtLockerV3Factory: debtLockerV3Imports.DebtLockerFactory,
   debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer,
+  loanV2: loanV2Imports.MapleLoan,
+  loanV2Factory: loanV2Imports.MapleLoanFactory,
   loanV3: loanV3Imports.MapleLoan,
   loanV3Factory: loanV3Imports.MapleLoanFactory,
   loanV3Initializer: loanV3Imports.MapleLoanInitializer,

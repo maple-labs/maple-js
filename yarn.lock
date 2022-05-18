@@ -880,10 +880,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/debt-locker/-/debt-locker-2.0.0.tgz#861aac87a87dd5ff8583a3a47764e99d2f6585a9"
   integrity sha512-CkCgeTPWw8cdPf5fUEX3QX0mYJl/5Yqc+HNY52VjUtDBve0hKhNvpOqJl0ztSSXCDwXIkkIDscU93+WRaCx0Qw==
 
-"@maplelabs/debtLockerV3@npm:@maplelabs/debt-locker@v3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@maplelabs/debt-locker/-/debt-locker-3.0.0.tgz#08c0541692ca69973550e5d586b671c6870fce1f"
-  integrity sha512-PKsNQ62ikQIhapnUGwEQDN03BnLWVvS7IQCRoCqMA6zbrVGWmJH/KWNNGnd+s1z+IERYuJgkiqLOoIiL/FIMXw==
+"@maplelabs/debtLockerV3@npm:@maplelabs/debt-locker@v3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://registry.npmjs.org/@maplelabs/debt-locker/-/debt-locker-3.0.0-rc.0.tgz#26a3f8732da978f47ec85f36972cea145bbaec84"
+  integrity sha512-eYGwEO0ztnVuOkiInwlbl/GbF6bNtXYeNGGI+md6qEUJCq2L8L92kXr7XhnkBvwmIEibBs5jdtAtMRDTSNpMcA==
+
 "@maplelabs/environmentMocks@npm:@maplelabs/environment-mocks@v0.0.1":
   version "0.0.1"
   resolved "https://registry.npmjs.org/@maplelabs/environment-mocks/-/environment-mocks-0.0.1.tgz#c1e788a8945491d9c5dcd88cea649fa43d5d0218"
@@ -914,10 +915,10 @@
   resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-2.0.0.tgz#c7ae112482cb45c5815bcae1f85afd9d3d39b8d9"
   integrity sha512-cDE4dzEB2pjL4zJXPX8PRXtYwYLj2CX9hePPI8xygS61hNN0KTw0cuaM2PVc+dFBja9Ejpc2+uaap3SEvpi0vw==
 
-"@maplelabs/loanV3@npm:@maplelabs/loan@v3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-3.0.0.tgz#bb0f3aca056d3198e164310f418c4fa0809efbe1"
-  integrity sha512-bfcKvwZz/MhnzZtFCN8n5OAPOyHJQrOXdb9xIwYu5sNQ4HMNwZySz/F5BGfmNCrJZd+WiNK1oFi4gKzHlmy57w==
+"@maplelabs/loanV3@npm:@maplelabs/loan@v3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-3.0.0-rc.0.tgz#590fb1d07939514671e855462bbf51da863a6abc"
+  integrity sha512-1pIJRRB7DNL4eN3iDKhMOrzbjVkQ2G5RI1gEb6jmyt2YocwGUTaoe6pAA6eGqsdCxJQ48vVfTCiP/J8jXJCY8A==
 
 "@maplelabs/mapleGlobals@npm:@maplelabs/globals@v1.0.0":
   version "1.0.0"
