@@ -3,7 +3,7 @@
   and ensure that all addresses have been updated or added accurately.
  */
 
-const build = (network) => {
+const build = (network = 'mainnet') => {
   const addresses = {
     manifest: require(`../artifacts/${network}/manifest.json`),
     // Factories
