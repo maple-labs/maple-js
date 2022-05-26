@@ -13,11 +13,13 @@
       "repo": "@maplelabs/debt-locker",
       "alias": [
         "debtLockerV1",
-        "debtLockerV2"
+        "debtLockerV2",
+        "debtLockerV3"
       ],
       "versions": [
         "v1.0.0",
-        "v2.0.0"
+        "v2.0.0",
+        "v3.0.0"
       ]
     },
     "fundingLocker": {
@@ -51,11 +53,13 @@
       "repo": "@maplelabs/loan",
       "alias": [
         "loanV1",
-        "loanV2"
+        "loanV2",
+        "loanV3"
       ],
       "versions": [
         "v1.0.0",
-        "v2.0.0"
+        "v2.0.0",
+        "v3.0.0"
       ]
     },
     "mapleGlobals": {
