@@ -1,9 +1,17 @@
 {
-  "version": "0.0.6",
-  "license": "MIT",
   "name": "@maplelabs/maple-js",
+  "version": "0.0.6",
   "description": "Maple SDK for JavaScript",
   "author": "Maple Labs",
+  "license": "AGPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maple-labs/maple-js"
+  },
+  "bugs": {
+    "url": "https://github.com/maple-labs/maple-js/issues"
+  },
+  "homepage": "https://github.com/maple-labs/maple-js",
   "main": "dist/index.js",
   "files": [
     "dist/",
