@@ -1,4 +1,4 @@
-# Maple-JS
+# maple-js
 
 A JavaScript SDK which provides tools for interacting with Maple Protocol.
 
@@ -14,7 +14,7 @@ yarn add @maplelabs/maple-js
 ```
 ---
 ### Addresses
-- Maple-JS provides you with smart contract addresses across the following networks: `Ethereum Mainnet`, `Rinkeby` & `Kovan`
+- maple-js provides you with smart contract addresses across the following networks: `Ethereum Mainnet`, `Rinkeby` & `Kovan`
     - Valid network values are: `'mainnet' | 'rinkeby' | 'kovan'`;
 - You can access addresses from the `addresses` object exported from maple-js:
 - You can see a list of available contracts in `src/addresses/*.ts`
@@ -42,7 +42,7 @@ const contractAddress = addresses.mainnet.MapleToken
 import { mapleGlobals } from 'maple-js'
 
 const contractAddress = addresses.mainnet.MapleToken
-const signer = 'yourSigner';
+const signer = 'yourSigner'
 
 const contract = mapleGlobals.core.connect(contractAddress, signer)
 ```
@@ -50,7 +50,7 @@ const contract = mapleGlobals.core.connect(contractAddress, signer)
 
 ### Interacting with a contract
 - Once you have connected to the contract you are then able to call any of the methods on that contract using the `contract` instance in the previous example:
-- Maple-JS contracts use typechain so you can see all the available methods using intellisense in your IDE.
+- maple-js contracts use typechain so you can see all the available methods using intellisense in your IDE.
 
 
 #### Usage for queries
