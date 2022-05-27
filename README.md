@@ -57,7 +57,7 @@ const contract = mapleGlobals.core.connect(contractAddress, signer)
 - Basic queries can be called using a standard `await` pattern
 
 ```
-const basicQuery = await mapleGlobals.lpCooldownPeriod()
+const basicQuery = await contract.lpCooldownPeriod()
 ```
 
 #### Usage for transactions
