@@ -33,7 +33,7 @@ const contractAddress = addresses.mainnet.MapleToken
 ### Connecting to a Contract
 
 - Once you have the address you need to set up a signer.
-- Please refer to the [ethers docs](https://docs.ethers.io/v5/) (or your choice of web3) if you require further assistance.
+- Please refer to the [ethers docs](https://docs.ethers.io/v5/) (or your choice of web3 library) if you require further assistance.
 
 
 #### Usage
@@ -44,7 +44,7 @@ import { mapleGlobals } from 'maple-js'
 const contractAddress = addresses.mainnet.MapleToken
 const signer = 'yourSigner';
 
-const mapleGlobals = mapleGlobals.core.connect(contractAddress, signer)
+const contract = mapleGlobals.core.connect(contractAddress, signer)
 ```
 ---
 
