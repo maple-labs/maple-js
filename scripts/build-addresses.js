@@ -63,6 +63,8 @@ const build = (network = 'mainnet') => {
   }
 
   if (network === 'localhost') {
+    addresses.DebtLockerV2 = require(`../artifacts/${network}/addresses/DebtLockerV2.address.js`)
+    addresses.DebtLockerV2Initializer = require(`../artifacts/${network}/addresses/DebtLockerV2Initializer.address.js`)
     addresses.DebtLockerV3 = require(`../artifacts/${network}/addresses/DebtLockerV3.address.js`)
     addresses.DebtLockerV3Initializer = require(`../artifacts/${network}/addresses/DebtLockerV3Initializer.address.js`)
     addresses.LoanV3 = require(`../artifacts/${network}/addresses/LoanV3.address.js`)
