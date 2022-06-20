@@ -163,6 +163,7 @@ interface ContractTypes {
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   mapleRewards: mapleRewardsImports.MplRewards
+  erc20: environmentMocksImports.MintSpecialToken
 }
 
 export {
