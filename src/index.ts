@@ -44,7 +44,6 @@ const debtLockerV2 = {
 }
 
 const debtLockerV3 = {
-  factory: debtLockerV3Imports.DebtLockerFactory__factory,
   core: debtLockerV3Imports.DebtLocker__factory,
   initializer: debtLockerV3Imports.DebtLockerInitializer__factory
 }
@@ -147,7 +146,6 @@ const addresses = {
 
 interface ContractTypes {
   debtLockerV3: debtLockerV3Imports.DebtLocker
-  debtLockerV3Factory: debtLockerV3Imports.DebtLockerFactory
   debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer
   debtLockerV2: debtLockerV2Imports.DebtLocker
   debtLockerV2Factory: debtLockerV2Imports.DebtLockerFactory
