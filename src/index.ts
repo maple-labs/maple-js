@@ -77,7 +77,6 @@ const loanV2 = {
 }
 
 const loanV3 = {
-  factory: loanV3Imports.MapleLoanFactory__factory,
   initializer: loanV3Imports.MapleLoanInitializer__factory,
   core: loanV3Imports.MapleLoan__factory,
   refinancer: loanV3Imports.Refinancer__factory
@@ -156,7 +155,6 @@ interface ContractTypes {
   loanV2: loanV2Imports.MapleLoan
   loanV2Factory: loanV2Imports.MapleLoanFactory
   loanV3: loanV3Imports.MapleLoan
-  loanV3Factory: loanV3Imports.MapleLoanFactory
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
   mapleToken: mapleTokenImports.MapleToken
