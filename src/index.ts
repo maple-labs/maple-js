@@ -160,6 +160,7 @@ interface ContractTypes {
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
   mapleToken: mapleTokenImports.MapleToken
+  mapleGlobals: mapleGlobalsImports.MapleGlobals,
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   mapleRewards: mapleRewardsImports.MplRewards
