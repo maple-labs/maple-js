@@ -1,3 +1,5 @@
+import { buildAddresses } from '../scripts/build-addresses'
+
 // Typechain entities
 import * as collateralLockerImports from './typechain/collateralLocker'
 import * as debtLockerV1Imports from './typechain/debtLockerV1'
@@ -25,7 +27,6 @@ import kovanDevAddresses from './addresses/kovan-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
 import mainnetAddresses from './addresses/mainnet'
-import localhostAddresses from './addresses/localhost'
 
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
@@ -135,13 +136,12 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
-const addresses = {
+const addresses: Record<string, any> = {
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
   rinkebyDev: rinkebyDevAddresses,
   mainnet: mainnetAddresses,
-  localhost: localhostAddresses
 }
 
 interface ContractTypes {
@@ -163,7 +163,14 @@ interface ContractTypes {
   erc20: environmentMocksImports.MintSpecialToken
 }
 
+const getAddress = (network: string, path?: string): any => {
+  if (path) buildAddresses('localhost', path);
+
+  else return addresses[network];
+}
+
 export {
+  getAddress,
   addresses,
   bPool,
   collateralLocker,
