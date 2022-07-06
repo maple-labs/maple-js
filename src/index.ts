@@ -141,7 +141,7 @@ const addresses: Record<string, any> = {
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
   rinkebyDev: rinkebyDevAddresses,
-  mainnet: mainnetAddresses,
+  mainnet: mainnetAddresses
 }
 
 interface ContractTypes {
@@ -156,7 +156,7 @@ interface ContractTypes {
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
   mapleToken: mapleTokenImports.MapleToken
-  mapleGlobals: mapleGlobalsImports.MapleGlobals,
+  mapleGlobals: mapleGlobalsImports.MapleGlobals
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   mapleRewards: mapleRewardsImports.MplRewards
@@ -164,9 +164,8 @@ interface ContractTypes {
 }
 
 const getAddress = (network: string, path?: string): any => {
-  if (path) buildAddresses('localhost', path);
-
-  else return addresses[network];
+  if (path) buildAddresses('localhost', path)
+  else return addresses[network]
 }
 
 export {

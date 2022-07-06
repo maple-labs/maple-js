@@ -1,20 +1,26 @@
-const path = require('path');
+// const path = require('path');
+const path = require('path')
 /**
   You need to copy the artifacts bundle that is generated from maple-deploy
   and ensure that all addresses have been updated or added accurately.
  */
 
-export const buildAddresses = (network = 'mainnet', customPath?: string): any => {
-
+const buildAddresses = (network = 'mainnet', customPath) => {
   if (customPath) {
-    console.log('buildAddresses', { network, customPath, dirname: __dirname, resolvedPath: path.resolve(__dirname), joinedPath: path.join(__dirname, customPath), cwd: process.cwd() })
+    console.log('buildAddresses', {
+      network,
+      customPath,
+      dirname: __dirname,
+      resolvedPath: path.resolve(__dirname),
+      joinedPath: path.join(__dirname, customPath),
+      cwd: process.cwd()
+    })
   }
 
-
-  let thePath = `../artifacts/${network}`;
+  let thePath = `../artifacts/${network}`
 
   if (network === 'localhost' && customPath) {
-    thePath = customPath;
+    thePath = customPath
   }
 
   const addresses = {
@@ -87,16 +93,20 @@ export const buildAddresses = (network = 'mainnet', customPath?: string): any =>
   return addresses
 }
 
-const ordered = (unordered: any): any =>
-  Object.keys(unordered)
-    .sort()
-    .reduce((obj: any, key: any) => {
-      obj[key] = unordered[key]
-      return obj
-    }, {})
+// const ordered = (unordered) =>
+//   Object.keys(unordered)
+//     .sort()
+//     .reduce((obj, key) => {
+//       obj[key] = unordered[key]
+//       return obj
+//     }, {})
 
-try {
-  console.log(ordered(buildAddresses(process.argv[2])))
-} catch (err) {
-  console.log(err)
+// try {
+//   console.log(ordered(buildAddresses(process.argv[2])))
+// } catch (err) {
+//   console.log(err)
+// }
+
+module.exports = {
+  buildAddresses
 }
