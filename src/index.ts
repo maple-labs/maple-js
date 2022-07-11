@@ -164,8 +164,9 @@ interface ContractTypes {
 }
 
 const getAddress = (network: string, path?: string): any => {
-  if (path) buildAddresses('localhost', path)
-  else return addresses[network]
+  if (path) {
+    return buildAddresses('localhost', path)
+  } else return addresses[network]
 }
 
 export {
