@@ -22,6 +22,7 @@ import * as environmentMocksImports from './typechain/environmentMocks'
 // Addresses
 import kovanAddresses from './addresses/kovan'
 import kovanDevAddresses from './addresses/kovan-dev'
+import goerliDevAddresses from './addresses/goerli-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
 import mainnetAddresses from './addresses/mainnet'
@@ -138,6 +139,7 @@ const xmpl = {
 const addresses = {
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
+  goerliDev: goerliDevAddresses,
   rinkeby: rinkebyAddresses,
   rinkebyDev: rinkebyDevAddresses,
   mainnet: mainnetAddresses,
@@ -156,8 +158,8 @@ interface ContractTypes {
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
   mapleToken: mapleTokenImports.MapleToken
-  mapleGlobals: mapleGlobalsImports.MapleGlobals,
-  stakeLocker: stakeLockerImports.StakeLocker,
+  mapleGlobals: mapleGlobalsImports.MapleGlobals
+  stakeLocker: stakeLockerImports.StakeLocker
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   mapleRewards: mapleRewardsImports.MplRewards

@@ -40,10 +40,10 @@ export default {
   Util: '0x28Caf95b1fB7609C575c263eDFFde84381CA6486',
   WBTC: '0xA23FAc1CF3f1ABb2BDD48579346653a765E31cb6',
   WETH: '0x1FEa817089FfE74D50815496d6Ae15da6bC1ce41',
+  xMPL: '0x2b8c302e12a8e35552d59960d697976a4a028334',
   manifest: {
     network: 'localhost',
     blockheight: 0,
     date: '2021-10-13T18:41:17.405Z'
-  },
-  xMPL: '0x2b8c302e12a8e35552d59960d697976a4a028334'
+  }
 }
