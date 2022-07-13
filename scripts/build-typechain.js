@@ -62,6 +62,110 @@ function overwriteEventParams({ files, eventName, inputs }) {
 async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
+  // These manual changes augment the npm packages. src/abis/ contains the updates already.
+  mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
+  overwriteEventParams({
+    files: ['Pool', 'StakeLocker'],
+    eventName: 'LossesRecognized',
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'by',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'lossesRecognized',
+        type: 'uint256'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'totalLossesRecognized',
+        type: 'uint256'
+      }
+    ]
+  })
+  overwriteEventParams({
+    files: ['Pool'],
+    eventName: 'LossesCorrectionUpdated',
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'account',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'int256',
+        name: 'lossesCorrection',
+        type: 'int256'
+      }
+    ]
+  })
+  overwriteEventParams({
+    files: ['Pool'],
+    eventName: 'LossesDistributed',
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'by',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'lossesDistributed',
+        type: 'uint256'
+      }
+    ]
+  })
+  overwriteEventParams({
+    files: ['Pool'],
+    eventName: 'LossesPerShareUpdated',
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'lossesPerShare',
+        type: 'uint256'
+      }
+    ]
+  })
+  overwriteEventParams({
+    files: ['Pool'],
+    eventName: 'PointsCorrectionUpdated',
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'account',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'int256',
+        name: 'pointsCorrection',
+        type: 'int256'
+      }
+    ]
+  })
+  overwriteEventParams({
+    files: ['Pool'],
+    eventName: 'PointsPerShareUpdated',
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'pointsPerShare',
+        type: 'uint256'
+      }
+    ]
+  })
   await generateTypechainBindings(config)
 }
 
