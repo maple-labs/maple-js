@@ -17,10 +17,20 @@ const build = (network = 'mainnet') => {
     LoanFactory: require(`../artifacts/${network}/addresses/LoanFactory.address.js`),
     LoanV2Factory: require(`../artifacts/${network}/addresses/LoanV2Factory.address.js`),
 
+    // Loans
+    LoanV2: require(`../artifacts/${network}/addresses/LoanV2.address.js`),
+    LoanV3: require(`../artifacts/${network}/addresses/LoanV3.address.js`),
+    DebtLockerV2: require(`../artifacts/${network}/addresses/DebtLockerV2.address.js`),
+    DebtLockerV3: require(`../artifacts/${network}/addresses/DebtLockerV3.address.js`),
+
     // Initializers
     DebtLockerV2Initializer: require(`../artifacts/${network}/addresses/DebtLockerV2Initializer.address.js`),
+    DebtLockerV3Initializer: require(`../artifacts/${network}/addresses/DebtLockerV3Initializer.address.js`),
     LoanV2Initializer: require(`../artifacts/${network}/addresses/LoanV2Initializer.address.js`),
+    LoanV3Initializer: require(`../artifacts/${network}/addresses/LoanV3Initializer.address.js`),
     LoanV2Refinancer: require(`../artifacts/${network}/addresses/LoanV2Refinancer.address.js`),
+    LoanV3Refinancer: require(`../artifacts/${network}/addresses/LoanV3Refinancer.address.js`),
+
     // DAO
     MapleTreasury: require(`../artifacts/${network}/addresses/MapleTreasury.address.js`),
     MapleGlobals: require(`../artifacts/${network}/addresses/MapleGlobals.address.js`),
@@ -60,15 +70,6 @@ const build = (network = 'mainnet') => {
     LINK: require(`../artifacts/${network}/addresses/LINK.address.js`),
     AAVE: require(`../artifacts/${network}/addresses/AAVE.address.js`),
     xMPL: require(`../artifacts/${network}/addresses/xMPL.address.js`)
-  }
-
-  if (network === 'localhost') {
-    addresses.DebtLockerV2 = require(`../artifacts/${network}/addresses/DebtLockerV2.address.js`)
-    addresses.DebtLockerV2Initializer = require(`../artifacts/${network}/addresses/DebtLockerV2Initializer.address.js`)
-    addresses.DebtLockerV3 = require(`../artifacts/${network}/addresses/DebtLockerV3.address.js`)
-    addresses.DebtLockerV3Initializer = require(`../artifacts/${network}/addresses/DebtLockerV3Initializer.address.js`)
-    addresses.LoanV3 = require(`../artifacts/${network}/addresses/LoanV3.address.js`)
-    addresses.LoanV3Initializer = require(`../artifacts/${network}/addresses/LoanV3Initializer.address.js`)
   }
 
   return addresses
