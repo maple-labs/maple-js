@@ -284,19 +284,19 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "by",
+        "name": "",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "lossesRecognized",
+        "name": "",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "totalLossesRecognized",
+        "name": "",
         "type": "uint256"
       }
     ],
