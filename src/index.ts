@@ -134,6 +134,41 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
+const allContracts = {
+  collateralLocker,
+  debtLockerV1,
+  debtLockerV2,
+  debtLockerV3,
+  fundingLocker,
+  lateFeeCalc,
+  liquidityLocker,
+  loanV1,
+  loanV2,
+  loanV3,
+  mapleGlobals,
+  mapleRewards,
+  mapleToken,
+  pool,
+  premiumCalc,
+  repaymentCalculator,
+  stakeLocker,
+  bPool,
+  erc20,
+  chainlink,
+  uniswapRouterV2,
+  xmpl
+}
+
+type KnownOptions<T> = T extends {
+  [k in keyof T]: {
+    [k: string]: infer OptionValue
+  }
+}
+  ? OptionValue
+  : never
+
+type TypeChainContract = KnownOptions<typeof allContracts>
+
 type AddressKey = typeof mainnetAddresses
 
 type MapleAddressMapping = {
@@ -193,5 +228,6 @@ export {
   uniswapRouterV2,
   xmpl,
   ContractTypes,
-  MapleAddressMapping
+  MapleAddressMapping,
+  TypeChainContract
 }
