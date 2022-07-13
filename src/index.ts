@@ -140,9 +140,7 @@ type MapleAddressMapping = {
   [K in keyof AddressKey]: AddressKey[K]
 }
 
-type Network = 'kovan' | 'kovanDev' | 'rinkeby' | 'rinkebyDev' | 'mainnet'
-
-const addresses: Record<Network, MapleAddressMapping> = {
+const addresses: Record<string, MapleAddressMapping> = {
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
