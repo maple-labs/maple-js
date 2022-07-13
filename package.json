@@ -12,6 +12,7 @@
     "url": "https://github.com/maple-labs/maple-js/issues"
   },
   "homepage": "https://github.com/maple-labs/maple-js",
+  "module": "dist/index.esm.js",
   "main": "dist/index.js",
   "files": [
     "dist/",
@@ -27,7 +28,8 @@
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet",
     "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
     "format": "prettier --write '*/**/*.ts'",
-    "postinstall": "yarn build-addresses && yarn build-typechain"
+    "postinstall": "yarn build-addresses && yarn build-typechain",
+    "rebuild": "yarn unlink && yarn build && yarn link"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -58,8 +60,8 @@
     "@maplelabs/loanV1": "npm:@maplelabs/loan@v1.0.0",
     "@maplelabs/loanV2": "npm:@maplelabs/loan@v2.0.0",
     "@maplelabs/loanV3": "npm:@maplelabs/loan@v3.0.0",
-    "@maplelabs/mapleToken": "npm:@maplelabs/maple-token@1.0.0 ",
     "@maplelabs/mapleGlobals": "npm:@maplelabs/globals@v1.0.0",
+    "@maplelabs/mapleToken": "npm:@maplelabs/maple-token@1.0.0 ",
     "@maplelabs/mplRewards": "npm:@maplelabs/mpl-rewards@v1.0.0",
     "@maplelabs/pool": "npm:@maplelabs/pool@v1.0.0",
     "@maplelabs/premiumCalculator": "npm:@maplelabs/premium-calculator@v1.0.0",

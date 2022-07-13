@@ -1,5 +1,3 @@
-import { buildAddresses } from '../scripts/build-addresses'
-
 // Typechain entities
 import * as collateralLockerImports from './typechain/collateralLocker'
 import * as debtLockerV1Imports from './typechain/debtLockerV1'
@@ -136,7 +134,15 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
-const addresses: Record<string, any> = {
+type AddressKey = typeof mainnetAddresses
+
+type MapleAddressMapping = {
+  [K in keyof AddressKey]: AddressKey[K]
+}
+
+type Network = 'kovan' | 'kovanDev' | 'rinkeby' | 'rinkebyDev' | 'mainnet'
+
+const addresses: Record<Network, MapleAddressMapping> = {
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
@@ -156,22 +162,15 @@ interface ContractTypes {
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
   mapleToken: mapleTokenImports.MapleToken
-  mapleGlobals: mapleGlobalsImports.MapleGlobals,
-  stakeLocker: stakeLockerImports.StakeLocker,
+  mapleGlobals: mapleGlobalsImports.MapleGlobals
+  stakeLocker: stakeLockerImports.StakeLocker
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   mapleRewards: mapleRewardsImports.MplRewards
   erc20: environmentMocksImports.MintSpecialToken
 }
 
-const getAddress = (network: string, path?: string): any => {
-  if (path) {
-    return buildAddresses('localhost', path)
-  } else return addresses[network]
-}
-
 export {
-  getAddress,
   addresses,
   bPool,
   collateralLocker,
@@ -195,5 +194,6 @@ export {
   stakeLocker,
   uniswapRouterV2,
   xmpl,
-  ContractTypes
+  ContractTypes,
+  MapleAddressMapping
 }
