@@ -134,32 +134,6 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
-const allContracts = {
-  collateralLocker,
-  debtLockerV2,
-  debtLockerV3,
-  fundingLockerImports,
-  lateFeeCalc,
-  liquidityLocker,
-  loanV2,
-  loanV3,
-  mapleGlobals,
-  mapleRewards,
-  mapleToken,
-  pool,
-  stakeLocker,
-  erc20,
-  xmpl
-}
-
-type KnownOptions<T> = T extends {
-  [k in keyof T]: {
-    [k: string]: infer OptionValue
-  }
-}
-  ? OptionValue
-  : never
-
 type AddressKey = typeof mainnetAddresses
 
 type MapleAddressMapping = {
@@ -194,10 +168,6 @@ interface ContractTypes {
   erc20: environmentMocksImports.MintSpecialToken
 }
 
-type TypeChainContract = KnownOptions<typeof allContracts>
-
-type ConnectedContract = ReturnType<TypeChainContract['connect']>
-
 export {
   addresses,
   bPool,
@@ -223,8 +193,5 @@ export {
   uniswapRouterV2,
   xmpl,
   ContractTypes,
-  MapleAddressMapping,
-  AddressKey,
-  TypeChainContract,
-  ConnectedContract
+  MapleAddressMapping
 }
