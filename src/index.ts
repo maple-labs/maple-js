@@ -20,6 +20,7 @@ import * as xmplImports from './typechain/xmpl'
 import * as environmentMocksImports from './typechain/environmentMocks'
 
 // Addresses
+import goerliDevddresses from './addresses/kovan-dev'
 import kovanAddresses from './addresses/kovan'
 import kovanDevAddresses from './addresses/kovan-dev'
 import goerliDevAddresses from './addresses/goerli-dev'
@@ -137,6 +138,7 @@ const xmpl = {
 }
 
 const addresses = {
+  goerliDev: goerliDevddresses,
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
   goerliDev: goerliDevAddresses,
