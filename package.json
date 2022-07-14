@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rm -rf dist/ && rollup -c && cp -R src/abis dist/abis",
+    "build": "rm -rf dist/ && rollup -c",
     "build-typechain": "node ./scripts/build-typechain.js",
     "build-addresses": "node ./scripts/build-addresses.js",
     "test": "jest --collectCoverage",

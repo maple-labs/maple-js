@@ -23,7 +23,6 @@ import * as environmentMocksImports from './typechain/environmentMocks'
 import goerliDevAddresses from './addresses/goerli-dev'
 import kovanAddresses from './addresses/kovan'
 import kovanDevAddresses from './addresses/kovan-dev'
-import goerliDevAddresses from './addresses/goerli-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
 import mainnetAddresses from './addresses/mainnet'
@@ -141,7 +140,6 @@ const addresses = {
   goerliDev: goerliDevAddresses,
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
-  goerliDev: goerliDevAddresses,
   rinkeby: rinkebyAddresses,
   rinkebyDev: rinkebyDevAddresses,
   mainnet: mainnetAddresses,
