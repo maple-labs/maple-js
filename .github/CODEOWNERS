@@ -1,0 +1,5 @@
+# Github CODEOWNERS file
+
+# Global code-owners for this repository
+
+-       @maple-labs/offchain

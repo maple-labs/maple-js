@@ -20,6 +20,7 @@ import * as xmplImports from './typechain/xmpl'
 import * as environmentMocksImports from './typechain/environmentMocks'
 
 // Addresses
+import goerliDevAddresses from './addresses/goerli-dev'
 import kovanAddresses from './addresses/kovan'
 import kovanDevAddresses from './addresses/kovan-dev'
 import rinkebyAddresses from './addresses/rinkeby'
@@ -141,6 +142,7 @@ type MapleAddressMapping = {
 }
 
 const addresses: Record<string, MapleAddressMapping> = {
+  goerliDev: goerliDevAddresses,
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
