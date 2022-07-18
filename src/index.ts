@@ -147,7 +147,8 @@ const addresses: Record<string, MapleAddressMapping> = {
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
   rinkebyDev: rinkebyDevAddresses,
-  mainnet: mainnetAddresses
+  mainnet: mainnetAddresses,
+  mainnetStage: mainnetAddresses
 }
 
 interface ContractTypes {
