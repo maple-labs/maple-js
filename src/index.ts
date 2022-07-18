@@ -26,7 +26,6 @@ import kovanDevAddresses from './addresses/kovan-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
 import mainnetAddresses from './addresses/mainnet'
-import localhostAddresses from './addresses/localhost'
 
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
@@ -136,14 +135,20 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
-const addresses = {
+type AddressKey = typeof mainnetAddresses
+
+type MapleAddressMapping = {
+  [K in keyof AddressKey]: AddressKey[K]
+}
+
+const addresses: Record<string, MapleAddressMapping> = {
   goerliDev: goerliDevAddresses,
   kovan: kovanAddresses,
   kovanDev: kovanDevAddresses,
   rinkeby: rinkebyAddresses,
   rinkebyDev: rinkebyDevAddresses,
   mainnet: mainnetAddresses,
-  localhost: localhostAddresses
+  mainnetStage: mainnetAddresses
 }
 
 interface ContractTypes {
@@ -190,5 +195,6 @@ export {
   stakeLocker,
   uniswapRouterV2,
   xmpl,
-  ContractTypes
+  ContractTypes,
+  MapleAddressMapping
 }
