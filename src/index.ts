@@ -158,6 +158,8 @@ interface ContractTypes {
   debtLockerV2: debtLockerV2Imports.DebtLocker
   debtLockerV2Factory: debtLockerV2Imports.DebtLockerFactory
   debtLockerV2Initializer: debtLockerV2Imports.DebtLockerInitializer
+  liquidityLocker: liquidityLockerImports.LiquidityLocker
+  liquidityLockerFactory: liquidityLockerImports.LiquidityLockerFactory
   loanV2: loanV2Imports.MapleLoan
   loanV2Factory: loanV2Imports.MapleLoanFactory
   loanV3: loanV3Imports.MapleLoan
@@ -166,8 +168,10 @@ interface ContractTypes {
   mapleToken: mapleTokenImports.MapleToken
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   stakeLocker: stakeLockerImports.StakeLocker
+  stakeLockerFactory: stakeLockerImports.StakeLockerFactory
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
+  poolFactory: poolImports.PoolFactory
   mapleRewards: mapleRewardsImports.MplRewards
   erc20: environmentMocksImports.MintSpecialToken
 }
