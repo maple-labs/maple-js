@@ -152,6 +152,7 @@ const addresses: Record<string, MapleAddressMapping> = {
 }
 
 interface ContractTypes {
+  bPool: environmentMocksImports.BPool
   debtLockerV3: debtLockerV3Imports.DebtLocker
   debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer
   debtLockerV2: debtLockerV2Imports.DebtLocker
