@@ -44,6 +44,7 @@ const debtLockerV2 = {
 }
 
 const debtLockerV3 = {
+  factory: debtLockerV3Imports.DebtLockerFactory__factory,
   core: debtLockerV3Imports.DebtLocker__factory,
   initializer: debtLockerV3Imports.DebtLockerInitializer__factory
 }
@@ -76,6 +77,7 @@ const loanV2 = {
 }
 
 const loanV3 = {
+  factory: loanV3Imports.MapleLoanFactory__factory,
   initializer: loanV3Imports.MapleLoanInitializer__factory,
   core: loanV3Imports.MapleLoan__factory,
   refinancer: loanV3Imports.Refinancer__factory
@@ -154,6 +156,7 @@ const addresses: Record<string, MapleAddressMapping> = {
 interface ContractTypes {
   bPool: environmentMocksImports.BPool
   debtLockerV3: debtLockerV3Imports.DebtLocker
+  debtLockerV3Factory: debtLockerV3Imports.DebtLockerFactory
   debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer
   debtLockerV2: debtLockerV2Imports.DebtLocker
   debtLockerV2Factory: debtLockerV2Imports.DebtLockerFactory
@@ -163,6 +166,7 @@ interface ContractTypes {
   loanV2: loanV2Imports.MapleLoan
   loanV2Factory: loanV2Imports.MapleLoanFactory
   loanV3: loanV3Imports.MapleLoan
+  loanV3Factory: loanV3Imports.MapleLoanFactory
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
   mapleToken: mapleTokenImports.MapleToken
