@@ -142,13 +142,13 @@ type MapleAddressMapping = {
 }
 
 const addresses: Record<string, MapleAddressMapping> = {
-  goerliDev: goerliDevAddresses,
+  'goerli-dev': goerliDevAddresses,
   kovan: kovanAddresses,
-  kovanDev: kovanDevAddresses,
+  'kovan-dev': kovanDevAddresses,
   rinkeby: rinkebyAddresses,
-  rinkebyDev: rinkebyDevAddresses,
+  'rinkeby-dev': rinkebyDevAddresses,
   mainnet: mainnetAddresses,
-  mainnetStage: mainnetAddresses
+  'mainnet-stage': mainnetAddresses
 }
 
 interface ContractTypes {
