@@ -143,7 +143,7 @@ type MapleAddressMapping = {
   [K in keyof AddressKey]: AddressKey[K]
 }
 
-const addresses: Record<string, MapleAddrRessMapping> = {
+const addresses: Record<string, MapleAddressMapping> = {
   'goerli-dev': goerliDevAddresses,
   kovan: kovanAddresses,
   'kovan-dev': kovanDevAddresses,
