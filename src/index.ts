@@ -171,12 +171,13 @@ interface ContractTypes {
   loanV3Refinancer: loanV3Imports.Refinancer
   mapleToken: mapleTokenImports.MapleToken
   mapleGlobals: mapleGlobalsImports.MapleGlobals
+  mapleRewards: mapleRewardsImports.MplRewards
+  mapleRewardsFactory: mapleRewardsImports.MplRewardsFactory
   stakeLocker: stakeLockerImports.StakeLocker
   stakeLockerFactory: stakeLockerImports.StakeLockerFactory
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   poolFactory: poolImports.PoolFactory
-  mapleRewards: mapleRewardsImports.MplRewards
   erc20: environmentMocksImports.MintSpecialToken
 }
 
