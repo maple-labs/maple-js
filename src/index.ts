@@ -178,7 +178,6 @@ interface ContractTypes {
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   poolFactory: poolImports.PoolFactory
-
   erc20: environmentMocksImports.MintSpecialToken
 }
 
