@@ -26,6 +26,7 @@ import kovanDevAddresses from './addresses/kovan-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
 import mainnetAddresses from './addresses/mainnet'
+import mainnetStageAddresses from './addresses/mainnet-stage'
 
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
@@ -150,7 +151,7 @@ const addresses: Record<string, MapleAddressMapping> = {
   rinkeby: rinkebyAddresses,
   'rinkeby-dev': rinkebyDevAddresses,
   mainnet: mainnetAddresses,
-  'mainnet-stage': mainnetAddresses
+  'mainnet-stage': mainnetStageAddresses
 }
 
 interface ContractTypes {
