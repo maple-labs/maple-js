@@ -145,6 +145,7 @@ type MapleAddressMapping = {
 }
 
 const addresses: Record<string, MapleAddressMapping> = {
+  goerli: goerliDevAddresses, // TODO - deploy goerli-prod
   'goerli-dev': goerliDevAddresses,
   kovan: kovanAddresses,
   'kovan-dev': kovanDevAddresses,
