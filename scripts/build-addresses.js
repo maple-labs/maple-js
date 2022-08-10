@@ -3,7 +3,7 @@
   and ensure that all addresses have been updated or added accurately.
  */
 
-const build = (project = 'rinkeby') => {
+const build = (project = 'mainnet') => {
   const addresses = {
     manifest: require(`../artifacts/${project}/manifest.json`),
     // Factories
