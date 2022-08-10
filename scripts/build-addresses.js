@@ -3,7 +3,7 @@
   and ensure that all addresses have been updated or added accurately.
  */
 
-const build = (project = 'mainnet') => {
+const build = (project = 'rinkeby') => {
   const addresses = {
     manifest: require(`../artifacts/${project}/manifest.json`),
     // Factories
@@ -65,7 +65,7 @@ const build = (project = 'mainnet') => {
     // tokens
     DAI: require(`../artifacts/${project}/addresses/DAI.address.js`),
     USDC: require(`../artifacts/${project}/addresses/USDC.address.js`),
-    WETH: require(`../artifacts/${project}/addresses/WETH9.address.js`),
+    WETH9: require(`../artifacts/${project}/addresses/WETH9.address.js`),
     WBTC: require(`../artifacts/${project}/addresses/WBTC.address.js`),
     LINK: require(`../artifacts/${project}/addresses/LINK.address.js`),
     AAVE: require(`../artifacts/${project}/addresses/AAVE.address.js`),
