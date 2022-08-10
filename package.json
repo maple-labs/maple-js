@@ -28,7 +28,7 @@
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet",
     "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
     "format": "prettier --write '*/**/*.ts'",
-    "postinstall": "yarn build-addresses && yarn build-typechain",
+    "postinstall": "yarn build-typechain",
     "rebuild": "yarn unlink && yarn build && yarn link"
   },
   "devDependencies": {
