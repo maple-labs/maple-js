@@ -22,6 +22,15 @@
         "v3.0.0"
       ]
     },
+    "external": {
+      "repo": "@maplelabs/environment-mocks",
+      "alias": [
+        "environmentMocks"
+      ],
+      "versions": [
+        "v0.0.1"
+      ]
+    },
     "fundingLocker": {
       "repo": "@maplelabs/funding-locker",
       "alias": [
@@ -29,6 +38,15 @@
       ],
       "versions": [
         "v1.0.0"
+      ]
+    },
+    "globalsV2": {
+      "repo": "@maplelabs/globals-v2",
+      "alias": [
+        "globalsV2"
+      ],
+      "versions": [
+        "v1.0.0-alpha.0"
       ]
     },
     "lateFeeCalculator": {
@@ -54,12 +72,14 @@
       "alias": [
         "loanV1",
         "loanV2",
-        "loanV3"
+        "loanV3",
+        "loanV4"
       ],
       "versions": [
         "v1.0.0",
         "v2.0.0",
-        "v3.0.0"
+        "v3.0.0",
+        "v4.0.0-alpha.0"
       ]
     },
     "mapleGlobals": {
@@ -80,6 +100,15 @@
         "v1.0.0"
       ]
     },
+    "mapleToken": {
+      "repo": "@maplelabs/maple-token",
+      "alias": [
+        "mapleToken"
+      ],
+      "versions": [
+        "v1.0.0"
+      ]
+    },
     "pool": {
       "repo": "@maplelabs/pool",
       "alias": [
@@ -87,6 +116,15 @@
       ],
       "versions": [
         "v1.0.0"
+      ]
+    },
+    "poolV2": {
+      "repo": "@maplelabs/pool-v2",
+      "alias": [
+        "poolV2"
+      ],
+      "versions": [
+        "v1.0.0-alpha-0"
       ]
     },
     "premiumCalculator": {
@@ -116,6 +154,15 @@
         "v1.0.0"
       ]
     },
+    "withdrawalManager": {
+      "repo": "@maplelabs/withdrawal-manager",
+      "alias": [
+        "withdrawal-manager"
+      ],
+      "versions": [
+        "v1.0.0-alpha.0"
+      ]
+    },
     "xmpl": {
       "repo": "@maplelabs/xmpl",
       "alias": [
@@ -123,24 +170,6 @@
       ],
       "versions": [
         "v1.0.1"
-      ]
-    },
-    "mapleToken": {
-      "repo": "@maplelabs/maple-token",
-      "alias": [
-        "mapleToken"
-      ],
-      "versions": [
-        "v1.0.0"
-      ]
-    },
-    "external": {
-      "repo": "@maplelabs/environment-mocks",
-      "alias": [
-        "environmentMocks"
-      ],
-      "versions": [
-        "v0.0.1"
       ]
     }
   }
