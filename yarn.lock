@@ -895,6 +895,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/funding-locker/-/funding-locker-1.0.0.tgz#e41a8f9870fa6c8930d266ccbafa08cea69acc15"
   integrity sha512-oyWpqaJuyG5cYFV1OYaAFvmhCQd3GGs8RxqFZWx4mb+Xk3bviDyzWVi09Obs3gJh0OI7X/Yfzedr45VBXDcy4g==
 
+"@maplelabs/globalsV2@npm:@maplelabs/globals-v2@1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@maplelabs/globals-v2/-/globals-v2-1.0.0-alpha.0.tgz#d34166ef6c736bb36d44380263ecfdc05a9c1bcf"
+  integrity sha512-j6PqYU8SKUZ3CzZkc0dCLUd3fCoD7Nlh5zeAe6cXPn4Uljcld+83+AB6ZXRkXMmMfsv4y18QdCf5DKMqNhvsyQ==
+
 "@maplelabs/lateFeeCalculator@npm:@maplelabs/late-fee-calculator@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/late-fee-calculator/-/late-fee-calculator-1.0.0.tgz#7001474936ae9821490a423737c08d8edafcd1a4"
@@ -920,6 +925,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-3.0.0.tgz#bb0f3aca056d3198e164310f418c4fa0809efbe1"
   integrity sha512-bfcKvwZz/MhnzZtFCN8n5OAPOyHJQrOXdb9xIwYu5sNQ4HMNwZySz/F5BGfmNCrJZd+WiNK1oFi4gKzHlmy57w==
 
+"@maplelabs/loanV4@npm:@maplelabs/loan@v4.0.0-alpha.0":
+  version "4.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-4.0.0-alpha.0.tgz#f1d50e6feb0bb1ae3493c6c7734a20d05e5e07ea"
+  integrity sha512-bKvarsAFvdtWwCSokfxVZeMwYuAnLJY6LdfLi/JCJzs5taEp8wKBXYhoAbXAneuglMqrXYXXezQbZFs/fFmjHA==
+
 "@maplelabs/mapleGlobals@npm:@maplelabs/globals@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/globals/-/globals-1.0.0.tgz#85fd3e667cdb5cd26e5882951e8a7cf7426645fe"
@@ -940,6 +950,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/pool/-/pool-1.0.0.tgz#7b04e9aee854d941a60445adb2f5cd54ab78d434"
   integrity sha512-2X2Q+IfLgkGRO4aeEXeWnaTzEKW2bMAJW/140tnw+YG4thbZloyYRI2hrrplTzjFaWkB6MvZgAOhSiHfrie0nQ==
 
+"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@maplelabs/pool-v2/-/pool-v2-1.0.0-alpha.0.tgz#4cbfb1701fbc3fc858698adfc6a06ca392789e9b"
+  integrity sha512-6ZmXWyroOrjEEOa0XT7btFfhRF/ekGaRVS7zd1eDmkp28ep3BLnKsBL0QRPBILtAwA3Ys1ZrSZC1PxHTjnV95w==
+
 "@maplelabs/premiumCalculator@npm:@maplelabs/premium-calculator@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/premium-calculator/-/premium-calculator-1.0.0.tgz#8b3ca39bac61748cbf7c9f01309c0080dd277dc5"
@@ -959,6 +974,11 @@
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/util/-/util-1.0.0.tgz#7b75a0a6900155c42422b2c8af03337980954b44"
   integrity sha512-jfeGr3dlzk3zyuY13n/1a/sIHsi2y0tZXOW1HCBgZqCwr/tNxzf/ovs1msGH8M5NTwHaomtd6F48jOvsAItmKQ==
+
+"@maplelabs/withdrawal-manager@1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0-alpha.0.tgz#9f7be184c06b0241758ffcdd74fa72a3998d1f1a"
+  integrity sha512-XKc0U2lWQSA7N7hy12MnxB+e+//ST4YBaw3Aabw5X3KIMRjL6aYzuyXYrbSX0zGPqmYBAtqta7FS876awUiGzg==
 
 "@maplelabs/xmpl@npm:@maplelabs/xmpl@v1.0.1":
   version "1.0.1"
