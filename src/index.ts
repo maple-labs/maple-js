@@ -283,7 +283,7 @@ export {
   premiumCalc,
   repaymentCalculator,
   stakeLocker,
-  withdawalManager,
+  withdrawalManager,
   uniswapRouterV2,
   xmpl,
   ContractTypes,
