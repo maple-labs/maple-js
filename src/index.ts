@@ -9,14 +9,18 @@ import * as liquidityLockerImports from './typechain/liquidityLocker'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
 import * as loanV3Imports from './typechain/loanV3'
-import * as mapleTokenImports from './typechain/mapleToken'
+import * as loanV4Imports from './typechain/loanV4'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
+import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleRewardsImports from './typechain/mplRewards'
+import * as mapleTokenImports from './typechain/mapleToken'
+import * as xmplImports from './typechain/xmpl'
 import * as poolImports from './typechain/pool'
 import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
-import * as xmplImports from './typechain/xmpl'
+import * as poolV2Imports from './typechain/poolV2'
+import * as withdrawalManagerImports from './typechain/withdrawal-manager'
 import * as environmentMocksImports from './typechain/environmentMocks'
 
 // Addresses
@@ -84,8 +88,21 @@ const loanV3 = {
   refinancer: loanV3Imports.Refinancer__factory
 }
 
+const loanV4 = {
+  core: loanV4Imports.MapleLoan__factory,
+  factory: loanV4Imports.MapleLoanFactory__factory,
+  initializer: loanV4Imports.MapleLoanInitializer__factory,
+  migrator: loanV4Imports.MapleLoanV4Migrator__factory,
+  feeManager: loanV4Imports.MapleLoanFeeManager__factory,
+  refinancer: loanV4Imports.Refinancer__factory
+}
+
 const mapleGlobals = {
   core: mapleGlobalsImports.MapleGlobals__factory
+}
+
+const mapleGlobalsV2 = {
+  core: mapleGlobalsV2Imports.MapleGlobals__factory
 }
 
 const mapleRewards = {
@@ -95,6 +112,10 @@ const mapleRewards = {
 
 const mapleToken = {
   factory: mapleTokenImports.MapleToken__factory
+}
+
+const xmpl = {
+  factory: xmplImports.XMPL__factory
 }
 
 const pool = {
@@ -116,13 +137,34 @@ const stakeLocker = {
   factory: stakeLockerImports.StakeLockerFactory__factory
 }
 
+const poolV2 = {
+  core: poolV2Imports.Pool__factory,
+  delegateCover: poolV2Imports.PoolDelegateCover__factory,
+  deployer: poolV2Imports.PoolDeployer__factory
+}
+
+const poolManager = {
+  core: poolV2Imports.PoolManager__factory,
+  factory: poolV2Imports.PoolManagerFactory__factory,
+  initializer: poolV2Imports.PoolManagerInitializer__factory
+}
+
+const loanManager = {
+  core: poolV2Imports.LoanManager__factory,
+  factory: poolV2Imports.LoanManagerFactory__factory,
+  initializer: poolV2Imports.LoanManagerInitializer__factory
+}
+
+const withdrawalManager = {
+  core: withdrawalManagerImports.WithdrawalManager__factory,
+  factory: withdrawalManagerImports.WithdrawalManagerFactory__factory,
+  initializer: withdrawalManagerImports.WithdrawalManagerInitializer__factory,
+  storage: withdrawalManagerImports.WithdrawalManagerStorage__factory
+}
+
 const bPool = {
   core: environmentMocksImports.BPool__factory,
   factory: environmentMocksImports.BFactory__factory
-}
-
-const erc20 = {
-  core: environmentMocksImports.MintSpecialToken__factory
 }
 
 const chainlink = {
@@ -130,14 +172,13 @@ const chainlink = {
   factory: environmentMocksImports.ChainLinkEmulatorFactory__factory
 }
 
+const erc20 = {
+  core: environmentMocksImports.MintSpecialToken__factory
+}
+
 const uniswapRouterV2 = {
   core: environmentMocksImports.UniswapV2Router02__factory
 }
-
-const xmpl = {
-  factory: xmplImports.XMPL__factory
-}
-
 type AddressKey = typeof mainnetAddresses
 
 type MapleAddressMapping = {
@@ -156,13 +197,12 @@ const addresses: Record<string, MapleAddressMapping> = {
 }
 
 interface ContractTypes {
-  bPool: environmentMocksImports.BPool
-  debtLockerV3: debtLockerV3Imports.DebtLocker
-  debtLockerV3Factory: debtLockerV3Imports.DebtLockerFactory
-  debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer
   debtLockerV2: debtLockerV2Imports.DebtLocker
   debtLockerV2Factory: debtLockerV2Imports.DebtLockerFactory
   debtLockerV2Initializer: debtLockerV2Imports.DebtLockerInitializer
+  debtLockerV3: debtLockerV3Imports.DebtLocker
+  debtLockerV3Factory: debtLockerV3Imports.DebtLockerFactory
+  debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer
   liquidityLocker: liquidityLockerImports.LiquidityLocker
   liquidityLockerFactory: liquidityLockerImports.LiquidityLockerFactory
   loanV2: loanV2Imports.MapleLoan
@@ -171,42 +211,72 @@ interface ContractTypes {
   loanV3Factory: loanV3Imports.MapleLoanFactory
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
-  mapleToken: mapleTokenImports.MapleToken
+  loanV4: loanV4Imports.MapleLoan__factory
+  loanV4Factory: loanV4Imports.MapleLoanFactory__factory
+  loanV4Initializer: loanV4Imports.MapleLoanInitializer__factory
+  loanV4Migrator: loanV4Imports.MapleLoanV4Migrator__factory
+  loanV4FeeManager: loanV4Imports.MapleLoanFeeManager__factory
+  loanV4Refinancer: loanV4Imports.Refinancer__factory
   mapleGlobals: mapleGlobalsImports.MapleGlobals
+  mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals__factory
   mapleRewards: mapleRewardsImports.MplRewards
   mapleRewardsFactory: mapleRewardsImports.MplRewardsFactory
-  stakeLocker: stakeLockerImports.StakeLocker
-  stakeLockerFactory: stakeLockerImports.StakeLockerFactory
+  mapleToken: mapleTokenImports.MapleToken
   xmpl: xmplImports.XMPL
   pool: poolImports.Pool
   poolFactory: poolImports.PoolFactory
+  stakeLocker: stakeLockerImports.StakeLocker
+  stakeLockerFactory: stakeLockerImports.StakeLockerFactory
+  // PoolV2:poolV2
+  poolV2: poolV2Imports.Pool
+  poolDeployer: poolV2Imports.PoolDeployer__factory
+  // PoolV2:poolManager
+  poolManager: poolV2Imports.PoolManager__factory
+  poolManagerFactory: poolV2Imports.PoolManagerFactory__factory
+  poolManagerInitializer: poolV2Imports.PoolManagerInitializer__factory
+  // PoolV2:loanManager
+  loanManager: poolV2Imports.LoanManager__factory
+  loanManagerfactory: poolV2Imports.LoanManagerFactory__factory
+  loanManagerInitializer: poolV2Imports.LoanManagerInitializer__factory
+  // withdrawalManager
+  withdrawalManager: withdrawalManagerImports.WithdrawalManager__factory
+  withdrawalManagerFactory: withdrawalManagerImports.WithdrawalManagerFactory__factory
+  withdrawalManagerInitializer: withdrawalManagerImports.WithdrawalManagerInitializer__factory
+  // environmentMocks
+  bPool: environmentMocksImports.BPool
   erc20: environmentMocksImports.MintSpecialToken
 }
 
 export {
   addresses,
-  bPool,
   collateralLocker,
-  chainlink,
   debtLockerV1,
   debtLockerV2,
   debtLockerV3,
-  erc20,
   fundingLocker,
   lateFeeCalc,
   liquidityLocker,
   loanV1,
   loanV2,
   loanV3,
+  loanV4,
   mapleGlobals,
+  mapleGlobalsV2,
   mapleRewards,
   mapleToken,
+  xmpl,
   pool,
   premiumCalc,
   repaymentCalculator,
   stakeLocker,
+  poolV2,
+  poolManager,
+  loanManager,
+  withdrawalManager,
+  bPool,
+  chainlink,
+  erc20,
   uniswapRouterV2,
-  xmpl,
   ContractTypes,
   MapleAddressMapping
 }
