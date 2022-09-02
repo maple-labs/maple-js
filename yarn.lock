@@ -895,11 +895,6 @@
   resolved "https://registry.npmjs.org/@maplelabs/funding-locker/-/funding-locker-1.0.0.tgz#e41a8f9870fa6c8930d266ccbafa08cea69acc15"
   integrity sha512-oyWpqaJuyG5cYFV1OYaAFvmhCQd3GGs8RxqFZWx4mb+Xk3bviDyzWVi09Obs3gJh0OI7X/Yfzedr45VBXDcy4g==
 
-"@maplelabs/globalsV2@npm:@maplelabs/globals-v2@1.0.0-alpha.0":
-  version "1.0.0-alpha.0"
-  resolved "https://registry.npmjs.org/@maplelabs/globals-v2/-/globals-v2-1.0.0-alpha.0.tgz#d34166ef6c736bb36d44380263ecfdc05a9c1bcf"
-  integrity sha512-j6PqYU8SKUZ3CzZkc0dCLUd3fCoD7Nlh5zeAe6cXPn4Uljcld+83+AB6ZXRkXMmMfsv4y18QdCf5DKMqNhvsyQ==
-
 "@maplelabs/lateFeeCalculator@npm:@maplelabs/late-fee-calculator@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/late-fee-calculator/-/late-fee-calculator-1.0.0.tgz#7001474936ae9821490a423737c08d8edafcd1a4"
@@ -934,6 +929,11 @@
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/globals/-/globals-1.0.0.tgz#85fd3e667cdb5cd26e5882951e8a7cf7426645fe"
   integrity sha512-pNqeltNI03JD0PdvZinJKP9UE9Xu8jFRzVxXm3mHMmLFkJmsEgwh2J8Sr8+2HSKouS9eX9RiH6vCh+nUwo45ug==
+
+"@maplelabs/mapleGlobalsV2@npm:@maplelabs/globals-v2@1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/globals-v2/-/globals-v2-1.0.0-alpha.0.tgz#d34166ef6c736bb36d44380263ecfdc05a9c1bcf"
+  integrity sha512-j6PqYU8SKUZ3CzZkc0dCLUd3fCoD7Nlh5zeAe6cXPn4Uljcld+83+AB6ZXRkXMmMfsv4y18QdCf5DKMqNhvsyQ==
 
 "@maplelabs/mapleToken@npm:@maplelabs/maple-token@1.0.0 ":
   version "1.0.0"
