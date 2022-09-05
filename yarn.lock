@@ -920,20 +920,20 @@
   resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-3.0.0.tgz#bb0f3aca056d3198e164310f418c4fa0809efbe1"
   integrity sha512-bfcKvwZz/MhnzZtFCN8n5OAPOyHJQrOXdb9xIwYu5sNQ4HMNwZySz/F5BGfmNCrJZd+WiNK1oFi4gKzHlmy57w==
 
-"@maplelabs/loanV4@npm:@maplelabs/loan@v4.0.0-alpha.0":
-  version "4.0.0-alpha.0"
-  resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-4.0.0-alpha.0.tgz#f1d50e6feb0bb1ae3493c6c7734a20d05e5e07ea"
-  integrity sha512-bKvarsAFvdtWwCSokfxVZeMwYuAnLJY6LdfLi/JCJzs5taEp8wKBXYhoAbXAneuglMqrXYXXezQbZFs/fFmjHA==
+"@maplelabs/loanV4@npm:@maplelabs/loan@v4.0.0-beta.0":
+  version "4.0.0-beta.0"
+  resolved "https://registry.npmjs.org/@maplelabs/loan/-/loan-4.0.0-beta.0.tgz#4394b01b216489bb287c8a92f831f747eb0ca971"
+  integrity sha512-K0nX2Gf3QU1vi0L5Uq/PGwbfxZN7wpqjGjHFPgXO58cPULmDW4+2hd+IAzLz8EffRSJNhcCTuJeWMDyJ/bFLgg==
 
 "@maplelabs/mapleGlobals@npm:@maplelabs/globals@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/globals/-/globals-1.0.0.tgz#85fd3e667cdb5cd26e5882951e8a7cf7426645fe"
   integrity sha512-pNqeltNI03JD0PdvZinJKP9UE9Xu8jFRzVxXm3mHMmLFkJmsEgwh2J8Sr8+2HSKouS9eX9RiH6vCh+nUwo45ug==
 
-"@maplelabs/mapleGlobalsV2@npm:@maplelabs/globals-v2@1.0.0-alpha.0":
-  version "1.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/globals-v2/-/globals-v2-1.0.0-alpha.0.tgz#d34166ef6c736bb36d44380263ecfdc05a9c1bcf"
-  integrity sha512-j6PqYU8SKUZ3CzZkc0dCLUd3fCoD7Nlh5zeAe6cXPn4Uljcld+83+AB6ZXRkXMmMfsv4y18QdCf5DKMqNhvsyQ==
+"@maplelabs/mapleGlobalsV2@npm:@maplelabs/globals-v2@1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://registry.npmjs.org/@maplelabs/globals-v2/-/globals-v2-1.0.0-beta.0.tgz#4326996c149373548ead5055af90dd41872e09ab"
+  integrity sha512-l5lUXsI9gEh2/gL7QPb1RAXRBO0ugJy5Hi/RaXbJ8KQQtXJS6nukFos6McxZfS73KI7j3NpfvPAPmY3WwOqLIA==
 
 "@maplelabs/mapleToken@npm:@maplelabs/maple-token@1.0.0 ":
   version "1.0.0"
@@ -975,10 +975,10 @@
   resolved "https://registry.npmjs.org/@maplelabs/util/-/util-1.0.0.tgz#7b75a0a6900155c42422b2c8af03337980954b44"
   integrity sha512-jfeGr3dlzk3zyuY13n/1a/sIHsi2y0tZXOW1HCBgZqCwr/tNxzf/ovs1msGH8M5NTwHaomtd6F48jOvsAItmKQ==
 
-"@maplelabs/withdrawal-manager@1.0.0-alpha.0":
-  version "1.0.0-alpha.0"
-  resolved "https://registry.npmjs.org/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0-alpha.0.tgz#9f7be184c06b0241758ffcdd74fa72a3998d1f1a"
-  integrity sha512-XKc0U2lWQSA7N7hy12MnxB+e+//ST4YBaw3Aabw5X3KIMRjL6aYzuyXYrbSX0zGPqmYBAtqta7FS876awUiGzg==
+"@maplelabs/withdrawal-manager@1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://registry.npmjs.org/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0-beta.0.tgz#a0eb56fbf3ee3b09fe58929f8df3e7e85f7d7075"
+  integrity sha512-/WCDQGkTeEit4TUh0DGHpcIpHtHqWQVYIE6GoTz0WZR2TJ/JzI/JQRAZ8xwS1GLjldjraihgnMqe0bfqiSMXuQ==
 
 "@maplelabs/xmpl@npm:@maplelabs/xmpl@v1.0.1":
   version "1.0.1"
