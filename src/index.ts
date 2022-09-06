@@ -229,7 +229,7 @@ interface ContractTypes {
   stakeLockerFactory: stakeLockerImports.StakeLockerFactory
   // PoolV2:poolV2
   poolV2: poolV2Imports.Pool
-  poolDeployer: poolV2Imports.PoolDeployer__factory
+  poolDeployer: poolV2Imports.PoolDeployer
   // PoolV2:poolManager
   poolManager: poolV2Imports.PoolManager__factory
   poolManagerFactory: poolV2Imports.PoolManagerFactory__factory
