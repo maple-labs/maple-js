@@ -43,7 +43,7 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "loan",
+        "name": "loan_",
         "type": "address"
       }
     ],
@@ -708,12 +708,12 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "escorwShares_",
+        "name": "escrowShares_",
         "type": "uint256"
       },
       {
         "internalType": "address",
-        "name": "destination",
+        "name": "destination_",
         "type": "address"
       }
     ],
@@ -1100,35 +1100,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "assets_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "owner_",
-        "type": "address"
-      }
-    ],
-    "name": "processWithdraw",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "redeemableShares_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "resultingAssets_",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "loan_",
         "type": "address"
@@ -1318,7 +1289,7 @@
         "type": "address"
       }
     ],
-    "name": "triggerCollateralLiquidation",
+    "name": "triggerDefault",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1329,11 +1300,6 @@
         "internalType": "address",
         "name": "loan_",
         "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "newPaymentDueDate_",
-        "type": "uint256"
       }
     ],
     "name": "triggerDefaultWarning",
