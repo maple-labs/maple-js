@@ -2,20 +2,20 @@ require('dotenv').config()
 import { mapleGlobals, addresses } from '../dist'
 import { ethers } from 'ethers'
 
-const kovan = {
-  name: 'Kovan',
-  networkName: 'kovan',
+const goerli = {
+  name: 'Goerli',
+  networkName: 'goerli',
   symbol: 'ETH',
-  chainId: 42,
-  RPC_URL: process.env.KOVAN_RPC_URL // will need to provide RPC_URL to run tests
+  chainId: 5,
+  RPC_URL: process.env.GOERLI_RPC_URL // will need to provide RPC_URL to run tests
 }
 
-const walletAddress = '0x91512a024607515E57aE8ffB9d478036F20fCF0C'
-const kovanMapleGlobalsAddress = addresses.kovan.MapleGlobals
+const walletAddress = '0xD3305377FdCDD5203018B67316D7E2E93613de04'
+const goerliMapleGlobalsAddress = addresses.goerli.MapleGlobals
 
 describe('MapleGlobals contract', () => {
-  const provider = new ethers.providers.JsonRpcProvider(kovan.RPC_URL, kovan)
-  const globals = mapleGlobals.core.connect(kovanMapleGlobalsAddress, provider)
+  const provider = new ethers.providers.JsonRpcProvider(goerli.RPC_URL, goerli)
+  const globals = mapleGlobals.core.connect(goerliMapleGlobalsAddress, provider)
 
   test('Successfully calls contract method', async () => {
     const isDelegate = await globals.isValidPoolDelegate(walletAddress)
