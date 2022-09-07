@@ -25,8 +25,6 @@ import * as environmentMocksImports from './typechain/environmentMocks'
 
 // Addresses
 import goerliDevAddresses from './addresses/goerli-dev'
-import kovanAddresses from './addresses/kovan'
-import kovanDevAddresses from './addresses/kovan-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
 import mainnetAddresses from './addresses/mainnet'
@@ -188,8 +186,6 @@ type MapleAddressMapping = {
 const addresses: Record<string, MapleAddressMapping> = {
   goerli: goerliDevAddresses, // TODO - deploy goerli-prod
   'goerli-dev': goerliDevAddresses,
-  kovan: kovanAddresses,
-  'kovan-dev': kovanDevAddresses,
   rinkeby: rinkebyAddresses,
   'rinkeby-dev': rinkebyDevAddresses,
   mainnet: mainnetAddresses,
