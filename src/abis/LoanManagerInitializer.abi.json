@@ -21,9 +21,9 @@
     "name": "accountedInterest",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "uint112",
         "name": "",
-        "type": "uint256"
+        "type": "uint112"
       }
     ],
     "stateMutability": "view",
@@ -72,9 +72,9 @@
     "name": "domainEnd",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "uint48",
         "name": "",
-        "type": "uint256"
+        "type": "uint48"
       }
     ],
     "stateMutability": "view",
@@ -85,9 +85,9 @@
     "name": "domainStart",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "uint48",
         "name": "",
-        "type": "uint256"
+        "type": "uint48"
       }
     ],
     "stateMutability": "view",
@@ -149,133 +149,34 @@
     "name": "liquidationInfo",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "bool",
+        "name": "triggeredByGovernor",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint128",
         "name": "principal",
-        "type": "uint256"
+        "type": "uint128"
       },
       {
-        "internalType": "uint256",
+        "internalType": "uint120",
         "name": "interest",
-        "type": "uint256"
+        "type": "uint120"
       },
       {
         "internalType": "uint256",
-        "name": "platformFees",
+        "name": "lateInterest",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint96",
+        "name": "platformFees",
+        "type": "uint96"
       },
       {
         "internalType": "address",
         "name": "liquidator",
         "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "triggeredByGovernor",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "loanCounter",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "loanIdOf",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "loanWithEarliestPaymentDueDate",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "loans",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "previous",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "next",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "incomingNetInterest",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "refinanceInterest",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "issuanceRate",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "startDate",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "paymentDueDate",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "platformManagementFeeRate",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "delegateManagementFeeRate",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -294,6 +195,100 @@
       {
         "internalType": "uint256",
         "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paymentCounter",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "paymentIdOf",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paymentWithEarliestDueDate",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "payments",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "platformManagementFeeRate",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint24",
+        "name": "delegateManagementFeeRate",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint48",
+        "name": "startDate",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "paymentDueDate",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint128",
+        "name": "incomingNetInterest",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "refinanceInterest",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "issuanceRate",
         "type": "uint256"
       }
     ],
@@ -331,9 +326,38 @@
     "name": "principalOut",
     "outputs": [
       {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "name": "sortedPayments",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "previous",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint24",
+        "name": "next",
+        "type": "uint24"
+      },
+      {
+        "internalType": "uint48",
+        "name": "paymentDueDate",
+        "type": "uint48"
       }
     ],
     "stateMutability": "view",
@@ -344,9 +368,9 @@
     "name": "unrealizedLosses",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "uint128",
         "name": "",
-        "type": "uint256"
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",

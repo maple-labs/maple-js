@@ -143,6 +143,12 @@
         "internalType": "uint256",
         "name": "shares_",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "escrowedShares_",
+        "type": "uint256"
       }
     ],
     "name": "RedemptionRequested",
@@ -242,6 +248,12 @@
         "indexed": false,
         "internalType": "uint256",
         "name": "assets_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "escrowedShares_",
         "type": "uint256"
       }
     ],
@@ -932,7 +944,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "escrowShares_",
+        "name": "escrowedShares_",
         "type": "uint256"
       }
     ],
@@ -951,7 +963,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "escrowShares_",
+        "name": "escrowedShares_",
         "type": "uint256"
       }
     ],
@@ -977,7 +989,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "totalManagedAssets_",
+        "name": "totalAssets_",
         "type": "uint256"
       }
     ],
@@ -1056,7 +1068,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "totalManagedAssets_",
+        "name": "unrealizedLosses_",
         "type": "uint256"
       }
     ],
