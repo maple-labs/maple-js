@@ -201,18 +201,22 @@ interface ContractTypes {
   debtLockerV3Initializer: debtLockerV3Imports.DebtLockerInitializer
   liquidityLocker: liquidityLockerImports.LiquidityLocker
   liquidityLockerFactory: liquidityLockerImports.LiquidityLockerFactory
+
   loanV2: loanV2Imports.MapleLoan
   loanV2Factory: loanV2Imports.MapleLoanFactory
+
   loanV3: loanV3Imports.MapleLoan
   loanV3Factory: loanV3Imports.MapleLoanFactory
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
-  loanV4: loanV4Imports.MapleLoan__factory
-  loanV4Factory: loanV4Imports.MapleLoanFactory__factory
-  loanV4Initializer: loanV4Imports.MapleLoanInitializer__factory
+
+  loanV4: loanV4Imports.MapleLoan
+  loanV4Factory: loanV4Imports.MapleLoanFactory
+  loanV4Initializer: loanV4Imports.MapleLoanInitializer
   loanV4Migrator: loanV4Imports.MapleLoanV4Migrator__factory
-  loanV4FeeManager: loanV4Imports.MapleLoanFeeManager__factory
+  loanV4FeeManager: loanV4Imports.MapleLoanFeeManager
   loanV4Refinancer: loanV4Imports.Refinancer__factory
+
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals__factory
   mapleRewards: mapleRewardsImports.MplRewards
