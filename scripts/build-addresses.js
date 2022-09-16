@@ -49,6 +49,7 @@ const build = (project = 'mainnet') => {
 
     // DAO
     MapleGlobals: require(`../artifacts/${project}/addresses/MapleGlobals.address.js`),
+    MapleGlobalsV2: require(`../artifacts/${project}/addresses/MapleGlobalsV2.address.js`),
     MapleToken: require(`../artifacts/${project}/addresses/MapleToken.address.js`),
     MapleTreasury: require(`../artifacts/${project}/addresses/MapleTreasury.address.js`),
     NonTransparentProxy: require(`../artifacts/${project}/addresses/NonTransparentProxy.address.js`),
