@@ -218,7 +218,7 @@ interface ContractTypes {
   loanV4Refinancer: loanV4Imports.Refinancer__factory
 
   mapleGlobals: mapleGlobalsImports.MapleGlobals
-  mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals__factory
+  mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals
   mapleRewards: mapleRewardsImports.MplRewards
   mapleRewardsFactory: mapleRewardsImports.MplRewardsFactory
   mapleToken: mapleTokenImports.MapleToken
