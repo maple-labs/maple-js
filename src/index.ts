@@ -231,7 +231,7 @@ interface ContractTypes {
   poolV2: poolV2Imports.Pool
   poolDeployer: poolV2Imports.PoolDeployer
   // PoolV2:poolManager
-  poolManager: poolV2Imports.PoolManager__factory
+  poolManager: poolV2Imports.PoolManager
   poolManagerFactory: poolV2Imports.PoolManagerFactory__factory
   poolManagerInitializer: poolV2Imports.PoolManagerInitializer__factory
   // PoolV2:loanManager
