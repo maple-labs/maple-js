@@ -66,6 +66,80 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "paymentId_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "platformManagementFeeRate_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "delegateManagementFeeRate_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "startDate_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "netRefinanceInterest_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newRate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "PaymentAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "paymentId_",
+        "type": "uint256"
+      }
+    ],
+    "name": "PaymentRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "uint128",
         "name": "principalOut_",
@@ -301,7 +375,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "loanAddress_",
+        "name": "loan_",
         "type": "address"
       }
     ],
@@ -384,6 +458,24 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isGovernor_",
+        "type": "bool"
+      }
+    ],
+    "name": "impairLoan",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -684,7 +776,7 @@
         "type": "bool"
       }
     ],
-    "name": "removeDefaultWarning",
+    "name": "removeLoanImpairment",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -773,6 +865,11 @@
         "internalType": "address",
         "name": "loan_",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "liquidatorFactory_",
+        "type": "address"
       }
     ],
     "name": "triggerDefault",
@@ -793,24 +890,6 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "loan_",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "isGovernor_",
-        "type": "bool"
-      }
-    ],
-    "name": "triggerDefaultWarning",
-    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },

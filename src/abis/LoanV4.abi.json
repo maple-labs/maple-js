@@ -212,6 +212,19 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanImpaired",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "bytes32",
         "name": "refinanceCommitment_",
         "type": "bytes32"
@@ -298,19 +311,6 @@
       }
     ],
     "name": "NewTermsRejected",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "nextPaymentDueDate_",
-        "type": "uint256"
-      }
-    ],
-    "name": "NextPaymentDueDateFastForwarded",
     "type": "event"
   },
   {
@@ -871,6 +871,13 @@
   },
   {
     "inputs": [],
+    "name": "impairLoan",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "implementation",
     "outputs": [
       {
@@ -897,11 +904,11 @@
   },
   {
     "inputs": [],
-    "name": "isInDefaultWarning",
+    "name": "isImpaired",
     "outputs": [
       {
         "internalType": "bool",
-        "name": "isInDefaultWarning_",
+        "name": "isImpaired_",
         "type": "bool"
       }
     ],
@@ -1001,6 +1008,19 @@
       {
         "internalType": "uint256",
         "name": "nextPaymentDueDate_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "originalNextPaymentDueDate",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "originalNextPaymentDueDate_",
         "type": "uint256"
       }
     ],
@@ -1208,7 +1228,7 @@
   },
   {
     "inputs": [],
-    "name": "removeDefaultWarning",
+    "name": "removeLoanImpairment",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1316,13 +1336,6 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "triggerDefaultWarning",
-    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },

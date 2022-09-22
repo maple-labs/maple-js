@@ -212,6 +212,19 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanImpaired",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "bytes32",
         "name": "refinanceCommitment_",
         "type": "bytes32"
@@ -298,19 +311,6 @@
       }
     ],
     "name": "NewTermsRejected",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "nextPaymentDueDate_",
-        "type": "uint256"
-      }
-    ],
-    "name": "NextPaymentDueDateFastForwarded",
     "type": "event"
   },
   {
