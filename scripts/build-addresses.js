@@ -19,6 +19,14 @@ const build = (project = 'mainnet') => {
     PoolManagerFactory: require(`../artifacts/${project}/addresses/PoolManagerFactory.address.js`),
     WithdrawalManagerFactory: require(`../artifacts/${project}/addresses/WithdrawalManagerFactory.address.js`),
 
+    // Pool v2 implementation contracts
+    LoanManager: require(`../artifacts/${project}/addresses/LoanManager.address.js`),
+    PoolManager: require(`../artifacts/${project}/addresses/PoolManager.address.js`),
+    WithdrawalManager: require(`../artifacts/${project}/addresses/WithdrawalManager.address.js`),
+
+    // Loan v4 fixed contracts
+    FeeManager: require(`../artifacts/${project}/addresses/FeeManager.address.js`),
+
     // DebtLocker Factories
     DebtLockerFactory: require(`../artifacts/${project}/addresses/DebtLockerFactory.address.js`),
     DebtLockerV2Factory: require(`../artifacts/${project}/addresses/DebtLockerV2Factory.address.js`),
@@ -33,6 +41,7 @@ const build = (project = 'mainnet') => {
     // Loan & DebtLocker Implementation
     LoanV2: require(`../artifacts/${project}/addresses/LoanV2.address.js`),
     LoanV3: require(`../artifacts/${project}/addresses/LoanV3.address.js`),
+    LoanV4: require(`../artifacts/${project}/addresses/LoanV4.address.js`),
     DebtLockerV2: require(`../artifacts/${project}/addresses/DebtLockerV2.address.js`),
     DebtLockerV3: require(`../artifacts/${project}/addresses/DebtLockerV3.address.js`),
 
@@ -41,6 +50,7 @@ const build = (project = 'mainnet') => {
     DebtLockerV3Initializer: require(`../artifacts/${project}/addresses/DebtLockerV3Initializer.address.js`),
     LoanV2Initializer: require(`../artifacts/${project}/addresses/LoanV2Initializer.address.js`),
     LoanV3Initializer: require(`../artifacts/${project}/addresses/LoanV3Initializer.address.js`),
+    LoanV4Initializer: require(`../artifacts/${project}/addresses/LoanV4Initializer.address.js`),
     LoanV2Refinancer: require(`../artifacts/${project}/addresses/LoanV2Refinancer.address.js`),
     LoanV3Refinancer: require(`../artifacts/${project}/addresses/LoanV3Refinancer.address.js`),
     LoanManagerInitializer: require(`../artifacts/${project}/addresses/LoanManagerInitializer.address.js`),
@@ -49,6 +59,7 @@ const build = (project = 'mainnet') => {
 
     // DAO
     MapleGlobals: require(`../artifacts/${project}/addresses/MapleGlobals.address.js`),
+    MapleGlobalsV2: require(`../artifacts/${project}/addresses/MapleGlobalsV2.address.js`),
     MapleToken: require(`../artifacts/${project}/addresses/MapleToken.address.js`),
     MapleTreasury: require(`../artifacts/${project}/addresses/MapleTreasury.address.js`),
     NonTransparentProxy: require(`../artifacts/${project}/addresses/NonTransparentProxy.address.js`),
