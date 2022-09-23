@@ -80,38 +80,6 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "loan_",
-        "type": "address"
-      }
-    ],
-    "name": "DefaultWarningRemoved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "loan_",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "newPaymentDueDate_",
-        "type": "uint256"
-      }
-    ],
-    "name": "DefaultWarningTriggered",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": false,
         "internalType": "uint256",
         "name": "managementFeeRate_",
@@ -157,6 +125,38 @@
       }
     ],
     "name": "LoanFunded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newPaymentDueDate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanImpaired",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      }
+    ],
+    "name": "LoanImpairmentRemoved",
     "type": "event"
   },
   {
@@ -785,6 +785,19 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      }
+    ],
+    "name": "impairLoan",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "implementation",
     "outputs": [
@@ -1130,7 +1143,7 @@
         "type": "address"
       }
     ],
-    "name": "removeDefaultWarning",
+    "name": "removeLoanImpairment",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1224,6 +1237,29 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "collateralAsset_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "allowedSlippage_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setAllowedSlippage",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "delegateManagementFeeRate_",
         "type": "uint256"
@@ -1256,6 +1292,29 @@
       }
     ],
     "name": "setLiquidityCap",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "collateralAsset_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minRatio_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setMinRatio",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1312,22 +1371,14 @@
         "internalType": "address",
         "name": "loan_",
         "type": "address"
-      }
-    ],
-    "name": "triggerDefault",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
+      },
       {
         "internalType": "address",
-        "name": "loan_",
+        "name": "liquidatorFactory_",
         "type": "address"
       }
     ],
-    "name": "triggerDefaultWarning",
+    "name": "triggerDefault",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

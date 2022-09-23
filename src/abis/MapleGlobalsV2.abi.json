@@ -1,21 +1,5 @@
 [
   {
-    "inputs": [
-      {
-        "internalType": "uint128",
-        "name": "defaultTimelockDelay_",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint128",
-        "name": "defaultTimelockDuration_",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -137,6 +121,25 @@
       }
     ],
     "name": "GovernorshipAccepted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "price_",
+        "type": "uint256"
+      }
+    ],
+    "name": "ManualOverridePriceSet",
     "type": "event"
   },
   {
@@ -327,6 +330,25 @@
       }
     ],
     "name": "PoolManagerOwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oracle_",
+        "type": "address"
+      }
+    ],
+    "name": "PriceOracleSet",
     "type": "event"
   },
   {
