@@ -24,7 +24,7 @@ const build = (project = 'mainnet') => {
     PoolManager: require(`../artifacts/${project}/addresses/PoolManager.address.js`),
     WithdrawalManager: require(`../artifacts/${project}/addresses/WithdrawalManager.address.js`),
 
-    // Pool v2 fixed contracts
+    // Loan v4 fixed contracts
     FeeManager: require(`../artifacts/${project}/addresses/FeeManager.address.js`),
 
     // DebtLocker Factories
