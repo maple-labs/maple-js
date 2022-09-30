@@ -986,10 +986,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/pool/-/pool-1.0.0.tgz#7b04e9aee854d941a60445adb2f5cd54ab78d434"
   integrity sha512-2X2Q+IfLgkGRO4aeEXeWnaTzEKW2bMAJW/140tnw+YG4thbZloyYRI2hrrplTzjFaWkB6MvZgAOhSiHfrie0nQ==
 
-"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0-beta.3.tgz#859959bfa915678ad621bafbf5a4249d5c778a9e"
-  integrity sha512-6bAjeePRcBq2mepsUCxThTp5isH6eFJoX0BRncwtKup9knDLd9A93l7kD0QMLO9aVkK3U6fEU49sfZXE4XXEdw==
+"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-beta.1.1":
+  version "1.0.0-beta.1.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0-beta.1.1.tgz#c915aa09b8ddcd5f1db68c2df5db25fc9ef6354f"
+  integrity sha512-HhK2A6OdTQ9tlhNGFkOK1cmthwY2K8/9EVd/q/iFG2BDVqM4zNonY3jwP1kCzbWzIUjHCPERhDprf0zjZ/Q5bg==
 
 "@maplelabs/premiumCalculator@npm:@maplelabs/premium-calculator@v1.0.0":
   version "1.0.0"
@@ -1011,7 +1011,7 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/util/-/util-1.0.0.tgz#7b75a0a6900155c42422b2c8af03337980954b44"
   integrity sha512-jfeGr3dlzk3zyuY13n/1a/sIHsi2y0tZXOW1HCBgZqCwr/tNxzf/ovs1msGH8M5NTwHaomtd6F48jOvsAItmKQ==
 
-"@maplelabs/withdrawal-manager@1.0.0-beta.3":
+"@maplelabs/withdrawalManager@npm:@maplelabs/withdrawal-manager@1.0.0-beta.3":
   version "1.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0-beta.3.tgz#d8ee69f4ccad9760048466459f0ba2e07f627604"
   integrity sha512-G5StF8DhC/N76d0K9+2/njzHFf3IaFTOrFGUvrD2f+JSanT+WUnzPsa7M0YoeJ+mv+p+tT6JxdnGf3pOEOyzlQ==
