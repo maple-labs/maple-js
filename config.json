@@ -87,7 +87,7 @@
     },
     "withdrawalManager": {
       "repo": "@maplelabs/withdrawal-manager",
-      "alias": ["withdrawal-manager"],
+      "alias": ["withdrawalManager"],
       "versions": ["v1.0.0-beta.3"]
     },
     "xmpl": {

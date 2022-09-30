@@ -20,7 +20,7 @@ import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as poolV2Imports from './typechain/poolV2'
-import * as withdrawalManagerImports from './typechain/withdrawal-manager'
+import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as environmentMocksImports from './typechain/environmentMocks'
 
 // Addresses
