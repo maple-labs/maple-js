@@ -47,6 +47,31 @@
       {
         "indexed": false,
         "internalType": "uint256",
+        "name": "delegateOriginationFee_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "platformOriginationFee_",
+        "type": "uint256"
+      }
+    ],
+    "name": "OriginationFeesPaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
         "name": "partialPlatformServiceFee_",
         "type": "uint256"
       },

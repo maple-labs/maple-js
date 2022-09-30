@@ -25,6 +25,11 @@
       "alias": ["lateFeeCalculator"],
       "versions": ["v1.0.0"]
     },
+    "liquidations": {
+      "repo": "@maplelabs/liquidations",
+      "alias": ["liquidityLocker"],
+      "versions": ["v2.0.0-beta.3"]
+    },
     "liquidityLocker": {
       "repo": "@maplelabs/liquidity-locker",
       "alias": ["liquidityLocker"],
@@ -33,7 +38,7 @@
     "loan": {
       "repo": "@maplelabs/loan",
       "alias": ["loanV1", "loanV2", "loanV3", "loanV4"],
-      "versions": ["v1.0.0", "v2.0.0", "v3.0.0", "v4.0.0-alpha.0"]
+      "versions": ["v1.0.0", "v2.0.0", "v3.0.0", "v4.0.0-beta.3"]
     },
     "mapleGlobals": {
       "repo": "@maplelabs/globals",
@@ -43,16 +48,16 @@
     "mapleGlobalsV2": {
       "repo": "@maplelabs/globals-v2",
       "alias": ["mapleGlobalsV2"],
-      "versions": ["v1.0.0-alpha.0"]
-    },
-    "mplRewards": {
-      "repo": "@maplelabs/mpl-rewards",
-      "alias": ["mplRewards"],
-      "versions": ["v1.0.0"]
+      "versions": ["v1.0.0-beta.3"]
     },
     "mapleToken": {
       "repo": "@maplelabs/maple-token",
       "alias": ["mapleToken"],
+      "versions": ["v1.0.0"]
+    },
+    "mplRewards": {
+      "repo": "@maplelabs/mpl-rewards",
+      "alias": ["mplRewards"],
       "versions": ["v1.0.0"]
     },
     "pool": {
@@ -63,7 +68,7 @@
     "poolV2": {
       "repo": "@maplelabs/pool-v2",
       "alias": ["poolV2"],
-      "versions": ["v1.0.0-alpha-0"]
+      "versions": ["v1.0.0-beta.1.1"]
     },
     "premiumCalculator": {
       "repo": "@maplelabs/premium-calculator",
@@ -83,7 +88,7 @@
     "withdrawalManager": {
       "repo": "@maplelabs/withdrawal-manager",
       "alias": ["withdrawal-manager"],
-      "versions": ["v1.0.0-alpha.0"]
+      "versions": ["v1.0.0-beta.3"]
     },
     "xmpl": {
       "repo": "@maplelabs/xmpl",

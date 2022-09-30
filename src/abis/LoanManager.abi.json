@@ -49,6 +49,31 @@
       {
         "indexed": false,
         "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "delegateManagementFee_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "platformManagementFee_",
+        "type": "uint256"
+      }
+    ],
+    "name": "ManagementFeesPaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
         "name": "collateralAsset_",
         "type": "address"
       },
@@ -904,6 +929,13 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "updateAccounting",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
