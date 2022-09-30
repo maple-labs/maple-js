@@ -931,6 +931,11 @@
   resolved "https://registry.npmjs.org/@maplelabs/late-fee-calculator/-/late-fee-calculator-1.0.0.tgz#7001474936ae9821490a423737c08d8edafcd1a4"
   integrity sha512-dMLCRUirNOnmJgifbarltHlAZOgJ0qM39uutADqJqWsvbcOSx7jvqwoT/gfMFCPHaqhbc/rQquXVDX5C069mvw==
 
+"@maplelabs/liquidationsV2@npm:@maplelabs/liquidations@2.0.0-beta.3":
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@maplelabs/liquidations/-/liquidations-2.0.0-beta.3.tgz#f8a8a610f8b8a947c4fdaabc25ffe8a52e4d5ab3"
+  integrity sha512-+KBHKt5rDkboLj9+dXl3S6q7v17+OHxcY8LL3VtUXv8/9OjLa1y0+7qW+bvsCEL3YY3efDS/N0ARDAMBQxcAvw==
+
 "@maplelabs/liquidityLocker@npm:@maplelabs/liquidity-locker@v1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@maplelabs/liquidity-locker/-/liquidity-locker-1.0.0.tgz#89f94cadc0a20317885a4fd3da642359d12ca270"
@@ -981,10 +986,10 @@
   resolved "https://registry.npmjs.org/@maplelabs/pool/-/pool-1.0.0.tgz#7b04e9aee854d941a60445adb2f5cd54ab78d434"
   integrity sha512-2X2Q+IfLgkGRO4aeEXeWnaTzEKW2bMAJW/140tnw+YG4thbZloyYRI2hrrplTzjFaWkB6MvZgAOhSiHfrie0nQ==
 
-"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0-beta.3.tgz#859959bfa915678ad621bafbf5a4249d5c778a9e"
-  integrity sha512-6bAjeePRcBq2mepsUCxThTp5isH6eFJoX0BRncwtKup9knDLd9A93l7kD0QMLO9aVkK3U6fEU49sfZXE4XXEdw==
+"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-beta.1.1":
+  version "1.0.0-beta.1.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0-beta.1.1.tgz#c915aa09b8ddcd5f1db68c2df5db25fc9ef6354f"
+  integrity sha512-HhK2A6OdTQ9tlhNGFkOK1cmthwY2K8/9EVd/q/iFG2BDVqM4zNonY3jwP1kCzbWzIUjHCPERhDprf0zjZ/Q5bg==
 
 "@maplelabs/premiumCalculator@npm:@maplelabs/premium-calculator@v1.0.0":
   version "1.0.0"
