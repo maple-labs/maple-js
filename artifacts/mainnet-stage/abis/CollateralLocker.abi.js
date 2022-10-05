@@ -1,62 +1,62 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_collateralAsset",
-        "type": "address"
+        internalType: 'address',
+        name: '_collateralAsset',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "_loan",
-        "type": "address"
+        internalType: 'address',
+        name: '_loan',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "inputs": [],
-    "name": "collateralAsset",
-    "outputs": [
+    inputs: [],
+    name: 'collateralAsset',
+    outputs: [
       {
-        "internalType": "contract IERC20",
-        "name": "",
-        "type": "address"
+        internalType: 'contract IERC20',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "loan",
-    "outputs": [
+    inputs: [],
+    name: 'loan',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "dst",
-        "type": "address"
+        internalType: 'address',
+        name: 'dst',
+        type: 'address'
       },
       {
-        "internalType": "uint256",
-        "name": "amt",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'amt',
+        type: 'uint256'
       }
     ],
-    "name": "pull",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'pull',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   }
-];
+]

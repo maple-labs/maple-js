@@ -1,113 +1,113 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_globals",
-        "type": "address"
+        internalType: 'address',
+        name: '_globals',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "rewardsToken",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'rewardsToken',
+        type: 'address'
       },
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "stakingToken",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'stakingToken',
+        type: 'address'
       },
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "mplRewards",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'mplRewards',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'owner',
+        type: 'address'
       }
     ],
-    "name": "MplRewardsCreated",
-    "type": "event"
+    name: 'MplRewardsCreated',
+    type: 'event'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "rewardsToken",
-        "type": "address"
+        internalType: 'address',
+        name: 'rewardsToken',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "stakingToken",
-        "type": "address"
+        internalType: 'address',
+        name: 'stakingToken',
+        type: 'address'
       }
     ],
-    "name": "createMplRewards",
-    "outputs": [
+    name: 'createMplRewards',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "mplRewards",
-        "type": "address"
+        internalType: 'address',
+        name: 'mplRewards',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "globals",
-    "outputs": [
+    inputs: [],
+    name: 'globals',
+    outputs: [
       {
-        "internalType": "contract IMapleGlobals",
-        "name": "",
-        "type": "address"
+        internalType: 'contract IMapleGlobals',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "name": "isMplRewards",
-    "outputs": [
+    name: 'isMplRewards',
+    outputs: [
       {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
+        internalType: 'bool',
+        name: '',
+        type: 'bool'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_globals",
-        "type": "address"
+        internalType: 'address',
+        name: '_globals',
+        type: 'address'
       }
     ],
-    "name": "setGlobals",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setGlobals',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   }
-];
+]

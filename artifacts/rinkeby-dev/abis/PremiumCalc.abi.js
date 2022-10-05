@@ -1,81 +1,81 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "uint256",
-        "name": "_premiumFee",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: '_premiumFee',
+        type: 'uint256'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "inputs": [],
-    "name": "calcType",
-    "outputs": [
+    inputs: [],
+    name: 'calcType',
+    outputs: [
       {
-        "internalType": "uint8",
-        "name": "",
-        "type": "uint8"
+        internalType: 'uint8',
+        name: '',
+        type: 'uint8'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_loan",
-        "type": "address"
+        internalType: 'address',
+        name: '_loan',
+        type: 'address'
       }
     ],
-    "name": "getPremiumPayment",
-    "outputs": [
+    name: 'getPremiumPayment',
+    outputs: [
       {
-        "internalType": "uint256",
-        "name": "total",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'total',
+        type: 'uint256'
       },
       {
-        "internalType": "uint256",
-        "name": "principalOwed",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'principalOwed',
+        type: 'uint256'
       },
       {
-        "internalType": "uint256",
-        "name": "interest",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'interest',
+        type: 'uint256'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "name",
-    "outputs": [
+    inputs: [],
+    name: 'name',
+    outputs: [
       {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
+        internalType: 'bytes32',
+        name: '',
+        type: 'bytes32'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "premiumFee",
-    "outputs": [
+    inputs: [],
+    name: 'premiumFee',
+    outputs: [
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   }
-];
+]

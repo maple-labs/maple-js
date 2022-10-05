@@ -1,201 +1,201 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_mpl",
-        "type": "address"
+        internalType: 'address',
+        name: '_mpl',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "_fundsToken",
-        "type": "address"
+        internalType: 'address',
+        name: '_fundsToken',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "_uniswapRouter",
-        "type": "address"
+        internalType: 'address',
+        name: '_uniswapRouter',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "_globals",
-        "type": "address"
+        internalType: 'address',
+        name: '_globals',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amount',
+        type: 'uint256'
       }
     ],
-    "name": "DistributedToHolders",
-    "type": "event"
+    name: 'DistributedToHolders',
+    type: 'event'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "asset",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'asset',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amountIn",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amountIn',
+        type: 'uint256'
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amountOut",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amountOut',
+        type: 'uint256'
       }
     ],
-    "name": "ERC20Conversion",
-    "type": "event"
+    name: 'ERC20Conversion',
+    type: 'event'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "asset",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'asset',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amount',
+        type: 'uint256'
       }
     ],
-    "name": "ERC20Reclaimed",
-    "type": "event"
+    name: 'ERC20Reclaimed',
+    type: 'event'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "newGlobals",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'newGlobals',
+        type: 'address'
       }
     ],
-    "name": "GlobalsSet",
-    "type": "event"
+    name: 'GlobalsSet',
+    type: 'event'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "asset",
-        "type": "address"
+        internalType: 'address',
+        name: 'asset',
+        type: 'address'
       }
     ],
-    "name": "convertERC20",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'convertERC20',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "distributeToHolders",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'distributeToHolders',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "fundsToken",
-    "outputs": [
+    inputs: [],
+    name: 'fundsToken',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "globals",
-    "outputs": [
+    inputs: [],
+    name: 'globals',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "mpl",
-    "outputs": [
+    inputs: [],
+    name: 'mpl',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "asset",
-        "type": "address"
+        internalType: 'address',
+        name: 'asset',
+        type: 'address'
       },
       {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'amount',
+        type: 'uint256'
       }
     ],
-    "name": "reclaimERC20",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'reclaimERC20',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "newGlobals",
-        "type": "address"
+        internalType: 'address',
+        name: 'newGlobals',
+        type: 'address'
       }
     ],
-    "name": "setGlobals",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setGlobals',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "uniswapRouter",
-    "outputs": [
+    inputs: [],
+    name: 'uniswapRouter',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   }
-];
+]

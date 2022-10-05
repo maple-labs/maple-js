@@ -1,36 +1,36 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "contract IMapleGlobals",
-        "name": "globals",
-        "type": "IMapleGlobals"
+        internalType: 'contract IMapleGlobals',
+        name: 'globals',
+        type: 'IMapleGlobals'
       },
       {
-        "internalType": "address",
-        "name": "fromAsset",
-        "type": "address"
+        internalType: 'address',
+        name: 'fromAsset',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "toAsset",
-        "type": "address"
+        internalType: 'address',
+        name: 'toAsset',
+        type: 'address'
       },
       {
-        "internalType": "uint256",
-        "name": "swapAmt",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'swapAmt',
+        type: 'uint256'
       }
     ],
-    "name": "calcMinAmount",
-    "outputs": [
+    name: 'calcMinAmount',
+    outputs: [
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   }
-];
+]

@@ -1,347 +1,347 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_globals",
-        "type": "address"
+        internalType: 'address',
+        name: '_globals',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "account",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'account',
+        type: 'address'
       }
     ],
-    "name": "Paused",
-    "type": "event"
+    name: 'Paused',
+    type: 'event'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "pool",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'pool',
+        type: 'address'
       },
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "delegate",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'delegate',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "liquidityAsset",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'liquidityAsset',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "stakeAsset",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'stakeAsset',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "liquidityLocker",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'liquidityLocker',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "stakeLocker",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'stakeLocker',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "stakingFee",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'stakingFee',
+        type: 'uint256'
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "delegateFee",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'delegateFee',
+        type: 'uint256'
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "liquidityCap",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'liquidityCap',
+        type: 'uint256'
       },
       {
-        "indexed": false,
-        "internalType": "string",
-        "name": "name",
-        "type": "string"
+        indexed: false,
+        internalType: 'string',
+        name: 'name',
+        type: 'string'
       },
       {
-        "indexed": false,
-        "internalType": "string",
-        "name": "symbol",
-        "type": "string"
+        indexed: false,
+        internalType: 'string',
+        name: 'symbol',
+        type: 'string'
       }
     ],
-    "name": "PoolCreated",
-    "type": "event"
+    name: 'PoolCreated',
+    type: 'event'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "poolFactoryAdmin",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'poolFactoryAdmin',
+        type: 'address'
       },
       {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "allowed",
-        "type": "bool"
+        indexed: false,
+        internalType: 'bool',
+        name: 'allowed',
+        type: 'bool'
       }
     ],
-    "name": "PoolFactoryAdminSet",
-    "type": "event"
+    name: 'PoolFactoryAdminSet',
+    type: 'event'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "account",
-        "type": "address"
+        indexed: false,
+        internalType: 'address',
+        name: 'account',
+        type: 'address'
       }
     ],
-    "name": "Unpaused",
-    "type": "event"
+    name: 'Unpaused',
+    type: 'event'
   },
   {
-    "inputs": [],
-    "name": "LL_FACTORY",
-    "outputs": [
+    inputs: [],
+    name: 'LL_FACTORY',
+    outputs: [
       {
-        "internalType": "uint8",
-        "name": "",
-        "type": "uint8"
+        internalType: 'uint8',
+        name: '',
+        type: 'uint8'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "SL_FACTORY",
-    "outputs": [
+    inputs: [],
+    name: 'SL_FACTORY',
+    outputs: [
       {
-        "internalType": "uint8",
-        "name": "",
-        "type": "uint8"
+        internalType: 'uint8',
+        name: '',
+        type: 'uint8'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "liquidityAsset",
-        "type": "address"
+        internalType: 'address',
+        name: 'liquidityAsset',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "stakeAsset",
-        "type": "address"
+        internalType: 'address',
+        name: 'stakeAsset',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "slFactory",
-        "type": "address"
+        internalType: 'address',
+        name: 'slFactory',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "llFactory",
-        "type": "address"
+        internalType: 'address',
+        name: 'llFactory',
+        type: 'address'
       },
       {
-        "internalType": "uint256",
-        "name": "stakingFee",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'stakingFee',
+        type: 'uint256'
       },
       {
-        "internalType": "uint256",
-        "name": "delegateFee",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'delegateFee',
+        type: 'uint256'
       },
       {
-        "internalType": "uint256",
-        "name": "liquidityCap",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'liquidityCap',
+        type: 'uint256'
       }
     ],
-    "name": "createPool",
-    "outputs": [
+    name: 'createPool',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "poolAddress",
-        "type": "address"
+        internalType: 'address',
+        name: 'poolAddress',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "globals",
-    "outputs": [
+    inputs: [],
+    name: 'globals',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "name": "isPool",
-    "outputs": [
+    name: 'isPool',
+    outputs: [
       {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
+        internalType: 'bool',
+        name: '',
+        type: 'bool'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "pause",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'pause',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "paused",
-    "outputs": [
+    inputs: [],
+    name: 'paused',
+    outputs: [
       {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
+        internalType: 'bool',
+        name: '',
+        type: 'bool'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "name": "poolFactoryAdmins",
-    "outputs": [
+    name: 'poolFactoryAdmins',
+    outputs: [
       {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
+        internalType: 'bool',
+        name: '',
+        type: 'bool'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256'
       }
     ],
-    "name": "pools",
-    "outputs": [
+    name: 'pools',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "poolsCreated",
-    "outputs": [
+    inputs: [],
+    name: 'poolsCreated',
+    outputs: [
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "newGlobals",
-        "type": "address"
+        internalType: 'address',
+        name: 'newGlobals',
+        type: 'address'
       }
     ],
-    "name": "setGlobals",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setGlobals',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "poolFactoryAdmin",
-        "type": "address"
+        internalType: 'address',
+        name: 'poolFactoryAdmin',
+        type: 'address'
       },
       {
-        "internalType": "bool",
-        "name": "allowed",
-        "type": "bool"
+        internalType: 'bool',
+        name: 'allowed',
+        type: 'bool'
       }
     ],
-    "name": "setPoolFactoryAdmin",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setPoolFactoryAdmin',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "unpause",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'unpause',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   }
-];
+]

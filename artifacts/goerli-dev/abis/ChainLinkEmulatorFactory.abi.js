@@ -1,77 +1,77 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_governor",
-        "type": "address"
+        internalType: 'address',
+        name: '_governor',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "string",
-        "name": "_pair",
-        "type": "string"
+        internalType: 'string',
+        name: '_pair',
+        type: 'string'
       }
     ],
-    "name": "getOracle",
-    "outputs": [
+    name: 'getOracle',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "governor",
-    "outputs": [
+    inputs: [],
+    name: 'governor',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "string",
-        "name": "_description",
-        "type": "string"
+        internalType: 'string',
+        name: '_description',
+        type: 'string'
       }
     ],
-    "name": "newAgg",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'newAgg',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
+        internalType: 'string',
+        name: '',
+        type: 'string'
       }
     ],
-    "name": "pricePairs",
-    "outputs": [
+    name: 'pricePairs',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   }
-];
+]

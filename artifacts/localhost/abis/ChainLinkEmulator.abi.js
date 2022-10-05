@@ -1,121 +1,121 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_governor",
-        "type": "address"
+        internalType: 'address',
+        name: '_governor',
+        type: 'address'
       },
       {
-        "internalType": "string",
-        "name": "_description",
-        "type": "string"
+        internalType: 'string',
+        name: '_description',
+        type: 'string'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "int256",
-        "name": "current",
-        "type": "int256"
+        indexed: true,
+        internalType: 'int256',
+        name: 'current',
+        type: 'int256'
       },
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "roundId",
-        "type": "uint256"
+        indexed: true,
+        internalType: 'uint256',
+        name: 'roundId',
+        type: 'uint256'
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "updatedAt",
-        "type": "uint256"
+        indexed: false,
+        internalType: 'uint256',
+        name: 'updatedAt',
+        type: 'uint256'
       }
     ],
-    "name": "AnswerUpdated",
-    "type": "event"
+    name: 'AnswerUpdated',
+    type: 'event'
   },
   {
-    "inputs": [],
-    "name": "decimals",
-    "outputs": [
+    inputs: [],
+    name: 'decimals',
+    outputs: [
       {
-        "internalType": "uint8",
-        "name": "",
-        "type": "uint8"
+        internalType: 'uint8',
+        name: '',
+        type: 'uint8'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "description",
-    "outputs": [
+    inputs: [],
+    name: 'description',
+    outputs: [
       {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
+        internalType: 'string',
+        name: '',
+        type: 'string'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "getLatestPrice",
-    "outputs": [
+    inputs: [],
+    name: 'getLatestPrice',
+    outputs: [
       {
-        "internalType": "int256",
-        "name": "",
-        "type": "int256"
+        internalType: 'int256',
+        name: '',
+        type: 'int256'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "price",
-    "outputs": [
+    inputs: [],
+    name: 'price',
+    outputs: [
       {
-        "internalType": "int256",
-        "name": "",
-        "type": "int256"
+        internalType: 'int256',
+        name: '',
+        type: 'int256'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "int256",
-        "name": "_price",
-        "type": "int256"
+        internalType: 'int256',
+        name: '_price',
+        type: 'int256'
       }
     ],
-    "name": "setPrice",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setPrice',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "version",
-    "outputs": [
+    inputs: [],
+    name: 'version',
+    outputs: [
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   }
-];
+]

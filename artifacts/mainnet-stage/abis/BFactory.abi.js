@@ -1,142 +1,142 @@
 module.exports = [
   {
-    "inputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    inputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "caller",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'caller',
+        type: 'address'
       },
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "blabs",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'blabs',
+        type: 'address'
       }
     ],
-    "name": "LOG_BLABS",
-    "type": "event"
+    name: 'LOG_BLABS',
+    type: 'event'
   },
   {
-    "anonymous": false,
-    "inputs": [
+    anonymous: false,
+    inputs: [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "caller",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'caller',
+        type: 'address'
       },
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "pool",
-        "type": "address"
+        indexed: true,
+        internalType: 'address',
+        name: 'pool',
+        type: 'address'
       }
     ],
-    "name": "LOG_NEW_POOL",
-    "type": "event"
+    name: 'LOG_NEW_POOL',
+    type: 'event'
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "internalType": "contract BPool",
-        "name": "pool",
-        "type": "address"
+        internalType: 'contract BPool',
+        name: 'pool',
+        type: 'address'
       }
     ],
-    "name": "collect",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'collect',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "getBLabs",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'getBLabs',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "getColor",
-    "outputs": [
+    constant: true,
+    inputs: [],
+    name: 'getColor',
+    outputs: [
       {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
+        internalType: 'bytes32',
+        name: '',
+        type: 'bytes32'
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "constant": true,
-    "inputs": [
+    constant: true,
+    inputs: [
       {
-        "internalType": "address",
-        "name": "b",
-        "type": "address"
+        internalType: 'address',
+        name: 'b',
+        type: 'address'
       }
     ],
-    "name": "isBPool",
-    "outputs": [
+    name: 'isBPool',
+    outputs: [
       {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
+        internalType: 'bool',
+        name: '',
+        type: 'bool'
       }
     ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
+    payable: false,
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "newBPool",
-    "outputs": [
+    constant: false,
+    inputs: [],
+    name: 'newBPool',
+    outputs: [
       {
-        "internalType": "contract BPool",
-        "name": "",
-        "type": "address"
+        internalType: 'contract BPool',
+        name: '',
+        type: 'address'
       }
     ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "constant": false,
-    "inputs": [
+    constant: false,
+    inputs: [
       {
-        "internalType": "address",
-        "name": "b",
-        "type": "address"
+        internalType: 'address',
+        name: 'b',
+        type: 'address'
       }
     ],
-    "name": "setBLabs",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'setBLabs',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function'
   }
-];
+]

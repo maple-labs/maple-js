@@ -1,85 +1,85 @@
 module.exports = [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "_liquidityAsset",
-        "type": "address"
+        internalType: 'address',
+        name: '_liquidityAsset',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "_pool",
-        "type": "address"
+        internalType: 'address',
+        name: '_pool',
+        type: 'address'
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "loan",
-        "type": "address"
+        internalType: 'address',
+        name: 'loan',
+        type: 'address'
       },
       {
-        "internalType": "address",
-        "name": "debtLocker",
-        "type": "address"
+        internalType: 'address',
+        name: 'debtLocker',
+        type: 'address'
       },
       {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'amount',
+        type: 'uint256'
       }
     ],
-    "name": "fundLoan",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'fundLoan',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "liquidityAsset",
-    "outputs": [
+    inputs: [],
+    name: 'liquidityAsset',
+    outputs: [
       {
-        "internalType": "contract IERC20",
-        "name": "",
-        "type": "address"
+        internalType: 'contract IERC20',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [],
-    "name": "pool",
-    "outputs": [
+    inputs: [],
+    name: 'pool',
+    outputs: [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        internalType: 'address',
+        name: '',
+        type: 'address'
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function'
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "address",
-        "name": "dst",
-        "type": "address"
+        internalType: 'address',
+        name: 'dst',
+        type: 'address'
       },
       {
-        "internalType": "uint256",
-        "name": "amt",
-        "type": "uint256"
+        internalType: 'uint256',
+        name: 'amt',
+        type: 'uint256'
       }
     ],
-    "name": "transfer",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'transfer',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function'
   }
-];
+]
