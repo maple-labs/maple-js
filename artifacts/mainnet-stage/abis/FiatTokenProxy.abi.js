@@ -1,121 +1,121 @@
 module.exports = [
   {
-    constant: false,
-    inputs: [
+    "constant": false,
+    "inputs": [
       {
-        name: 'newImplementation',
-        type: 'address'
+        "name": "newImplementation",
+        "type": "address"
       }
     ],
-    name: 'upgradeTo',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "upgradeTo",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    constant: false,
-    inputs: [
+    "constant": false,
+    "inputs": [
       {
-        name: 'newImplementation',
-        type: 'address'
+        "name": "newImplementation",
+        "type": "address"
       },
       {
-        name: 'data',
-        type: 'bytes'
+        "name": "data",
+        "type": "bytes"
       }
     ],
-    name: 'upgradeToAndCall',
-    outputs: [],
-    payable: true,
-    stateMutability: 'payable',
-    type: 'function'
+    "name": "upgradeToAndCall",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: 'implementation',
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "implementation",
+    "outputs": [
       {
-        name: '',
-        type: 'address'
+        "name": "",
+        "type": "address"
       }
     ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    constant: false,
-    inputs: [
+    "constant": false,
+    "inputs": [
       {
-        name: 'newAdmin',
-        type: 'address'
+        "name": "newAdmin",
+        "type": "address"
       }
     ],
-    name: 'changeAdmin',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "changeAdmin",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    constant: true,
-    inputs: [],
-    name: 'admin',
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "admin",
+    "outputs": [
       {
-        name: '',
-        type: 'address'
+        "name": "",
+        "type": "address"
       }
     ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        name: '_implementation',
-        type: 'address'
+        "name": "_implementation",
+        "type": "address"
       }
     ],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'constructor'
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
-    payable: true,
-    stateMutability: 'payable',
-    type: 'fallback'
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "fallback"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        name: 'previousAdmin',
-        type: 'address'
+        "indexed": false,
+        "name": "previousAdmin",
+        "type": "address"
       },
       {
-        indexed: false,
-        name: 'newAdmin',
-        type: 'address'
+        "indexed": false,
+        "name": "newAdmin",
+        "type": "address"
       }
     ],
-    name: 'AdminChanged',
-    type: 'event'
+    "name": "AdminChanged",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        name: 'implementation',
-        type: 'address'
+        "indexed": false,
+        "name": "implementation",
+        "type": "address"
       }
     ],
-    name: 'Upgraded',
-    type: 'event'
+    "name": "Upgraded",
+    "type": "event"
   }
-]
+];

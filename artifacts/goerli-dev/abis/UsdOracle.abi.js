@@ -1,15 +1,15 @@
 module.exports = [
   {
-    inputs: [],
-    name: 'getLatestPrice',
-    outputs: [
+    "inputs": [],
+    "name": "getLatestPrice",
+    "outputs": [
       {
-        internalType: 'int256',
-        name: '',
-        type: 'int256'
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   }
-]
+];

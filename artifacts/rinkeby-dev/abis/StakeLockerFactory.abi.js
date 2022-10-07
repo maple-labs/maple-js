@@ -1,120 +1,120 @@
 module.exports = [
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'owner',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'stakeLocker',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "stakeLocker",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'stakeAsset',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "stakeAsset",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'string',
-        name: 'name',
-        type: 'string'
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
       },
       {
-        indexed: false,
-        internalType: 'string',
-        name: 'symbol',
-        type: 'string'
+        "indexed": false,
+        "internalType": "string",
+        "name": "symbol",
+        "type": "string"
       }
     ],
-    name: 'StakeLockerCreated',
-    type: 'event'
+    "name": "StakeLockerCreated",
+    "type": "event"
   },
   {
-    inputs: [],
-    name: 'factoryType',
-    outputs: [
+    "inputs": [],
+    "name": "factoryType",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    name: 'isLocker',
-    outputs: [
+    "name": "isLocker",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'stakeAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       }
     ],
-    name: 'newLocker',
-    outputs: [
+    "name": "newLocker",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'stakeLocker',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeLocker",
+        "type": "address"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    name: 'owner',
-    outputs: [
+    "name": "owner",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   }
-]
+];

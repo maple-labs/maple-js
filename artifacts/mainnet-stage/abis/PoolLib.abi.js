@@ -1,460 +1,460 @@
 module.exports = [
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'liquidityProvider',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "liquidityProvider",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'depositDate',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "depositDate",
+        "type": "uint256"
       }
     ],
-    name: 'DepositDateUpdated',
-    type: 'event'
+    "name": "DepositDateUpdated",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'loan',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'debtLocker',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "debtLocker",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amountFunded',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountFunded",
+        "type": "uint256"
       }
     ],
-    name: 'LoanFunded',
-    type: 'event'
+    "name": "LoanFunded",
+    "type": "event"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '_bPool',
-        type: 'address'
+        "internalType": "address",
+        "name": "_bPool",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'staker',
-        type: 'address'
+        "internalType": "address",
+        "name": "staker",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'stakeLocker',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeLocker",
+        "type": "address"
       }
     ],
-    name: 'BPTVal',
-    outputs: [
+    "name": "BPTVal",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'DL_FACTORY',
-    outputs: [
+    "inputs": [],
+    "name": "DL_FACTORY",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'MAX_UINT256',
-    outputs: [
+    "inputs": [],
+    "name": "MAX_UINT256",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'WAD',
-    outputs: [
+    "inputs": [],
+    "name": "WAD",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256[7]',
-        name: 'claimInfo',
-        type: 'uint256[7]'
+        "internalType": "uint256[7]",
+        "name": "claimInfo",
+        "type": "uint256[7]"
       },
       {
-        internalType: 'uint256',
-        name: 'delegateFee',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "delegateFee",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'stakingFee',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "stakingFee",
+        "type": "uint256"
       }
     ],
-    name: 'calculateClaimAndPortions',
-    outputs: [
+    "name": "calculateClaimAndPortions",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'poolDelegatePortion',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "poolDelegatePortion",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'stakeLockerPortion',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "stakeLockerPortion",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'principalClaim',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principalClaim",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'interestClaim',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interestClaim",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'pure',
-    type: 'function'
+    "stateMutability": "pure",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amt',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amt",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'liquidityAssetDecimals',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "liquidityAssetDecimals",
+        "type": "uint256"
       }
     ],
-    name: 'fromWad',
-    outputs: [
+    "name": "fromWad",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'pure',
-    type: 'function'
+    "stateMutability": "pure",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'contract IMapleGlobals',
-        name: 'globals',
-        type: 'IMapleGlobals'
+        "internalType": "contract IMapleGlobals",
+        "name": "globals",
+        "type": "IMapleGlobals"
       },
       {
-        internalType: 'address',
-        name: 'balancerPool',
-        type: 'address'
+        "internalType": "address",
+        "name": "balancerPool",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'poolDelegate',
-        type: 'address'
+        "internalType": "address",
+        "name": "poolDelegate",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'stakeLocker',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeLocker",
+        "type": "address"
       }
     ],
-    name: 'getInitialStakeRequirements',
-    outputs: [
+    "name": "getInitialStakeRequirements",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'swapOutAmountRequired',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "swapOutAmountRequired",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'currentPoolDelegateCover',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "currentPoolDelegateCover",
+        "type": "uint256"
       },
       {
-        internalType: 'bool',
-        name: 'enoughStakeForFinalization',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "enoughStakeForFinalization",
+        "type": "bool"
       },
       {
-        internalType: 'uint256',
-        name: 'poolAmountInRequired',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "poolAmountInRequired",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'poolAmountPresent',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "poolAmountPresent",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '_bPool',
-        type: 'address'
+        "internalType": "address",
+        "name": "_bPool",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'staker',
-        type: 'address'
+        "internalType": "address",
+        "name": "staker",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'stakeLocker',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeLocker",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'liquidityAssetAmountRequired',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "liquidityAssetAmountRequired",
+        "type": "uint256"
       }
     ],
-    name: 'getPoolSharesRequired',
-    outputs: [
+    "name": "getPoolSharesRequired",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'poolAmountInRequired',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "poolAmountInRequired",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'stakerBalance',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "stakerBalance",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '_bPool',
-        type: 'address'
+        "internalType": "address",
+        "name": "_bPool",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'staker',
-        type: 'address'
+        "internalType": "address",
+        "name": "staker",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'stakeLocker',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeLocker",
+        "type": "address"
       }
     ],
-    name: 'getSwapOutValue',
-    outputs: [
+    "name": "getSwapOutValue",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '_bPool',
-        type: 'address'
+        "internalType": "address",
+        "name": "_bPool",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'stakeLocker',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeLocker",
+        "type": "address"
       }
     ],
-    name: 'getSwapOutValueLocker',
-    outputs: [
+    "name": "getSwapOutValueLocker",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'custodian',
-        type: 'address'
+        "internalType": "address",
+        "name": "custodian",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'amount',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'newTotalAllowance',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "newTotalAllowance",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'fdtBal',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fdtBal",
+        "type": "uint256"
       }
     ],
-    name: 'increaseCustodyAllowanceChecks',
-    outputs: [],
-    stateMutability: 'pure',
-    type: 'function'
+    "name": "increaseCustodyAllowanceChecks",
+    "outputs": [],
+    "stateMutability": "pure",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'contract IMapleGlobals',
-        name: 'globals',
-        type: 'IMapleGlobals'
+        "internalType": "contract IMapleGlobals",
+        "name": "globals",
+        "type": "IMapleGlobals"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'stakeAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "stakeAsset",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'stakingFee',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "stakingFee",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'delegateFee',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "delegateFee",
+        "type": "uint256"
       }
     ],
-    name: 'poolSanityChecks',
-    outputs: [],
-    stateMutability: 'view',
-    type: 'function'
+    "name": "poolSanityChecks",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'from',
-        type: 'address'
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'to',
-        type: 'address'
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'amount',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
-    name: 'transferByCustodianChecks',
-    outputs: [],
-    stateMutability: 'pure',
-    type: 'function'
+    "name": "transferByCustodianChecks",
+    "outputs": [],
+    "stateMutability": "pure",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'contract IMapleGlobals',
-        name: 'globals',
-        type: 'IMapleGlobals'
+        "internalType": "contract IMapleGlobals",
+        "name": "globals",
+        "type": "IMapleGlobals"
       },
       {
-        internalType: 'uint256',
-        name: 'principalOut',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principalOut",
+        "type": "uint256"
       },
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       }
     ],
-    name: 'validateDeactivation',
-    outputs: [],
-    stateMutability: 'view',
-    type: 'function'
+    "name": "validateDeactivation",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
   }
-]
+];

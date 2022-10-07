@@ -1,71 +1,71 @@
 module.exports = [
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: '_lateFee',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "_lateFee",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'constructor'
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
-    inputs: [],
-    name: 'calcType',
-    outputs: [
+    "inputs": [],
+    "name": "calcType",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'interest',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interest",
+        "type": "uint256"
       }
     ],
-    name: 'getLateFee',
-    outputs: [
+    "name": "getLateFee",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'lateFee',
-    outputs: [
+    "inputs": [],
+    "name": "lateFee",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'name',
-    outputs: [
+    "inputs": [],
+    "name": "name",
+    "outputs": [
       {
-        internalType: 'bytes32',
-        name: '',
-        type: 'bytes32'
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   }
-]
+];

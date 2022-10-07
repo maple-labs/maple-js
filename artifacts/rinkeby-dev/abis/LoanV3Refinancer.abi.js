@@ -1,262 +1,262 @@
 module.exports = [
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'collateralRequired_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "collateralRequired_",
+        "type": "uint256"
       }
     ],
-    name: 'CollateralRequiredSet',
-    type: 'event'
+    "name": "CollateralRequiredSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'earlyFeeRate_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "earlyFeeRate_",
+        "type": "uint256"
       }
     ],
-    name: 'EarlyFeeRateSet',
-    type: 'event'
+    "name": "EarlyFeeRateSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'endingPrincipal_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "endingPrincipal_",
+        "type": "uint256"
       }
     ],
-    name: 'EndingPrincipalSet',
-    type: 'event'
+    "name": "EndingPrincipalSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'gracePeriod_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "gracePeriod_",
+        "type": "uint256"
       }
     ],
-    name: 'GracePeriodSet',
-    type: 'event'
+    "name": "GracePeriodSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'interestRate_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "interestRate_",
+        "type": "uint256"
       }
     ],
-    name: 'InterestRateSet',
-    type: 'event'
+    "name": "InterestRateSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lateFeeRate_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "lateFeeRate_",
+        "type": "uint256"
       }
     ],
-    name: 'LateFeeRateSet',
-    type: 'event'
+    "name": "LateFeeRateSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lateInterestPremium_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "lateInterestPremium_",
+        "type": "uint256"
       }
     ],
-    name: 'LateInterestPremiumSet',
-    type: 'event'
+    "name": "LateInterestPremiumSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'paymentInterval_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "paymentInterval_",
+        "type": "uint256"
       }
     ],
-    name: 'PaymentIntervalSet',
-    type: 'event'
+    "name": "PaymentIntervalSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'paymentsRemaining_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "paymentsRemaining_",
+        "type": "uint256"
       }
     ],
-    name: 'PaymentsRemainingSet',
-    type: 'event'
+    "name": "PaymentsRemainingSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'increasedBy_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "increasedBy_",
+        "type": "uint256"
       }
     ],
-    name: 'PrincipalIncreased',
-    type: 'event'
+    "name": "PrincipalIncreased",
+    "type": "event"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
-    name: 'increasePrincipal',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "increasePrincipal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'collateralRequired_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "collateralRequired_",
+        "type": "uint256"
       }
     ],
-    name: 'setCollateralRequired',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setCollateralRequired",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'earlyFeeRate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "earlyFeeRate_",
+        "type": "uint256"
       }
     ],
-    name: 'setEarlyFeeRate',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setEarlyFeeRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'endingPrincipal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "endingPrincipal_",
+        "type": "uint256"
       }
     ],
-    name: 'setEndingPrincipal',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setEndingPrincipal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'gracePeriod_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "gracePeriod_",
+        "type": "uint256"
       }
     ],
-    name: 'setGracePeriod',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setGracePeriod",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'interestRate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interestRate_",
+        "type": "uint256"
       }
     ],
-    name: 'setInterestRate',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setInterestRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'lateFeeRate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "lateFeeRate_",
+        "type": "uint256"
       }
     ],
-    name: 'setLateFeeRate',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setLateFeeRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'lateInterestPremium_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "lateInterestPremium_",
+        "type": "uint256"
       }
     ],
-    name: 'setLateInterestPremium',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setLateInterestPremium",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'paymentInterval_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "paymentInterval_",
+        "type": "uint256"
       }
     ],
-    name: 'setPaymentInterval',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setPaymentInterval",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'paymentsRemaining_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "paymentsRemaining_",
+        "type": "uint256"
       }
     ],
-    name: 'setPaymentsRemaining',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setPaymentsRemaining",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
-]
+];

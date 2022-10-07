@@ -1,1360 +1,1360 @@
 module.exports = [
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'borrower_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "borrower_",
+        "type": "address"
       }
     ],
-    name: 'BorrowerAccepted',
-    type: 'event'
+    "name": "BorrowerAccepted",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
-    name: 'CollateralPosted',
-    type: 'event'
+    "name": "CollateralPosted",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'CollateralRemoved',
-    type: 'event'
+    "name": "CollateralRemoved",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'lender_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "lender_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'nextPaymentDueDate_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
       }
     ],
-    name: 'Funded',
-    type: 'event'
+    "name": "Funded",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'FundsClaimed',
-    type: 'event'
+    "name": "FundsClaimed",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'FundsDrawnDown',
-    type: 'event'
+    "name": "FundsDrawnDown",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
-    name: 'FundsReturned',
-    type: 'event'
+    "name": "FundsReturned",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'borrower_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "borrower_",
+        "type": "address"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'feeManager_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "feeManager_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address[2]',
-        name: 'assets_',
-        type: 'address[2]'
+        "indexed": false,
+        "internalType": "address[2]",
+        "name": "assets_",
+        "type": "address[2]"
       },
       {
-        indexed: false,
-        internalType: 'uint256[3]',
-        name: 'termDetails_',
-        type: 'uint256[3]'
+        "indexed": false,
+        "internalType": "uint256[3]",
+        "name": "termDetails_",
+        "type": "uint256[3]"
       },
       {
-        indexed: false,
-        internalType: 'uint256[3]',
-        name: 'amounts_',
-        type: 'uint256[3]'
+        "indexed": false,
+        "internalType": "uint256[3]",
+        "name": "amounts_",
+        "type": "uint256[3]"
       },
       {
-        indexed: false,
-        internalType: 'uint256[4]',
-        name: 'rates_',
-        type: 'uint256[4]'
+        "indexed": false,
+        "internalType": "uint256[4]",
+        "name": "rates_",
+        "type": "uint256[4]"
       },
       {
-        indexed: false,
-        internalType: 'uint256[2]',
-        name: 'fees_',
-        type: 'uint256[2]'
+        "indexed": false,
+        "internalType": "uint256[2]",
+        "name": "fees_",
+        "type": "uint256[2]"
       }
     ],
-    name: 'Initialized',
-    type: 'event'
+    "name": "Initialized",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'lender_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "lender_",
+        "type": "address"
       }
     ],
-    name: 'LenderAccepted',
-    type: 'event'
+    "name": "LenderAccepted",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'principalPaid_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principalPaid_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'interestPaid_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "interestPaid_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'feesPaid_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "feesPaid_",
+        "type": "uint256"
       }
     ],
-    name: 'LoanClosed',
-    type: 'event'
+    "name": "LoanClosed",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'nextPaymentDueDate_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
       }
     ],
-    name: 'LoanImpaired',
-    type: 'event'
+    "name": "LoanImpaired",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'bytes32',
-        name: 'refinanceCommitment_',
-        type: 'bytes32'
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "refinanceCommitment_",
+        "type": "bytes32"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'refinancer_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'deadline_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'bytes[]',
-        name: 'calls_',
-        type: 'bytes[]'
+        "indexed": false,
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
       }
     ],
-    name: 'NewTermsAccepted',
-    type: 'event'
+    "name": "NewTermsAccepted",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'bytes32',
-        name: 'refinanceCommitment_',
-        type: 'bytes32'
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "refinanceCommitment_",
+        "type": "bytes32"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'refinancer_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'deadline_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'bytes[]',
-        name: 'calls_',
-        type: 'bytes[]'
+        "indexed": false,
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
       }
     ],
-    name: 'NewTermsProposed',
-    type: 'event'
+    "name": "NewTermsProposed",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'bytes32',
-        name: 'refinanceCommitment_',
-        type: 'bytes32'
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "refinanceCommitment_",
+        "type": "bytes32"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'refinancer_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'deadline_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'bytes[]',
-        name: 'calls_',
-        type: 'bytes[]'
+        "indexed": false,
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
       }
     ],
-    name: 'NewTermsRejected',
-    type: 'event'
+    "name": "NewTermsRejected",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'nextPaymentDueDate_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
       }
     ],
-    name: 'NextPaymentDueDateRestored',
-    type: 'event'
+    "name": "NextPaymentDueDateRestored",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'principalPaid_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principalPaid_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'interestPaid_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "interestPaid_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'fees_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "fees_",
+        "type": "uint256"
       }
     ],
-    name: 'PaymentMade',
-    type: 'event'
+    "name": "PaymentMade",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'pendingBorrower_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "pendingBorrower_",
+        "type": "address"
       }
     ],
-    name: 'PendingBorrowerSet',
-    type: 'event'
+    "name": "PendingBorrowerSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'pendingLender_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "pendingLender_",
+        "type": "address"
       }
     ],
-    name: 'PendingLenderSet',
-    type: 'event'
+    "name": "PendingLenderSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'collateralRepossessed_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "collateralRepossessed_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'fundsRepossessed_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "fundsRepossessed_",
+        "type": "uint256"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'Repossessed',
-    type: 'event'
+    "name": "Repossessed",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'token_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "token_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'Skimmed',
-    type: 'event'
+    "name": "Skimmed",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'toVersion_',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "toVersion_",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: 'bytes',
-        name: 'arguments_',
-        type: 'bytes'
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "arguments_",
+        "type": "bytes"
       }
     ],
-    name: 'Upgraded',
-    type: 'event'
+    "name": "Upgraded",
+    "type": "event"
   },
   {
-    inputs: [],
-    name: 'acceptBorrower',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "inputs": [],
+    "name": "acceptBorrower",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'acceptLender',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "inputs": [],
+    "name": "acceptLender",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'refinancer_',
-        type: 'address'
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'deadline_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
       },
       {
-        internalType: 'bytes[]',
-        name: 'calls_',
-        type: 'bytes[]'
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
       }
     ],
-    name: 'acceptNewTerms',
-    outputs: [
+    "name": "acceptNewTerms",
+    "outputs": [
       {
-        internalType: 'bytes32',
-        name: 'refinanceCommitment_',
-        type: 'bytes32'
+        "internalType": "bytes32",
+        "name": "refinanceCommitment_",
+        "type": "bytes32"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'borrower',
-    outputs: [
+    "inputs": [],
+    "name": "borrower",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'borrower_',
-        type: 'address'
+        "internalType": "address",
+        "name": "borrower_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
-    name: 'closeLoan',
-    outputs: [
+    "name": "closeLoan",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'principal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'interest_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interest_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'fees_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fees_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'closingRate',
-    outputs: [
+    "inputs": [],
+    "name": "closingRate",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'closingRate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "closingRate_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'collateral',
-    outputs: [
+    "inputs": [],
+    "name": "collateral",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'collateral_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "collateral_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'collateralAsset',
-    outputs: [
+    "inputs": [],
+    "name": "collateralAsset",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'collateralAsset_',
-        type: 'address'
+        "internalType": "address",
+        "name": "collateralAsset_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'collateralRequired',
-    outputs: [
+    "inputs": [],
+    "name": "collateralRequired",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'collateralRequired_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "collateralRequired_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'drawableFunds',
-    outputs: [
+    "inputs": [],
+    "name": "drawableFunds",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'drawableFunds_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "drawableFunds_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       },
       {
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'drawdownFunds',
-    outputs: [
+    "name": "drawdownFunds",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'collateralPosted_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "collateralPosted_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'endingPrincipal',
-    outputs: [
+    "inputs": [],
+    "name": "endingPrincipal",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'endingPrincipal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "endingPrincipal_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'excessCollateral',
-    outputs: [
+    "inputs": [],
+    "name": "excessCollateral",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'excessCollateral_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "excessCollateral_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'factory',
-    outputs: [
+    "inputs": [],
+    "name": "factory",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'factory_',
-        type: 'address'
+        "internalType": "address",
+        "name": "factory_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'feeManager',
-    outputs: [
+    "inputs": [],
+    "name": "feeManager",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'feeManager_',
-        type: 'address'
+        "internalType": "address",
+        "name": "feeManager_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'lender_',
-        type: 'address'
+        "internalType": "address",
+        "name": "lender_",
+        "type": "address"
       }
     ],
-    name: 'fundLoan',
-    outputs: [
+    "name": "fundLoan",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'fundsLent_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fundsLent_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'fundsAsset',
-    outputs: [
+    "inputs": [],
+    "name": "fundsAsset",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'fundsAsset_',
-        type: 'address'
+        "internalType": "address",
+        "name": "fundsAsset_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'drawdown_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "drawdown_",
+        "type": "uint256"
       }
     ],
-    name: 'getAdditionalCollateralRequiredFor',
-    outputs: [
+    "name": "getAdditionalCollateralRequiredFor",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'collateral_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "collateral_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'getClosingPaymentBreakdown',
-    outputs: [
+    "inputs": [],
+    "name": "getClosingPaymentBreakdown",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'principal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'interest_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interest_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'fees_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fees_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'getNextPaymentBreakdown',
-    outputs: [
+    "inputs": [],
+    "name": "getNextPaymentBreakdown",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'principal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'interest_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interest_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'fees_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fees_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'getNextPaymentDetailedBreakdown',
-    outputs: [
+    "inputs": [],
+    "name": "getNextPaymentDetailedBreakdown",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'principal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256[3]',
-        name: 'interest_',
-        type: 'uint256[3]'
+        "internalType": "uint256[3]",
+        "name": "interest_",
+        "type": "uint256[3]"
       },
       {
-        internalType: 'uint256[2]',
-        name: 'fees_',
-        type: 'uint256[2]'
+        "internalType": "uint256[2]",
+        "name": "fees_",
+        "type": "uint256[2]"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'timestamp_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "timestamp_",
+        "type": "uint256"
       }
     ],
-    name: 'getRefinanceInterest',
-    outputs: [
+    "name": "getRefinanceInterest",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'proRataInterest_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "proRataInterest_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'asset_',
-        type: 'address'
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
       }
     ],
-    name: 'getUnaccountedAmount',
-    outputs: [
+    "name": "getUnaccountedAmount",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'unaccountedAmount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "unaccountedAmount_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'globals',
-    outputs: [
+    "inputs": [],
+    "name": "globals",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'globals_',
-        type: 'address'
+        "internalType": "address",
+        "name": "globals_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'governor',
-    outputs: [
+    "inputs": [],
+    "name": "governor",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'governor_',
-        type: 'address'
+        "internalType": "address",
+        "name": "governor_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'gracePeriod',
-    outputs: [
+    "inputs": [],
+    "name": "gracePeriod",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'gracePeriod_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "gracePeriod_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'impairLoan',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "inputs": [],
+    "name": "impairLoan",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'implementation',
-    outputs: [
+    "inputs": [],
+    "name": "implementation",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'implementation_',
-        type: 'address'
+        "internalType": "address",
+        "name": "implementation_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'interestRate',
-    outputs: [
+    "inputs": [],
+    "name": "interestRate",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'interestRate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interestRate_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'isImpaired',
-    outputs: [
+    "inputs": [],
+    "name": "isImpaired",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: 'isImpaired_',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "isImpaired_",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'lateFeeRate',
-    outputs: [
+    "inputs": [],
+    "name": "lateFeeRate",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'lateFeeRate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "lateFeeRate_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'lateInterestPremium',
-    outputs: [
+    "inputs": [],
+    "name": "lateInterestPremium",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'lateInterestPremium_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "lateInterestPremium_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'lender',
-    outputs: [
+    "inputs": [],
+    "name": "lender",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'lender_',
-        type: 'address'
+        "internalType": "address",
+        "name": "lender_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
-    name: 'makePayment',
-    outputs: [
+    "name": "makePayment",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'principal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'interest_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "interest_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'fees_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fees_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'migrator_',
-        type: 'address'
+        "internalType": "address",
+        "name": "migrator_",
+        "type": "address"
       },
       {
-        internalType: 'bytes',
-        name: 'arguments_',
-        type: 'bytes'
+        "internalType": "bytes",
+        "name": "arguments_",
+        "type": "bytes"
       }
     ],
-    name: 'migrate',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "migrate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'nextPaymentDueDate',
-    outputs: [
+    "inputs": [],
+    "name": "nextPaymentDueDate",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'nextPaymentDueDate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'originalNextPaymentDueDate',
-    outputs: [
+    "inputs": [],
+    "name": "originalNextPaymentDueDate",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'originalNextPaymentDueDate_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "originalNextPaymentDueDate_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'paymentInterval',
-    outputs: [
+    "inputs": [],
+    "name": "paymentInterval",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'paymentInterval_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "paymentInterval_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'paymentsRemaining',
-    outputs: [
+    "inputs": [],
+    "name": "paymentsRemaining",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'paymentsRemaining_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "paymentsRemaining_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'pendingBorrower',
-    outputs: [
+    "inputs": [],
+    "name": "pendingBorrower",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'pendingBorrower_',
-        type: 'address'
+        "internalType": "address",
+        "name": "pendingBorrower_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'pendingLender',
-    outputs: [
+    "inputs": [],
+    "name": "pendingLender",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'pendingLender_',
-        type: 'address'
+        "internalType": "address",
+        "name": "pendingLender_",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
-    name: 'postCollateral',
-    outputs: [
+    "name": "postCollateral",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'collateralPosted_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "collateralPosted_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'principal',
-    outputs: [
+    "inputs": [],
+    "name": "principal",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'principal_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'principalRequested',
-    outputs: [
+    "inputs": [],
+    "name": "principalRequested",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'principalRequested_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "principalRequested_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'refinancer_',
-        type: 'address'
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'deadline_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
       },
       {
-        internalType: 'bytes[]',
-        name: 'calls_',
-        type: 'bytes[]'
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
       }
     ],
-    name: 'proposeNewTerms',
-    outputs: [
+    "name": "proposeNewTerms",
+    "outputs": [
       {
-        internalType: 'bytes32',
-        name: 'refinanceCommitment_',
-        type: 'bytes32'
+        "internalType": "bytes32",
+        "name": "refinanceCommitment_",
+        "type": "bytes32"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'refinanceCommitment',
-    outputs: [
+    "inputs": [],
+    "name": "refinanceCommitment",
+    "outputs": [
       {
-        internalType: 'bytes32',
-        name: 'refinanceCommitment_',
-        type: 'bytes32'
+        "internalType": "bytes32",
+        "name": "refinanceCommitment_",
+        "type": "bytes32"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'refinanceInterest',
-    outputs: [
+    "inputs": [],
+    "name": "refinanceInterest",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'refinanceInterest_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "refinanceInterest_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'refinancer_',
-        type: 'address'
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'deadline_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
       },
       {
-        internalType: 'bytes[]',
-        name: 'calls_',
-        type: 'bytes[]'
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
       }
     ],
-    name: 'rejectNewTerms',
-    outputs: [
+    "name": "rejectNewTerms",
+    "outputs": [
       {
-        internalType: 'bytes32',
-        name: 'refinanceCommitment_',
-        type: 'bytes32'
+        "internalType": "bytes32",
+        "name": "refinanceCommitment_",
+        "type": "bytes32"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       },
       {
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'removeCollateral',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "removeCollateral",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'removeLoanImpairment',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "inputs": [],
+    "name": "removeLoanImpairment",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'repossess',
-    outputs: [
+    "name": "repossess",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'collateralRepossessed_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "collateralRepossessed_",
+        "type": "uint256"
       },
       {
-        internalType: 'uint256',
-        name: 'fundsRepossessed_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fundsRepossessed_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
-    name: 'returnFunds',
-    outputs: [
+    "name": "returnFunds",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'fundsReturned_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "fundsReturned_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'newImplementation_',
-        type: 'address'
+        "internalType": "address",
+        "name": "newImplementation_",
+        "type": "address"
       }
     ],
-    name: 'setImplementation',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setImplementation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'pendingBorrower_',
-        type: 'address'
+        "internalType": "address",
+        "name": "pendingBorrower_",
+        "type": "address"
       }
     ],
-    name: 'setPendingBorrower',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setPendingBorrower",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'pendingLender_',
-        type: 'address'
+        "internalType": "address",
+        "name": "pendingLender_",
+        "type": "address"
       }
     ],
-    name: 'setPendingLender',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setPendingLender",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'token_',
-        type: 'address'
+        "internalType": "address",
+        "name": "token_",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'destination_',
-        type: 'address'
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
       }
     ],
-    name: 'skim',
-    outputs: [
+    "name": "skim",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: 'skimmed_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "skimmed_",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: 'toVersion_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "toVersion_",
+        "type": "uint256"
       },
       {
-        internalType: 'bytes',
-        name: 'arguments_',
-        type: 'bytes'
+        "internalType": "bytes",
+        "name": "arguments_",
+        "type": "bytes"
       }
     ],
-    name: 'upgrade',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "upgrade",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
-]
+];

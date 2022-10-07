@@ -1,375 +1,375 @@
 module.exports = [
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '_globals',
-        type: 'address'
+        "internalType": "address",
+        "name": "_globals",
+        "type": "address"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'constructor'
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'loan',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "loan",
+        "type": "address"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'borrower',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
       },
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'collateralAsset',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "collateralAsset",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'collateralLocker',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "collateralLocker",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'fundingLocker',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "fundingLocker",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'uint256[5]',
-        name: 'specs',
-        type: 'uint256[5]'
+        "indexed": false,
+        "internalType": "uint256[5]",
+        "name": "specs",
+        "type": "uint256[5]"
       },
       {
-        indexed: false,
-        internalType: 'address[3]',
-        name: 'calcs',
-        type: 'address[3]'
+        "indexed": false,
+        "internalType": "address[3]",
+        "name": "calcs",
+        "type": "address[3]"
       },
       {
-        indexed: false,
-        internalType: 'string',
-        name: 'name',
-        type: 'string'
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
       },
       {
-        indexed: false,
-        internalType: 'string',
-        name: 'symbol',
-        type: 'string'
+        "indexed": false,
+        "internalType": "string",
+        "name": "symbol",
+        "type": "string"
       }
     ],
-    name: 'LoanCreated',
-    type: 'event'
+    "name": "LoanCreated",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'loanFactoryAdmin',
-        type: 'address'
+        "indexed": true,
+        "internalType": "address",
+        "name": "loanFactoryAdmin",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'bool',
-        name: 'allowed',
-        type: 'bool'
+        "indexed": false,
+        "internalType": "bool",
+        "name": "allowed",
+        "type": "bool"
       }
     ],
-    name: 'LoanFactoryAdminSet',
-    type: 'event'
+    "name": "LoanFactoryAdminSet",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'account',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
       }
     ],
-    name: 'Paused',
-    type: 'event'
+    "name": "Paused",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'account',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
       }
     ],
-    name: 'Unpaused',
-    type: 'event'
+    "name": "Unpaused",
+    "type": "event"
   },
   {
-    inputs: [],
-    name: 'CL_FACTORY',
-    outputs: [
+    "inputs": [],
+    "name": "CL_FACTORY",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'FL_FACTORY',
-    outputs: [
+    "inputs": [],
+    "name": "FL_FACTORY",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'INTEREST_CALC_TYPE',
-    outputs: [
+    "inputs": [],
+    "name": "INTEREST_CALC_TYPE",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'LATEFEE_CALC_TYPE',
-    outputs: [
+    "inputs": [],
+    "name": "LATEFEE_CALC_TYPE",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'PREMIUM_CALC_TYPE',
-    outputs: [
+    "inputs": [],
+    "name": "PREMIUM_CALC_TYPE",
+    "outputs": [
       {
-        internalType: 'uint8',
-        name: '',
-        type: 'uint8'
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'liquidityAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "liquidityAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'collateralAsset',
-        type: 'address'
+        "internalType": "address",
+        "name": "collateralAsset",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'flFactory',
-        type: 'address'
+        "internalType": "address",
+        "name": "flFactory",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'clFactory',
-        type: 'address'
+        "internalType": "address",
+        "name": "clFactory",
+        "type": "address"
       },
       {
-        internalType: 'uint256[5]',
-        name: 'specs',
-        type: 'uint256[5]'
+        "internalType": "uint256[5]",
+        "name": "specs",
+        "type": "uint256[5]"
       },
       {
-        internalType: 'address[3]',
-        name: 'calcs',
-        type: 'address[3]'
+        "internalType": "address[3]",
+        "name": "calcs",
+        "type": "address[3]"
       }
     ],
-    name: 'createLoan',
-    outputs: [
+    "name": "createLoan",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'loanAddress',
-        type: 'address'
+        "internalType": "address",
+        "name": "loanAddress",
+        "type": "address"
       }
     ],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'globals',
-    outputs: [
+    "inputs": [],
+    "name": "globals",
+    "outputs": [
       {
-        internalType: 'contract IMapleGlobals',
-        name: '',
-        type: 'address'
+        "internalType": "contract IMapleGlobals",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    name: 'isLoan',
-    outputs: [
+    "name": "isLoan",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    name: 'loanFactoryAdmins',
-    outputs: [
+    "name": "loanFactoryAdmins",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    name: 'loans',
-    outputs: [
+    "name": "loans",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'loansCreated',
-    outputs: [
+    "inputs": [],
+    "name": "loansCreated",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'pause',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "inputs": [],
+    "name": "pause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'paused',
-    outputs: [
+    "inputs": [],
+    "name": "paused",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'newGlobals',
-        type: 'address'
+        "internalType": "address",
+        "name": "newGlobals",
+        "type": "address"
       }
     ],
-    name: 'setGlobals',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setGlobals",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'loanFactoryAdmin',
-        type: 'address'
+        "internalType": "address",
+        "name": "loanFactoryAdmin",
+        "type": "address"
       },
       {
-        internalType: 'bool',
-        name: 'allowed',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "allowed",
+        "type": "bool"
       }
     ],
-    name: 'setLoanFactoryAdmin',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "setLoanFactoryAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'unpause',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "inputs": [],
+    "name": "unpause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
-]
+];

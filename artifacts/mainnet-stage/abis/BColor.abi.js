@@ -1,17 +1,17 @@
 module.exports = [
   {
-    constant: true,
-    inputs: [],
-    name: 'getColor',
-    outputs: [
+    "constant": true,
+    "inputs": [],
+    "name": "getColor",
+    "outputs": [
       {
-        internalType: 'bytes32',
-        name: '',
-        type: 'bytes32'
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
       }
     ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   }
-]
+];

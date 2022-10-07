@@ -1,328 +1,328 @@
 module.exports = [
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'owner_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'asset_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: 'address',
-        name: 'pool_',
-        type: 'address'
+        "indexed": false,
+        "internalType": "address",
+        "name": "pool_",
+        "type": "address"
       }
     ],
-    name: 'Initialized',
-    type: 'event'
+    "name": "Initialized",
+    "type": "event"
   },
   {
-    stateMutability: 'nonpayable',
-    type: 'fallback'
+    "stateMutability": "nonpayable",
+    "type": "fallback"
   },
   {
-    inputs: [],
-    name: 'active',
-    outputs: [
+    "inputs": [],
+    "name": "active",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'asset',
-    outputs: [
+    "inputs": [],
+    "name": "asset",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'configured',
-    outputs: [
+    "inputs": [],
+    "name": "configured",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'bytes',
-        name: 'encodedArguments_',
-        type: 'bytes'
+        "internalType": "bytes",
+        "name": "encodedArguments_",
+        "type": "bytes"
       }
     ],
-    name: 'decodeArguments',
-    outputs: [
+    "name": "decodeArguments",
+    "outputs": [
       {
-        internalType: 'address',
-        name: 'poolDelegate_',
-        type: 'address'
+        "internalType": "address",
+        "name": "poolDelegate_",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'asset_',
-        type: 'address'
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'intialSupply_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "intialSupply_",
+        "type": "uint256"
       },
       {
-        internalType: 'string',
-        name: 'name_',
-        type: 'string'
+        "internalType": "string",
+        "name": "name_",
+        "type": "string"
       },
       {
-        internalType: 'string',
-        name: 'symbol_',
-        type: 'string'
+        "internalType": "string",
+        "name": "symbol_",
+        "type": "string"
       }
     ],
-    stateMutability: 'pure',
-    type: 'function'
+    "stateMutability": "pure",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'delegateManagementFeeRate',
-    outputs: [
+    "inputs": [],
+    "name": "delegateManagementFeeRate",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: 'poolDelegate_',
-        type: 'address'
+        "internalType": "address",
+        "name": "poolDelegate_",
+        "type": "address"
       },
       {
-        internalType: 'address',
-        name: 'asset_',
-        type: 'address'
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
       },
       {
-        internalType: 'uint256',
-        name: 'intialSupply_',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "intialSupply_",
+        "type": "uint256"
       },
       {
-        internalType: 'string',
-        name: 'name_',
-        type: 'string'
+        "internalType": "string",
+        "name": "name_",
+        "type": "string"
       },
       {
-        internalType: 'string',
-        name: 'symbol_',
-        type: 'string'
+        "internalType": "string",
+        "name": "symbol_",
+        "type": "string"
       }
     ],
-    name: 'encodeArguments',
-    outputs: [
+    "name": "encodeArguments",
+    "outputs": [
       {
-        internalType: 'bytes',
-        name: 'encodedArguments_',
-        type: 'bytes'
+        "internalType": "bytes",
+        "name": "encodedArguments_",
+        "type": "bytes"
       }
     ],
-    stateMutability: 'pure',
-    type: 'function'
+    "stateMutability": "pure",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    name: 'isLoanManager',
-    outputs: [
+    "name": "isLoanManager",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    name: 'isValidLender',
-    outputs: [
+    "name": "isValidLender",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'liquidityCap',
-    outputs: [
+    "inputs": [],
+    "name": "liquidityCap",
+    "outputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    name: 'loanManagerList',
-    outputs: [
+    "name": "loanManagerList",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    name: 'loanManagers',
-    outputs: [
+    "name": "loanManagers",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'openToPublic',
-    outputs: [
+    "inputs": [],
+    "name": "openToPublic",
+    "outputs": [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool'
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'pendingPoolDelegate',
-    outputs: [
+    "inputs": [],
+    "name": "pendingPoolDelegate",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'pool',
-    outputs: [
+    "inputs": [],
+    "name": "pool",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'poolDelegate',
-    outputs: [
+    "inputs": [],
+    "name": "poolDelegate",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'poolDelegateCover',
-    outputs: [
+    "inputs": [],
+    "name": "poolDelegateCover",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: 'withdrawalManager',
-    outputs: [
+    "inputs": [],
+    "name": "withdrawalManager",
+    "outputs": [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address'
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function"
   }
-]
+];
