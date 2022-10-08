@@ -986,10 +986,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/pool/-/pool-1.0.0.tgz#7b04e9aee854d941a60445adb2f5cd54ab78d434"
   integrity sha512-2X2Q+IfLgkGRO4aeEXeWnaTzEKW2bMAJW/140tnw+YG4thbZloyYRI2hrrplTzjFaWkB6MvZgAOhSiHfrie0nQ==
 
-"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-beta.1.1":
-  version "1.0.0-beta.1.1"
-  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0-beta.1.1.tgz#c915aa09b8ddcd5f1db68c2df5db25fc9ef6354f"
-  integrity sha512-HhK2A6OdTQ9tlhNGFkOK1cmthwY2K8/9EVd/q/iFG2BDVqM4zNonY3jwP1kCzbWzIUjHCPERhDprf0zjZ/Q5bg==
+"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-beta.3.1":
+  version "1.0.0-beta.3.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0-beta.3.1.tgz#4d7473b00a7356f1c698ed14221f481856bb0e70"
+  integrity sha512-8b0W8DWlX2sFy4AOoQCbzDJVqngBl9NE1KKe9Ik5LtRmxsOHuDKJeNHmsFIJ2GiL4L5wa+dFPXFQXCQTc5Mpxw==
 
 "@maplelabs/premiumCalculator@npm:@maplelabs/premium-calculator@v1.0.0":
   version "1.0.0"
