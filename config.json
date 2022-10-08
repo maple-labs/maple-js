@@ -68,7 +68,7 @@
     "poolV2": {
       "repo": "@maplelabs/pool-v2",
       "alias": ["poolV2"],
-      "versions": ["v1.0.0-beta.1.1"]
+      "versions": ["v1.0.0-beta.3.1"]
     },
     "premiumCalculator": {
       "repo": "@maplelabs/premium-calculator",
