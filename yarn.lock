@@ -1011,10 +1011,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/util/-/util-1.0.0.tgz#7b75a0a6900155c42422b2c8af03337980954b44"
   integrity sha512-jfeGr3dlzk3zyuY13n/1a/sIHsi2y0tZXOW1HCBgZqCwr/tNxzf/ovs1msGH8M5NTwHaomtd6F48jOvsAItmKQ==
 
-"@maplelabs/withdrawalManager@npm:@maplelabs/withdrawal-manager@1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0-beta.3.tgz#d8ee69f4ccad9760048466459f0ba2e07f627604"
-  integrity sha512-G5StF8DhC/N76d0K9+2/njzHFf3IaFTOrFGUvrD2f+JSanT+WUnzPsa7M0YoeJ+mv+p+tT6JxdnGf3pOEOyzlQ==
+"@maplelabs/withdrawalManager@npm:@maplelabs/withdrawal-manager@1.0.0-beta.3.1":
+  version "1.0.0-beta.3.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0-beta.3.1.tgz#385900ef563e62c16ee4c7c16fcfb78a72b54763"
+  integrity sha512-TGgYYSiWjWjVUOcQxsUy7xYnjutFbpcB9zG876L8uUzty4XiKYH4fD4tkd66noa7RQcIsNq15o8s5fmiOGjxtg==
 
 "@maplelabs/xmpl@npm:@maplelabs/xmpl@v1.0.1":
   version "1.0.1"

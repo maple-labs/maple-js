@@ -74,7 +74,7 @@
     "@maplelabs/repaymentCalculator": "npm:@maplelabs/repayment-calculator@v1.0.0",
     "@maplelabs/stakeLocker": "npm:@maplelabs/stake-locker@v1.0.0",
     "@maplelabs/util": "npm:@maplelabs/util@v1.0.0",
-    "@maplelabs/withdrawalManager": "npm:@maplelabs/withdrawal-manager@1.0.0-beta.3",
+    "@maplelabs/withdrawalManager": "npm:@maplelabs/withdrawal-manager@1.0.0-beta.3.1",
     "@maplelabs/xmpl": "npm:@maplelabs/xmpl@v1.0.1",
     "@typechain/ethers-v5": "^9.0.0",
     "ethers": "^5.5.3",
