@@ -38,7 +38,7 @@
     "loan": {
       "repo": "@maplelabs/loan",
       "alias": ["loanV1", "loanV2", "loanV3", "loanV4"],
-      "versions": ["v1.0.0", "v2.0.0", "v3.0.0", "v4.0.0-beta.3"]
+      "versions": ["v1.0.0", "v2.0.0", "v3.0.0", "v4.0.0-beta.3.1"]
     },
     "mapleGlobals": {
       "repo": "@maplelabs/globals",
@@ -68,7 +68,7 @@
     "poolV2": {
       "repo": "@maplelabs/pool-v2",
       "alias": ["poolV2"],
-      "versions": ["v1.0.0-beta.3.1"]
+      "versions": ["v1.0.0-beta.3.2"]
     },
     "premiumCalculator": {
       "repo": "@maplelabs/premium-calculator",
