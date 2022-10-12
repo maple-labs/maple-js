@@ -62,6 +62,7 @@ export default {
   xMPL: '0x4937a209d4cdbd3ecd48857277cfd4da4d82914c',
   manifest: {
     network: 'mainnet',
+    project: 'mainnet-stage',
     blockheight: 12350622,
     date: '2021-05-13T22:22:51.155Z'
   }
