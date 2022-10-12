@@ -24,6 +24,7 @@ import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as environmentMocksImports from './typechain/environmentMocks'
 
 // Addresses
+import goerliAddresses from './addresses/goerli'
 import goerliDevAddresses from './addresses/goerli-dev'
 import rinkebyAddresses from './addresses/rinkeby'
 import rinkebyDevAddresses from './addresses/rinkeby-dev'
@@ -184,7 +185,7 @@ type MapleAddressMapping = {
 }
 
 const addresses: Record<string, MapleAddressMapping> = {
-  goerli: goerliDevAddresses, // TODO - deploy goerli-prod
+  goerli: goerliAddresses,
   'goerli-dev': goerliDevAddresses,
   rinkeby: rinkebyAddresses,
   'rinkeby-dev': rinkebyDevAddresses,
