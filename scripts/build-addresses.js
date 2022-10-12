@@ -3,7 +3,7 @@
   and ensure that all addresses have been updated or added accurately.
  */
 
-const build = (project = 'mainnet') => {
+const build = (project = 'goerli') => {
   const addresses = {
     manifest: require(`../artifacts/${project}/manifest.json`),
     // Pool v1 Factories
