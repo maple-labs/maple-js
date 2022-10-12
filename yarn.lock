@@ -956,10 +956,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-3.0.0.tgz#bb0f3aca056d3198e164310f418c4fa0809efbe1"
   integrity sha512-bfcKvwZz/MhnzZtFCN8n5OAPOyHJQrOXdb9xIwYu5sNQ4HMNwZySz/F5BGfmNCrJZd+WiNK1oFi4gKzHlmy57w==
 
-"@maplelabs/loanV4@npm:@maplelabs/loan@4.0.0-beta.3.1":
-  version "4.0.0-beta.3.1"
-  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-4.0.0-beta.3.1.tgz#7e396cc041b19969538eaf9c766fd146df484a08"
-  integrity sha512-MPRmNQkSWFeDEfM72rebHNCZjanazIfPtwsJJRWbhJ2tx6T5GhOvJuA+wwvEPZ/NcrSD2mNC2klE0FIhHb7H7A==
+"@maplelabs/loanV4@npm:@maplelabs/loan@4.0.0-beta.3.2":
+  version "4.0.0-beta.3.2"
+  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-4.0.0-beta.3.2.tgz#97df93d2c907b9333c3310fcb842e533bec6f7b8"
+  integrity sha512-mmwyx8TUheE9Y2t3KjU6z8MPqRz2kGo2wy+KCwUsPLT5fqWAX5KFZ5vrcm56IZT/u2zQtrNHUX+i9E78wnPJ8w==
 
 "@maplelabs/mapleGlobals@npm:@maplelabs/globals@v1.0.0":
   version "1.0.0"
