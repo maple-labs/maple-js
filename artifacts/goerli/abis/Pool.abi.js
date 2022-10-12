@@ -405,13 +405,13 @@ module.exports = [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "",
+        "name": "account",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "int256",
-        "name": "",
+        "name": "lossesCorrection",
         "type": "int256"
       }
     ],
@@ -424,13 +424,13 @@ module.exports = [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "",
+        "name": "by",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "",
+        "name": "lossesDistributed",
         "type": "uint256"
       }
     ],
@@ -443,7 +443,7 @@ module.exports = [
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "",
+        "name": "lossesPerShare",
         "type": "uint256"
       }
     ],
@@ -456,19 +456,19 @@ module.exports = [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "",
+        "name": "by",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "",
+        "name": "lossesRecognized",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "",
+        "name": "totalLossesRecognized",
         "type": "uint256"
       }
     ],
@@ -481,13 +481,13 @@ module.exports = [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "",
+        "name": "account",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "int256",
-        "name": "",
+        "name": "pointsCorrection",
         "type": "int256"
       }
     ],
@@ -500,7 +500,7 @@ module.exports = [
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "",
+        "name": "pointsPerShare",
         "type": "uint256"
       }
     ],
@@ -544,7 +544,7 @@ module.exports = [
     "inputs": [
       {
         "indexed": false,
-        "internalType": "enum IPool.State",
+        "internalType": "enum Pool.State",
         "name": "state",
         "type": "uint8"
       }
@@ -1303,7 +1303,7 @@ module.exports = [
     "name": "poolState",
     "outputs": [
       {
-        "internalType": "enum IPool.State",
+        "internalType": "enum Pool.State",
         "name": "",
         "type": "uint8"
       }
