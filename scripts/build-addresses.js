@@ -3,7 +3,7 @@
   and ensure that all addresses have been updated or added accurately.
  */
 
-const build = (project = 'goerli') => {
+const build = (project = 'mainnet') => {
   const addresses = {
     manifest: require(`../artifacts/${project}/manifest.json`),
     // Pool v1 Factories
@@ -52,7 +52,8 @@ const build = (project = 'goerli') => {
     LoanV3Initializer: require(`../artifacts/${project}/addresses/LoanV3Initializer.address.js`),
     LoanV4Initializer: require(`../artifacts/${project}/addresses/LoanV4Initializer.address.js`),
     LoanV2Refinancer: require(`../artifacts/${project}/addresses/LoanV2Refinancer.address.js`),
-    LoanV3Refinancer: require(`../artifacts/${project}/addresses/LoanV3Refinancer.address.js`),
+    // LoanV3Refinancer: require(`../artifacts/${project}/addresses/LoanV3Refinancer.address.js`),
+    // LoanV4Refinancer: require(`../artifacts/${project}/addresses/LoanV4Refinancer.address.js`),
     LoanManagerInitializer: require(`../artifacts/${project}/addresses/LoanManagerInitializer.address.js`),
     PoolManagerInitializer: require(`../artifacts/${project}/addresses/PoolManagerInitializer.address.js`),
     WithdrawalManagerInitializer: require(`../artifacts/${project}/addresses/WithdrawalManagerInitializer.address.js`),
