@@ -60,5 +60,5 @@ export default {
   WithdrawalManagerFactory: '0xfbF2a32a9055F14C0c8D4Fc1808281Ccb4c40bAD',
   WithdrawalManagerInitializer: '0x0054aF9F177DF480a892eC1F2Adb58eF7e1176A4',
   xMPL: '0x06B04eb332B072bbe02b91e7DDE423b1Bbaa3CCb',
-  manifest: { network: 'goerli', project: 'goerli', blockheight: 7758279, date: '2022-10-12' }
+  manifest: { network: 'goerli', blockheight: 7758279, date: '2022-10-12' }
 }
