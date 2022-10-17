@@ -210,9 +210,9 @@ interface ContractTypes {
   loanV4: loanV4Imports.MapleLoan
   loanV4Factory: loanV4Imports.MapleLoanFactory
   loanV4Initializer: loanV4Imports.MapleLoanInitializer
-  loanV4Migrator: loanV4Imports.MapleLoanV4Migrator__factory
+  loanV4Migrator: loanV4Imports.MapleLoanV4Migrator
   loanV4FeeManager: loanV4Imports.MapleLoanFeeManager
-  loanV4Refinancer: loanV4Imports.Refinancer__factory
+  loanV4Refinancer: loanV4Imports.Refinancer
 
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals
@@ -229,16 +229,16 @@ interface ContractTypes {
   poolDeployer: poolV2Imports.PoolDeployer
   // PoolV2:poolManager
   poolManager: poolV2Imports.PoolManager
-  poolManagerFactory: poolV2Imports.PoolManagerFactory__factory
-  poolManagerInitializer: poolV2Imports.PoolManagerInitializer__factory
+  poolManagerFactory: poolV2Imports.PoolManagerFactory
+  poolManagerInitializer: poolV2Imports.PoolManagerInitializer
   // PoolV2:loanManager
-  loanManager: poolV2Imports.LoanManager__factory
-  loanManagerfactory: poolV2Imports.LoanManagerFactory__factory
-  loanManagerInitializer: poolV2Imports.LoanManagerInitializer__factory
+  loanManager: poolV2Imports.LoanManager
+  loanManagerfactory: poolV2Imports.LoanManagerFactory
+  loanManagerInitializer: poolV2Imports.LoanManagerInitializer
   // withdrawalManager
-  withdrawalManager: withdrawalManagerImports.WithdrawalManager__factory
-  withdrawalManagerFactory: withdrawalManagerImports.WithdrawalManagerFactory__factory
-  withdrawalManagerInitializer: withdrawalManagerImports.WithdrawalManagerInitializer__factory
+  withdrawalManager: withdrawalManagerImports.WithdrawalManager
+  withdrawalManagerFactory: withdrawalManagerImports.WithdrawalManagerFactory
+  withdrawalManagerInitializer: withdrawalManagerImports.WithdrawalManagerInitializer
   // environmentMocks
   bPool: environmentMocksImports.BPool
   erc20: environmentMocksImports.MintSpecialToken
