@@ -27,10 +27,10 @@ export default {
   LoanV2Refinancer: '0x245FfBe1031ad0CeAfC36953D950Eb7f7e044DA4',
   LoanV3: '0x1bd6e15867124AeCd7d1cD4eD357B252281815f9',
   LoanV3Initializer: '0x5C76b30B5A135D3ff109f8944229F8D7f758959F',
-  LoanV3Refinancer: '0x0000000000000000000000000000000000000000',
+  LoanV3Refinancer: '0x8773e2B9677367d69CE4Cd3aa22487788359E582',
   LoanV4: '0x422FC72Ac0090577526B74084E902c91C4F49931',
   LoanV4Initializer: '0xD295a94752D38004E9b8E6f0464AB951bFe63e81',
-  LoanV4Refinancer: '0x0000000000000000000000000000000000000000',
+  LoanV4Refinancer: '0x954b598e091920d2Ef1db1b504e990f81E77C042',
   MapleGlobals: '0x3b889D3dA8b637824DE8Ce767559046dB315C0b9',
   MapleGlobalsV2: '0xE179e15e3931586333C152cf29Ce075f7496d47a',
   MapleToken: '0x4Ba7c3F15Cdcc8d0C70F3eDd6EC409C02Cf253Be',
@@ -60,5 +60,5 @@ export default {
   WithdrawalManagerFactory: '0xfbF2a32a9055F14C0c8D4Fc1808281Ccb4c40bAD',
   WithdrawalManagerInitializer: '0x0054aF9F177DF480a892eC1F2Adb58eF7e1176A4',
   xMPL: '0x06B04eb332B072bbe02b91e7DDE423b1Bbaa3CCb',
-  manifest: { network: 'goerli', project: 'goerli-dev', blockheight: 7758279, date: '2022-10-12' }
+  manifest: { network: 'goerli', project: 'goerli', blockheight: 7758279, date: '2022-10-12' }
 }
