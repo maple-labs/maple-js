@@ -919,6 +919,11 @@ module.exports = [
         "internalType": "uint256",
         "name": "shares_",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
       }
     ],
     "name": "removeShares",
@@ -938,6 +943,11 @@ module.exports = [
         "internalType": "uint256",
         "name": "shares_",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
       }
     ],
     "name": "requestRedeem",
@@ -957,6 +967,11 @@ module.exports = [
         "internalType": "uint256",
         "name": "assets_",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
       }
     ],
     "name": "requestWithdraw",

@@ -3,6 +3,43 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "configId_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "initialCycleId_",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "initialCycleTime_",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "cycleDuration_",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "windowDuration_",
+        "type": "uint64"
+      }
+    ],
+    "name": "ConfigurationUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "uint256",
         "name": "toVersion_",
@@ -16,6 +53,75 @@
       }
     ],
     "name": "Upgraded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account_",
+        "type": "address"
+      }
+    ],
+    "name": "WithdrawalCancelled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "sharesToRedeem_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "assetsToWithdraw_",
+        "type": "uint256"
+      }
+    ],
+    "name": "WithdrawalProcessed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "lockedShares_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "windowStart_",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "windowEnd_",
+        "type": "uint64"
+      }
+    ],
+    "name": "WithdrawalUpdated",
     "type": "event"
   },
   {
@@ -34,19 +140,6 @@
     "name": "addShares",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "admin",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "admin_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -122,6 +215,198 @@
       {
         "internalType": "address",
         "name": "factory_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "cycleId_",
+        "type": "uint256"
+      }
+    ],
+    "name": "getConfigAtId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "initialCycleId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "initialCycleTime",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "cycleDuration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "windowDuration",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct WithdrawalManagerStorage.CycleConfig",
+        "name": "config_",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getCurrentConfig",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "initialCycleId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "initialCycleTime",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "cycleDuration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "windowDuration",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct WithdrawalManagerStorage.CycleConfig",
+        "name": "config_",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getCurrentCycleId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "cycleId_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "lockedShares_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      }
+    ],
+    "name": "getRedeemableAmounts",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "redeemableShares_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "resultingAssets_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "partialLiquidity_",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "cycleId_",
+        "type": "uint256"
+      }
+    ],
+    "name": "getWindowAtId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "windowStart_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "windowEnd_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "cycleId_",
+        "type": "uint256"
+      }
+    ],
+    "name": "getWindowStart",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "cycleStart_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "globals",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "globals_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "governor",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "governor_",
         "type": "address"
       }
     ],
@@ -230,6 +515,19 @@
       {
         "internalType": "address",
         "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "poolDelegate",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "poolDelegate_",
         "type": "address"
       }
     ],
