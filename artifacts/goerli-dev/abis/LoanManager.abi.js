@@ -22,6 +22,31 @@ module.exports = [
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "netInterest_",
+        "type": "uint256"
+      }
+    ],
+    "name": "FundsDistributed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "uint48",
         "name": "domainEnd_",
@@ -41,6 +66,31 @@ module.exports = [
       }
     ],
     "name": "IssuanceParamsUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "delegateManagementFee_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "platformManagementFee_",
+        "type": "uint256"
+      }
+    ],
+    "name": "ManagementFeesPaid",
     "type": "event"
   },
   {
@@ -904,6 +954,13 @@ module.exports = [
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "updateAccounting",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
