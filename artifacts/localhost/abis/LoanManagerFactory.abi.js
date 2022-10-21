@@ -1,9 +1,9 @@
-[
+module.exports = [
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "mapleGlobals_",
+        "name": "globals_",
         "type": "address"
       }
     ],
@@ -303,7 +303,7 @@
         "type": "address"
       }
     ],
-    "name": "isLoan",
+    "name": "isInstance",
     "outputs": [
       {
         "internalType": "bool",
@@ -461,4 +461,4 @@
     "stateMutability": "view",
     "type": "function"
   }
-]
+];

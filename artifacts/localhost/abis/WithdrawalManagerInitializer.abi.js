@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "anonymous": false,
     "inputs": [
@@ -239,4 +239,4 @@
     "stateMutability": "view",
     "type": "function"
   }
-]
+];
