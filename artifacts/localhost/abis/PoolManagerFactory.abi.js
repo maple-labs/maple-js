@@ -3,7 +3,7 @@ module.exports = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "mapleGlobals_",
+        "name": "globals_",
         "type": "address"
       }
     ],
@@ -303,7 +303,7 @@ module.exports = [
         "type": "address"
       }
     ],
-    "name": "isLoan",
+    "name": "isInstance",
     "outputs": [
       {
         "internalType": "bool",
