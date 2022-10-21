@@ -2,98 +2,79 @@
   "contractPackages": {
     "collateralLocker": {
       "repo": "@maplelabs/collateral-locker",
-      "alias": ["collateralLocker"],
-      "versions": ["v1.0.0"]
+      "alias": ["collateralLocker"]
     },
     "debtLocker": {
       "repo": "@maplelabs/debt-locker",
-      "alias": ["debtLockerV1", "debtLockerV2", "debtLockerV3"],
-      "versions": ["v1.0.0", "v2.0.0", "v3.0.0"]
+      "alias": ["debtLockerV1", "debtLockerV2", "debtLockerV3"]
     },
     "external": {
       "repo": "@maplelabs/environment-mocks",
-      "alias": ["environmentMocks"],
-      "versions": ["v0.0.1"]
+      "alias": ["environmentMocks"]
     },
     "fundingLocker": {
       "repo": "@maplelabs/funding-locker",
-      "alias": ["fundingLocker"],
-      "versions": ["v1.0.0"]
+      "alias": ["fundingLocker"]
     },
     "lateFeeCalculator": {
       "repo": "@maplelabs/late-fee-calculator",
-      "alias": ["lateFeeCalculator"],
-      "versions": ["v1.0.0"]
+      "alias": ["lateFeeCalculator"]
     },
     "liquidations": {
       "repo": "@maplelabs/liquidations",
-      "alias": ["liquidityLocker"],
-      "versions": ["v2.0.0-beta.3"]
+      "alias": ["liquidityLocker"]
     },
     "liquidityLocker": {
       "repo": "@maplelabs/liquidity-locker",
-      "alias": ["liquidityLocker"],
-      "versions": ["v1.0.0"]
+      "alias": ["liquidityLocker"]
     },
     "loan": {
       "repo": "@maplelabs/loan",
-      "alias": ["loanV1", "loanV2", "loanV3", "loanV4"],
-      "versions": ["v1.0.0", "v2.0.0", "v3.0.0", "v4.0.0-beta.3.1"]
+      "alias": ["loanV1", "loanV2", "loanV3", "loanV4"]
     },
     "mapleGlobals": {
       "repo": "@maplelabs/globals",
-      "alias": ["mapleGlobals"],
-      "versions": ["v1.0.0"]
+      "alias": ["mapleGlobals"]
     },
     "mapleGlobalsV2": {
       "repo": "@maplelabs/globals-v2",
-      "alias": ["mapleGlobalsV2"],
-      "versions": ["v1.0.0-beta.3"]
+      "alias": ["mapleGlobalsV2"]
     },
     "mapleToken": {
       "repo": "@maplelabs/maple-token",
-      "alias": ["mapleToken"],
-      "versions": ["v1.0.0"]
+      "alias": ["mapleToken"]
     },
     "mplRewards": {
       "repo": "@maplelabs/mpl-rewards",
-      "alias": ["mplRewards"],
-      "versions": ["v1.0.0"]
+      "alias": ["mplRewards"]
     },
     "pool": {
       "repo": "@maplelabs/pool",
-      "alias": ["pool"],
-      "versions": ["v1.0.0"]
+      "alias": ["pool"]
     },
     "poolV2": {
       "repo": "@maplelabs/pool-v2",
-      "alias": ["poolV2"],
-      "versions": ["v1.0.0-beta.3.2"]
+      "alias": ["poolV2"]
     },
     "premiumCalculator": {
       "repo": "@maplelabs/premium-calculator",
-      "alias": ["premiumCalculator"],
-      "versions": ["v1.0.0"]
+      "alias": ["premiumCalculator"]
     },
     "repaymentCalculator": {
       "repo": "@maplelabs/repayment-calculator",
-      "alias": ["repaymentCalculator"],
-      "versions": ["v1.0.0"]
+      "alias": ["repaymentCalculator"]
     },
     "stakeLocker": {
       "repo": "@maplelabs/stake-locker",
-      "alias": ["stakeLocker"],
-      "versions": ["v1.0.0"]
+      "alias": ["stakeLocker"]
     },
     "withdrawalManager": {
       "repo": "@maplelabs/withdrawal-manager",
-      "alias": ["withdrawalManager"],
-      "versions": ["v1.0.0-beta.3.1"]
+      "alias": ["withdrawalManager"]
     },
     "xmpl": {
       "repo": "@maplelabs/xmpl",
-      "alias": ["xmpl"],
-      "versions": ["v1.0.1"]
+      "alias": ["xmpl"]
     }
   }
 }
