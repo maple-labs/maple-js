@@ -89,7 +89,7 @@ module.exports = [
       },
       {
         "internalType": "uint256",
-        "name": "intialSupply_",
+        "name": "initialSupply_",
         "type": "uint256"
       },
       {
@@ -133,7 +133,7 @@ module.exports = [
       },
       {
         "internalType": "uint256",
-        "name": "intialSupply_",
+        "name": "initialSupply_",
         "type": "uint256"
       },
       {

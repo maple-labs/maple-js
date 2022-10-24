@@ -444,6 +444,25 @@ module.exports = [
     "inputs": [
       {
         "indexed": true,
+        "internalType": "address",
+        "name": "collateralAsset_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bool",
+        "name": "isValid_",
+        "type": "bool"
+      }
+    ],
+    "name": "ValidCollateralAssetSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "internalType": "bytes32",
         "name": "factoryKey_",
         "type": "bytes32"
@@ -639,6 +658,25 @@ module.exports = [
       }
     ],
     "name": "isBorrower",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "isCollateralAsset",
     "outputs": [
       {
         "internalType": "bool",
@@ -1341,6 +1379,24 @@ module.exports = [
       }
     ],
     "name": "setValidBorrower",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "collateralAsset_",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "isValid_",
+        "type": "bool"
+      }
+    ],
+    "name": "setValidCollateralAsset",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
