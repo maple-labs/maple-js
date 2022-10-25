@@ -556,7 +556,7 @@ module.exports = [
       },
       {
         "internalType": "address",
-        "name": "caller_",
+        "name": "",
         "type": "address"
       },
       {
@@ -720,7 +720,7 @@ module.exports = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "owner_",
+        "name": "",
         "type": "address"
       },
       {
