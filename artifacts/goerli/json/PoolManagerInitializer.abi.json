@@ -89,7 +89,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "intialSupply_",
+        "name": "initialSupply_",
         "type": "uint256"
       },
       {
@@ -133,7 +133,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "intialSupply_",
+        "name": "initialSupply_",
         "type": "uint256"
       },
       {

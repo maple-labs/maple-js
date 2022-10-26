@@ -16,7 +16,7 @@ module.exports = [
     "type": "constructor"
   },
   {
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "fallback"
   },
   {
