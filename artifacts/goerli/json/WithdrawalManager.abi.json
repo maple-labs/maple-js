@@ -254,7 +254,7 @@
             "type": "uint64"
           }
         ],
-        "internalType": "struct WithdrawalManagerStorage.CycleConfig",
+        "internalType": "struct IWithdrawalManagerStorage.CycleConfig",
         "name": "config_",
         "type": "tuple"
       }
@@ -289,7 +289,7 @@
             "type": "uint64"
           }
         ],
-        "internalType": "struct WithdrawalManagerStorage.CycleConfig",
+        "internalType": "struct IWithdrawalManagerStorage.CycleConfig",
         "name": "config_",
         "type": "tuple"
       }
@@ -380,7 +380,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "cycleStart_",
+        "name": "windowStart_",
         "type": "uint256"
       }
     ],
@@ -574,6 +574,35 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "assets_",
+        "type": "uint256"
+      }
+    ],
+    "name": "previewWithdraw",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "redeemableAssets_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "resultingShares_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {
