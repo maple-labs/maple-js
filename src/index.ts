@@ -9,6 +9,8 @@ import * as liquidityLockerImports from './typechain/liquidityLocker'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
 import * as loanV3Imports from './typechain/loanV3'
+import * as loanV301Imports from './typechain/loanV301'
+
 import * as loanV4Imports from './typechain/loanV4'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
@@ -83,6 +85,13 @@ const loanV3 = {
   initializer: loanV3Imports.MapleLoanInitializer__factory,
   core: loanV3Imports.MapleLoan__factory,
   refinancer: loanV3Imports.Refinancer__factory
+}
+
+const loanV301 = {
+  factory: loanV301Imports.MapleLoanFactory__factory,
+  initializer: loanV301Imports.MapleLoanInitializer__factory,
+  core: loanV301Imports.MapleLoan__factory,
+  refinancer: loanV301Imports.Refinancer__factory
 }
 
 const loanV4 = {
@@ -207,6 +216,11 @@ interface ContractTypes {
   loanV3Initializer: loanV3Imports.MapleLoanInitializer
   loanV3Refinancer: loanV3Imports.Refinancer
 
+  loanV301: loanV301Imports.MapleLoan
+  loanV301Factory: loanV301Imports.MapleLoanFactory
+  loanV301Initializer: loanV301Imports.MapleLoanInitializer
+  loanV301Refinancer: loanV301Imports.Refinancer
+
   loanV4: loanV4Imports.MapleLoan
   loanV4Factory: loanV4Imports.MapleLoanFactory
   loanV4Initializer: loanV4Imports.MapleLoanInitializer
@@ -256,6 +270,7 @@ export {
   loanV1,
   loanV2,
   loanV3,
+  loanV301,
   loanV4,
   mapleGlobals,
   mapleGlobalsV2,
