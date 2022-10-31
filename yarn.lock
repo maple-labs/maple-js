@@ -956,7 +956,7 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-2.0.0.tgz#c7ae112482cb45c5815bcae1f85afd9d3d39b8d9"
   integrity sha512-cDE4dzEB2pjL4zJXPX8PRXtYwYLj2CX9hePPI8xygS61hNN0KTw0cuaM2PVc+dFBja9Ejpc2+uaap3SEvpi0vw==
 
-"@maplelabs/loanV3.0.1@npm:@maplelabs/loan@3.0.1-rc.0":
+"@maplelabs/loanV301@npm:@maplelabs/loan@3.0.1-rc.0":
   version "3.0.1-rc.0"
   resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-3.0.1-rc.0.tgz#91332db3a38003332380a4a34819b357449659d7"
   integrity sha512-R2cy9lW1DC174nnH3NBr3LB9UJwscJO9xl89weO6s5vIZ3fin/j50Lu4hm91MTXFRt30MfUWiHYV22abMrhbYA==
