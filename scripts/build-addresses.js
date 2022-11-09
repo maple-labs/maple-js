@@ -48,18 +48,23 @@ const build = (project = 'mainnet') => {
     // Loan & DebtLocker Implementation
     LoanV2: getAddress(`../artifacts/${project}/addresses/LoanV2.address.js`),
     LoanV3: getAddress(`../artifacts/${project}/addresses/LoanV3.address.js`),
+    LoanV301: getAddress(`../artifacts/${project}/addresses/LoanV301.address.js`),
     LoanV4: getAddress(`../artifacts/${project}/addresses/LoanV4.address.js`),
     DebtLockerV2: getAddress(`../artifacts/${project}/addresses/DebtLockerV2.address.js`),
     DebtLockerV3: getAddress(`../artifacts/${project}/addresses/DebtLockerV3.address.js`),
+    DebtLockerV4: getAddress(`../artifacts/${project}/addresses/DebtLockerV4.address.js`),
 
     // Initializers
     DebtLockerV2Initializer: getAddress(`../artifacts/${project}/addresses/DebtLockerV2Initializer.address.js`),
     DebtLockerV3Initializer: getAddress(`../artifacts/${project}/addresses/DebtLockerV3Initializer.address.js`),
+    DebtLockerV4Initializer: getAddress(`../artifacts/${project}/addresses/DebtLockerV4Initializer.address.js`),
     LoanV2Initializer: getAddress(`../artifacts/${project}/addresses/LoanV2Initializer.address.js`),
     LoanV3Initializer: getAddress(`../artifacts/${project}/addresses/LoanV3Initializer.address.js`),
+    LoanV301Initializer: getAddress(`../artifacts/${project}/addresses/LoanV301Initializer.address.js`),
     LoanV4Initializer: getAddress(`../artifacts/${project}/addresses/LoanV4Initializer.address.js`),
     LoanV2Refinancer: getAddress(`../artifacts/${project}/addresses/LoanV2Refinancer.address.js`),
     LoanV3Refinancer: getAddress(`../artifacts/${project}/addresses/LoanV3Refinancer.address.js`),
+    LoanV301Refinancer: getAddress(`../artifacts/${project}/addresses/LoanV301Refinancer.address.js`),
     LoanV4Refinancer: getAddress(`../artifacts/${project}/addresses/LoanV4Refinancer.address.js`),
     LoanManagerInitializer: getAddress(`../artifacts/${project}/addresses/LoanManagerInitializer.address.js`),
     PoolManagerInitializer: getAddress(`../artifacts/${project}/addresses/PoolManagerInitializer.address.js`),
