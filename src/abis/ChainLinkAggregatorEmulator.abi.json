@@ -7,11 +7,6 @@
         "type": "address"
       },
       {
-        "internalType": "address",
-        "name": "_aggregator",
-        "type": "address"
-      },
-      {
         "internalType": "string",
         "name": "_description",
         "type": "string"
@@ -21,17 +16,29 @@
     "type": "constructor"
   },
   {
-    "inputs": [],
-    "name": "aggregator",
-    "outputs": [
+    "anonymous": false,
+    "inputs": [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        "indexed": true,
+        "internalType": "int256",
+        "name": "current",
+        "type": "int256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "roundId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "updatedAt",
+        "type": "uint256"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "name": "AnswerUpdated",
+    "type": "event"
   },
   {
     "inputs": [],
@@ -61,7 +68,7 @@
   },
   {
     "inputs": [],
-    "name": "getLatestPrice",
+    "name": "price",
     "outputs": [
       {
         "internalType": "int256",
@@ -70,6 +77,19 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int256",
+        "name": "_price",
+        "type": "int256"
+      }
+    ],
+    "name": "setPrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
