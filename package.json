@@ -56,7 +56,7 @@
     "@maplelabs/debtLockerV2": "npm:@maplelabs/debt-locker@v2.0.0",
     "@maplelabs/debtLockerV3": "npm:@maplelabs/debt-locker@v3.0.0",
     "@maplelabs/debtLockerV4": "npm:@maplelabs/debt-locker@4.0.0-rc.0",
-    "@maplelabs/environmentMocks": "npm:@maplelabs/environment-mocks@v0.0.1",
+    "@maplelabs/environmentMocks": "npm:@maplelabs/environment-mocks@v2.0.0-beta.0",
     "@maplelabs/fundingLocker": "npm:@maplelabs/funding-locker@v1.0.0",
     "@maplelabs/lateFeeCalculator": "npm:@maplelabs/late-fee-calculator@v1.0.0",
     "@maplelabs/liquidationsV2": "npm:@maplelabs/liquidations@2.0.0-rc.0",
