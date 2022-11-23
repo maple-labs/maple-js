@@ -44,6 +44,10 @@
       "repo": "@maplelabs/maple-token",
       "alias": ["mapleToken"]
     },
+    "migrationHelper": {
+      "repo": "@maplelabs/migration-helpers",
+      "alias": ["migrationHelpers"]
+    },
     "mplRewards": {
       "repo": "@maplelabs/mpl-rewards",
       "alias": ["mplRewards"]

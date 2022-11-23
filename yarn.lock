@@ -986,6 +986,11 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/maple-token/-/maple-token-1.0.0.tgz#c160531e3be688d4cd90c524a1baa2d585da772c"
   integrity sha512-WiJFk15Xic43gnqKC8u6Fnl11AfCADbtcY1668PswnMMIC08RJJgDlwlDy5dq1bYqyWFpMfPem6Ye/McMNua+A==
 
+"@maplelabs/migrationHelpers@npm:@maplelabs/migration-helpers@1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/migration-helpers/-/migration-helpers-1.0.0-rc.1.tgz#77fff54da6102b9d86bd74c43deffe4a77b86142"
+  integrity sha512-wprKbT+EddVm723rStzsG4gqf+VLsZ8uNEwK7FAZvBlwarZGbEkcDRKRsurlGj1yPLyrLWeYKy1HPWHukyDnqA==
+
 "@maplelabs/mplRewards@npm:@maplelabs/mpl-rewards@v1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@maplelabs/mpl-rewards/-/mpl-rewards-1.0.0.tgz#7915e10bd59bd80374784f0f8772817ca87e45ad"
