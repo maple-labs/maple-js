@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "anonymous": false,
     "inputs": [
@@ -346,4 +346,4 @@
     "stateMutability": "nonpayable",
     "type": "function"
   }
-]
+];

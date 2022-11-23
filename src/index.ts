@@ -122,7 +122,7 @@ const mapleToken = {
 }
 
 const migrationHelpers = {
-  factory: migrationHelpersImports.MigrationHelper__factory
+  core: migrationHelpersImports.MigrationHelper__factory
 }
 
 const xmpl = {
