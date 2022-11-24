@@ -111,6 +111,9 @@ const build = (project = 'mainnet') => {
     LINK: getAddress(`../artifacts/${project}/addresses/LINK.address.js`),
     xMPL: getAddress(`../artifacts/${project}/addresses/xMPL.address.js`),
 
+    // misc
+    MigrationHelper: getAddress(`../artifacts/${project}/addresses/MigrationHelper.address.js`),
+
     // manifest
     manifest: require(`../artifacts/${project}/manifest.json`)
   }

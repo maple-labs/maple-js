@@ -24,6 +24,7 @@ import * as stakeLockerImports from './typechain/stakeLocker'
 import * as poolV2Imports from './typechain/poolV2'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as environmentMocksImports from './typechain/environmentMocks'
+import * as migrationHelpersImports from './typechain/migrationHelpers'
 
 // Addresses
 import goerliAddresses from './addresses/goerli'
@@ -119,6 +120,10 @@ const mapleRewards = {
 
 const mapleToken = {
   factory: mapleTokenImports.MapleToken__factory
+}
+
+const migrationHelpers = {
+  core: migrationHelpersImports.MigrationHelper__factory
 }
 
 const xmpl = {
@@ -258,6 +263,8 @@ interface ContractTypes {
   // environmentMocks
   bPool: environmentMocksImports.BPool
   erc20: environmentMocksImports.MintSpecialToken
+  // PoolV2: migrationHelper
+  migrationHelpers: migrationHelpersImports.MigrationHelper
 }
 
 export {
@@ -278,6 +285,7 @@ export {
   mapleGlobalsV2,
   mapleRewards,
   mapleToken,
+  migrationHelpers,
   xmpl,
   pool,
   premiumCalc,
