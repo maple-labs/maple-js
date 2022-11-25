@@ -6,7 +6,7 @@
     },
     "debtLocker": {
       "repo": "@maplelabs/debt-locker",
-      "alias": ["debtLockerV1", "debtLockerV2", "debtLockerV3"]
+      "alias": ["debtLockerV1", "debtLockerV2", "debtLockerV3", "debtLockerV4"]
     },
     "external": {
       "repo": "@maplelabs/environment-mocks",
