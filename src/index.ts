@@ -32,6 +32,7 @@ import goerliDevAddresses from './addresses/goerli-dev'
 import mainnetAddresses from './addresses/mainnet'
 import mainnetStageAddresses from './addresses/mainnet-stage'
 import mainnetDevAddresses from './addresses/mainnet-dev'
+import mainnetProdAddresses from './addresses/mainnet-prod'
 
 const collateralLocker = {
   core: collateralLockerImports.CollateralLocker__factory,
@@ -201,6 +202,7 @@ const addresses: Record<string, MapleAddressMapping> = {
   goerli: goerliAddresses,
   'goerli-dev': goerliDevAddresses,
   mainnet: mainnetAddresses,
+  'mainnet-prod': mainnetProdAddresses,
   'mainnet-stage': mainnetStageAddresses,
   'mainnet-dev': mainnetDevAddresses
 }
