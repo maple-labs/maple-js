@@ -22,7 +22,7 @@
     },
     "liquidations": {
       "repo": "@maplelabs/liquidations",
-      "alias": ["liquidityLocker"]
+      "alias": ["liquidations"]
     },
     "liquidityLocker": {
       "repo": "@maplelabs/liquidity-locker",
