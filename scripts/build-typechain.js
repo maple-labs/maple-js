@@ -62,8 +62,10 @@ function overwriteEventParams({ files, eventName, inputs }) {
 async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
-  // These manual changes augment the npm packages. src/abis/ contains the updates already.
+  // These manual changes patch the npm packages in node-modules which need to be copied over into the abis directory
+  mergeEvents({ src: 'loanV401/abis/Refinancer.json', dst: 'loanV401/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json' })
+  mergeEvents({ src: 'loanV302/abis/Refinancer.json', dst: 'loanV302/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV301/abis/Refinancer.json', dst: 'loanV301/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
   mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json' })
