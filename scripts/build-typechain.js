@@ -38,14 +38,20 @@ const generateTypechainBindings = async (config) => {
   }
 }
 
-function mergeEvents({ src, dst }) {
+function mergeEvents({ src, dst, srcOutput }) {
   console.log(`🔀 Merging events from ${src} events into ${dst}`)
   const srcJson = JSON.parse(readFileSync(path.join(pathDir, `${src}`)).toString())
   const events = srcJson.filter((entry) => entry.type === 'event')
   const dstJson = JSON.parse(readFileSync(path.join(pathDir, `${dst}`)).toString())
   const eventIndexJson = dstJson.findIndex((el) => el.type !== 'event')
   dstJson.splice(eventIndexJson, 0, ...events)
-  writeFileSync(path.join(pathDir, `${dst}`), JSON.stringify(dstJson, null, 2))
+  const updatedAbi = JSON.stringify(dstJson, null, 2)
+  // Write abi with merged events into node_modules
+  const nodeModulesPath = path.join(pathDir, `${dst}`)
+  writeFileSync(nodeModulesPath, updatedAbi)
+  // Write new abi with merged events into src/abis
+  const srcAbisPath = path.join(__dirname, `../src/abis/${srcOutput}`)
+  writeFileSync(srcAbisPath, updatedAbi)
 }
 
 function overwriteEventParams({ files, eventName, inputs }) {
@@ -63,10 +69,10 @@ async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
   // These manual changes augment the npm packages. src/abis/ contains the updates already.
-  mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json' })
-  mergeEvents({ src: 'loanV301/abis/Refinancer.json', dst: 'loanV301/abis/MapleLoan.json' })
-  mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
-  mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json' })
+  mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json', srcOutput: 'LoanV4.abi.json' })
+  mergeEvents({ src: 'loanV301/abis/Refinancer.json', dst: 'loanV301/abis/MapleLoan.json', srcOutput: 'LoanV301.abi.json' })
+  mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json', srcOutput: 'LoanV3.abi.json' })
+  mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json', srcOutput: 'PoolManager.abi.json' })
   overwriteEventParams({
     files: ['Pool', 'StakeLocker'],
     eventName: 'LossesRecognized',
