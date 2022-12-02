@@ -48,6 +48,25 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "delegateFee_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "treasuryFee_",
+        "type": "uint256"
+      }
+    ],
+    "name": "EstablishmentFeesSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "lender_",
@@ -115,6 +134,25 @@
         "internalType": "uint256",
         "name": "amount_",
         "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
+      }
+    ],
+    "name": "FundsRedirected",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
       }
     ],
     "name": "FundsReturned",
@@ -127,12 +165,6 @@
         "indexed": true,
         "internalType": "address",
         "name": "borrower_",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "feeManager_",
         "type": "address"
       },
       {
@@ -158,12 +190,6 @@
         "internalType": "uint256[4]",
         "name": "rates_",
         "type": "uint256[4]"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256[2]",
-        "name": "fees_",
-        "type": "uint256[2]"
       }
     ],
     "name": "Initialized",
@@ -200,24 +226,17 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "feesPaid_",
+        "name": "delegateFeePaid_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "treasuryFeePaid_",
         "type": "uint256"
       }
     ],
     "name": "LoanClosed",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "nextPaymentDueDate_",
-        "type": "uint256"
-      }
-    ],
-    "name": "LoanImpaired",
     "type": "event"
   },
   {
@@ -319,19 +338,6 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "nextPaymentDueDate_",
-        "type": "uint256"
-      }
-    ],
-    "name": "NextPaymentDueDateRestored",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
         "name": "principalPaid_",
         "type": "uint256"
       },
@@ -344,7 +350,13 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "fees_",
+        "name": "delegateFeePaid_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "treasuryFeePaid_",
         "type": "uint256"
       }
     ],
@@ -447,11 +459,6 @@
         "type": "address"
       },
       {
-        "internalType": "address",
-        "name": "feeManager_",
-        "type": "address"
-      },
-      {
         "internalType": "address[2]",
         "name": "assets_",
         "type": "address[2]"
@@ -470,11 +477,6 @@
         "internalType": "uint256[4]",
         "name": "rates_",
         "type": "uint256[4]"
-      },
-      {
-        "internalType": "uint256[2]",
-        "name": "fees_",
-        "type": "uint256[2]"
       }
     ],
     "stateMutability": "pure",
@@ -488,11 +490,6 @@
         "type": "address"
       },
       {
-        "internalType": "address",
-        "name": "feeManager_",
-        "type": "address"
-      },
-      {
         "internalType": "address[2]",
         "name": "assets_",
         "type": "address[2]"
@@ -511,11 +508,6 @@
         "internalType": "uint256[4]",
         "name": "rates_",
         "type": "uint256[4]"
-      },
-      {
-        "internalType": "uint256[2]",
-        "name": "fees_",
-        "type": "uint256[2]"
       }
     ],
     "name": "encodeArguments",

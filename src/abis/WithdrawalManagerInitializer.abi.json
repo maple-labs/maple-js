@@ -40,6 +40,31 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "pool_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "cycleDuration_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "windowDuration_",
+        "type": "uint256"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "account_",
@@ -141,6 +166,64 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "encodedArguments_",
+        "type": "bytes"
+      }
+    ],
+    "name": "decodeArguments",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "pool_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "cycleDuration_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "windowDuration_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "pool_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "cycleDuration_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "windowDuration_",
+        "type": "uint256"
+      }
+    ],
+    "name": "encodeArguments",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "encodedArguments_",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {
