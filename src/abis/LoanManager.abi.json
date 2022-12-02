@@ -74,6 +74,19 @@
       {
         "indexed": true,
         "internalType": "address",
+        "name": "loanTransferAdmin_",
+        "type": "address"
+      }
+    ],
+    "name": "LoanTransferAdminSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "loan_",
         "type": "address"
       },
@@ -619,6 +632,19 @@
   },
   {
     "inputs": [],
+    "name": "loanTransferAdmin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "mapleTreasury",
     "outputs": [
       {
@@ -866,6 +892,19 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "newLoanTransferAdmin_",
+        "type": "address"
+      }
+    ],
+    "name": "setLoanTransferAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "collateralAsset_",
         "type": "address"
       },
@@ -876,6 +915,24 @@
       }
     ],
     "name": "setMinRatio",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "loans_",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "newLenders_",
+        "type": "address[]"
+      }
+    ],
+    "name": "setOwnershipTo",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -907,6 +964,19 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "loans_",
+        "type": "address[]"
+      }
+    ],
+    "name": "takeOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {

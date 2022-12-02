@@ -5,11 +5,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "closingRate_",
+        "name": "collateralRequired_",
         "type": "uint256"
       }
     ],
-    "name": "ClosingRateSet",
+    "name": "CollateralRequiredSet",
     "type": "event"
   },
   {
@@ -18,11 +18,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "collateralRequired_",
+        "name": "earlyFeeRate_",
         "type": "uint256"
       }
     ],
-    "name": "CollateralRequiredSet",
+    "name": "EarlyFeeRateSet",
     "type": "event"
   },
   {
@@ -146,11 +146,11 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "closingRate_",
+        "name": "collateralRequired_",
         "type": "uint256"
       }
     ],
-    "name": "setClosingRate",
+    "name": "setCollateralRequired",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -159,11 +159,11 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "collateralRequired_",
+        "name": "earlyFeeRate_",
         "type": "uint256"
       }
     ],
-    "name": "setCollateralRequired",
+    "name": "setEarlyFeeRate",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -255,24 +255,6 @@
       }
     ],
     "name": "setPaymentsRemaining",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "delegateOriginationFee_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "delegateServiceFee_",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateDelegateFeeTerms",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
