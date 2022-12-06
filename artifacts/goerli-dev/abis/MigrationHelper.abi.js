@@ -118,6 +118,38 @@ module.exports = [
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "loans_",
+        "type": "address[]"
+      }
+    ],
+    "name": "RolledBackSetPendingLenders",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "loans_",
+        "type": "address[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "debtLockers_",
+        "type": "address[]"
+      }
+    ],
+    "name": "RolledBackTakeOwnershipOfLoans",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "poolV1_",
@@ -162,6 +194,11 @@ module.exports = [
     "inputs": [
       {
         "internalType": "address",
+        "name": "poolV1_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "transitionLoanManager_",
         "type": "address"
       },
@@ -169,9 +206,14 @@ module.exports = [
         "internalType": "address[]",
         "name": "loans_",
         "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "allowedDiff_",
+        "type": "uint256"
       }
     ],
-    "name": "addLoansToLM",
+    "name": "addLoansToLoanManager",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -210,6 +252,11 @@ module.exports = [
         "internalType": "address[]",
         "name": "lpsV2_",
         "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "allowedDiff_",
+        "type": "uint256"
       }
     ],
     "name": "airdropTokens",
@@ -260,6 +307,56 @@ module.exports = [
     "inputs": [
       {
         "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "previousLenderOf",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "loans_",
+        "type": "address[]"
+      }
+    ],
+    "name": "rollback_setPendingLenders",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "transitionLoanManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "loans_",
+        "type": "address[]"
+      }
+    ],
+    "name": "rollback_takeOwnershipOfLoans",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "globalsV2_",
         "type": "address"
       }
@@ -303,6 +400,11 @@ module.exports = [
         "internalType": "address[]",
         "name": "loans_",
         "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "allowedDiff_",
+        "type": "uint256"
       }
     ],
     "name": "setPendingLenders",
@@ -314,6 +416,11 @@ module.exports = [
     "inputs": [
       {
         "internalType": "address",
+        "name": "poolV1_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "transitionLoanManager_",
         "type": "address"
       },
@@ -321,6 +428,11 @@ module.exports = [
         "internalType": "address[]",
         "name": "loans_",
         "type": "address[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "allowedDiff_",
+        "type": "uint256"
       }
     ],
     "name": "takeOwnershipOfLoans",
