@@ -50,7 +50,7 @@ module.exports = [
         "type": "string"
       }
     ],
-    "name": "newAgg",
+    "name": "newOracle",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

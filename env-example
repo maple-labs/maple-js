@@ -1,0 +1,5 @@
+# goerli-dev | goerli | mainnet-dev | mainnet-prod | mainnet-stage | mainnet
+PROJECT=
+
+GOERLI_RPC_URL=
+MAINNET_RPC_URL=
