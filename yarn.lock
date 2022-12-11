@@ -936,10 +936,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/late-fee-calculator/-/late-fee-calculator-1.0.0.tgz#7001474936ae9821490a423737c08d8edafcd1a4"
   integrity sha512-dMLCRUirNOnmJgifbarltHlAZOgJ0qM39uutADqJqWsvbcOSx7jvqwoT/gfMFCPHaqhbc/rQquXVDX5C069mvw==
 
-"@maplelabs/liquidationsV2@npm:@maplelabs/liquidations@2.0.0-rc.3":
-  version "2.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/liquidations/-/liquidations-2.0.0-rc.3.tgz#16643636fa069c266f7ecb6fd047ffe2a8245611"
-  integrity sha512-gSkEQMPESPeO9R4KM/X7Nwx8uIFpuZg0z/3TJhCb4okpAJc+FhF479NKfhCC04ZNMD61VtCNAD5kOM1Onry4ug==
+"@maplelabs/liquidationsV2@npm:@maplelabs/liquidations@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/liquidations/-/liquidations-2.0.0.tgz#fa0c517a451ee93a370d6a11b5c2055589b876ae"
+  integrity sha512-MMSCKZ31lF4dl2QJhGnSkt+VBiparccSHIK7JU/u2YM5VKFnt+ZODLsbQczNO8s3nfNaaaIgY5fdx7ZyV5qOZg==
 
 "@maplelabs/liquidityLocker@npm:@maplelabs/liquidity-locker@1.0.0":
   version "1.0.0"
@@ -961,35 +961,35 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-3.0.1-rc.0.tgz#91332db3a38003332380a4a34819b357449659d7"
   integrity sha512-R2cy9lW1DC174nnH3NBr3LB9UJwscJO9xl89weO6s5vIZ3fin/j50Lu4hm91MTXFRt30MfUWiHYV22abMrhbYA==
 
-"@maplelabs/loanV302@npm:@maplelabs/loan@3.0.2-rc.3":
-  version "3.0.2-rc.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-3.0.2-rc.3.tgz#7e29e6401a027208ae963f8443c16f5d0298f606"
-  integrity sha512-nNMClS88IDUHGlJPWvRD4I0nKr6kRE9VqbZcbH6Ch0GZvI5DBLeKalmbCXD1XCkLbJZ5De0gVqbNrdRJ/42qVA==
+"@maplelabs/loanV302@npm:@maplelabs/loan@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-3.0.2.tgz#9ea74f6d55260b063bac0828141b69b495f0183d"
+  integrity sha512-5tspa0J0FH2/H/e6wqyFkOWsQNZrpS5ws/rwIutWZRPNhyf0ZMuYeFqr8IpSeqUgp2zX7rC8hPYLZel60pmnsA==
 
 "@maplelabs/loanV3@npm:@maplelabs/loan@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-3.0.0.tgz#bb0f3aca056d3198e164310f418c4fa0809efbe1"
   integrity sha512-bfcKvwZz/MhnzZtFCN8n5OAPOyHJQrOXdb9xIwYu5sNQ4HMNwZySz/F5BGfmNCrJZd+WiNK1oFi4gKzHlmy57w==
 
-"@maplelabs/loanV401@npm:@maplelabs/loan@4.0.1-rc.3":
-  version "4.0.1-rc.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-4.0.1-rc.3.tgz#6c9e268e5269fb7382f37bc2fca82c02256eb00d"
-  integrity sha512-/35DlvtXzJe7IdDCWa2NiiOOThRUIlg0M6eDeO8+mJsl5fuqMpj84VNnvK33MAxlbCNvtPG3Ro6TfviKa/mScA==
+"@maplelabs/loanV401@npm:@maplelabs/loan@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-4.0.1.tgz#f18893c6d456fa61f5a13737272ad7201af7bbf3"
+  integrity sha512-j6d/yI3MDIo/R2x90SIt3h2YVHgU+q/ibzxLcKg3uV3X9+PUKckfBblaD9+Br2ZdoSfSXPT0emJqA5t5nONxUg==
 
-"@maplelabs/loanV4@npm:@maplelabs/loan@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-4.0.0-rc.3.tgz#c902207d6457844247ecc2da75231591fd2dc182"
-  integrity sha512-Qlrg7vWqHb5jg0bRLsqZ6uys8RxR51gre5JMfQULAWEyw12F+xv9X0RRTkLzlaA0fL7PtZGtahzvNHGWWFAMcg==
+"@maplelabs/loanV4@npm:@maplelabs/loan@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/loan/-/loan-4.0.0.tgz#3a84090eecf7a01cd5a9715c0ba4c59800b597a4"
+  integrity sha512-emoirZxx0Yxq+Ds0LfRCdPBZKWQbhL0nEuXtaeZgk69vUFNh9rSUrnpqmS7B8v7D3zhKo7JNIPStEKn0enTqyw==
 
 "@maplelabs/mapleGlobals@npm:@maplelabs/globals@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@maplelabs/globals/-/globals-1.0.0.tgz#85fd3e667cdb5cd26e5882951e8a7cf7426645fe"
   integrity sha512-pNqeltNI03JD0PdvZinJKP9UE9Xu8jFRzVxXm3mHMmLFkJmsEgwh2J8Sr8+2HSKouS9eX9RiH6vCh+nUwo45ug==
 
-"@maplelabs/mapleGlobalsV2@npm:@maplelabs/globals-v2@1.0.0-rc.3.0":
-  version "1.0.0-rc.3.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/globals-v2/-/globals-v2-1.0.0-rc.3.0.tgz#2710b88109b5fa391a141f729b95429726deb5d3"
-  integrity sha512-hBbxUmXHwyOIo+zQWBBRxfwN0wHoJhEqaWGKZX3X+niaO2REFtIqJqaQQddUOyizFsAPea7kgvBuzEPBF4Mgyw==
+"@maplelabs/mapleGlobalsV2@npm:@maplelabs/globals-v2@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/globals-v2/-/globals-v2-1.0.0.tgz#31dc641c793d8652335633b7af05fb094e640189"
+  integrity sha512-14KXf/UadE/WbBqn4+8ngynCnAzJdmswXXcApUVxBdZQlYQdkyfxFrU1RnRFxm+2I4uHN2lTADg8xF/VjpKFag==
 
 "@maplelabs/mapleToken@npm:@maplelabs/maple-token@1.0.0 ":
   version "1.0.0"
@@ -1011,10 +1011,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/pool/-/pool-1.0.0.tgz#7b04e9aee854d941a60445adb2f5cd54ab78d434"
   integrity sha512-2X2Q+IfLgkGRO4aeEXeWnaTzEKW2bMAJW/140tnw+YG4thbZloyYRI2hrrplTzjFaWkB6MvZgAOhSiHfrie0nQ==
 
-"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0-rc.3":
-  version "1.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0-rc.3.tgz#0214fc5b898b5e463ee33559160cba318f424acb"
-  integrity sha512-ZV0M8QvqRsCUKrPrPtiCsOlJo/xbmjbLnlxmHMoFKTA+Yap6zAbLVeUeX3VSu/H8pw1m1+Q0zphyyl/wQt+ilQ==
+"@maplelabs/poolV2@npm:@maplelabs/pool-v2@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0.tgz#aea3c4f8fcc213728216bf158b34e6d5b525048e"
+  integrity sha512-cQBeaBqp7irEkxnmeftd8XtvK2tVhmitEZuOGZeh3FCIpFwlULUPF/fyU+mQLyqpq+xvBR4xJ5qAqwr07aRn4A==
 
 "@maplelabs/premiumCalculator@npm:@maplelabs/premium-calculator@1.0.0":
   version "1.0.0"
@@ -1036,10 +1036,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/util/-/util-1.0.0.tgz#7b75a0a6900155c42422b2c8af03337980954b44"
   integrity sha512-jfeGr3dlzk3zyuY13n/1a/sIHsi2y0tZXOW1HCBgZqCwr/tNxzf/ovs1msGH8M5NTwHaomtd6F48jOvsAItmKQ==
 
-"@maplelabs/withdrawalManager@npm:@maplelabs/withdrawal-manager@1.0.0-rc.3":
-  version "1.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0-rc.3.tgz#fbae1461f64e67c3e7fc332f1c17a7cf2d14444c"
-  integrity sha512-nkxq70EBMHot7fDAMQDPmSgQ5b35acHA9F7EJoLV8lpn2BjEEVh1syYlUHurgz236WoSioI3GeEeAcEaWBiovA==
+"@maplelabs/withdrawalManager@npm:@maplelabs/withdrawal-manager@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/withdrawal-manager/-/withdrawal-manager-1.0.0.tgz#df3b898b683e1aa340b450976c5cbcf21bd2102f"
+  integrity sha512-8KjqhOmbHfOONTDXxmPgaNFUnzf523wx01TVRJ7srZKR8GL+TiyXigf1UOLmr4K3crz4CJ96YRYXptRpEJNtQQ==
 
 "@maplelabs/xmpl@npm:@maplelabs/xmpl@1.0.1":
   version "1.0.1"
