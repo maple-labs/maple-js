@@ -1,6 +1,7 @@
 # Local
 .DS_Store
 .vscode
+yarn-error.log
 
 # Build
 node_modules
