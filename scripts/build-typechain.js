@@ -59,6 +59,22 @@ function overwriteEventParams({ files, eventName, inputs }) {
   }
 }
 
+function overwritePoolV2Event({ src, name, inputs }) {
+  console.log(`✏️ Overwriting event params for ${name} in ${src}`)
+  const filePath = path.join(pathDir, `poolV2/abis/${src}.json`)
+  const json = JSON.parse(readFileSync(filePath).toString())
+  const eventIndex = json.findIndex((el) => el.type === 'event' && el.name === name)
+  if (eventIndex > 0) json[eventIndex].inputs = inputs
+  else
+    json.push({
+      type: 'event',
+      inputs,
+      name,
+      anonymous: false
+    })
+  writeFileSync(filePath, JSON.stringify(json, null, 2))
+}
+
 async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
@@ -167,6 +183,30 @@ async function buildTypechain() {
         indexed: false,
         internalType: 'uint256',
         name: 'pointsPerShare',
+        type: 'uint256'
+      }
+    ]
+  })
+  overwritePoolV2Event({
+    src: 'PoolDelegateCover',
+    name: 'Transfer',
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'from',
+        type: 'address'
+      },
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'to',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'value',
         type: 'uint256'
       }
     ]
