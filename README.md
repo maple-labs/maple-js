@@ -18,9 +18,9 @@ yarn add @maplelabs/maple-js
 
 ### Addresses
 
-- maple-js provides you with smart contract addresses across the following networks: `Ethereum Mainnet`, `Rinkeby` & `Goerli`
+- maple-js provides you with smart contract addresses across the following networks: `Ethereum Mainnet` & `Goerli`
   - Valid network values are: `'mainnet' | 'goerli'`;
-  - Valid project values are `'mainnet' | 'mainnet-stage' | 'goerli' | 'goerli-dev'`
+  - Valid project values are `'mainnet' | 'mainnet-dev' | 'goerli' | 'goerli-dev'`
 - You can access addresses from the `addresses` object exported from maple-js:
 - You can see a list of available contracts in `src/addresses/*.ts`
 
