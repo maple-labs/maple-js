@@ -18,6 +18,11 @@ module.exports = [
       },
       {
         "internalType": "uint256",
+        "name": "bootstrapMint_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
         "name": "initialSupply_",
         "type": "uint256"
       },
@@ -58,6 +63,43 @@ module.exports = [
       }
     ],
     "name": "Approval",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "caller_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "receiver_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "assets_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "shares_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "bootStrapMintAmount_",
+        "type": "uint256"
+      }
+    ],
+    "name": "BootstrapMintPerformed",
     "type": "event"
   },
   {
@@ -262,6 +304,19 @@ module.exports = [
   },
   {
     "inputs": [],
+    "name": "BOOTSTRAP_MINT",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "DOMAIN_SEPARATOR",
     "outputs": [
       {
@@ -394,6 +449,25 @@ module.exports = [
       }
     ],
     "name": "convertToAssets",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "assets_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "shares_",
+        "type": "uint256"
+      }
+    ],
+    "name": "convertToExitAssets",
     "outputs": [
       {
         "internalType": "uint256",

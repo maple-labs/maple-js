@@ -884,25 +884,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "loanManagers",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
         "name": "receiver_",
         "type": "address"
       }
@@ -1117,9 +1098,48 @@
         "internalType": "address",
         "name": "owner_",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender_",
+        "type": "address"
       }
     ],
     "name": "processRedeem",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "redeemableShares_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "resultingAssets_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "assets_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender_",
+        "type": "address"
+      }
+    ],
+    "name": "processWithdraw",
     "outputs": [
       {
         "internalType": "uint256",
@@ -1196,9 +1216,42 @@
         "internalType": "address",
         "name": "owner_",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender_",
+        "type": "address"
       }
     ],
     "name": "requestRedeem",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "shares_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "assets_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender_",
+        "type": "address"
+      }
+    ],
+    "name": "requestWithdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
