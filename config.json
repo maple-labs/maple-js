@@ -12,6 +12,10 @@
       "repo": "@maplelabs/environment-mocks",
       "alias": ["environmentMocks"]
     },
+    "fixedTermLoanManager": {
+      "repo": "@maplelabs/fixed-term-loan-manager",
+      "alias": ["fixedTermLoanManager"]
+    },
     "fundingLocker": {
       "repo": "@maplelabs/funding-locker",
       "alias": ["fundingLocker"]
@@ -51,6 +55,14 @@
     "mplRewards": {
       "repo": "@maplelabs/mpl-rewards",
       "alias": ["mplRewards"]
+    },
+    "openTermLoan": {
+      "repo": "@maplelabs/open-term-loan",
+      "alias": ["openTermLoan"]
+    },
+    "openTermLoanManager": {
+      "repo": "@maplelabs/open-term-loan-manager",
+      "alias": ["openTermLoanManager"]
     },
     "pool": {
       "repo": "@maplelabs/pool",

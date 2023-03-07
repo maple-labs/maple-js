@@ -25,6 +25,9 @@ import * as poolV2Imports from './typechain/poolV2'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
+import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
+import * as openTermLoanImports from './typechain/openTermLoan'
+import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
 
 // Addresses
 import goerliAddresses from './addresses/goerli'
@@ -175,6 +178,24 @@ const withdrawalManager = {
   storage: withdrawalManagerImports.WithdrawalManagerStorage__factory
 }
 
+const openTermLoan = {
+  core: openTermLoanImports.MapleLoan__factory,
+  factory: openTermLoanImports.MapleLoanFactory__factory,
+  initializer: openTermLoanImports.MapleLoanInitializer__factory
+}
+
+const openTermLoanManager = {
+  core: openTermLoanManagerImports.LoanManager__factory,
+  factory: openTermLoanManagerImports.LoanManagerFactory__factory,
+  initializer: openTermLoanManagerImports.LoanManagerInitializer__factory
+}
+
+const fixedTermLoanManager = {
+  core: fixedTermLoanManagerImports.LoanManager__factory,
+  factory: fixedTermLoanManagerImports.LoanManagerFactory__factory,
+  initializer: fixedTermLoanManagerImports.LoanManagerInitializer__factory
+}
+
 const bPool = {
   core: environmentMocksImports.BPool__factory,
   factory: environmentMocksImports.BFactory__factory
@@ -237,6 +258,11 @@ interface ContractTypes {
   loanV4FeeManager: loanV4Imports.MapleLoanFeeManager
   loanV4Refinancer: loanV4Imports.Refinancer
 
+  // openTermLoan
+  openTermLoan: openTermLoanImports.MapleLoan
+  openTermLoanFactory: openTermLoanImports.MapleLoanFactory
+  openTermLoanInitializer: openTermLoanImports.MapleLoanInitializer
+
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals
   mapleRewards: mapleRewardsImports.MplRewards
@@ -258,6 +284,12 @@ interface ContractTypes {
   loanManager: poolV2Imports.LoanManager
   loanManagerfactory: poolV2Imports.LoanManagerFactory
   loanManagerInitializer: poolV2Imports.LoanManagerInitializer
+  // PoolV2:openTermLoanManager
+  openTermLoanManager: openTermLoanManagerImports.LoanManager
+  openTermLoanManagerFactory: openTermLoanManagerImports.LoanManagerFactory
+  openTermLoanManagerInitializer: openTermLoanManagerImports.LoanManagerInitializer
+  // PoolV2:fixedTermLoanManager
+  fixedTermLoanManager: fixedTermLoanManagerImports.LoanManager
   // withdrawalManager
   withdrawalManager: withdrawalManagerImports.WithdrawalManager
   withdrawalManagerFactory: withdrawalManagerImports.WithdrawalManagerFactory
@@ -283,6 +315,7 @@ export {
   loanV3,
   loanV301,
   loanV4,
+  openTermLoan,
   mapleGlobals,
   mapleGlobalsV2,
   mapleRewards,
@@ -296,6 +329,8 @@ export {
   poolV2,
   poolManager,
   loanManager,
+  openTermLoanManager,
+  fixedTermLoanManager,
   withdrawalManager,
   bPool,
   chainlink,
