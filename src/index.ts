@@ -290,6 +290,8 @@ interface ContractTypes {
   openTermLoanManagerInitializer: openTermLoanManagerImports.LoanManagerInitializer
   // PoolV2:fixedTermLoanManager
   fixedTermLoanManager: fixedTermLoanManagerImports.LoanManager
+  fixedTermLoanManagerFactory: fixedTermLoanManagerImports.LoanManagerFactory
+  fixedTermLoanManagerInitializer: fixedTermLoanManagerImports.LoanManagerInitializer
   // withdrawalManager
   withdrawalManager: withdrawalManagerImports.WithdrawalManager
   withdrawalManagerFactory: withdrawalManagerImports.WithdrawalManagerFactory
