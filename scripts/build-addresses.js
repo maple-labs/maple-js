@@ -36,6 +36,8 @@ const build = () => {
     DebtLockerV4Migrator: getAddress('DebtLockerV4Migrator'),
     FeeManager: getAddress('FeeManager'),
     FixedTermLoanManager: getAddress('FixedTermLoanManager'),
+    FixedTermLoanManagerFactory: getAddress('FixedTermLoanManagerFactory'),
+    FixedTermLoanManagerInitializer: getAddress('FixedTermLoanManagerInitializer'),
     FundingLockerFactory: getAddress('FundingLockerFactory'),
     LINK: getAddress('LINK'),
     LateFeeCalc: getAddress('LateFeeCalc'),
