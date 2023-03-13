@@ -70,7 +70,7 @@
     },
     "pool": {
       "repo": "@maplelabs/pool-v2",
-      "alias": ["pool"]
+      "alias": ["pool", "poolV2"]
     },
     "premiumCalculator": {
       "repo": "@maplelabs/premium-calculator",

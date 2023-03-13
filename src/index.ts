@@ -22,6 +22,7 @@ import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as poolImports from './typechain/pool'
+import * as poolV2Imports from './typechain/poolV2'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
@@ -267,14 +268,20 @@ interface ContractTypes {
   poolV1Factory: poolV1Imports.PoolFactory
   stakeLocker: stakeLockerImports.StakeLocker
   stakeLockerFactory: stakeLockerImports.StakeLockerFactory
-  // PoolV2:poolV2
+  // Pool
   pool: poolImports.Pool
   poolDeployer: poolImports.PoolDeployer
-  // PoolV2:poolManager
+  // Pool:poolManager
   poolManager: poolImports.PoolManager
   poolManagerFactory: poolImports.PoolManagerFactory
   poolManagerInitializer: poolImports.PoolManagerInitializer
-
+  // Pool
+  poolV2: poolV2Imports.Pool
+  poolV2Deployer: poolV2Imports.PoolDeployer
+  // Pool:poolManager
+  poolManagerV2: poolV2Imports.PoolManager
+  poolManagerV2Factory: poolV2Imports.PoolManagerFactory
+  poolManagerV2Initializer: poolV2Imports.PoolManagerInitializer
   // PoolV2:openTermLoanManager
   openTermLoanManager: openTermLoanManagerImports.LoanManager
   openTermLoanManagerFactory: openTermLoanManagerImports.LoanManagerFactory
