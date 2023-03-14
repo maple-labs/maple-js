@@ -17,10 +17,11 @@ import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as xmplImports from './typechain/xmpl'
-import * as poolImports from './typechain/pool'
+import * as poolV1Imports from './typechain/poolV1'
 import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
+import * as poolImports from './typechain/pool'
 import * as poolV2Imports from './typechain/poolV2'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as environmentMocksImports from './typechain/environmentMocks'
@@ -134,10 +135,10 @@ const xmpl = {
   factory: xmplImports.XMPL__factory
 }
 
-const pool = {
-  core: poolImports.Pool__factory,
-  factory: poolImports.PoolFactory__factory,
-  lib: poolImports.PoolLib__factory
+const poolV1 = {
+  core: poolV1Imports.Pool__factory,
+  factory: poolV1Imports.PoolFactory__factory,
+  lib: poolV1Imports.PoolLib__factory
 }
 
 const premiumCalc = {
@@ -153,16 +154,20 @@ const stakeLocker = {
   factory: stakeLockerImports.StakeLockerFactory__factory
 }
 
-const poolV2 = {
-  core: poolV2Imports.Pool__factory,
-  delegateCover: poolV2Imports.PoolDelegateCover__factory,
-  deployer: poolV2Imports.PoolDeployer__factory
+const pool = {
+  core: poolImports.Pool__factory,
+  delegateCover: poolImports.PoolDelegateCover__factory,
+  deployer: poolImports.PoolDeployer__factory
 }
 
 const poolManager = {
-  core: poolV2Imports.PoolManager__factory,
-  factory: poolV2Imports.PoolManagerFactory__factory,
-  initializer: poolV2Imports.PoolManagerInitializer__factory
+  core: poolImports.PoolManager__factory,
+  factory: poolImports.PoolManagerFactory__factory,
+  initializer: poolImports.PoolManagerInitializer__factory
+}
+
+const poolManagerV2 = {
+  core: poolV2Imports.PoolManager__factory
 }
 
 const withdrawalManager = {
@@ -263,18 +268,19 @@ interface ContractTypes {
   mapleRewardsFactory: mapleRewardsImports.MplRewardsFactory
   mapleToken: mapleTokenImports.MapleToken
   xmpl: xmplImports.XMPL
-  pool: poolImports.Pool
-  poolFactory: poolImports.PoolFactory
+  poolV1: poolV1Imports.Pool
+  poolV1Factory: poolV1Imports.PoolFactory
   stakeLocker: stakeLockerImports.StakeLocker
   stakeLockerFactory: stakeLockerImports.StakeLockerFactory
-  // PoolV2:poolV2
-  poolV2: poolV2Imports.Pool
-  poolDeployer: poolV2Imports.PoolDeployer
+  // Pool
+  pool: poolImports.Pool
+  poolDeployer: poolImports.PoolDeployer
+  // Pool:poolManager
+  poolManager: poolImports.PoolManager
+  poolManagerFactory: poolImports.PoolManagerFactory
+  poolManagerInitializer: poolImports.PoolManagerInitializer
   // PoolV2:poolManager
-  poolManager: poolV2Imports.PoolManager
-  poolManagerFactory: poolV2Imports.PoolManagerFactory
-  poolManagerInitializer: poolV2Imports.PoolManagerInitializer
-
+  poolManagerV2: poolV2Imports.PoolManager
   // PoolV2:openTermLoanManager
   openTermLoanManager: openTermLoanManagerImports.LoanManager
   openTermLoanManagerFactory: openTermLoanManagerImports.LoanManagerFactory
@@ -315,12 +321,13 @@ export {
   mapleToken,
   migrationHelpers,
   xmpl,
-  pool,
+  poolV1,
   premiumCalc,
   repaymentCalculator,
   stakeLocker,
-  poolV2,
+  pool,
   poolManager,
+  poolManagerV2,
   openTermLoanManager,
   fixedTermLoanManager,
   withdrawalManager,

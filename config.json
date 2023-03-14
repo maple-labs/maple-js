@@ -64,13 +64,13 @@
       "repo": "@maplelabs/open-term-loan-manager",
       "alias": ["openTermLoanManager"]
     },
-    "pool": {
+    "poolV1": {
       "repo": "@maplelabs/pool",
-      "alias": ["pool"]
+      "alias": ["poolV1"]
     },
-    "poolV2": {
+    "pool": {
       "repo": "@maplelabs/pool-v2",
-      "alias": ["poolV2"]
+      "alias": ["pool", "poolV2"]
     },
     "premiumCalculator": {
       "repo": "@maplelabs/premium-calculator",

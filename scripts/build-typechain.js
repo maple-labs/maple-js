@@ -48,10 +48,10 @@ function mergeEvents({ src, dst }) {
   writeFileSync(path.join(pathDir, `${dst}`), JSON.stringify(dstJson, null, 2))
 }
 
-function overwriteEventParams({ files, eventName, inputs }) {
+function overwriteEventParams({ alias, files, eventName, inputs }) {
   for (const src of files) {
     console.log(`✏️ Overwriting event params for ${eventName} in ${src}`)
-    const filePath = path.join(pathDir, `${src.toLowerCase()}/abis/${src}.json`)
+    const filePath = path.join(pathDir, `${alias}/abis/${src}.json`)
     const json = JSON.parse(readFileSync(filePath).toString())
     const eventIndex = json.findIndex((el) => el.type === 'event' && el.name === eventName)
     json[eventIndex].inputs = inputs
@@ -68,9 +68,11 @@ async function buildTypechain() {
   mergeEvents({ src: 'loanV302/abis/Refinancer.json', dst: 'loanV302/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV301/abis/Refinancer.json', dst: 'loanV301/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
+  mergeEvents({ src: 'pool/abis/PoolManagerInitializer.json', dst: 'pool/abis/PoolManager.json' })
   mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json' })
   overwriteEventParams({
-    files: ['Pool', 'StakeLocker'],
+    alias: 'poolV1',
+    files: ['Pool'],
     eventName: 'LossesRecognized',
     inputs: [
       {
@@ -94,6 +96,32 @@ async function buildTypechain() {
     ]
   })
   overwriteEventParams({
+    alias: 'stakeLocker',
+    files: ['StakeLocker'],
+    eventName: 'LossesRecognized',
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'by',
+        type: 'address'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'lossesRecognized',
+        type: 'uint256'
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'totalLossesRecognized',
+        type: 'uint256'
+      }
+    ]
+  })
+  overwriteEventParams({
+    alias: 'poolV1',
     files: ['Pool'],
     eventName: 'LossesCorrectionUpdated',
     inputs: [
@@ -112,6 +140,7 @@ async function buildTypechain() {
     ]
   })
   overwriteEventParams({
+    alias: 'poolV1',
     files: ['Pool'],
     eventName: 'LossesDistributed',
     inputs: [
@@ -130,6 +159,7 @@ async function buildTypechain() {
     ]
   })
   overwriteEventParams({
+    alias: 'poolV1',
     files: ['Pool'],
     eventName: 'LossesPerShareUpdated',
     inputs: [
@@ -142,6 +172,7 @@ async function buildTypechain() {
     ]
   })
   overwriteEventParams({
+    alias: 'poolV1',
     files: ['Pool'],
     eventName: 'PointsCorrectionUpdated',
     inputs: [
@@ -160,6 +191,7 @@ async function buildTypechain() {
     ]
   })
   overwriteEventParams({
+    alias: 'poolV1',
     files: ['Pool'],
     eventName: 'PointsPerShareUpdated',
     inputs: [

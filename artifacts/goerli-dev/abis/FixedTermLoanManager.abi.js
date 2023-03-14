@@ -445,11 +445,6 @@ module.exports = [
         "internalType": "address",
         "name": "loan_",
         "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "principal_",
-        "type": "uint256"
       }
     ],
     "name": "fund",

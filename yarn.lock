@@ -926,10 +926,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/environment-mocks/-/environment-mocks-2.0.0-beta.0.tgz#2b64b869b7f5f79228af58b919e274bfe257d5ef"
   integrity sha512-IJ+mw9l9zDm2OyFnQvZNCH/MvZxyqv4JtsGhXXDsMUgFXoJJu/pXEpXIygMDug2B8I9gaOOykXZCR77Uai7Q7A==
 
-"@maplelabs/fixedTermLoanManager@npm:@maplelabs/fixed-term-loan-manager@3.0.0-alpha.0":
-  version "3.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/fixed-term-loan-manager/-/fixed-term-loan-manager-3.0.0-alpha.0.tgz#909546e355e48a9ccd05b90d71521ae6197ca7a8"
-  integrity sha512-yE3IOX1QW4BOdhlTkm8KIpGGJEFg+eZA7XWRieCbDJUg/098M/gImKWStX/1WZ/WVDEdS26M7SIsIZa9xIRoXg==
+"@maplelabs/fixedTermLoanManager@npm:@maplelabs/fixed-term-loan-manager@3.0.0-alpha.1":
+  version "3.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/fixed-term-loan-manager/-/fixed-term-loan-manager-3.0.0-alpha.1.tgz#7625fee72a78db080c9e9c0b3b28726ecd672b3c"
+  integrity sha512-J4u972aOHKrn3j0LbIsz8OPbPdMx3ejPDSrX66b2Tf09gfsasKQ27NupqJD88n1U7PYeKrPjIVpKA36a7HxHpw==
 
 "@maplelabs/fundingLocker@npm:@maplelabs/funding-locker@1.0.0":
   version "1.0.0"
@@ -1011,24 +1011,29 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/mpl-rewards/-/mpl-rewards-1.0.0.tgz#7915e10bd59bd80374784f0f8772817ca87e45ad"
   integrity sha512-QQyPyUVNg0ZCfG/sU72CplMC1Us0N3bPYPspZJctsSdSPYgG/Mblbtbof77aGlZoddmHTFnxuWN+5RY+T7b2Rg==
 
-"@maplelabs/openTermLoan@npm:@maplelabs/open-term-loan@1.0.0-alpha.0":
-  version "1.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/open-term-loan/-/open-term-loan-1.0.0-alpha.0.tgz#d176678bbe674cd8e7cb7c56cd6643d1068c01d4"
-  integrity sha512-7mxhu4qk+9gMMf/RZUaKlhALpv28GQLg72QLetroLp/M1PrMHXnj9Lk5j0w+mXOMJcTdTx+JXgMwHrqRMCFj4w==
+"@maplelabs/openTermLoan@npm:@maplelabs/open-term-loan@1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/open-term-loan/-/open-term-loan-1.0.0-alpha.1.tgz#8c54e646a890003c685d866648c38d716607816d"
+  integrity sha512-VVqxwzO1OVCYRK4APDt3SzGQTht2rFEm/tdZ8TMigmFfncqyXgsc0g5pgOcCBhRs0QE4SLRHjHBUCvsyJ7avvw==
 
-"@maplelabs/openTermLoanManager@npm:@maplelabs/open-term-loan-manager@1.0.0-alpha.0":
-  version "1.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/open-term-loan-manager/-/open-term-loan-manager-1.0.0-alpha.0.tgz#b9a6ceea278d46b710afc1c9f3e5d0349307f373"
-  integrity sha512-5N5Dth3tJ4xK217T1z8KPHx8A287KrogEStX1QW0NcEsQZjWantrpsLtKBnObV6XVKAAy2TTh/cmmtiXob7l8Q==
+"@maplelabs/openTermLoanManager@npm:@maplelabs/open-term-loan-manager@1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@maplelabs/open-term-loan-manager/-/open-term-loan-manager-1.0.0-alpha.1.tgz#39e0a9a023c7ad17a9c7039261552330e9847386"
+  integrity sha512-Nbb5CSWI9IsDj9CJIUAYnrV9lOzXMYvJ4WyDIkSoAs5/Kcm1HI29YrzP9t6Q0APBiFMhMUl+njSUWFY7gYUxwQ==
 
-"@maplelabs/pool@npm:@maplelabs/pool@1.0.0":
+"@maplelabs/pool@npm:@maplelabs/pool-v2@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-1.0.0.tgz#aea3c4f8fcc213728216bf158b34e6d5b525048e"
+  integrity sha512-cQBeaBqp7irEkxnmeftd8XtvK2tVhmitEZuOGZeh3FCIpFwlULUPF/fyU+mQLyqpq+xvBR4xJ5qAqwr07aRn4A==
+
+"@maplelabs/poolV1@npm:@maplelabs/pool@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@maplelabs/pool/-/pool-1.0.0.tgz#7b04e9aee854d941a60445adb2f5cd54ab78d434"
   integrity sha512-2X2Q+IfLgkGRO4aeEXeWnaTzEKW2bMAJW/140tnw+YG4thbZloyYRI2hrrplTzjFaWkB6MvZgAOhSiHfrie0nQ==
 
 "@maplelabs/poolV2@npm:@maplelabs/pool-v2@2.0.0-alpha.0":
   version "2.0.0-alpha.0"
-  resolved "https://registry.npmjs.org/@maplelabs/pool-v2/-/pool-v2-2.0.0-alpha.0.tgz#8c3502a49e8b84a9091898a122c575a7d4d90255"
+  resolved "https://registry.yarnpkg.com/@maplelabs/pool-v2/-/pool-v2-2.0.0-alpha.0.tgz#8c3502a49e8b84a9091898a122c575a7d4d90255"
   integrity sha512-FkPoDaBpLvS45+nUER01nmccwwpQOsV8+gA+iJPGOkhGEuh1UKm6drIf/UnF1y/Z9a/1OZ7xf/XQYcacayod4A==
 
 "@maplelabs/premiumCalculator@npm:@maplelabs/premium-calculator@1.0.0":

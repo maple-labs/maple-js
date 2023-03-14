@@ -3,6 +3,25 @@ module.exports = [
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "issuanceRate_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint112",
+        "name": "accountedInterest_",
+        "type": "uint112"
+      }
+    ],
+    "name": "AccountingStateUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "loan_",
@@ -22,31 +41,6 @@ module.exports = [
       }
     ],
     "name": "FundsDistributed",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint48",
-        "name": "domainEnd_",
-        "type": "uint48"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "issuanceRate_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint112",
-        "name": "accountedInterest_",
-        "type": "uint112"
-      }
-    ],
-    "name": "IssuanceParamsUpdated",
     "type": "event"
   },
   {
@@ -84,12 +78,6 @@ module.exports = [
         "type": "address"
       },
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "paymentId_",
-        "type": "uint256"
-      },
-      {
         "indexed": false,
         "internalType": "uint256",
         "name": "platformManagementFeeRate_",
@@ -104,25 +92,13 @@ module.exports = [
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "startDate_",
+        "name": "paymentDueDate_",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "nextPaymentDueDate_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "accountedInterest_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "newRate_",
+        "name": "issuanceRate_",
         "type": "uint256"
       }
     ],
@@ -137,12 +113,6 @@ module.exports = [
         "internalType": "address",
         "name": "loan_",
         "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "paymentId_",
-        "type": "uint256"
       }
     ],
     "name": "PaymentRemoved",
@@ -166,9 +136,9 @@ module.exports = [
     "inputs": [
       {
         "indexed": false,
-        "internalType": "uint256",
+        "internalType": "uint128",
         "name": "unrealizedLosses_",
-        "type": "uint256"
+        "type": "uint128"
       }
     ],
     "name": "UnrealizedLossesUpdated",
@@ -234,6 +204,19 @@ module.exports = [
   },
   {
     "inputs": [],
+    "name": "accruedInterest",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "accruedInterest_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "assetsUnderManagement",
     "outputs": [
       {
@@ -266,9 +249,9 @@ module.exports = [
   {
     "inputs": [
       {
-        "internalType": "uint256",
+        "internalType": "int256",
         "name": "principal_",
-        "type": "uint256"
+        "type": "int256"
       },
       {
         "internalType": "uint256",
@@ -298,25 +281,12 @@ module.exports = [
   },
   {
     "inputs": [],
-    "name": "domainEnd",
-    "outputs": [
-      {
-        "internalType": "uint48",
-        "name": "",
-        "type": "uint48"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "domainStart",
     "outputs": [
       {
-        "internalType": "uint48",
+        "internalType": "uint40",
         "name": "",
-        "type": "uint48"
+        "type": "uint40"
       }
     ],
     "stateMutability": "view",
@@ -341,11 +311,6 @@ module.exports = [
         "internalType": "address",
         "name": "loan_",
         "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "principal_",
-        "type": "uint256"
       }
     ],
     "name": "fund",
@@ -361,19 +326,6 @@ module.exports = [
         "internalType": "address",
         "name": "",
         "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getAccruedInterest",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "accruedInterest_",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -419,6 +371,30 @@ module.exports = [
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "impairmentFor",
+    "outputs": [
+      {
+        "internalType": "uint40",
+        "name": "impairedDate",
+        "type": "uint40"
+      },
+      {
+        "internalType": "bool",
+        "name": "impairedByGovernor",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "implementation",
     "outputs": [
@@ -439,45 +415,6 @@ module.exports = [
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "liquidationInfo",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "triggeredByGovernor",
-        "type": "bool"
-      },
-      {
-        "internalType": "uint128",
-        "name": "principal",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint120",
-        "name": "interest",
-        "type": "uint120"
-      },
-      {
-        "internalType": "uint256",
-        "name": "lateInterest",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint96",
-        "name": "platformFees",
-        "type": "uint96"
       }
     ],
     "stateMutability": "view",
@@ -515,19 +452,6 @@ module.exports = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "paymentCounter",
-    "outputs": [
-      {
-        "internalType": "uint24",
-        "name": "",
-        "type": "uint24"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -535,39 +459,7 @@ module.exports = [
         "type": "address"
       }
     ],
-    "name": "paymentIdOf",
-    "outputs": [
-      {
-        "internalType": "uint24",
-        "name": "",
-        "type": "uint24"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "paymentWithEarliestDueDate",
-    "outputs": [
-      {
-        "internalType": "uint24",
-        "name": "",
-        "type": "uint24"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "payments",
+    "name": "paymentFor",
     "outputs": [
       {
         "internalType": "uint24",
@@ -580,29 +472,14 @@ module.exports = [
         "type": "uint24"
       },
       {
-        "internalType": "uint48",
+        "internalType": "uint40",
         "name": "startDate",
-        "type": "uint48"
+        "type": "uint40"
       },
       {
-        "internalType": "uint48",
-        "name": "paymentDueDate",
-        "type": "uint48"
-      },
-      {
-        "internalType": "uint128",
-        "name": "incomingNetInterest",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint128",
-        "name": "accountedInterest",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint256",
+        "internalType": "uint168",
         "name": "issuanceRate",
-        "type": "uint256"
+        "type": "uint168"
       }
     ],
     "stateMutability": "view",
@@ -614,7 +491,7 @@ module.exports = [
     "outputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "pool_",
         "type": "address"
       }
     ],
@@ -666,6 +543,34 @@ module.exports = [
         "internalType": "address",
         "name": "loan_",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
+      }
+    ],
+    "name": "proposeNewTerms",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
       }
     ],
     "name": "removeCall",
@@ -702,30 +607,35 @@ module.exports = [
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "liquidatorFactory_",
+        "type": "address"
+      }
+    ],
+    "name": "triggerDefault",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "liquidationComplete_",
+        "type": "bool"
+      },
+      {
         "internalType": "uint256",
-        "name": "",
+        "name": "remainingLosses_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "platformFees_",
         "type": "uint256"
       }
     ],
-    "name": "sortedPayments",
-    "outputs": [
-      {
-        "internalType": "uint24",
-        "name": "previous",
-        "type": "uint24"
-      },
-      {
-        "internalType": "uint24",
-        "name": "next",
-        "type": "uint24"
-      },
-      {
-        "internalType": "uint48",
-        "name": "paymentDueDate",
-        "type": "uint48"
-      }
-    ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -763,13 +673,6 @@ module.exports = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "updateAccounting",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
