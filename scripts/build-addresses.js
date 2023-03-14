@@ -88,8 +88,6 @@ const build = () => {
     PoolManagerInitializer: getAddress('PoolManagerInitializer'),
     PoolDeployerV2: getAddress('PoolDeployerV2'),
     PoolManagerV2: getAddress('PoolManagerV2'),
-    PoolManagerV2Factory: getAddress('PoolManagerV2Factory'),
-    PoolManagerV2Initializer: getAddress('PoolManagerV2Initializer'),
     PremiumCalc: getAddress('PremiumCalc'),
     PriceOracleAAVE: getAddress('PriceOracleAAVE'),
     PriceOracleLINK: getAddress('PriceOracleLINK'),

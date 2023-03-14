@@ -160,12 +160,6 @@ const pool = {
   deployer: poolImports.PoolDeployer__factory
 }
 
-const poolV2 = {
-  core: poolV2Imports.Pool__factory,
-  delegateCover: poolV2Imports.PoolDelegateCover__factory,
-  deployer: poolV2Imports.PoolDeployer__factory
-}
-
 const poolManager = {
   core: poolImports.PoolManager__factory,
   factory: poolImports.PoolManagerFactory__factory,
@@ -173,9 +167,7 @@ const poolManager = {
 }
 
 const poolManagerV2 = {
-  core: poolV2Imports.PoolManager__factory,
-  factory: poolV2Imports.PoolManagerFactory__factory,
-  initializer: poolV2Imports.PoolManagerInitializer__factory
+  core: poolV2Imports.PoolManager__factory
 }
 
 const withdrawalManager = {
@@ -287,13 +279,8 @@ interface ContractTypes {
   poolManager: poolImports.PoolManager
   poolManagerFactory: poolImports.PoolManagerFactory
   poolManagerInitializer: poolImports.PoolManagerInitializer
-  // Pool
-  poolV2: poolV2Imports.Pool
-  poolV2Deployer: poolV2Imports.PoolDeployer
-  // Pool:poolManager
+  // PoolV2:poolManager
   poolManagerV2: poolV2Imports.PoolManager
-  poolManagerV2Factory: poolV2Imports.PoolManagerFactory
-  poolManagerV2Initializer: poolV2Imports.PoolManagerInitializer
   // PoolV2:openTermLoanManager
   openTermLoanManager: openTermLoanManagerImports.LoanManager
   openTermLoanManagerFactory: openTermLoanManagerImports.LoanManagerFactory
@@ -339,7 +326,6 @@ export {
   repaymentCalculator,
   stakeLocker,
   pool,
-  poolV2,
   poolManager,
   poolManagerV2,
   openTermLoanManager,
