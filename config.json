@@ -34,7 +34,7 @@
     },
     "loan": {
       "repo": "@maplelabs/loan",
-      "alias": ["loanV1", "loanV2", "loanV3", "loanV301", "loanV302", "loanV4", "loanV401"]
+      "alias": ["loanV1", "loanV2", "loanV3", "loanV301", "loanV302", "loanV4", "loanV401", "loanV5"]
     },
     "mapleGlobals": {
       "repo": "@maplelabs/globals",

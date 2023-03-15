@@ -63,6 +63,7 @@ async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
   // These manual changes patch the npm packages in node-modules which need to be copied over into the abis directory
+  mergeEvents({ src: 'loanV5/abis/Refinancer.json', dst: 'loanV5/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV401/abis/Refinancer.json', dst: 'loanV401/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV302/abis/Refinancer.json', dst: 'loanV302/abis/MapleLoan.json' })

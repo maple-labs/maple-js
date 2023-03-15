@@ -69,6 +69,7 @@
     "@maplelabs/loanV302": "npm:@maplelabs/loan@3.0.2",
     "@maplelabs/loanV4": "npm:@maplelabs/loan@4.0.0",
     "@maplelabs/loanV401": "npm:@maplelabs/loan@4.0.1",
+    "@maplelabs/loanV5": "npm:@maplelabs/loan@5.0.0-alpha.0",
     "@maplelabs/mapleGlobals": "npm:@maplelabs/globals@1.0.0",
     "@maplelabs/mapleGlobalsV2": "npm:@maplelabs/globals-v2@1.0.0",
     "@maplelabs/mapleToken": "npm:@maplelabs/maple-token@1.0.0 ",
