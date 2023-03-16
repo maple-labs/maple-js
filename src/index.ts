@@ -164,6 +164,12 @@ const stakeLocker = {
   factory: stakeLockerImports.StakeLockerFactory__factory
 }
 
+const loanManager = {
+  core: poolImports.LoanManager__factory,
+  factory: poolImports.LoanManagerFactory__factory,
+  initializer: poolImports.LoanManagerInitializer__factory
+}
+
 const pool = {
   core: poolImports.Pool__factory,
   delegateCover: poolImports.PoolDelegateCover__factory,
@@ -296,6 +302,10 @@ interface ContractTypes {
   poolManager: poolImports.PoolManager
   poolManagerFactory: poolImports.PoolManagerFactory
   poolManagerInitializer: poolImports.PoolManagerInitializer
+  // Pool:loanManager
+  loanManager: poolImports.LoanManager
+  loanManagerfactory: poolImports.LoanManagerFactory
+  loanManagerInitializer: poolImports.LoanManagerInitializer
   // PoolV2:poolManager
   poolManagerV2: poolV2Imports.PoolManager
   // PoolV2:openTermLoanManager
@@ -345,6 +355,7 @@ export {
   stakeLocker,
   pool,
   poolManager,
+  loanManager,
   poolManagerV2,
   openTermLoanManager,
   fixedTermLoanManager,
