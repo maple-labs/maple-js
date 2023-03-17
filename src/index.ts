@@ -12,6 +12,7 @@ import * as loanV3Imports from './typechain/loanV3'
 import * as loanV301Imports from './typechain/loanV301'
 
 import * as loanV4Imports from './typechain/loanV4'
+import * as loanV5Imports from './typechain/loanV5'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleRewardsImports from './typechain/mplRewards'
@@ -110,6 +111,15 @@ const loanV4 = {
   refinancer: loanV4Imports.Refinancer__factory
 }
 
+const loanV5 = {
+  core: loanV5Imports.MapleLoan__factory,
+  factory: loanV5Imports.MapleLoanFactory__factory,
+  initializer: loanV5Imports.MapleLoanInitializer__factory,
+  migrator: loanV5Imports.MapleLoanV4Migrator__factory,
+  feeManager: loanV5Imports.MapleLoanFeeManager__factory,
+  refinancer: loanV5Imports.Refinancer__factory
+}
+
 const mapleGlobals = {
   core: mapleGlobalsImports.MapleGlobals__factory
 }
@@ -152,6 +162,12 @@ const repaymentCalculator = {
 const stakeLocker = {
   core: stakeLockerImports.StakeLocker__factory,
   factory: stakeLockerImports.StakeLockerFactory__factory
+}
+
+const loanManager = {
+  core: poolImports.LoanManager__factory,
+  factory: poolImports.LoanManagerFactory__factory,
+  initializer: poolImports.LoanManagerInitializer__factory
 }
 
 const pool = {
@@ -257,6 +273,13 @@ interface ContractTypes {
   loanV4FeeManager: loanV4Imports.MapleLoanFeeManager
   loanV4Refinancer: loanV4Imports.Refinancer
 
+  loanV5: loanV5Imports.MapleLoan
+  loanV5Factory: loanV5Imports.MapleLoanFactory
+  loanV5Initializer: loanV5Imports.MapleLoanInitializer
+  loanV5Migrator: loanV5Imports.MapleLoanV4Migrator
+  loanV5FeeManager: loanV5Imports.MapleLoanFeeManager
+  loanV5Refinancer: loanV5Imports.Refinancer
+
   // openTermLoan
   openTermLoan: openTermLoanImports.MapleLoan
   openTermLoanFactory: openTermLoanImports.MapleLoanFactory
@@ -279,6 +302,10 @@ interface ContractTypes {
   poolManager: poolImports.PoolManager
   poolManagerFactory: poolImports.PoolManagerFactory
   poolManagerInitializer: poolImports.PoolManagerInitializer
+  // Pool:loanManager
+  loanManager: poolImports.LoanManager
+  loanManagerfactory: poolImports.LoanManagerFactory
+  loanManagerInitializer: poolImports.LoanManagerInitializer
   // PoolV2:poolManager
   poolManagerV2: poolV2Imports.PoolManager
   // PoolV2:openTermLoanManager
@@ -314,6 +341,7 @@ export {
   loanV3,
   loanV301,
   loanV4,
+  loanV5,
   openTermLoan,
   mapleGlobals,
   mapleGlobalsV2,
@@ -327,6 +355,7 @@ export {
   stakeLocker,
   pool,
   poolManager,
+  loanManager,
   poolManagerV2,
   openTermLoanManager,
   fixedTermLoanManager,
