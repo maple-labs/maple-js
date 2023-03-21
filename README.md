@@ -1,10 +1,25 @@
 # maple-js
 
-A JavaScript SDK which provides tools for interacting with Maple Protocol.
+A JavaScript SDK for interacting with Maple Protocol's smart contracts.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Addresses](#addresses)
+    - [Usage](#addresses-usage)
+  - [Connecting to a Contract](#connecting-to-a-contract)
+    - [Usage](#connecting-to-a-contract-usage)
+  - [Interacting with a Contract](#interacting-with-a-contract)
+    - [Usage for Queries](#usage-for-queries)
+    - [Usage for Transactions](#usage-for-transactions)
+- [Additional Resources](#additional-resources)
 
 ## Getting Started
 
-### Quick Start
+### Installation
+
+Install the SDK using npm or yarn:
 
 ```
 npm install --save @maplelabs/maple-js
@@ -14,17 +29,13 @@ npm install --save @maplelabs/maple-js
 yarn add @maplelabs/maple-js
 ```
 
----
-
 ### Addresses
 
-- maple-js provides you with smart contract addresses across the following networks: `Ethereum Mainnet` & `Goerli`
-  - Valid network values are: `'mainnet' | 'goerli'`;
-  - Valid project values are `'mainnet' | 'mainnet-dev' | 'goerli' | 'goerli-dev'`
-- You can access addresses from the `addresses` object exported from maple-js:
-- You can see a list of available contracts in `src/addresses/*.ts`
+`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet` & `Goerli`. Valid network values are: `'mainnet' | 'goerli'`. Valid project values are `'mainnet' | 'mainnet-dev' | 'goerli' | 'goerli-dev'`.
 
-#### Usage
+Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
+
+**Addresses Usage**
 
 ```js
 import { addresses } from '@maplelabs/maple-js'
@@ -33,17 +44,14 @@ import { addresses } from '@maplelabs/maple-js'
 const contractAddress = addresses.mainnet.MapleToken
 ```
 
----
-
 ### Connecting to a Contract
 
-- Once you have the address you need to set up a signer.
-- Please refer to the [ethers docs](https://docs.ethers.io/v5/) (or your choice of web3 library) if you require further assistance.
+To connect to a contract, you'll need its address and a signer. Refer to the [ethers docs](https://docs.ethers.io/v5/) (or your choice of web3 library) for further assistance.
 
-#### Usage
+**Connecting to a Contract Usage**
 
 ```js
-import { mapleGlobals } from 'maple-js'
+import { mapleGlobals } from '@maplelabs/maple-js'
 
 const contractAddress = addresses.mainnet.MapleToken
 const signer = 'yourSigner'
@@ -51,35 +59,29 @@ const signer = 'yourSigner'
 const contract = mapleGlobals.core.connect(contractAddress, signer)
 ```
 
----
+### Interacting with a Contract
 
-### Interacting with a contract
+Once connected to a contract, you can call any available methods using the `contract` instance. `maple-js` contracts use typechain, so you can see all available methods using intellisense in your IDE.
 
-- Once you have connected to the contract you are then able to call any of the methods on that contract using the `contract` instance in the previous example:
-- maple-js contracts use typechain so you can see all the available methods using intellisense in your IDE.
+**Usage for Queries**
 
-#### Usage for queries
+Basic queries can be called using the standard `await` pattern:
 
-- Basic queries can be called using a standard `await` pattern
-
-```
+```js
 const basicQuery = await contract.lpCooldownPeriod()
 ```
 
-#### Usage for transactions
+**Usage for Transactions**
 
-- If you are executing a transaction then it is recommended to use the `.wait()` method so that the Promise resolves when the block containing your transaction has enough confirmations to be considered final:
+When executing a transaction, use the `.wait()` method to resolve the Promise once the block containing your transaction has enough confirmations to be considered final:
 
-```
-import { pool } from 'maple-js'
+```js
+import { pool } from '@maplelabs/maple-js'
 
 const poolContract = pool.core.connect(poolAddress, signer)
 const method = await (await poolContract.deposit(depositAmount)).wait()
 ```
 
----
+## Additional Resources
 
-### Additional Information
-
-- For detailed information about the methods available on Maples Smart Contracts, please consult [our gitbook](https://maplefinance.gitbook.io/maple/smart-contracts/general)
-- For in depth information about Maple Protocol please visit [our maple-core wiki](https://github.com/maple-labs/maple-core/wiki)
+- For technical infomration about Maple Protocol, visit [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
