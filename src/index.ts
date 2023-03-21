@@ -176,6 +176,12 @@ const pool = {
   deployer: poolImports.PoolDeployer__factory
 }
 
+const poolV2 = {
+  core: poolV2Imports.Pool__factory,
+  delegateCover: poolV2Imports.PoolDelegateCover__factory,
+  deployer: poolV2Imports.PoolDeployer__factory
+}
+
 const poolManager = {
   core: poolImports.PoolManager__factory,
   factory: poolImports.PoolManagerFactory__factory,
@@ -306,6 +312,12 @@ interface ContractTypes {
   loanManager: poolImports.LoanManager
   loanManagerfactory: poolImports.LoanManagerFactory
   loanManagerInitializer: poolImports.LoanManagerInitializer
+
+  // PoolV2
+  poolV2: poolV2Imports.Pool__factory
+  poolDeployerV2: poolV2Imports.PoolDeployer
+  poolDelegateCoverV2: poolV2Imports.PoolDelegateCover__factory
+
   // PoolV2:poolManager
   poolManagerV2: poolV2Imports.PoolManager
   // PoolV2:openTermLoanManager
@@ -354,6 +366,7 @@ export {
   repaymentCalculator,
   stakeLocker,
   pool,
+  poolV2,
   poolManager,
   loanManager,
   poolManagerV2,
