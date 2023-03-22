@@ -314,7 +314,7 @@ interface ContractTypes {
   loanManagerInitializer: poolImports.LoanManagerInitializer
 
   // PoolV2
-  poolV2: poolV2Imports.Pool__factory
+  poolV2: poolV2Imports.Pool
   poolDeployerV2: poolV2Imports.PoolDeployer
   poolDelegateCoverV2: poolV2Imports.PoolDelegateCover__factory
 
