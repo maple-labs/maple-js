@@ -42,7 +42,7 @@
     },
     "mapleGlobalsV2": {
       "repo": "@maplelabs/globals-v2",
-      "alias": ["mapleGlobalsV2"]
+      "alias": ["mapleGlobalsV2", "mapleGlobalsV2V2"]
     },
     "mapleToken": {
       "repo": "@maplelabs/maple-token",

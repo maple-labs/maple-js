@@ -71,6 +71,7 @@ const build = () => {
     LoanV5Refinancer: getAddress('LoanV5Refinancer'),
     MapleGlobals: getAddress('MapleGlobals'),
     MapleGlobalsV2: getAddress('MapleGlobalsV2'),
+    MapleGlobalsV2V2: getAddress('MapleGlobalsV2V2'),
     MapleToken: getAddress('MapleToken'),
     MapleTreasury: getAddress('MapleTreasury'),
     MigrationHelper: getAddress('MigrationHelper'),

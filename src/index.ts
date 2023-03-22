@@ -15,6 +15,7 @@ import * as loanV4Imports from './typechain/loanV4'
 import * as loanV5Imports from './typechain/loanV5'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
+import * as mapleGlobalsV2V2Imports from './typechain/mapleGlobalsV2V2'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as xmplImports from './typechain/xmpl'
@@ -126,6 +127,10 @@ const mapleGlobals = {
 
 const mapleGlobalsV2 = {
   core: mapleGlobalsV2Imports.MapleGlobals__factory
+}
+
+const mapleGlobalsV2V2 = {
+  core: mapleGlobalsV2V2Imports.MapleGlobals__factory
 }
 
 const mapleRewards = {
@@ -293,6 +298,7 @@ interface ContractTypes {
 
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals
+  mapleGlobalsV2V2: mapleGlobalsV2V2Imports.MapleGlobals
   mapleRewards: mapleRewardsImports.MplRewards
   mapleRewardsFactory: mapleRewardsImports.MplRewardsFactory
   mapleToken: mapleTokenImports.MapleToken
@@ -357,6 +363,7 @@ export {
   openTermLoan,
   mapleGlobals,
   mapleGlobalsV2,
+  mapleGlobalsV2V2,
   mapleRewards,
   mapleToken,
   migrationHelpers,
