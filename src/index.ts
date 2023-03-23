@@ -15,6 +15,7 @@ import * as loanV4Imports from './typechain/loanV4'
 import * as loanV5Imports from './typechain/loanV5'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
+import * as mapleGlobalsV2V2Imports from './typechain/mapleGlobalsV2V2'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as xmplImports from './typechain/xmpl'
@@ -128,6 +129,10 @@ const mapleGlobalsV2 = {
   core: mapleGlobalsV2Imports.MapleGlobals__factory
 }
 
+const mapleGlobalsV2V2 = {
+  core: mapleGlobalsV2V2Imports.MapleGlobals__factory
+}
+
 const mapleRewards = {
   core: mapleRewardsImports.MplRewards__factory,
   factory: mapleRewardsImports.MplRewardsFactory__factory
@@ -174,6 +179,12 @@ const pool = {
   core: poolImports.Pool__factory,
   delegateCover: poolImports.PoolDelegateCover__factory,
   deployer: poolImports.PoolDeployer__factory
+}
+
+const poolV2 = {
+  core: poolV2Imports.Pool__factory,
+  delegateCover: poolV2Imports.PoolDelegateCover__factory,
+  deployer: poolV2Imports.PoolDeployer__factory
 }
 
 const poolManager = {
@@ -287,6 +298,7 @@ interface ContractTypes {
 
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals
+  mapleGlobalsV2V2: mapleGlobalsV2V2Imports.MapleGlobals
   mapleRewards: mapleRewardsImports.MplRewards
   mapleRewardsFactory: mapleRewardsImports.MplRewardsFactory
   mapleToken: mapleTokenImports.MapleToken
@@ -306,6 +318,12 @@ interface ContractTypes {
   loanManager: poolImports.LoanManager
   loanManagerfactory: poolImports.LoanManagerFactory
   loanManagerInitializer: poolImports.LoanManagerInitializer
+
+  // PoolV2
+  poolV2: poolV2Imports.Pool
+  poolDeployerV2: poolV2Imports.PoolDeployer
+  poolDelegateCoverV2: poolV2Imports.PoolDelegateCover__factory
+
   // PoolV2:poolManager
   poolManagerV2: poolV2Imports.PoolManager
   // PoolV2:openTermLoanManager
@@ -345,6 +363,7 @@ export {
   openTermLoan,
   mapleGlobals,
   mapleGlobalsV2,
+  mapleGlobalsV2V2,
   mapleRewards,
   mapleToken,
   migrationHelpers,
@@ -354,6 +373,7 @@ export {
   repaymentCalculator,
   stakeLocker,
   pool,
+  poolV2,
   poolManager,
   loanManager,
   poolManagerV2,
