@@ -24,6 +24,11 @@ jobs:
           node-version: 14
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.17.1'
+
       - name: Install dependencies
         run: yarn install
 
