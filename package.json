@@ -26,7 +26,6 @@
     "dev": "rollup -c -w",
     "build": "rm -rf dist/ && rollup -c && cp -R src/abis dist/abis",
     "build-typechain": "node ./scripts/build-typechain.js",
-    "build-addresses": "node ./scripts/build-addresses.js",
     "test": "jest --collectCoverage",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet",
     "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
