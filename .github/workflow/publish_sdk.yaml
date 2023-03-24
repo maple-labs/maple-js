@@ -1,0 +1,57 @@
+name: Publish SDK
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'artifacts/**'
+      - 'package.json'
+      - '!**/.github/**'
+
+jobs:
+  publish-sdk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.17.1'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build SDK
+        run: yarn build
+
+      - name: Publish SDK
+        run: npm publish --access private
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#  trigger-dependent-repos:
+#     needs: publish-sdk
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         repo: ['maplelabs/maple-stack']
+#     steps:
+#     - name: Trigger update workflow in dependent repository
+#       run: |
+#         curl -X POST \
+#           -H "Authorization: token ${{ secrets.TRIGGER_TOKEN }}" \
+#           -H "Accept: application/vnd.github.everest-preview+json" \
+#           "https://api.github.com/repos/${{ matrix.repo }}/dispatches" \
+#           -d '{"event_type": "update_sdk_version", "client_payload": {"tag_name": "${{ github.event.release.tag_name }}"} }'
+
+# Note:
+# TRIGGER_TOKEN secret is a GitHub personal access token (PAT) with the repo scope. This token will be used to authenticate the repository dispatch requests.
