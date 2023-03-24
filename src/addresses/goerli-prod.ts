@@ -93,7 +93,7 @@ export default {
   xMPL: '0x40790a56fA096Fb6A91810F7717702881eD99d90',
   manifest: {
     network: 'goerli',
-    project: 'goerli',
+    project: 'goerli-prod',
     blockheight: 8261945,
     date: '2023-01-05'
   }

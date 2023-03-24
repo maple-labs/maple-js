@@ -10,7 +10,6 @@ import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
 import * as loanV3Imports from './typechain/loanV3'
 import * as loanV301Imports from './typechain/loanV301'
-
 import * as loanV4Imports from './typechain/loanV4'
 import * as loanV5Imports from './typechain/loanV5'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
@@ -33,10 +32,8 @@ import * as openTermLoanImports from './typechain/openTermLoan'
 import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
 
 // Addresses
-import goerliAddresses from './addresses/goerli'
+import goerliProdAddresses from './addresses/goerli-prod'
 import goerliDevAddresses from './addresses/goerli-dev'
-import mainnetAddresses from './addresses/mainnet'
-import mainnetStageAddresses from './addresses/mainnet-stage'
 import mainnetDevAddresses from './addresses/mainnet-dev'
 import mainnetProdAddresses from './addresses/mainnet-prod'
 
@@ -239,19 +236,17 @@ const erc20 = {
 const uniswapRouterV2 = {
   core: environmentMocksImports.UniswapV2Router02__factory
 }
-type AddressKey = typeof mainnetAddresses
+type AddressKey = typeof mainnetProdAddresses
 
 type MapleAddressMapping = {
   [K in keyof AddressKey]: AddressKey[K]
 }
 
 const addresses: Record<string, MapleAddressMapping> = {
-  goerli: goerliAddresses,
   'goerli-dev': goerliDevAddresses,
-  mainnet: mainnetAddresses,
-  'mainnet-prod': mainnetProdAddresses,
-  'mainnet-stage': mainnetStageAddresses,
-  'mainnet-dev': mainnetDevAddresses
+  'goerli-prod': goerliProdAddresses,
+  'mainnet-dev': mainnetDevAddresses,
+  'mainnet-prod': mainnetProdAddresses
 }
 
 interface ContractTypes {
