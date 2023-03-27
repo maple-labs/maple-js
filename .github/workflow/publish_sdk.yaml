@@ -5,8 +5,6 @@ on:
     branches:
       - main
     paths:
-      - 'src/**'
-      - 'artifacts/**'
       - 'package.json'
       - '!**/.github/**'
 
@@ -34,8 +32,8 @@ jobs:
       - name: Build SDK
         run: yarn build
 
-      - name: Publish SDK
-        run: npm publish --access private
+      - name: Publish private SDK
+        run: npm publish --access=restricted --scope=@maplelabs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 #  trigger-dependent-repos:
