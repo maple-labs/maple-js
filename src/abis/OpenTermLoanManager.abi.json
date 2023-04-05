@@ -38,9 +38,33 @@
         "internalType": "uint256",
         "name": "netInterest_",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "delegateManagementFee_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "delegateServiceFee_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "platformManagementFee_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "platformServiceFee_",
+        "type": "uint256"
       }
     ],
-    "name": "FundsDistributed",
+    "name": "ClaimedFundsDistributed",
     "type": "event"
   },
   {
@@ -55,7 +79,13 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "delegateManagementFee_",
+        "name": "principal_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "netInterest_",
         "type": "uint256"
       },
       {
@@ -63,9 +93,46 @@
         "internalType": "uint256",
         "name": "platformManagementFee_",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "platformServiceFee_",
+        "type": "uint256"
       }
     ],
-    "name": "ManagementFeesPaid",
+    "name": "ExpectedClaim",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "toBorrower_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "toPool_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "toTreasury_",
+        "type": "uint256"
+      }
+    ],
+    "name": "LiquidatedFundsDistributed",
     "type": "event"
   },
   {
@@ -332,32 +399,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "globals",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "globals_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "governor",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "governor_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -421,19 +462,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "mapleTreasury",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "treasury_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -480,32 +508,6 @@
         "internalType": "uint168",
         "name": "issuanceRate",
         "type": "uint168"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "pool",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "pool_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "poolDelegate",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "poolDelegate_",
-        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -561,6 +563,34 @@
       }
     ],
     "name": "proposeNewTerms",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
+      }
+    ],
+    "name": "rejectNewTerms",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -631,7 +661,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "platformFees_",
+        "name": "unrecoveredPlatformFees_",
         "type": "uint256"
       }
     ],
@@ -655,7 +685,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "platformFees_",
+        "name": "unrecoveredPlatformFees_",
         "type": "uint256"
       }
     ],
