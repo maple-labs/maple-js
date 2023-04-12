@@ -204,7 +204,8 @@ const withdrawalManager = {
 const openTermLoan = {
   core: openTermLoanImports.MapleLoan__factory,
   factory: openTermLoanImports.MapleLoanFactory__factory,
-  initializer: openTermLoanImports.MapleLoanInitializer__factory
+  initializer: openTermLoanImports.MapleLoanInitializer__factory,
+  refinancer: openTermLoanImports.MapleRefinancer__factory
 }
 
 const openTermLoanManager = {
@@ -290,6 +291,7 @@ interface ContractTypes {
   openTermLoan: openTermLoanImports.MapleLoan
   openTermLoanFactory: openTermLoanImports.MapleLoanFactory
   openTermLoanInitializer: openTermLoanImports.MapleLoanInitializer
+  openTermLoanRefinancer: openTermLoanImports.MapleRefinancer
 
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals
