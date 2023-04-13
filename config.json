@@ -12,6 +12,10 @@
       "repo": "@maplelabs/environment-mocks",
       "alias": ["environmentMocks"]
     },
+    "fixedTermLoan": {
+      "repo": "@maplelabs/fixed-term-loan",
+      "alias": ["fixedTermLoan"]
+    },
     "fixedTermLoanManager": {
       "repo": "@maplelabs/fixed-term-loan-manager",
       "alias": ["fixedTermLoanManager"]
@@ -34,7 +38,7 @@
     },
     "loan": {
       "repo": "@maplelabs/loan",
-      "alias": ["loanV1", "loanV2", "loanV3", "loanV301", "loanV302", "loanV4", "loanV401", "loanV5"]
+      "alias": ["loanV1", "loanV2", "loanV3", "loanV301", "loanV302", "loanV4", "loanV401"]
     },
     "mapleGlobals": {
       "repo": "@maplelabs/globals",
