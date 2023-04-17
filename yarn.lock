@@ -1007,15 +1007,15 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/globals/-/globals-1.0.0.tgz#85fd3e667cdb5cd26e5882951e8a7cf7426645fe"
   integrity sha512-pNqeltNI03JD0PdvZinJKP9UE9Xu8jFRzVxXm3mHMmLFkJmsEgwh2J8Sr8+2HSKouS9eX9RiH6vCh+nUwo45ug==
 
-"@maplelabs/mapleGlobalsV2@npm:@maplelabs/globals-v2@1.1.0-rc.0":
+"@maplelabs/mapleGlobalsV2@npm:@maplelabs/globals-v2@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@maplelabs/globals-v2/-/globals-v2-1.0.0.tgz#31dc641c793d8652335633b7af05fb094e640189"
+  integrity sha512-14KXf/UadE/WbBqn4+8ngynCnAzJdmswXXcApUVxBdZQlYQdkyfxFrU1RnRFxm+2I4uHN2lTADg8xF/VjpKFag==
+
+"@maplelabs/mapleGlobalsV2V2@npm:@maplelabs/globals-v2@1.1.0-rc.0":
   version "1.1.0-rc.0"
   resolved "https://registry.yarnpkg.com/@maplelabs/globals-v2/-/globals-v2-1.1.0-rc.0.tgz#6df89d40e6a68498cc26e61751512409bbd20bd1"
   integrity sha512-zibjWqf2Aha8aiE4kTzvRCJwZr/9DPC3B3rPLqJ9aCIHPtRi8QNB/e2wEtNCV8olaQYel0R55gQdsRWIoojmPw==
-
-"@maplelabs/mapleGlobalsV2V2@npm:@maplelabs/globals-v2@1.1.0-beta.0":
-  version "1.1.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/globals-v2/-/globals-v2-1.1.0-beta.0.tgz#e3ea3ac17ea35cffe77084fe8dad95a17a5cb886"
-  integrity sha512-j+v+ZJ8gcgkYsf/UNPLqhCvw0E5sb/oZXitdK6gJYMhIPMcL4VxghhCmrBc1ytf5GVYrhKYrMOam/gNiBFhm1Q==
 
 "@maplelabs/mapleToken@npm:@maplelabs/maple-token@1.0.0 ":
   version "1.0.0"
