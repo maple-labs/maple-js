@@ -769,6 +769,45 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "timestamp_",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPaymentBreakdown",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "interest_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lateInterest_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "delegateServiceFee_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "platformServiceFee_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "globals",
     "outputs": [
@@ -976,45 +1015,6 @@
         "internalType": "uint32",
         "name": "",
         "type": "uint32"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "timestamp_",
-        "type": "uint256"
-      }
-    ],
-    "name": "paymentBreakdown",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "principal_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "interest_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "lateInterest_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "delegateServiceFee_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "platformServiceFee_",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",

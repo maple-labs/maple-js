@@ -3,32 +3,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "borrower_",
-        "type": "address"
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "delegateServiceFeeRate_",
+        "type": "uint64"
       }
     ],
-    "name": "BorrowerAccepted",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "paymentDueDate_",
-        "type": "uint40"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "defaultDate_",
-        "type": "uint40"
-      }
-    ],
-    "name": "CallRemoved",
+    "name": "DelegateServiceFeeRateSet",
     "type": "event"
   },
   {
@@ -37,23 +18,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "amount_",
+        "name": "gracePeriod_",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "paymentDueDate_",
-        "type": "uint40"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "defaultDate_",
-        "type": "uint40"
       }
     ],
-    "name": "Funded",
+    "name": "GracePeriodSet",
     "type": "event"
   },
   {
@@ -61,18 +30,12 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "uint40",
-        "name": "paymentDueDate_",
-        "type": "uint40"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "defaultDate_",
-        "type": "uint40"
+        "internalType": "uint64",
+        "name": "interestRate_",
+        "type": "uint64"
       }
     ],
-    "name": "Impaired",
+    "name": "InterestRateSet",
     "type": "event"
   },
   {
@@ -80,74 +43,12 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "uint40",
-        "name": "paymentDueDate_",
-        "type": "uint40"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "defaultDate_",
-        "type": "uint40"
+        "internalType": "uint64",
+        "name": "lateFeeRate_",
+        "type": "uint64"
       }
     ],
-    "name": "ImpairmentRemoved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "borrower_",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "lender_",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "fundsAsset_",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "principalRequested_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint32[3]",
-        "name": "termDetails_",
-        "type": "uint32[3]"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint64[4]",
-        "name": "rates_",
-        "type": "uint64[4]"
-      }
-    ],
-    "name": "Initialized",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "lender_",
-        "type": "address"
-      }
-    ],
-    "name": "LenderAccepted",
+    "name": "LateFeeRateSet",
     "type": "event"
   },
   {
@@ -155,173 +56,12 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "bytes32",
-        "name": "refinanceCommitment_",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "refinancer_",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "deadline_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "bytes[]",
-        "name": "calls_",
-        "type": "bytes[]"
+        "internalType": "uint64",
+        "name": "lateInterestPremiumRate_",
+        "type": "uint64"
       }
     ],
-    "name": "NewTermsAccepted",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "bytes32",
-        "name": "refinanceCommitment_",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "refinancer_",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "deadline_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "bytes[]",
-        "name": "calls_",
-        "type": "bytes[]"
-      }
-    ],
-    "name": "NewTermsProposed",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "bytes32",
-        "name": "refinanceCommitment_",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "refinancer_",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "deadline_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "bytes[]",
-        "name": "calls_",
-        "type": "bytes[]"
-      }
-    ],
-    "name": "NewTermsRejected",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "lender_",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "principalPaid_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "interestPaid_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "lateInterestPaid_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "delegateServiceFee_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "platformServiceFee_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "paymentDueDate_",
-        "type": "uint40"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "defaultDate_",
-        "type": "uint40"
-      }
-    ],
-    "name": "PaymentMade",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "pendingBorrower_",
-        "type": "address"
-      }
-    ],
-    "name": "PendingBorrowerSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "pendingLender_",
-        "type": "address"
-      }
-    ],
-    "name": "PendingLenderSet",
+    "name": "LateInterestPremiumRateSet",
     "type": "event"
   },
   {
@@ -330,23 +70,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "principalToReturn_",
+        "name": "noticePeriod_",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "paymentDueDate_",
-        "type": "uint40"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint40",
-        "name": "defaultDate_",
-        "type": "uint40"
       }
     ],
-    "name": "PrincipalCalled",
+    "name": "NoticePeriodSet",
     "type": "event"
   },
   {
@@ -355,17 +83,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "principalReturned_",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "principalRemaining_",
+        "name": "paymentInterval_",
         "type": "uint256"
       }
     ],
-    "name": "PrincipalReturned",
+    "name": "PaymentIntervalSet",
     "type": "event"
   },
   {
@@ -374,47 +96,25 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "fundsRepossessed_",
+        "name": "decreasedBy_",
         "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "destination_",
-        "type": "address"
       }
     ],
-    "name": "Repossessed",
+    "name": "PrincipalDecreased",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "token_",
-        "type": "address"
-      },
-      {
         "indexed": false,
         "internalType": "uint256",
-        "name": "amount_",
+        "name": "increasedBy_",
         "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "destination_",
-        "type": "address"
       }
     ],
-    "name": "Skimmed",
+    "name": "PrincipalIncreased",
     "type": "event"
-  },
-  {
-    "stateMutability": "nonpayable",
-    "type": "fallback"
   },
   {
     "inputs": [],
@@ -497,45 +197,14 @@
   {
     "inputs": [
       {
-        "internalType": "bytes",
-        "name": "encodedArguments_",
-        "type": "bytes"
-      }
-    ],
-    "name": "decodeArguments",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "borrower_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "lender_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "fundsAsset_",
-        "type": "address"
-      },
-      {
         "internalType": "uint256",
-        "name": "principalRequested_",
+        "name": "amount_",
         "type": "uint256"
-      },
-      {
-        "internalType": "uint32[3]",
-        "name": "termDetails_",
-        "type": "uint32[3]"
-      },
-      {
-        "internalType": "uint64[4]",
-        "name": "rates_",
-        "type": "uint64[4]"
       }
     ],
-    "stateMutability": "pure",
+    "name": "decreasePrincipal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -549,50 +218,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "borrower_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "lender_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "fundsAsset_",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "principalRequested_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint32[3]",
-        "name": "termDetails_",
-        "type": "uint32[3]"
-      },
-      {
-        "internalType": "uint64[4]",
-        "name": "rates_",
-        "type": "uint64[4]"
-      }
-    ],
-    "name": "encodeArguments",
-    "outputs": [
-      {
-        "internalType": "bytes",
-        "name": "encodedArguments_",
-        "type": "bytes"
-      }
-    ],
-    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -619,6 +244,19 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
+      }
+    ],
+    "name": "increasePrincipal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -762,6 +400,97 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "delegateServiceFeeRate_",
+        "type": "uint64"
+      }
+    ],
+    "name": "setDelegateServiceFeeRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "gracePeriod_",
+        "type": "uint32"
+      }
+    ],
+    "name": "setGracePeriod",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "interestRate_",
+        "type": "uint64"
+      }
+    ],
+    "name": "setInterestRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "lateFeeRate_",
+        "type": "uint64"
+      }
+    ],
+    "name": "setLateFeeRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "lateInterestPremiumRate_",
+        "type": "uint64"
+      }
+    ],
+    "name": "setLateInterestPremiumRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "noticePeriod_",
+        "type": "uint32"
+      }
+    ],
+    "name": "setNoticePeriod",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "paymentInterval_",
+        "type": "uint32"
+      }
+    ],
+    "name": "setPaymentInterval",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
