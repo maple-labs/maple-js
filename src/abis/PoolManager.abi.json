@@ -93,25 +93,6 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "loanManager_",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "isLoanManager_",
-        "type": "bool"
-      }
-    ],
-    "name": "IsLoanManagerSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": false,
         "internalType": "uint256",
         "name": "liquidityCap_",
@@ -127,11 +108,118 @@
       {
         "indexed": true,
         "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanFunded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newPaymentDueDate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanImpaired",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      }
+    ],
+    "name": "LoanImpairmentRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "loanManager_",
         "type": "address"
       }
     ],
     "name": "LoanManagerAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      }
+    ],
+    "name": "LoanManagerRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principalIncrease_",
+        "type": "uint256"
+      }
+    ],
+    "name": "LoanRefinanced",
     "type": "event"
   },
   {
@@ -180,8 +268,33 @@
   },
   {
     "anonymous": false,
-    "inputs": [],
-    "name": "PoolConfigurationComplete",
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "withdrawalManager_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "liquidityCap_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "delegateManagementFeeRate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "PoolConfigured",
     "type": "event"
   },
   {
@@ -318,6 +431,31 @@
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "pool_",
+        "type": "address"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
     "inputs": [],
     "name": "HUNDRED_PERCENT",
     "outputs": [
@@ -328,6 +466,39 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "principalIncrease_",
+        "type": "uint256"
+      }
+    ],
+    "name": "acceptNewTerms",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -354,18 +525,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "loanManagerFactory_",
-        "type": "address"
-      }
-    ],
-    "name": "addLoanManager",
-    "outputs": [
-      {
-        "internalType": "address",
         "name": "loanManager_",
         "type": "address"
       }
     ],
+    "name": "addLoanManager",
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -417,8 +582,29 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "completeConfiguration",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "withdrawalManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidityCap_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "delegateManagementFeeRate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "configure",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -510,6 +696,29 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "principal_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      }
+    ],
+    "name": "fund",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "",
         "type": "address"
@@ -573,6 +782,19 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      }
+    ],
+    "name": "impairLoan",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -653,19 +875,6 @@
         "internalType": "address",
         "name": "",
         "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "loanManagerListLength",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "loanManagerListLength_",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -949,6 +1158,32 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      }
+    ],
+    "name": "removeLoanImpairment",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      }
+    ],
+    "name": "removeLoanManager",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "shares_",
         "type": "uint256"
@@ -967,24 +1202,6 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "destination_",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "principal_",
-        "type": "uint256"
-      }
-    ],
-    "name": "requestFunds",
-    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -1073,6 +1290,29 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "collateralAsset_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "allowedSlippage_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setAllowedSlippage",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "delegateManagementFeeRate_",
         "type": "uint256"
@@ -1099,17 +1339,12 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "loanManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "isLoanManager_",
-        "type": "bool"
+        "internalType": "uint256",
+        "name": "liquidityCap_",
+        "type": "uint256"
       }
     ],
-    "name": "setIsLoanManager",
+    "name": "setLiquidityCap",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1117,12 +1352,22 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "loanManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "collateralAsset_",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
-        "name": "liquidityCap_",
+        "name": "minRatio_",
         "type": "uint256"
       }
     ],
-    "name": "setLiquidityCap",
+    "name": "setMinRatio",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
