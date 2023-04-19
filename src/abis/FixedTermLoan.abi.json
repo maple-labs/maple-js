@@ -536,11 +536,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "lateInterestPremium_",
+        "name": "lateInterestPremiumRate_",
         "type": "uint256"
       }
     ],
-    "name": "LateInterestPremiumSet",
+    "name": "LateInterestPremiumRateSet",
     "type": "event"
   },
   {
@@ -1060,11 +1060,11 @@
   },
   {
     "inputs": [],
-    "name": "lateInterestPremium",
+    "name": "lateInterestPremiumRate",
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "lateInterestPremium_",
+        "name": "lateInterestPremiumRate_",
         "type": "uint256"
       }
     ],

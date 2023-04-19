@@ -11,16 +11,52 @@
     "type": "constructor"
   },
   {
+    "anonymous": false,
     "inputs": [
       {
-        "internalType": "address[3]",
-        "name": "factories_",
-        "type": "address[3]"
+        "indexed": true,
+        "internalType": "address",
+        "name": "pool_",
+        "type": "address"
       },
       {
-        "internalType": "address[3]",
-        "name": "initializers_",
-        "type": "address[3]"
+        "indexed": true,
+        "internalType": "address",
+        "name": "poolManager_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "withdrawalManager_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "loanManagers_",
+        "type": "address[]"
+      }
+    ],
+    "name": "PoolDeployed",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "poolManagerFactory_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "withdrawalManagerFactory_",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "loanManagerFactories_",
+        "type": "address[]"
       },
       {
         "internalType": "address",
@@ -48,16 +84,6 @@
       {
         "internalType": "address",
         "name": "poolManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "loanManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "withdrawalManager_",
         "type": "address"
       }
     ],
