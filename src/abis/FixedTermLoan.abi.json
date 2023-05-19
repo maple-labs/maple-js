@@ -124,6 +124,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nextPaymentDueDate_",
+        "type": "uint256"
+      }
+    ],
+    "name": "ImpairmentRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "borrower_",
@@ -317,19 +330,6 @@
       }
     ],
     "name": "NewTermsRejected",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "nextPaymentDueDate_",
-        "type": "uint256"
-      }
-    ],
-    "name": "NextPaymentDueDateRestored",
     "type": "event"
   },
   {
@@ -581,6 +581,19 @@
     ],
     "name": "PrincipalIncreased",
     "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "HUNDRED_PERCENT",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [],
