@@ -69,6 +69,25 @@
       {
         "indexed": false,
         "internalType": "uint256",
+        "name": "toTreasury_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "toPool_",
+        "type": "uint256"
+      }
+    ],
+    "name": "CoverLiquidated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
         "name": "amount_",
         "type": "uint256"
       }
