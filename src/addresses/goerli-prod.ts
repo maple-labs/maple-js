@@ -21,6 +21,7 @@ export default {
   FixedTermLoanInitializer: '0x0D2B0D863bEf387D03FEDc745564D3646D4ddE64',
   FixedTermLoanManager: '0x6047CA7B43Fd4D972fcebBA12c2eEc4CC8123a06',
   FixedTermLoanManagerInitializer: '0x0B703919cF2d30DbB18bAD6feBe8F0eA4F191918',
+  FixedTermLoanMigrator: '0x203B704Fc34215B519fbacb8CBAD38B1fbc899d5',
   FixedTermLoanRefinancer: '0x8373a5fD22C99d84DD30d4698aB4ee7c3E41a79b',
   FundingLockerFactory: '0xB84983F39791c4b140513fb80B2E3a8F2f3B817B',
   kycWETH: '0xE5cF6204DFb0A2381DDa6a2EBaCD8389Af7D5ebd',
