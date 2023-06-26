@@ -932,10 +932,10 @@
   resolved "https://registry.yarnpkg.com/@maplelabs/debt-locker/-/debt-locker-4.0.0-rc.0.tgz#adee2c6c3d3ed8a9234963d8c7fb3181fc49f47b"
   integrity sha512-RT84p+ABhovXF1/GOQfelmSNqfsGzEYwVyPuQuhe58rNlBKHc9BNrKF2qgvrIamdjOMD4mkbCyRWAj3M/Zdlnw==
 
-"@maplelabs/environmentMocks@npm:@maplelabs/environment-mocks@2.0.0-beta.0":
-  version "2.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@maplelabs/environment-mocks/-/environment-mocks-2.0.0-beta.0.tgz#2b64b869b7f5f79228af58b919e274bfe257d5ef"
-  integrity sha512-IJ+mw9l9zDm2OyFnQvZNCH/MvZxyqv4JtsGhXXDsMUgFXoJJu/pXEpXIygMDug2B8I9gaOOykXZCR77Uai7Q7A==
+"@maplelabs/environmentMocks@npm:@maplelabs/environment-mocks@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/@maplelabs/environment-mocks/-/environment-mocks-2.0.2.tgz#dbdbf10623889a33fca7903f39f7bae5767815bd"
+  integrity sha512-5pZhWHO/UgYw5VfdufduCz0YivjFOW/v/7pmVXDpWEFDxb/6pd0pqg04iE/ci+Uzffdt0OwFR1PSlJdg0QLa6w==
 
 "@maplelabs/fixedTermLoan@npm:@maplelabs/fixed-term-loan@5.0.1":
   version "5.0.1"
