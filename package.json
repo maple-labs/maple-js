@@ -55,7 +55,7 @@
     "@maplelabs/debtLockerV2": "npm:@maplelabs/debt-locker@2.0.0",
     "@maplelabs/debtLockerV3": "npm:@maplelabs/debt-locker@3.0.0",
     "@maplelabs/debtLockerV4": "npm:@maplelabs/debt-locker@4.0.0-rc.0",
-    "@maplelabs/environmentMocks": "npm:@maplelabs/environment-mocks@2.0.0-beta.0",
+    "@maplelabs/environmentMocks": "npm:@maplelabs/environment-mocks@2.0.2",
     "@maplelabs/fixedTermLoan": "npm:@maplelabs/fixed-term-loan@5.0.1",
     "@maplelabs/fixedTermLoanManager": "npm:@maplelabs/fixed-term-loan-manager@3.0.1",
     "@maplelabs/fundingLocker": "npm:@maplelabs/funding-locker@1.0.0",

@@ -230,7 +230,7 @@ const chainlink = {
 }
 
 const erc20 = {
-  core: environmentMocksImports.MintSpecialToken__factory
+  core: environmentMocksImports.ERC20__factory
 }
 
 const uniswapRouterV2 = {
@@ -336,7 +336,7 @@ interface ContractTypes {
   withdrawalManagerInitializer: withdrawalManagerImports.WithdrawalManagerInitializer
   // environmentMocks
   bPool: environmentMocksImports.BPool
-  erc20: environmentMocksImports.MintSpecialToken
+  erc20: environmentMocksImports.ERC20
   // PoolV2: migrationHelper
   migrationHelpers: migrationHelpersImports.MigrationHelper
 }
