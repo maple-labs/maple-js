@@ -230,7 +230,8 @@ const chainlink = {
 }
 
 const erc20 = {
-  core: environmentMocksImports.ERC20__factory
+  core: environmentMocksImports.ERC20__factory,
+  usdt: environmentMocksImports.MintSpecialTetherToken__factory
 }
 
 const uniswapRouterV2 = {
@@ -337,6 +338,7 @@ interface ContractTypes {
   // environmentMocks
   bPool: environmentMocksImports.BPool
   erc20: environmentMocksImports.ERC20
+  usdt: environmentMocksImports.MintSpecialTetherToken
   // PoolV2: migrationHelper
   migrationHelpers: migrationHelpersImports.MigrationHelper
 }
