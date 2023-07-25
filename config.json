@@ -52,6 +52,10 @@
       "repo": "@maplelabs/maple-token",
       "alias": ["mapleToken"]
     },
+    "mapleTokenV2": {
+      "repo": "@maplelabs/mplv2",
+      "alias": ["mapleTokenV2"]
+    },
     "migrationHelper": {
       "repo": "@maplelabs/migration-helpers",
       "alias": ["migrationHelpers"]
