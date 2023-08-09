@@ -15,24 +15,20 @@ const getParsedConfig = () => {
 
 const generateTypechainBindings = async (config) => {
   const cwd = process.cwd()
-  const aliases = []
-  for (const key in config.contractPackages) {
-    aliases.push(...config.contractPackages[key].alias)
-  }
 
-  for (let i = 0; i < aliases.length; i++) {
-    const allFiles = typechain.glob(
-      cwd,
-      [`node_modules/@maplelabs/${aliases[i]}/artifacts/+([a-zA-Z0-9_]).json`],
-      false
-    )
+  // Loop through each contract package in the config
+  for (const packageName in config.contractPackages) {
+    const contracts = config.contractPackages[packageName].contracts
+    const fileNames = contracts.map((contractName) => `src/abis/${contractName}.abi.json`)
 
-    console.log(`${aliases[i]} contracts`, allFiles)
+    const allFiles = typechain.glob(cwd, fileNames)
+
+    // Generate TypeChain bindings for all found ABI files in the package at once
     await typechain.runTypeChain({
       cwd,
       filesToProcess: allFiles,
       allFiles,
-      outDir: `${artifactsOutputDir}/${aliases[i]}`,
+      outDir: `${artifactsOutputDir}/${packageName}`,
       target: 'ethers-v5'
     })
   }
@@ -62,149 +58,151 @@ function overwriteEventParams({ alias, files, eventName, inputs }) {
 async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
+
+  console.log({ config })
   // These manual changes patch the npm packages in node-modules which need to be copied over into the abis directory
-  mergeEvents({ src: 'openTermLoan/abis/MapleRefinancer.json', dst: 'openTermLoan/abis/MapleLoan.json' })
-  mergeEvents({ src: 'fixedTermLoan/abis/Refinancer.json', dst: 'fixedTermLoan/abis/MapleLoan.json' })
-  mergeEvents({ src: 'loanV401/abis/Refinancer.json', dst: 'loanV401/abis/MapleLoan.json' })
-  mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json' })
-  mergeEvents({ src: 'loanV302/abis/Refinancer.json', dst: 'loanV302/abis/MapleLoan.json' })
-  mergeEvents({ src: 'loanV301/abis/Refinancer.json', dst: 'loanV301/abis/MapleLoan.json' })
-  mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
-  mergeEvents({ src: 'pool/abis/PoolManagerInitializer.json', dst: 'pool/abis/PoolManager.json' })
-  mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json' })
-  overwriteEventParams({
-    alias: 'poolV1',
-    files: ['Pool'],
-    eventName: 'LossesRecognized',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'by',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesRecognized',
-        type: 'uint256'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'totalLossesRecognized',
-        type: 'uint256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    alias: 'stakeLocker',
-    files: ['StakeLocker'],
-    eventName: 'LossesRecognized',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'by',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesRecognized',
-        type: 'uint256'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'totalLossesRecognized',
-        type: 'uint256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    alias: 'poolV1',
-    files: ['Pool'],
-    eventName: 'LossesCorrectionUpdated',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'account',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'int256',
-        name: 'lossesCorrection',
-        type: 'int256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    alias: 'poolV1',
-    files: ['Pool'],
-    eventName: 'LossesDistributed',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'by',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesDistributed',
-        type: 'uint256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    alias: 'poolV1',
-    files: ['Pool'],
-    eventName: 'LossesPerShareUpdated',
-    inputs: [
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesPerShare',
-        type: 'uint256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    alias: 'poolV1',
-    files: ['Pool'],
-    eventName: 'PointsCorrectionUpdated',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'account',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'int256',
-        name: 'pointsCorrection',
-        type: 'int256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    alias: 'poolV1',
-    files: ['Pool'],
-    eventName: 'PointsPerShareUpdated',
-    inputs: [
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'pointsPerShare',
-        type: 'uint256'
-      }
-    ]
-  })
+  // mergeEvents({ src: 'openTermLoan/abis/MapleRefinancer.json', dst: 'openTermLoan/abis/MapleLoan.json' })
+  // mergeEvents({ src: 'fixedTermLoan/abis/Refinancer.json', dst: 'fixedTermLoan/abis/MapleLoan.json' })
+  // mergeEvents({ src: 'loanV401/abis/Refinancer.json', dst: 'loanV401/abis/MapleLoan.json' })
+  // mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json' })
+  // mergeEvents({ src: 'loanV302/abis/Refinancer.json', dst: 'loanV302/abis/MapleLoan.json' })
+  // mergeEvents({ src: 'loanV301/abis/Refinancer.json', dst: 'loanV301/abis/MapleLoan.json' })
+  // mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
+  // mergeEvents({ src: 'pool/abis/PoolManagerInitializer.json', dst: 'pool/abis/PoolManager.json' })
+  // mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json' })
+  // overwriteEventParams({
+  //   alias: 'poolV1',
+  //   files: ['Pool'],
+  //   eventName: 'LossesRecognized',
+  //   inputs: [
+  //     {
+  //       indexed: true,
+  //       internalType: 'address',
+  //       name: 'by',
+  //       type: 'address'
+  //     },
+  //     {
+  //       indexed: false,
+  //       internalType: 'uint256',
+  //       name: 'lossesRecognized',
+  //       type: 'uint256'
+  //     },
+  //     {
+  //       indexed: false,
+  //       internalType: 'uint256',
+  //       name: 'totalLossesRecognized',
+  //       type: 'uint256'
+  //     }
+  //   ]
+  // })
+  // overwriteEventParams({
+  //   alias: 'stakeLocker',
+  //   files: ['StakeLocker'],
+  //   eventName: 'LossesRecognized',
+  //   inputs: [
+  //     {
+  //       indexed: true,
+  //       internalType: 'address',
+  //       name: 'by',
+  //       type: 'address'
+  //     },
+  //     {
+  //       indexed: false,
+  //       internalType: 'uint256',
+  //       name: 'lossesRecognized',
+  //       type: 'uint256'
+  //     },
+  //     {
+  //       indexed: false,
+  //       internalType: 'uint256',
+  //       name: 'totalLossesRecognized',
+  //       type: 'uint256'
+  //     }
+  //   ]
+  // })
+  // overwriteEventParams({
+  //   alias: 'poolV1',
+  //   files: ['Pool'],
+  //   eventName: 'LossesCorrectionUpdated',
+  //   inputs: [
+  //     {
+  //       indexed: true,
+  //       internalType: 'address',
+  //       name: 'account',
+  //       type: 'address'
+  //     },
+  //     {
+  //       indexed: false,
+  //       internalType: 'int256',
+  //       name: 'lossesCorrection',
+  //       type: 'int256'
+  //     }
+  //   ]
+  // })
+  // overwriteEventParams({
+  //   alias: 'poolV1',
+  //   files: ['Pool'],
+  //   eventName: 'LossesDistributed',
+  //   inputs: [
+  //     {
+  //       indexed: true,
+  //       internalType: 'address',
+  //       name: 'by',
+  //       type: 'address'
+  //     },
+  //     {
+  //       indexed: false,
+  //       internalType: 'uint256',
+  //       name: 'lossesDistributed',
+  //       type: 'uint256'
+  //     }
+  //   ]
+  // })
+  // overwriteEventParams({
+  //   alias: 'poolV1',
+  //   files: ['Pool'],
+  //   eventName: 'LossesPerShareUpdated',
+  //   inputs: [
+  //     {
+  //       indexed: false,
+  //       internalType: 'uint256',
+  //       name: 'lossesPerShare',
+  //       type: 'uint256'
+  //     }
+  //   ]
+  // })
+  // overwriteEventParams({
+  //   alias: 'poolV1',
+  //   files: ['Pool'],
+  //   eventName: 'PointsCorrectionUpdated',
+  //   inputs: [
+  //     {
+  //       indexed: true,
+  //       internalType: 'address',
+  //       name: 'account',
+  //       type: 'address'
+  //     },
+  //     {
+  //       indexed: false,
+  //       internalType: 'int256',
+  //       name: 'pointsCorrection',
+  //       type: 'int256'
+  //     }
+  //   ]
+  // })
+  // overwriteEventParams({
+  //   alias: 'poolV1',
+  //   files: ['Pool'],
+  //   eventName: 'PointsPerShareUpdated',
+  //   inputs: [
+  //     {
+  //       indexed: false,
+  //       internalType: 'uint256',
+  //       name: 'pointsPerShare',
+  //       type: 'uint256'
+  //     }
+  //   ]
+  // })
   await generateTypechainBindings(config)
 }
 
