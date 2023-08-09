@@ -5,7 +5,7 @@ const typechain = require('typechain')
 const { readFileSync, writeFileSync } = require('fs')
 
 const artifactsOutputDir = path.join(__dirname, '../src/typechain')
-const pathDir = path.join(__dirname, `../node_modules/@maplelabs/`)
+const pathDir = path.join(__dirname, `../src/abis/`)
 
 const getParsedConfig = () => {
   const configPath = path.join(__dirname, '../config.json')
@@ -40,6 +40,7 @@ function mergeEvents({ src, dst }) {
   const events = srcJson.filter((entry) => entry.type === 'event')
   const dstJson = JSON.parse(readFileSync(path.join(pathDir, `${dst}`)).toString())
   const eventIndexJson = dstJson.findIndex((el) => el.type !== 'event')
+
   dstJson.splice(eventIndexJson, 0, ...events)
   writeFileSync(path.join(pathDir, `${dst}`), JSON.stringify(dstJson, null, 2))
 }
@@ -61,15 +62,15 @@ async function buildTypechain() {
 
   console.log({ config })
   // These manual changes patch the npm packages in node-modules which need to be copied over into the abis directory
-  // mergeEvents({ src: 'openTermLoan/abis/MapleRefinancer.json', dst: 'openTermLoan/abis/MapleLoan.json' })
-  // mergeEvents({ src: 'fixedTermLoan/abis/Refinancer.json', dst: 'fixedTermLoan/abis/MapleLoan.json' })
-  // mergeEvents({ src: 'loanV401/abis/Refinancer.json', dst: 'loanV401/abis/MapleLoan.json' })
-  // mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json' })
-  // mergeEvents({ src: 'loanV302/abis/Refinancer.json', dst: 'loanV302/abis/MapleLoan.json' })
-  // mergeEvents({ src: 'loanV301/abis/Refinancer.json', dst: 'loanV301/abis/MapleLoan.json' })
-  // mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
-  // mergeEvents({ src: 'pool/abis/PoolManagerInitializer.json', dst: 'pool/abis/PoolManager.json' })
-  // mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json' })
+  mergeEvents({ src: 'LoanV3Refinancer.abi.json', dst: 'LoanV3.abi.json' })
+  mergeEvents({ src: 'LoanV301Refinancer.abi.json', dst: 'LoanV301.abi.json' })
+  mergeEvents({ src: 'LoanV302Refinancer.abi.json', dst: 'LoanV302.abi.json' })
+  mergeEvents({ src: 'LoanV401Refinancer.abi.json', dst: 'LoanV401.abi.json' })
+  mergeEvents({ src: 'LoanV4Refinancer.abi.json', dst: 'LoanV4.abi.json' })
+  mergeEvents({ src: 'OpenTermLoanRefinancer.abi.json', dst: 'OpenTermLoan.abi.json' })
+  mergeEvents({ src: 'FixedTermLoanRefinancer.abi.json', dst: 'FixedTermLoan.abi.json' })
+  mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV2PoolManager.abi.json' })
+  mergeEvents({ src: 'PoolV201PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
   // overwriteEventParams({
   //   alias: 'poolV1',
   //   files: ['Pool'],
