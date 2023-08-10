@@ -36,24 +36,57 @@ const generateTypechainBindings = async (config) => {
 
 function mergeEvents({ src, dst }) {
   console.log(`🔀 Merging events from ${src} events into ${dst}`)
+
   const srcJson = JSON.parse(readFileSync(path.join(pathDir, `${src}`)).toString())
   const events = srcJson.filter((entry) => entry.type === 'event')
+
   const dstJson = JSON.parse(readFileSync(path.join(pathDir, `${dst}`)).toString())
+
+  // Create a set of event names already in dst
+  const dstEventNames = new Set(dstJson.filter((entry) => entry.type === 'event').map((entry) => entry.name))
+
+  // Filter out events from src that already exist in dst
+  const newEvents = events.filter((event) => !dstEventNames.has(event.name))
+
   const eventIndexJson = dstJson.findIndex((el) => el.type !== 'event')
 
-  dstJson.splice(eventIndexJson, 0, ...events)
-  writeFileSync(path.join(pathDir, `${dst}`), JSON.stringify(dstJson, null, 2))
+  dstJson.splice(eventIndexJson, 0, ...newEvents)
+
+  // Prune duplicate events
+  const prunedDstJson = pruneDuplicateEvents(dstJson)
+
+  writeFileSync(path.join(pathDir, `${dst}`), JSON.stringify(prunedDstJson, null, 2))
 }
 
-function overwriteEventParams({ files, eventName, inputs }) {
-  for (const src of files) {
-    console.log(`✏️ Overwriting event params for ${eventName} in ${src}`)
-    const filePath = path.join(pathDir, `${src}.abi.json`)
-    const json = JSON.parse(readFileSync(filePath).toString())
+function pruneDuplicateEvents(abi) {
+  const seenEvents = new Set()
+  return abi.filter((entry) => {
+    if (entry.type === 'event') {
+      if (seenEvents.has(entry.name)) {
+        return false // Skip this duplicate event
+      }
+      seenEvents.add(entry.name)
+    }
+    return true // Keep this entry
+  })
+}
+
+function overwriteEventParams({ file, events }) {
+  console.log(`✏️ Overwriting event params in ${file}`)
+
+  const filePath = path.join(pathDir, `${file}.abi.json`)
+  let json = JSON.parse(readFileSync(filePath).toString())
+
+  for (const eventChange of events) {
+    const { eventName, inputs } = eventChange
     const eventIndex = json.findIndex((el) => el.type === 'event' && el.name === eventName)
-    json[eventIndex].inputs = inputs
-    writeFileSync(filePath, JSON.stringify(json, null, 2))
+
+    if (eventIndex !== -1) {
+      json[eventIndex].inputs = inputs
+    }
   }
+
+  writeFileSync(filePath, JSON.stringify(json, null, 2))
 }
 
 async function buildTypechain() {
@@ -71,128 +104,131 @@ async function buildTypechain() {
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV2PoolManager.abi.json' })
   mergeEvents({ src: 'PoolV201PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
   overwriteEventParams({
-    files: ['PoolV1'],
-    eventName: 'LossesRecognized',
-    inputs: [
+    file: 'PoolV1',
+    events: [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'by',
-        type: 'address'
+        eventName: 'LossesRecognized',
+        inputs: [
+          {
+            indexed: true,
+            internalType: 'address',
+            name: 'by',
+            type: 'address'
+          },
+          {
+            indexed: false,
+            internalType: 'uint256',
+            name: 'lossesRecognized',
+            type: 'uint256'
+          },
+          {
+            indexed: false,
+            internalType: 'uint256',
+            name: 'totalLossesRecognized',
+            type: 'uint256'
+          }
+        ]
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesRecognized',
-        type: 'uint256'
+        eventName: 'LossesCorrectionUpdated',
+        inputs: [
+          {
+            indexed: true,
+            internalType: 'address',
+            name: 'account',
+            type: 'address'
+          },
+          {
+            indexed: false,
+            internalType: 'int256',
+            name: 'lossesCorrection',
+            type: 'int256'
+          }
+        ]
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'totalLossesRecognized',
-        type: 'uint256'
+        eventName: 'LossesDistributed',
+        inputs: [
+          {
+            indexed: true,
+            internalType: 'address',
+            name: 'by',
+            type: 'address'
+          },
+          {
+            indexed: false,
+            internalType: 'uint256',
+            name: 'lossesDistributed',
+            type: 'uint256'
+          }
+        ]
+      },
+      {
+        eventName: 'LossesPerShareUpdated',
+        inputs: [
+          {
+            indexed: false,
+            internalType: 'uint256',
+            name: 'lossesPerShare',
+            type: 'uint256'
+          }
+        ]
+      },
+      {
+        eventName: 'PointsCorrectionUpdated',
+        inputs: [
+          {
+            indexed: true,
+            internalType: 'address',
+            name: 'account',
+            type: 'address'
+          },
+          {
+            indexed: false,
+            internalType: 'int256',
+            name: 'pointsCorrection',
+            type: 'int256'
+          }
+        ]
+      },
+      {
+        eventName: 'PointsPerShareUpdated',
+        inputs: [
+          {
+            indexed: false,
+            internalType: 'uint256',
+            name: 'pointsPerShare',
+            type: 'uint256'
+          }
+        ]
       }
     ]
   })
   overwriteEventParams({
-    files: ['StakeLocker'],
-    eventName: 'LossesRecognized',
-    inputs: [
+    file: 'StakeLocker',
+    events: [
       {
-        indexed: true,
-        internalType: 'address',
-        name: 'by',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesRecognized',
-        type: 'uint256'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'totalLossesRecognized',
-        type: 'uint256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    files: ['PoolV1'],
-    eventName: 'LossesCorrectionUpdated',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'account',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'int256',
-        name: 'lossesCorrection',
-        type: 'int256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    files: ['PoolV1'],
-    eventName: 'LossesDistributed',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'by',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesDistributed',
-        type: 'uint256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    files: ['PoolV1'],
-    eventName: 'LossesPerShareUpdated',
-    inputs: [
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'lossesPerShare',
-        type: 'uint256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    files: ['PoolV1'],
-    eventName: 'PointsCorrectionUpdated',
-    inputs: [
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'account',
-        type: 'address'
-      },
-      {
-        indexed: false,
-        internalType: 'int256',
-        name: 'pointsCorrection',
-        type: 'int256'
-      }
-    ]
-  })
-  overwriteEventParams({
-    files: ['PoolV1'],
-    eventName: 'PointsPerShareUpdated',
-    inputs: [
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'pointsPerShare',
-        type: 'uint256'
+        eventName: 'LossesRecognized',
+        inputs: [
+          {
+            indexed: true,
+            internalType: 'address',
+            name: 'by',
+            type: 'address'
+          },
+          {
+            indexed: false,
+            internalType: 'uint256',
+            name: 'lossesRecognized',
+            type: 'uint256'
+          },
+          {
+            indexed: false,
+            internalType: 'uint256',
+            name: 'totalLossesRecognized',
+            type: 'uint256'
+          }
+        ]
       }
     ]
   })
