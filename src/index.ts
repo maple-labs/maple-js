@@ -44,8 +44,8 @@ const debtLockerV3 = {
 const environmentMocks = {
   bpool: environmentMocksImports.BPoolAbi__factory,
   erc20: environmentMocksImports.ERC20Abi__factory,
-  usdt: environmentMocksImports.MintSpecialTokenTetherAbi__factory,
-  kycweth: environmentMocksImports.KycWETHAbi__factory
+  kycerc20: environmentMocksImports.KycERC20Abi__factory,
+  usdt: environmentMocksImports.USDTAbi__factory
 }
 
 const fixedTermLoan = {
@@ -92,7 +92,7 @@ const mapleGlobalsV2 = {
   core: mapleGlobalsV2Imports.MapleGlobalsV2Abi__factory
 }
 
-const mapleGlobalsV2V2 = {
+const mapleGlobalsV201 = {
   core: mapleGlobalsV201Imports.MapleGlobalsV201Abi__factory
 }
 
@@ -196,8 +196,8 @@ interface ContractTypes {
   // environmentMocks
   bPool: environmentMocksImports.BPoolAbi
   erc20: environmentMocksImports.ERC20Abi
-  kycweth: environmentMocksImports.KycWETHAbi
-  usdt: environmentMocksImports.MintSpecialTokenTetherAbi
+  kycweth: environmentMocksImports.KycERC20Abi
+  usdt: environmentMocksImports.USDTAbi
 
   // Fixed Term Loans & Managers
   fixedTermLoan: fixedTermLoanImports.FixedTermLoanAbi
@@ -300,7 +300,7 @@ export {
   MapleAddressMapping,
   mapleGlobals,
   mapleGlobalsV2,
-  mapleGlobalsV2V2,
+  mapleGlobalsV201,
   mapleRewards,
   mapleToken,
   mapleTokenV2,

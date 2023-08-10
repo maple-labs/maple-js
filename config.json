@@ -15,8 +15,8 @@
       "contracts": [
         "BPool",
         "ERC20",
-        "kycWETH",
-        "MintSpecialTokenTether"
+        "kycERC20",
+        "USDT"
       ]
     },
     "fixedTermLoan": {
