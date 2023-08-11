@@ -103,6 +103,11 @@ async function buildTypechain() {
   mergeEvents({ src: 'FixedTermLoanRefinancer.abi.json', dst: 'FixedTermLoan.abi.json' })
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV2PoolManager.abi.json' })
   mergeEvents({ src: 'PoolV201PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
+  // TODO: update this withdrawalManager mergeEvents call to use src/abis folder
+  mergeEvents({
+    src: 'withdrawalManager/abis/WithdrawalManagerInitializer.json',
+    dst: 'withdrawalManager/abis/WithdrawalManager.json'
+  })
   overwriteEventParams({
     file: 'PoolV1',
     events: [
