@@ -1,0 +1,233 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountClaimed",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "lastClaimedWindowId",
+        "type": "uint16"
+      }
+    ],
+    "name": "Claimed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "newWindowId",
+        "type": "uint16"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "windowStart",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint208",
+        "name": "issuanceRate",
+        "type": "uint208"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "previousWindowId",
+        "type": "uint16"
+      }
+    ],
+    "name": "WindowScheduled",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "claim",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "amountClaimed_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "to_",
+        "type": "uint32"
+      }
+    ],
+    "name": "claimable",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "claimableAmount_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "currentIssuanceRate",
+    "outputs": [
+      {
+        "internalType": "uint208",
+        "name": "issuanceRate_",
+        "type": "uint208"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "currentWindowId",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "windowId_",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "currentWindowStart",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "windowStart_",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastClaimedTimestamp",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastClaimedWindowId",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastScheduledWindowId",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "windowStarts_",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "uint208[]",
+        "name": "issuanceRates_",
+        "type": "uint208[]"
+      }
+    ],
+    "name": "schedule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "token",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "name": "windows",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "nextWindowId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "windowStart",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint208",
+        "name": "issuanceRate",
+        "type": "uint208"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
