@@ -1,122 +1,64 @@
 {
   "contractPackages": {
     "debtLockerV2": {
-      "contracts": [
-        "DebtLockerV2",
-        "DebtLockerV2Factory"
-      ]
+      "contracts": ["DebtLockerV2", "DebtLockerV2Factory"]
     },
     "debtLockerV3": {
-      "contracts": [
-        "DebtLockerV3"
-      ]
+      "contracts": ["DebtLockerV3"]
     },
     "environmentMocks": {
-      "contracts": [
-        "BPool",
-        "ERC20",
-        "kycERC20",
-        "USDT"
-      ]
+      "contracts": ["BPool", "ERC20", "kycERC20", "USDT"]
     },
     "fixedTermLoan": {
-      "contracts": [
-        "FixedTermLoan",
-        "FixedTermLoanFactory",
-        "FixedTermLoanInitializer",
-        "FixedTermLoanRefinancer"
-      ]
+      "contracts": ["FixedTermLoan", "FixedTermLoanFactory", "FixedTermLoanInitializer", "FixedTermLoanRefinancer"]
     },
     "fixedTermLoanManager": {
-      "contracts": [
-        "FixedTermLoanManager"
-      ]
+      "contracts": ["FixedTermLoanManager"]
     },
     "loanV2": {
-      "contracts": [
-        "LoanV2",
-        "LoanV2Factory"
-      ]
+      "contracts": ["LoanV2", "LoanV2Factory"]
     },
     "loanV3": {
-      "contracts": [
-        "LoanV3",
-        "LoanV3Initializer",
-        "LoanV3Refinancer"
-      ]
+      "contracts": ["LoanV3", "LoanV3Initializer", "LoanV3Refinancer"]
     },
     "loanV301": {
-      "contracts": [
-        "LoanV301"
-      ]
+      "contracts": ["LoanV301"]
     },
     "loanV4": {
-      "contracts": [
-        "LoanV4",
-        "LoanV4Initializer",
-        "LoanV4Refinancer"
-      ]
+      "contracts": ["LoanV4", "LoanV4Initializer", "LoanV4Refinancer"]
     },
     "loanV401": {
-      "contracts": [
-        "LoanV401"
-      ]
+      "contracts": ["LoanV401"]
     },
     "mapleGlobals": {
-      "contracts": [
-        "MapleGlobals"
-      ]
+      "contracts": ["MapleGlobals"]
     },
     "mapleGlobalsV2": {
-      "contracts": [
-        "MapleGlobalsV2"
-      ]
+      "contracts": ["MapleGlobalsV2"]
     },
     "mapleGlobalsV201": {
-      "contracts": [
-        "MapleGlobalsV201"
-      ]
+      "contracts": ["MapleGlobalsV201"]
     },
     "mapleToken": {
-      "contracts": [
-        "MapleToken"
-      ]
+      "contracts": ["MapleToken"]
     },
     "mapleTokenV2": {
-      "contracts": [
-        "MapleTokenV2"
-      ]
+      "contracts": ["MapleTokenV2", "RecapitalizationModule"]
     },
     "migrationHelpers": {
-      "contracts": [
-        "MigrationHelper"
-      ]
+      "contracts": ["MigrationHelper"]
     },
     "mplRewards": {
-      "contracts": [
-        "MplRewards",
-        "MplRewardsFactory"
-      ]
+      "contracts": ["MplRewards", "MplRewardsFactory"]
     },
     "openTermLoan": {
-      "contracts": [
-        "OpenTermLoan",
-        "OpenTermLoanFactory",
-        "OpenTermLoanInitializer",
-        "OpenTermLoanRefinancer"
-      ]
+      "contracts": ["OpenTermLoan", "OpenTermLoanFactory", "OpenTermLoanInitializer", "OpenTermLoanRefinancer"]
     },
     "openTermLoanManager": {
-      "contracts": [
-        "OpenTermLoanManager",
-        "OpenTermLoanManagerFactory"
-      ]
+      "contracts": ["OpenTermLoanManager", "OpenTermLoanManagerFactory"]
     },
     "poolV1": {
-      "contracts": [
-        "PoolV1",
-        "PoolV1Factory"
-      ]
+      "contracts": ["PoolV1", "PoolV1Factory"]
     },
     "poolV2": {
       "contracts": [
@@ -131,26 +73,16 @@
       ]
     },
     "poolV201": {
-      "contracts": [
-        "PoolV201PoolDeployer",
-        "PoolV201PoolManager"
-      ]
+      "contracts": ["PoolV201PoolDeployer", "PoolV201PoolManager"]
     },
     "stakeLocker": {
-      "contracts": [
-        "StakeLocker",
-        "StakeLockerFactory"
-      ]
+      "contracts": ["StakeLocker", "StakeLockerFactory"]
     },
     "withdrawalManager": {
-      "contracts": [
-        "WithdrawalManager"
-      ]
+      "contracts": ["WithdrawalManager"]
     },
     "xmpl": {
-      "contracts": [
-        "xMPL"
-      ]
+      "contracts": ["xMPL"]
     }
   }
 }

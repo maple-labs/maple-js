@@ -101,7 +101,8 @@ const mapleToken = {
 }
 
 const mapleTokenV2 = {
-  core: mapleTokenV2Imports.MapleTokenV2Abi__factory
+  core: mapleTokenV2Imports.MapleTokenV2Abi__factory,
+  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi__factory
 }
 
 const migrationHelpers = {
@@ -235,6 +236,7 @@ interface ContractTypes {
   // Maple Token
   mapleToken: mapleTokenImports.MapleTokenAbi
   mapleTokenV2: mapleTokenV2Imports.MapleTokenV2Abi
+  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi
 
   // Migration Helpers
   migrationHelpers: migrationHelpersImports.MigrationHelperAbi
