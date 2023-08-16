@@ -7,7 +7,7 @@
       "contracts": ["DebtLockerV3"]
     },
     "environmentMocks": {
-      "contracts": ["BPool", "ERC20", "kycERC20", "USDT"]
+      "contracts": ["BPool", "ERC20", "kycERC20", "USDT", "MintSpecialToken"]
     },
     "fixedTermLoan": {
       "contracts": ["FixedTermLoan", "FixedTermLoanFactory", "FixedTermLoanInitializer", "FixedTermLoanRefinancer"]

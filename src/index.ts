@@ -46,6 +46,7 @@ const environmentMocks = {
   bpool: environmentMocksImports.BPoolAbi__factory,
   erc20: environmentMocksImports.ERC20Abi__factory,
   kycerc20: environmentMocksImports.KycERC20Abi__factory,
+  mintSpecialToken: environmentMocksImports.MintSpecialTokenAbi__factory,
   usdt: environmentMocksImports.USDTAbi__factory
 }
 
