@@ -15,6 +15,9 @@
     "fixedTermLoanManager": {
       "contracts": ["FixedTermLoanManager"]
     },
+    "loanV1": {
+      "contracts": ["Loan", "LoanFactory"]
+    },
     "loanV2": {
       "contracts": ["LoanV2", "LoanV2Factory"]
     },

@@ -5,6 +5,7 @@ import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as fixedTermLoanImports from './typechain/fixedTermLoan'
 import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
+import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
 import * as loanV3Imports from './typechain/loanV3'
 import * as loanV301Imports from './typechain/loanV301'
@@ -57,6 +58,11 @@ const fixedTermLoan = {
 
 const fixedTermLoanManager = {
   core: fixedTermLoanManagerImports.FixedTermLoanManagerAbi__factory
+}
+
+const loanV1 = {
+  core: loanV1Imports.LoanAbi__factory,
+  factory: loanV1Imports.LoanFactoryAbi__factory
 }
 
 const loanV2 = {
@@ -294,6 +300,7 @@ export {
   fixedTermLoan,
   fixedTermLoanManager,
   loanManager,
+  loanV1,
   loanV2,
   loanV3,
   loanV301,
