@@ -204,7 +204,7 @@ interface ContractTypes {
   // environmentMocks
   bPool: environmentMocksImports.BPoolAbi
   erc20: environmentMocksImports.ERC20Abi
-  kycweth: environmentMocksImports.KycERC20Abi
+  kycerc20: environmentMocksImports.KycERC20Abi
   usdt: environmentMocksImports.USDTAbi
 
   // Fixed Term Loans & Managers
