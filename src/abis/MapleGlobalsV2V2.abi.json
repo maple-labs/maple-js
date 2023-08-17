@@ -96,6 +96,56 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "factory_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "canDeployFrom_",
+        "type": "bool"
+      }
+    ],
+    "name": "CanDeployFromSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "caller_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "contract_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "contractPaused_",
+        "type": "bool"
+      }
+    ],
+    "name": "ContractPauseSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "uint256",
         "name": "previousDelay_",
@@ -121,6 +171,37 @@
       }
     ],
     "name": "DefaultTimelockParametersSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "caller_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "contract_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes4",
+        "name": "sig_",
+        "type": "bytes4"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "functionUnpaused_",
+        "type": "bool"
+      }
+    ],
+    "name": "FunctionUnpauseSet",
     "type": "event"
   },
   {
@@ -376,11 +457,11 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "securityAdmin_",
+        "name": "caller_",
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "bool",
         "name": "protocolPaused_",
         "type": "bool"
@@ -449,7 +530,7 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "bool",
         "name": "isValid_",
         "type": "bool"
@@ -468,38 +549,13 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "bool",
         "name": "isValid_",
         "type": "bool"
       }
     ],
     "name": "ValidCollateralAssetSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "bytes32",
-        "name": "factoryKey_",
-        "type": "bytes32"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "factory_",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "bool",
-        "name": "isValid_",
-        "type": "bool"
-      }
-    ],
-    "name": "ValidFactorySet",
     "type": "event"
   },
   {
@@ -518,7 +574,7 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "bool",
         "name": "isValid_",
         "type": "bool"
@@ -537,7 +593,7 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "bool",
         "name": "isValid_",
         "type": "bool"
@@ -556,7 +612,7 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "bool",
         "name": "isValid_",
         "type": "bool"
@@ -575,7 +631,7 @@
         "type": "address"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "bool",
         "name": "isValid_",
         "type": "bool"
@@ -644,6 +700,49 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller_",
+        "type": "address"
+      }
+    ],
+    "name": "canDeploy",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "canDeploy_",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "factory_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "caller_",
+        "type": "address"
+      }
+    ],
+    "name": "canDeployFrom",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "canDeployFrom_",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -753,8 +852,27 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "isContractPaused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bytes32",
-        "name": "key_",
+        "name": "factoryId_",
         "type": "bytes32"
       },
       {
@@ -768,6 +886,73 @@
       {
         "internalType": "bool",
         "name": "isFactory_",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "sig_",
+        "type": "bytes4"
+      }
+    ],
+    "name": "isFunctionPaused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "functionIsPaused_",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "contract_",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "sig_",
+        "type": "bytes4"
+      }
+    ],
+    "name": "isFunctionPaused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "functionIsPaused_",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "",
+        "type": "bytes4"
+      }
+    ],
+    "name": "isFunctionUnpaused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
         "type": "bool"
       }
     ],
@@ -840,7 +1025,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "caller_",
         "type": "address"
       }
     ],
@@ -848,7 +1033,7 @@
     "outputs": [
       {
         "internalType": "bool",
-        "name": "",
+        "name": "isPoolDeployer_",
         "type": "bool"
       }
     ],
@@ -1208,6 +1393,47 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "factory_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "account_",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "canDeployFrom_",
+        "type": "bool"
+      }
+    ],
+    "name": "setCanDeployFrom",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "contract_",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "contractPaused_",
+        "type": "bool"
+      }
+    ],
+    "name": "setContractPause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint128",
         "name": "defaultTimelockDelay_",
         "type": "uint128"
@@ -1219,6 +1445,29 @@
       }
     ],
     "name": "setDefaultTimelockParameters",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "contract_",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "sig_",
+        "type": "bytes4"
+      },
+      {
+        "internalType": "bool",
+        "name": "functionUnpaused_",
+        "type": "bool"
+      }
+    ],
+    "name": "setFunctionUnpause",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1510,29 +1759,6 @@
     "inputs": [
       {
         "internalType": "bytes32",
-        "name": "factoryKey_",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "address",
-        "name": "factory_",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "isValid_",
-        "type": "bool"
-      }
-    ],
-    "name": "setValidFactory",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
         "name": "instanceKey_",
         "type": "bytes32"
       },
@@ -1592,12 +1818,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "poolDeployer_",
+        "name": "account_",
         "type": "address"
       },
       {
         "internalType": "bool",
-        "name": "isValid_",
+        "name": "isPoolDeployer_",
         "type": "bool"
       }
     ],

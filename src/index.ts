@@ -3,33 +3,33 @@ import * as collateralLockerImports from './typechain/collateralLocker'
 import * as debtLockerV1Imports from './typechain/debtLockerV1'
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
+import * as environmentMocksImports from './typechain/environmentMocks'
+import * as fixedTermLoanImports from './typechain/fixedTermLoan'
+import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
 import * as fundingLockerImports from './typechain/fundingLocker'
 import * as lateFeeCalcImports from './typechain/lateFeeCalculator'
 import * as liquidityLockerImports from './typechain/liquidityLocker'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
-import * as loanV3Imports from './typechain/loanV3'
 import * as loanV301Imports from './typechain/loanV301'
+import * as loanV3Imports from './typechain/loanV3'
 import * as loanV4Imports from './typechain/loanV4'
-import * as loanV5Imports from './typechain/loanV5'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleGlobalsV2V2Imports from './typechain/mapleGlobalsV2V2'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
-import * as xmplImports from './typechain/xmpl'
+import * as migrationHelpersImports from './typechain/migrationHelpers'
+import * as openTermLoanImports from './typechain/openTermLoan'
+import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
+import * as poolImports from './typechain/pool'
 import * as poolV1Imports from './typechain/poolV1'
+import * as poolV2Imports from './typechain/poolV2'
 import * as premiumCalcImports from './typechain/premiumCalculator'
 import * as repaymentCalcImports from './typechain/repaymentCalculator'
 import * as stakeLockerImports from './typechain/stakeLocker'
-import * as poolImports from './typechain/pool'
-import * as poolV2Imports from './typechain/poolV2'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
-import * as environmentMocksImports from './typechain/environmentMocks'
-import * as migrationHelpersImports from './typechain/migrationHelpers'
-import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
-import * as openTermLoanImports from './typechain/openTermLoan'
-import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
+import * as xmplImports from './typechain/xmpl'
 
 // Addresses
 import goerliProdAddresses from './addresses/goerli-prod'
@@ -57,6 +57,14 @@ const debtLockerV3 = {
   factory: debtLockerV3Imports.DebtLockerFactory__factory,
   core: debtLockerV3Imports.DebtLocker__factory,
   initializer: debtLockerV3Imports.DebtLockerInitializer__factory
+}
+
+const fixedTermLoan = {
+  core: fixedTermLoanImports.MapleLoan__factory,
+  factory: fixedTermLoanImports.MapleLoanFactory__factory,
+  initializer: fixedTermLoanImports.MapleLoanInitializer__factory,
+  migrator: fixedTermLoanImports.MapleLoanV5Migrator__factory,
+  refinancer: fixedTermLoanImports.Refinancer__factory
 }
 
 const fundingLocker = {
@@ -107,15 +115,6 @@ const loanV4 = {
   migrator: loanV4Imports.MapleLoanV4Migrator__factory,
   feeManager: loanV4Imports.MapleLoanFeeManager__factory,
   refinancer: loanV4Imports.Refinancer__factory
-}
-
-const loanV5 = {
-  core: loanV5Imports.MapleLoan__factory,
-  factory: loanV5Imports.MapleLoanFactory__factory,
-  initializer: loanV5Imports.MapleLoanInitializer__factory,
-  migrator: loanV5Imports.MapleLoanV4Migrator__factory,
-  feeManager: loanV5Imports.MapleLoanFeeManager__factory,
-  refinancer: loanV5Imports.Refinancer__factory
 }
 
 const mapleGlobals = {
@@ -204,7 +203,8 @@ const withdrawalManager = {
 const openTermLoan = {
   core: openTermLoanImports.MapleLoan__factory,
   factory: openTermLoanImports.MapleLoanFactory__factory,
-  initializer: openTermLoanImports.MapleLoanInitializer__factory
+  initializer: openTermLoanImports.MapleLoanInitializer__factory,
+  refinancer: openTermLoanImports.MapleRefinancer__factory
 }
 
 const openTermLoanManager = {
@@ -230,7 +230,8 @@ const chainlink = {
 }
 
 const erc20 = {
-  core: environmentMocksImports.MintSpecialToken__factory
+  core: environmentMocksImports.ERC20__factory,
+  usdt: environmentMocksImports.MintSpecialTetherToken__factory
 }
 
 const uniswapRouterV2 = {
@@ -279,17 +280,11 @@ interface ContractTypes {
   loanV4FeeManager: loanV4Imports.MapleLoanFeeManager
   loanV4Refinancer: loanV4Imports.Refinancer
 
-  loanV5: loanV5Imports.MapleLoan
-  loanV5Factory: loanV5Imports.MapleLoanFactory
-  loanV5Initializer: loanV5Imports.MapleLoanInitializer
-  loanV5Migrator: loanV5Imports.MapleLoanV4Migrator
-  loanV5FeeManager: loanV5Imports.MapleLoanFeeManager
-  loanV5Refinancer: loanV5Imports.Refinancer
-
   // openTermLoan
   openTermLoan: openTermLoanImports.MapleLoan
   openTermLoanFactory: openTermLoanImports.MapleLoanFactory
   openTermLoanInitializer: openTermLoanImports.MapleLoanInitializer
+  openTermLoanRefinancer: openTermLoanImports.MapleRefinancer
 
   mapleGlobals: mapleGlobalsImports.MapleGlobals
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobals
@@ -325,6 +320,13 @@ interface ContractTypes {
   openTermLoanManager: openTermLoanManagerImports.LoanManager
   openTermLoanManagerFactory: openTermLoanManagerImports.LoanManagerFactory
   openTermLoanManagerInitializer: openTermLoanManagerImports.LoanManagerInitializer
+  // PoolV2:fixedTermLoan
+  fixedTermLoan: fixedTermLoanImports.MapleLoan
+  fixedTermLoanFactory: fixedTermLoanImports.MapleLoanFactory
+  fixedTermLoanInitializer: fixedTermLoanImports.MapleLoanInitializer
+  fixedTermLoanMigrator: fixedTermLoanImports.MapleLoanV5Migrator
+  fixedTermFeeManager: fixedTermLoanImports.MapleLoanFeeManager
+  fixedTermLoanRefinancer: fixedTermLoanImports.Refinancer
   // PoolV2:fixedTermLoanManager
   fixedTermLoanManager: fixedTermLoanManagerImports.LoanManager
   fixedTermLoanManagerFactory: fixedTermLoanManagerImports.LoanManagerFactory
@@ -335,50 +337,51 @@ interface ContractTypes {
   withdrawalManagerInitializer: withdrawalManagerImports.WithdrawalManagerInitializer
   // environmentMocks
   bPool: environmentMocksImports.BPool
-  erc20: environmentMocksImports.MintSpecialToken
+  erc20: environmentMocksImports.ERC20
+  usdt: environmentMocksImports.MintSpecialTetherToken
   // PoolV2: migrationHelper
   migrationHelpers: migrationHelpersImports.MigrationHelper
 }
 
 export {
   addresses,
+  bPool,
+  chainlink,
   collateralLocker,
+  ContractTypes,
   debtLockerV1,
   debtLockerV2,
   debtLockerV3,
+  erc20,
+  fixedTermLoan,
+  fixedTermLoanManager,
   fundingLocker,
   lateFeeCalc,
   liquidityLocker,
+  loanManager,
   loanV1,
   loanV2,
   loanV3,
   loanV301,
   loanV4,
-  loanV5,
-  openTermLoan,
+  MapleAddressMapping,
   mapleGlobals,
   mapleGlobalsV2,
   mapleGlobalsV2V2,
   mapleRewards,
   mapleToken,
   migrationHelpers,
-  xmpl,
+  openTermLoan,
+  openTermLoanManager,
+  pool,
+  poolManager,
+  poolManagerV2,
   poolV1,
+  poolV2,
   premiumCalc,
   repaymentCalculator,
   stakeLocker,
-  pool,
-  poolV2,
-  poolManager,
-  loanManager,
-  poolManagerV2,
-  openTermLoanManager,
-  fixedTermLoanManager,
-  withdrawalManager,
-  bPool,
-  chainlink,
-  erc20,
   uniswapRouterV2,
-  ContractTypes,
-  MapleAddressMapping
+  withdrawalManager,
+  xmpl
 }

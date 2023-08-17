@@ -317,6 +317,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "accruedInterest",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "accruedInterest_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -466,19 +479,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getAccruedInterest",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "accruedInterest_",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -497,19 +497,6 @@
         "internalType": "uint256",
         "name": "returnAmount_",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "globals",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "globals_",
-        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -624,32 +611,6 @@
       {
         "internalType": "address",
         "name": "liquidator",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "loanTransferAdmin",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "mapleTreasury",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "treasury_",
         "type": "address"
       }
     ],
@@ -789,19 +750,6 @@
   },
   {
     "inputs": [],
-    "name": "pool",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "poolDelegate",
     "outputs": [
       {
@@ -837,6 +785,34 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "loan_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "refinancer_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "calls_",
+        "type": "bytes[]"
+      }
+    ],
+    "name": "rejectNewTerms",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -887,19 +863,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "newLoanTransferAdmin_",
-        "type": "address"
-      }
-    ],
-    "name": "setLoanTransferAdmin",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
         "name": "collateralAsset_",
         "type": "address"
       },
@@ -910,24 +873,6 @@
       }
     ],
     "name": "setMinRatio",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address[]",
-        "name": "loans_",
-        "type": "address[]"
-      },
-      {
-        "internalType": "address[]",
-        "name": "newLenders_",
-        "type": "address[]"
-      }
-    ],
-    "name": "setOwnershipTo",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -959,19 +904,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address[]",
-        "name": "loans_",
-        "type": "address[]"
-      }
-    ],
-    "name": "takeOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {

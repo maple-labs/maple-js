@@ -91,6 +91,80 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "poolDelegate_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "poolManagerFactory_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "withdrawalManagerFactory_",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "loanManagerFactories_",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address",
+        "name": "asset_",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "name_",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "symbol_",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256[6]",
+        "name": "configParams_",
+        "type": "uint256[6]"
+      }
+    ],
+    "name": "getDeploymentAddresses",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "poolManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "pool_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "poolDelegateCover_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "withdrawalManager_",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "loanManagers_",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "globals",
     "outputs": [

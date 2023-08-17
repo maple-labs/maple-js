@@ -5,7 +5,7 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "pool_",
+        "name": "poolManager_",
         "type": "address"
       }
     ],
@@ -60,7 +60,7 @@
     "outputs": [
       {
         "internalType": "address",
-        "name": "pool_",
+        "name": "poolManager_",
         "type": "address"
       }
     ],
@@ -97,7 +97,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "pool_",
+        "name": "poolManager_",
         "type": "address"
       }
     ],
@@ -176,19 +176,6 @@
       {
         "internalType": "address",
         "name": "liquidator",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "loanTransferAdmin",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
         "type": "address"
       }
     ],
@@ -303,19 +290,6 @@
         "internalType": "uint256",
         "name": "issuanceRate",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "pool",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
       }
     ],
     "stateMutability": "view",

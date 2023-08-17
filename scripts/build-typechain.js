@@ -63,7 +63,8 @@ async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
   // These manual changes patch the npm packages in node-modules which need to be copied over into the abis directory
-  mergeEvents({ src: 'loanV5/abis/Refinancer.json', dst: 'loanV5/abis/MapleLoan.json' })
+  mergeEvents({ src: 'openTermLoan/abis/MapleRefinancer.json', dst: 'openTermLoan/abis/MapleLoan.json' })
+  mergeEvents({ src: 'fixedTermLoan/abis/Refinancer.json', dst: 'fixedTermLoan/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV401/abis/Refinancer.json', dst: 'loanV401/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV4/abis/Refinancer.json', dst: 'loanV4/abis/MapleLoan.json' })
   mergeEvents({ src: 'loanV302/abis/Refinancer.json', dst: 'loanV302/abis/MapleLoan.json' })
@@ -71,6 +72,10 @@ async function buildTypechain() {
   mergeEvents({ src: 'loanV3/abis/Refinancer.json', dst: 'loanV3/abis/MapleLoan.json' })
   mergeEvents({ src: 'pool/abis/PoolManagerInitializer.json', dst: 'pool/abis/PoolManager.json' })
   mergeEvents({ src: 'poolV2/abis/PoolManagerInitializer.json', dst: 'poolV2/abis/PoolManager.json' })
+  mergeEvents({
+    src: 'withdrawalManager/abis/WithdrawalManagerInitializer.json',
+    dst: 'withdrawalManager/abis/WithdrawalManager.json'
+  })
   overwriteEventParams({
     alias: 'poolV1',
     files: ['Pool'],
