@@ -52,7 +52,6 @@ const environmentMocks = {
 
 const fixedTermLoan = {
   core: fixedTermLoanImports.FixedTermLoanAbi__factory,
-  factory: fixedTermLoanImports.FixedTermLoanFactoryAbi__factory,
   initializer: fixedTermLoanImports.FixedTermLoanInitializerAbi__factory,
   refinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi__factory
 }
@@ -209,7 +208,6 @@ interface ContractTypes {
 
   // Fixed Term Loans & Managers
   fixedTermLoan: fixedTermLoanImports.FixedTermLoanAbi
-  fixedTermLoanFactory: fixedTermLoanImports.FixedTermLoanFactoryAbi
   fixedTermLoanInitializer: fixedTermLoanImports.FixedTermLoanInitializerAbi
   fixedTermLoanRefinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi
 
