@@ -102,7 +102,7 @@ async function buildTypechain() {
   mergeEvents({ src: 'OpenTermLoanRefinancer.abi.json', dst: 'OpenTermLoan.abi.json' })
   mergeEvents({ src: 'FixedTermLoanRefinancer.abi.json', dst: 'FixedTermLoan.abi.json' })
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV2PoolManager.abi.json' })
-  mergeEvents({ src: 'PoolV201PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
+  mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
   mergeEvents({
     src: 'WithdrawalManagerInitializer.abi.json',
     dst: 'WithdrawalManager.abi.json'
