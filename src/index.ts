@@ -265,7 +265,7 @@ interface ContractTypes {
 
   // PoolV2 / PoolManager / LoanManager
   poolV2: poolV2Imports.PoolV2PoolAbi
-  poolDeployer: poolV2Imports.PoolV2PoolDeployerAbi
+  poolDeployerV2: poolV2Imports.PoolV2PoolDeployerAbi
 
   poolManager: poolV2Imports.PoolV2PoolManagerAbi
   poolManagerFactory: poolV2Imports.PoolV2PoolManagerFactoryAbi
@@ -275,7 +275,7 @@ interface ContractTypes {
   loanManagerFactory: poolV2Imports.LoanManagerFactoryAbi
 
   // PoolV201 / PoolManagerV2
-  poolDeployerV2: poolV201Imports.PoolV201PoolDeployerAbi
+  poolDeployer: poolV201Imports.PoolV201PoolDeployerAbi
 
   poolManagerV2: poolV201Imports.PoolV201PoolManagerAbi
 
