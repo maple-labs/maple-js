@@ -140,8 +140,7 @@ const poolV1 = {
 // Pool V2 start
 // --------------------
 const poolV2 = {
-  core: poolV2Imports.PoolV2PoolAbi__factory,
-  deployer: poolV2Imports.PoolV2PoolDeployerAbi__factory
+  core: poolV2Imports.PoolV2PoolAbi__factory
 }
 
 const loanManager = {
@@ -265,7 +264,6 @@ interface ContractTypes {
 
   // PoolV2 / PoolManager / LoanManager
   poolV2: poolV2Imports.PoolV2PoolAbi
-  poolDeployer: poolV2Imports.PoolV2PoolDeployerAbi
 
   poolManager: poolV2Imports.PoolV2PoolManagerAbi
   poolManagerFactory: poolV2Imports.PoolV2PoolManagerFactoryAbi
