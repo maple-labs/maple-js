@@ -108,7 +108,8 @@ const mapleToken = {
 
 const mapleTokenV2 = {
   core: mapleTokenV2Imports.MapleTokenV2Abi__factory,
-  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi__factory
+  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi__factory,
+  migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi__factory
 }
 
 const migrationHelpers = {
