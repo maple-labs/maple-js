@@ -46,10 +46,7 @@
       "contracts": ["MapleToken"]
     },
     "mapleTokenV2": {
-      "contracts": ["MapleTokenV2", "RecapitalizationModule"]
-    },
-    "mapleTokenV2Migrator": {
-      "contracts": ["MapleTokenV2Migrator"]
+      "contracts": ["MapleTokenV2", "RecapitalizationModule", "MapleTokenV2Migrator"]
     },
     "migrationHelpers": {
       "contracts": ["MigrationHelper"]

@@ -17,7 +17,6 @@ import * as mapleGlobalsV201Imports from './typechain/mapleGlobalsV201'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as mapleTokenV2Imports from './typechain/mapleTokenV2'
-import * as mapleTokenV2MigratorImports from './typechain/mapleTokenV2Migrator'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
 import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
@@ -109,11 +108,8 @@ const mapleToken = {
 
 const mapleTokenV2 = {
   core: mapleTokenV2Imports.MapleTokenV2Abi__factory,
-  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi__factory
-}
-
-const mapleTokenV2Migrator = {
-  core: mapleTokenV2MigratorImports.MapleTokenV2MigratorAbi__factory
+  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi__factory,
+  migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi__factory
 }
 
 const migrationHelpers = {
@@ -250,7 +246,6 @@ interface ContractTypes {
 
   // Migration Helpers
   migrationHelpers: migrationHelpersImports.MigrationHelperAbi
-  mapleTokenV2Migrator: mapleTokenV2MigratorImports.MapleTokenV2MigratorAbi
 
   // MplRewards
   mapleRewards: mapleRewardsImports.MplRewardsAbi
@@ -318,7 +313,6 @@ export {
   mapleRewards,
   mapleToken,
   mapleTokenV2,
-  mapleTokenV2Migrator,
   migrationHelpers,
   openTermLoan,
   openTermLoanManager,
