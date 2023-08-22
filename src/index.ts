@@ -243,6 +243,7 @@ interface ContractTypes {
   mapleToken: mapleTokenImports.MapleTokenAbi
   mapleTokenV2: mapleTokenV2Imports.MapleTokenV2Abi
   recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi
+  mapleTokenV2Migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi
 
   // Migration Helpers
   migrationHelpers: migrationHelpersImports.MigrationHelperAbi
