@@ -1,139 +1,122 @@
 [
   {
-    "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
         "internalType": "address",
         "name": "owner_",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       },
       {
-        "indexed": true,
         "internalType": "address",
         "name": "spender_",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       },
       {
-        "indexed": false,
         "internalType": "uint256",
         "name": "amount_",
-        "type": "uint256"
+        "type": "uint256",
+        "indexed": false
       }
     ],
+    "type": "event",
     "name": "Approval",
-    "type": "event"
+    "anonymous": false
   },
   {
-    "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
         "internalType": "address",
         "name": "from",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       },
       {
-        "indexed": false,
         "internalType": "uint256",
         "name": "amount",
-        "type": "uint256"
+        "type": "uint256",
+        "indexed": false
       }
     ],
+    "type": "event",
     "name": "Burn",
-    "type": "event"
+    "anonymous": false
   },
   {
-    "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
         "internalType": "address",
         "name": "to",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       },
       {
-        "indexed": false,
         "internalType": "uint256",
         "name": "amount",
-        "type": "uint256"
+        "type": "uint256",
+        "indexed": false
       }
     ],
+    "type": "event",
     "name": "Mint",
-    "type": "event"
+    "anonymous": false
   },
   {
-    "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
         "internalType": "address",
         "name": "module",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       }
     ],
+    "type": "event",
     "name": "ModuleAdded",
-    "type": "event"
+    "anonymous": false
   },
   {
-    "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
         "internalType": "address",
         "name": "module",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       }
     ],
+    "type": "event",
     "name": "ModuleRemoved",
-    "type": "event"
+    "anonymous": false
   },
   {
-    "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
         "internalType": "address",
         "name": "owner_",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       },
       {
-        "indexed": true,
         "internalType": "address",
         "name": "recipient_",
-        "type": "address"
+        "type": "address",
+        "indexed": true
       },
       {
-        "indexed": false,
         "internalType": "uint256",
         "name": "amount_",
-        "type": "uint256"
+        "type": "uint256",
+        "indexed": false
       }
     ],
+    "type": "event",
     "name": "Transfer",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "tokenMigrator",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "treasury",
-        "type": "address"
-      }
-    ],
-    "name": "Initialized",
-    "type": "event"
+    "anonymous": false
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "DOMAIN_SEPARATOR",
     "outputs": [
       {
@@ -141,12 +124,12 @@
         "name": "domainSeparator_",
         "type": "bytes32"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "PERMIT_TYPEHASH",
     "outputs": [
       {
@@ -154,22 +137,19 @@
         "name": "",
         "type": "bytes32"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "module",
+        "name": "module_",
         "type": "address"
       }
     ],
-    "name": "addModule",
-    "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
+    "type": "function",
+    "name": "addModule"
   },
   {
     "inputs": [
@@ -184,6 +164,8 @@
         "type": "address"
       }
     ],
+    "stateMutability": "view",
+    "type": "function",
     "name": "allowance",
     "outputs": [
       {
@@ -191,9 +173,7 @@
         "name": "",
         "type": "uint256"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -208,6 +188,8 @@
         "type": "uint256"
       }
     ],
+    "stateMutability": "nonpayable",
+    "type": "function",
     "name": "approve",
     "outputs": [
       {
@@ -215,9 +197,7 @@
         "name": "success_",
         "type": "bool"
       }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -227,6 +207,8 @@
         "type": "address"
       }
     ],
+    "stateMutability": "view",
+    "type": "function",
     "name": "balanceOf",
     "outputs": [
       {
@@ -234,9 +216,7 @@
         "name": "",
         "type": "uint256"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -251,13 +231,14 @@
         "type": "uint256"
       }
     ],
-    "name": "burn",
-    "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
+    "type": "function",
+    "name": "burn"
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "decimals",
     "outputs": [
       {
@@ -265,9 +246,7 @@
         "name": "",
         "type": "uint8"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -282,6 +261,8 @@
         "type": "uint256"
       }
     ],
+    "stateMutability": "nonpayable",
+    "type": "function",
     "name": "decreaseAllowance",
     "outputs": [
       {
@@ -289,12 +270,12 @@
         "name": "success_",
         "type": "bool"
       }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    ]
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "globals",
     "outputs": [
       {
@@ -302,12 +283,12 @@
         "name": "globals_",
         "type": "address"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "governor",
     "outputs": [
       {
@@ -315,12 +296,12 @@
         "name": "governor_",
         "type": "address"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "implementation",
     "outputs": [
       {
@@ -328,9 +309,7 @@
         "name": "implementation_",
         "type": "address"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -345,6 +324,8 @@
         "type": "uint256"
       }
     ],
+    "stateMutability": "nonpayable",
+    "type": "function",
     "name": "increaseAllowance",
     "outputs": [
       {
@@ -352,9 +333,7 @@
         "name": "success_",
         "type": "bool"
       }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -364,6 +343,8 @@
         "type": "address"
       }
     ],
+    "stateMutability": "view",
+    "type": "function",
     "name": "isModule",
     "outputs": [
       {
@@ -371,9 +352,7 @@
         "name": "",
         "type": "bool"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -388,13 +367,14 @@
         "type": "uint256"
       }
     ],
-    "name": "mint",
-    "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
+    "type": "function",
+    "name": "mint"
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "name",
     "outputs": [
       {
@@ -402,9 +382,7 @@
         "name": "",
         "type": "string"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -414,6 +392,8 @@
         "type": "address"
       }
     ],
+    "stateMutability": "view",
+    "type": "function",
     "name": "nonces",
     "outputs": [
       {
@@ -421,9 +401,7 @@
         "name": "",
         "type": "uint256"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -463,26 +441,26 @@
         "type": "bytes32"
       }
     ],
-    "name": "permit",
-    "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
+    "type": "function",
+    "name": "permit"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "module",
+        "name": "module_",
         "type": "address"
       }
     ],
-    "name": "removeModule",
-    "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
+    "type": "function",
+    "name": "removeModule"
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "symbol",
     "outputs": [
       {
@@ -490,12 +468,12 @@
         "name": "",
         "type": "string"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [],
+    "stateMutability": "view",
+    "type": "function",
     "name": "totalSupply",
     "outputs": [
       {
@@ -503,9 +481,7 @@
         "name": "",
         "type": "uint256"
       }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -520,6 +496,8 @@
         "type": "uint256"
       }
     ],
+    "stateMutability": "nonpayable",
+    "type": "function",
     "name": "transfer",
     "outputs": [
       {
@@ -527,9 +505,7 @@
         "name": "success_",
         "type": "bool"
       }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    ]
   },
   {
     "inputs": [
@@ -549,6 +525,8 @@
         "type": "uint256"
       }
     ],
+    "stateMutability": "nonpayable",
+    "type": "function",
     "name": "transferFrom",
     "outputs": [
       {
@@ -556,8 +534,6 @@
         "name": "success_",
         "type": "bool"
       }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    ]
   }
 ]
