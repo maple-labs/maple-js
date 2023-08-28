@@ -108,6 +108,8 @@ const mapleToken = {
 
 const mapleTokenV2 = {
   core: mapleTokenV2Imports.MapleTokenV2Abi__factory,
+  initializer: mapleTokenV2Imports.MapleTokenV2InitializerAbi__factory,
+  migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi__factory,
   recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi__factory
 }
 
@@ -241,6 +243,8 @@ interface ContractTypes {
   // Maple Token
   mapleToken: mapleTokenImports.MapleTokenAbi
   mapleTokenV2: mapleTokenV2Imports.MapleTokenV2Abi
+  mapleTokenV2Initializer: mapleTokenV2Imports.MapleTokenV2InitializerAbi
+  mapleTokenV2Migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi
   recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi
 
   // Migration Helpers

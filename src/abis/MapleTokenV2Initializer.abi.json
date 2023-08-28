@@ -28,64 +28,19 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "address",
-        "name": "from",
+        "name": "tokenMigrator",
         "type": "address"
       },
       {
         "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "Burn",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
         "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "Mint",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "module",
+        "name": "treasury",
         "type": "address"
       }
     ],
-    "name": "ModuleAdded",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "module",
-        "type": "address"
-      }
-    ],
-    "name": "ModuleRemoved",
+    "name": "Initialized",
     "type": "event"
   },
   {
@@ -114,25 +69,6 @@
     "type": "event"
   },
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "tokenMigrator",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "treasury",
-        "type": "address"
-      }
-    ],
-    "name": "Initialized",
-    "type": "event"
-  },
-  {
     "inputs": [],
     "name": "DOMAIN_SEPARATOR",
     "outputs": [
@@ -156,19 +92,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "module_",
-        "type": "address"
-      }
-    ],
-    "name": "addModule",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -239,24 +162,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "from_",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "amount_",
-        "type": "uint256"
-      }
-    ],
-    "name": "burn",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "decimals",
     "outputs": [
@@ -294,45 +199,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "globals",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "globals_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "governor",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "governor_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "implementation",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "implementation_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -360,35 +226,16 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "isModule",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "to_",
+        "name": "migrator_",
         "type": "address"
       },
       {
-        "internalType": "uint256",
-        "name": "amount_",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "treasury_",
+        "type": "address"
       }
     ],
-    "name": "mint",
+    "name": "initialize",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -464,19 +311,6 @@
       }
     ],
     "name": "permit",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "module_",
-        "type": "address"
-      }
-    ],
-    "name": "removeModule",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
