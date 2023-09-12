@@ -102,7 +102,7 @@ export default {
   WithdrawalManager: '0x5c5F05A86ebFc39dAf49A680E70FF45E6262eC40',
   WithdrawalManagerFactory: '0x373f362F3Fed0655E784c0186434E778DC14C7EF',
   WithdrawalManagerInitializer: '0x4c9E17f0c748D1911AEc8e9DA14f783b0318Db5C',
-  xMPL: '0x57C900c5349a3Eee9E06c68b6b8f8627B01b4965',
+  xMPL: '0xbe82aa3302F1ccCc24eBF9A03eD34bcbb70E5f60',
   manifest: {
     network: 'goerli',
     project: 'goerli-dev',
