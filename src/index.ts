@@ -28,6 +28,7 @@ import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
+import baseGoerliDevAddresses from './addresses/base-goerli-dev'
 import goerliProdAddresses from './addresses/goerli-prod'
 import goerliDevAddresses from './addresses/goerli-dev'
 import mainnetDevAddresses from './addresses/mainnet-dev'
@@ -191,6 +192,7 @@ type MapleAddressMapping = {
 }
 
 const addresses: Record<string, MapleAddressMapping> = {
+  'base-goerli-dev': baseGoerliDevAddresses,
   'goerli-dev': goerliDevAddresses,
   'goerli-prod': goerliProdAddresses,
   'mainnet-dev': mainnetDevAddresses,
