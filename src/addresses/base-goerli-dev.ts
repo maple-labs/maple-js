@@ -106,7 +106,7 @@ export default {
   manifest: {
     network: 'base-goerli',
     project: 'base-goerli-dev',
-    blockheight: 10100757,
-    date: '2023-09-22T15:05:30.000Z'
+    blockheight: 10581780,
+    date: '2023-10-03T18:19:36.000Z'
   }
 }
