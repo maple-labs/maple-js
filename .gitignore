@@ -11,3 +11,12 @@ dist
 # Test
 coverage
 .env
+
+# Yarn 3 / Berry
+.yarn/*
+.yarn/cache
+.yarn/patches
+.yarn/plugins
+.yarn/releases
+.yarn/sdks
+.yarn/versions
