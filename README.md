@@ -31,7 +31,7 @@ yarn add @maplelabs/maple-js
 
 ### Addresses
 
-`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet` & `Goerli`. Valid network values are: `'mainnet' | 'goerli' | 'base-goerli`. Valid project values are `'mainnet-prod' | 'mainnet-dev' | 'goerli-prod' | 'goerli-dev' | 'base-goerli-dev'`.
+`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet` & `Goerli`. Valid network values are: `'mainnet' | 'goerli' | 'base-mainnet' | 'base-goerli`. Valid project values are `'mainnet-prod' | 'mainnet-dev' | 'goerli-prod' | 'goerli-dev' | 'base-mainnet-prod' | 'base-goerli-dev'`.
 
 Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
 

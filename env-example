@@ -1,6 +1,7 @@
-# base-goerli-dev | goerli-dev | goerli-prod | mainnet-dev | mainnet-prod
+# base-goerli-dev | goerli-dev | goerli-prod | base-mainnet-prod | mainnet-dev | mainnet-prod
 PROJECT=
 
 BASE_GOERLI_RPC_URL=
 GOERLI_RPC_URL=
+BASE_MAINNET_RPC_URL=
 MAINNET_RPC_URL=
