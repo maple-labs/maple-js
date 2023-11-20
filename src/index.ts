@@ -4,6 +4,8 @@ import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as fixedTermLoanImports from './typechain/fixedTermLoan'
+// import * as fixedTermLoanV501Imports from './typechain/fixedTermLoanV501'
+// import * as fixedTermLoanFactoryImports from './typechain/fixedTermLoanFactory'
 import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
@@ -14,17 +16,22 @@ import * as loanV401Imports from './typechain/loanV401'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleGlobalsV201Imports from './typechain/mapleGlobalsV201'
+// import * as mapleGlobalsV3Imports from './typechain/mapleGlobalsV3'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as mapleTokenV2Imports from './typechain/mapleTokenV2'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
 import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
+// import * as poolPermissionManagerImports from './typechain/poolPermissionManager'
 import * as poolV1Imports from './typechain/poolV1'
 import * as poolV2Imports from './typechain/poolV2'
 import * as poolV201Imports from './typechain/poolV201'
+// import * as poolV3Imports from './typechain/poolV3'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
+// import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
+// import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
@@ -56,7 +63,14 @@ const fixedTermLoan = {
   core: fixedTermLoanImports.FixedTermLoanAbi__factory,
   initializer: fixedTermLoanImports.FixedTermLoanInitializerAbi__factory,
   refinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi__factory
+  // factory: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2
 }
+
+// const fixedTermLoanV501 = {
+//   core: fixedTermLoanV501Imports.FixedTermLoanV501Abi__factory,
+//   factory: fixedTermLoanV501Imports.FixedTermLoanV501FactoryAbi__factory,
+//   initializer: fixedTermLoanV501Imports.FixedTermLoanV501InitializerAbi__factory,
+// }
 
 const fixedTermLoanManager = {
   core: fixedTermLoanManagerImports.FixedTermLoanManagerAbi__factory
@@ -99,6 +113,10 @@ const mapleGlobals = {
 const mapleGlobalsV2 = {
   core: mapleGlobalsV2Imports.MapleGlobalsV2Abi__factory
 }
+
+// const mapleGlobalsV3 = {
+//   core: mapleGlobalsV3Imports.MapleGLobalsV3Abi__factory
+// }
 
 const mapleGlobalsV201 = {
   core: mapleGlobalsV201Imports.MapleGlobalsV201Abi__factory
@@ -173,6 +191,29 @@ const poolManagerV2 = {
 // --------------------
 // Pool V201 end
 
+// --------------------
+// Pool V3 start
+// const poolV3 = {
+//   deployer: PoolV3Imports.PoolV3DeployerAbi__factory
+// }
+
+// const poolManagerV3 = {
+//   core: poolV3Imports.PoolManagerV3Abi__factory,
+//   initializer: poolV3Imports.PoolManagerV3InitializerAbi__factory,
+//   migrator: poolV3Imports.PoolManagerV3MigratorAbi__factory
+// }
+
+// const poolManagerV301 = {
+//   migrator: poolV3Imports.PoolManagerV301MigratorAbi__factory
+// }
+// Pool V3 end
+// --------------------
+
+// const poolPermissionManager = {
+//   core: poolPermissionManagerImports.PoolPermissionManagerAbi__factory
+//   initializer: poolPermissionManagerImports.PoolPermissionManagerInitializerAbi__factory
+// }
+
 const stakeLocker = {
   core: stakeLockerImports.StakeLockerAbi__factory,
   factory: stakeLockerImports.StakeLockerFactoryAbi__factory
@@ -181,6 +222,17 @@ const stakeLocker = {
 const withdrawalManager = {
   core: withdrawalManagerImports.WithdrawalManagerAbi__factory
 }
+
+// const withdrawalManagerCyclical = {
+//   core: withdrawalManagerCyclicalImports.WithdrawalManagerCyclicalAbi__factory,
+//   initializer: withdrawalManagerCyclicalImports.WithdrawalManagerCyclicalInitializerAbi__factory,
+// }
+
+// const withdrawalManagerQueue = {
+//   core: withdrawalManagerQueueImports.WithdrawalManagerQueueAbi__factory,
+//   initializer: withdrawalManagerQueueImports.WithdrawalManagerQueueInitializerAbi__factory,
+//   factory: withdrawalManagerQueueImports.WithdrawalManagerQueueFactoryAbi__factory,
+// }
 
 const xmpl = {
   factory: xmplImports.XMPLAbi__factory
