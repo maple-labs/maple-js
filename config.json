@@ -40,7 +40,7 @@
     "fixedTermLoanV502": {
       "contracts": [
         "FixedTermLoanV502",
-        "FixedTermLoanV502Migrator"
+        "FixedTermLoanV502Initializer"
       ]
     },
     "loanV1": {
@@ -171,9 +171,7 @@
       "contracts": [
         "PoolDeployerV3",
         "PoolManagerV3",
-        "PoolManagerV3Migrator",
         "PoolManagerV301",
-        "PoolManagerV301Migrator",
         "PoolManagerV3Initializer"
       ]
     },
