@@ -41,7 +41,6 @@ import goerliProdAddresses from './addresses/goerli-prod'
 import goerliDevAddresses from './addresses/goerli-dev'
 import mainnetDevAddresses from './addresses/mainnet-dev'
 import mainnetProdAddresses from './addresses/mainnet-prod'
-import { FixedTermLoanV502InitializerAbiInterface } from 'typechain/fixedTermLoanV502/FixedTermLoanV502InitializerAbi'
 
 const debtLockerV2 = {
   core: debtLockerV2Imports.DebtLockerV2Abi__factory,
@@ -68,8 +67,7 @@ const fixedTermLoan = {
 
 const fixedTermLoanV502 = {
   core: fixedTermLoanV502Imports.FixedTermLoanV502Abi__factory,
-  factory: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2Abi__factory,
-  initializer: fixedTermLoanV502Imports.FixedTermLoanV502InitializerAbi__factory
+  factory: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2Abi__factory
 }
 
 const fixedTermLoanManager = {
@@ -265,9 +263,7 @@ interface ContractTypes {
   fixedTermLoanInitializer: fixedTermLoanImports.FixedTermLoanInitializerAbi
   fixedTermLoanRefinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi
   fixedTermLoanV502: fixedTermLoanV502Imports.FixedTermLoanV502Abi
-  fixedTermLoanV502Initializer: FixedTermLoanV502InitializerAbiInterface
   fixedTermLoanFactoryV2: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2Abi
-
   fixedTermLoanManager: fixedTermLoanManagerImports.FixedTermLoanManagerAbi
 
   // Loan V2
