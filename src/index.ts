@@ -4,6 +4,8 @@ import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as fixedTermLoanImports from './typechain/fixedTermLoan'
+import * as fixedTermLoanV502Imports from './typechain/fixedTermLoanV502'
+import * as fixedTermLoanFactoryV2Imports from './typechain/fixedTermLoanFactoryV2'
 import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
@@ -14,17 +16,22 @@ import * as loanV401Imports from './typechain/loanV401'
 import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleGlobalsV201Imports from './typechain/mapleGlobalsV201'
+import * as mapleGlobalsV3Imports from './typechain/mapleGlobalsV3'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as mapleTokenV2Imports from './typechain/mapleTokenV2'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
 import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
+import * as poolPermissionManagerImports from './typechain/poolPermissionManager'
 import * as poolV1Imports from './typechain/poolV1'
 import * as poolV2Imports from './typechain/poolV2'
 import * as poolV201Imports from './typechain/poolV201'
+import * as poolV3Imports from './typechain/poolV3'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
+import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
+import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
@@ -56,6 +63,11 @@ const fixedTermLoan = {
   core: fixedTermLoanImports.FixedTermLoanAbi__factory,
   initializer: fixedTermLoanImports.FixedTermLoanInitializerAbi__factory,
   refinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi__factory
+}
+
+const fixedTermLoanV502 = {
+  core: fixedTermLoanV502Imports.FixedTermLoanV502Abi__factory,
+  factory: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2Abi__factory
 }
 
 const fixedTermLoanManager = {
@@ -98,6 +110,10 @@ const mapleGlobals = {
 
 const mapleGlobalsV2 = {
   core: mapleGlobalsV2Imports.MapleGlobalsV2Abi__factory
+}
+
+const mapleGlobalsV3 = {
+  core: mapleGlobalsV3Imports.MapleGlobalsV3Abi__factory
 }
 
 const mapleGlobalsV201 = {
@@ -173,6 +189,25 @@ const poolManagerV2 = {
 // --------------------
 // Pool V201 end
 
+// --------------------
+// Pool V3 start
+const poolV3 = {
+  deployer: poolV3Imports.PoolDeployerV3Abi__factory
+}
+
+const poolManagerV3 = {
+  core: poolV3Imports.PoolManagerV3Abi__factory,
+  initializer: poolV3Imports.PoolManagerV3InitializerAbi__factory
+}
+
+// Pool V3 end
+// --------------------
+
+const poolPermissionManager = {
+  core: poolPermissionManagerImports.PoolPermissionManagerAbi__factory,
+  initializer: poolPermissionManagerImports.PoolPermissionManagerInitializerAbi__factory
+}
+
 const stakeLocker = {
   core: stakeLockerImports.StakeLockerAbi__factory,
   factory: stakeLockerImports.StakeLockerFactoryAbi__factory
@@ -180,6 +215,17 @@ const stakeLocker = {
 
 const withdrawalManager = {
   core: withdrawalManagerImports.WithdrawalManagerAbi__factory
+}
+
+const withdrawalManagerCyclical = {
+  core: withdrawalManagerCyclicalImports.WithdrawalManagerCyclicalAbi__factory,
+  initializer: withdrawalManagerCyclicalImports.WithdrawalManagerCyclicalInitializerAbi__factory
+}
+
+const withdrawalManagerQueue = {
+  core: withdrawalManagerQueueImports.WithdrawalManagerQueueAbi__factory,
+  initializer: withdrawalManagerQueueImports.WithdrawalManagerQueueInitializerAbi__factory,
+  factory: withdrawalManagerQueueImports.WithdrawalManagerQueueFactoryAbi__factory
 }
 
 const xmpl = {
@@ -216,7 +262,8 @@ interface ContractTypes {
   fixedTermLoan: fixedTermLoanImports.FixedTermLoanAbi
   fixedTermLoanInitializer: fixedTermLoanImports.FixedTermLoanInitializerAbi
   fixedTermLoanRefinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi
-
+  fixedTermLoanV502: fixedTermLoanV502Imports.FixedTermLoanV502Abi
+  fixedTermLoanFactoryV2: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2Abi
   fixedTermLoanManager: fixedTermLoanManagerImports.FixedTermLoanManagerAbi
 
   // Loan V2
@@ -243,6 +290,7 @@ interface ContractTypes {
   mapleGlobals: mapleGlobalsImports.MapleGlobalsAbi
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobalsV2Abi
   mapleGlobalsV201: mapleGlobalsV201Imports.MapleGlobalsV201Abi
+  mapleGlobalsV3: mapleGlobalsV3Imports.MapleGlobalsV3Abi
 
   // Maple Token
   mapleToken: mapleTokenImports.MapleTokenAbi
@@ -287,12 +335,29 @@ interface ContractTypes {
 
   poolManagerV2: poolV201Imports.PoolV201PoolManagerAbi
 
+  // Pool V3
+  poolDeployerV3: poolV3Imports.PoolDeployerV3Abi
+  poolManagerV3: poolV3Imports.PoolManagerV3Abi
+  poolManagerV3Initializer: poolV3Imports.PoolManagerV3InitializerAbi
+
+  // Pool Permission Manager
+  poolPermissionManager: poolPermissionManagerImports.PoolPermissionManagerAbi
+  poolPermissionManagerInitializer: poolPermissionManagerImports.PoolPermissionManagerInitializerAbi
+
   // StakeLocker
   stakeLocker: stakeLockerImports.StakeLockerAbi
   stakeLockerFactory: stakeLockerImports.StakeLockerFactoryAbi
 
   // withdrawalManager
   withdrawalManager: withdrawalManagerImports.WithdrawalManagerAbi
+
+  // Withdrawal Manager Cyclical / Queue
+  withdrawalManagerCyclical: withdrawalManagerCyclicalImports.WithdrawalManagerCyclicalAbi
+  withdrawalManagerCyclicalInitializer: withdrawalManagerCyclicalImports.WithdrawalManagerCyclicalInitializerAbi
+
+  withdrawalManagerQueue: withdrawalManagerQueueImports.WithdrawalManagerQueueAbi
+  withdrawalManagerQueueInitializer: withdrawalManagerQueueImports.WithdrawalManagerQueueInitializerAbi
+  withdrawalManagerQueueFactory: withdrawalManagerQueueImports.WithdrawalManagerQueueFactoryAbi
 
   // xMPL
   xmpl: xmplImports.XMPLAbi
@@ -305,6 +370,7 @@ export {
   debtLockerV3,
   environmentMocks,
   fixedTermLoan,
+  fixedTermLoanV502,
   fixedTermLoanManager,
   loanManager,
   loanV1,
@@ -317,6 +383,7 @@ export {
   mapleGlobals,
   mapleGlobalsV2,
   mapleGlobalsV201,
+  mapleGlobalsV3,
   mapleRewards,
   mapleToken,
   mapleTokenV2,
@@ -327,8 +394,13 @@ export {
   poolV2,
   poolManager,
   poolV201,
+  poolV3,
   poolManagerV2,
+  poolManagerV3,
+  poolPermissionManager,
   stakeLocker,
   withdrawalManager,
+  withdrawalManagerCyclical,
+  withdrawalManagerQueue,
   xmpl
 }

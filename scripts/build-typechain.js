@@ -101,12 +101,22 @@ async function buildTypechain() {
   mergeEvents({ src: 'LoanV4Refinancer.abi.json', dst: 'LoanV4.abi.json' })
   mergeEvents({ src: 'OpenTermLoanRefinancer.abi.json', dst: 'OpenTermLoan.abi.json' })
   mergeEvents({ src: 'FixedTermLoanRefinancer.abi.json', dst: 'FixedTermLoan.abi.json' })
+  mergeEvents({ src: 'FixedTermLoanRefinancer.abi.json', dst: 'FixedTermLoanV502.abi.json' })
   mergeEvents({ src: 'MapleTokenV2Initializer.abi.json', dst: 'MapleTokenV2.abi.json' })
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV2PoolManager.abi.json' })
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
+  mergeEvents({ src: 'PoolManagerV3Initializer.abi.json', dst: 'PoolManagerV3.abi.json' })
   mergeEvents({
     src: 'WithdrawalManagerInitializer.abi.json',
     dst: 'WithdrawalManager.abi.json'
+  })
+  mergeEvents({
+    src: 'WithdrawalManagerCyclicalInitializer.abi.json',
+    dst: 'WithdrawalManagerCyclical.abi.json'
+  })
+  mergeEvents({
+    src: 'WithdrawalManagerQueueInitializer.abi.json',
+    dst: 'WithdrawalManagerQueue.abi.json'
   })
   overwriteEventParams({
     file: 'PoolV1',
