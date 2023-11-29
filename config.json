@@ -10,16 +10,10 @@
       "contracts": ["BPool", "ERC20", "kycERC20", "USDT", "MintSpecialToken"]
     },
     "fixedTermLoan": {
-      "contracts": ["FixedTermLoan", "FixedTermLoanInitializer", "FixedTermLoanRefinancer"]
-    },
-    "fixedTermLoanFactoryV2": {
-      "contracts": ["FixedTermLoanFactoryV2"]
+      "contracts": ["FixedTermLoan", "FixedTermLoanFactoryV2", "FixedTermLoanInitializer", "FixedTermLoanRefinancer"]
     },
     "fixedTermLoanManager": {
       "contracts": ["FixedTermLoanManager"]
-    },
-    "fixedTermLoanV502": {
-      "contracts": ["FixedTermLoanV502"]
     },
     "loanV1": {
       "contracts": ["Loan", "LoanFactory"]
