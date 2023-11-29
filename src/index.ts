@@ -4,8 +4,6 @@ import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as fixedTermLoanImports from './typechain/fixedTermLoan'
-import * as fixedTermLoanV502Imports from './typechain/fixedTermLoanV502'
-import * as fixedTermLoanFactoryV2Imports from './typechain/fixedTermLoanFactoryV2'
 import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
@@ -61,13 +59,9 @@ const environmentMocks = {
 
 const fixedTermLoan = {
   core: fixedTermLoanImports.FixedTermLoanAbi__factory,
+  factory: fixedTermLoanImports.FixedTermLoanFactoryV2Abi__factory,
   initializer: fixedTermLoanImports.FixedTermLoanInitializerAbi__factory,
   refinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi__factory
-}
-
-const fixedTermLoanV502 = {
-  core: fixedTermLoanV502Imports.FixedTermLoanV502Abi__factory,
-  factory: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2Abi__factory
 }
 
 const fixedTermLoanManager = {
@@ -260,10 +254,9 @@ interface ContractTypes {
 
   // Fixed Term Loans & Managers
   fixedTermLoan: fixedTermLoanImports.FixedTermLoanAbi
+  fixedTermLoanFactoryV2: fixedTermLoanImports.FixedTermLoanFactoryV2Abi
   fixedTermLoanInitializer: fixedTermLoanImports.FixedTermLoanInitializerAbi
   fixedTermLoanRefinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi
-  fixedTermLoanV502: fixedTermLoanV502Imports.FixedTermLoanV502Abi
-  fixedTermLoanFactoryV2: fixedTermLoanFactoryV2Imports.FixedTermLoanFactoryV2Abi
   fixedTermLoanManager: fixedTermLoanManagerImports.FixedTermLoanManagerAbi
 
   // Loan V2
@@ -370,7 +363,6 @@ export {
   debtLockerV3,
   environmentMocks,
   fixedTermLoan,
-  fixedTermLoanV502,
   fixedTermLoanManager,
   loanManager,
   loanV1,
