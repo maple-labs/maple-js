@@ -5,113 +5,6 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "poolManager",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address[]",
-        "name": "lenders",
-        "type": "address[]"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool[]",
-        "name": "booleans",
-        "type": "bool[]"
-      }
-    ],
-    "name": "LenderAllowlistSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address[]",
-        "name": "lenders",
-        "type": "address[]"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256[]",
-        "name": "bitmaps",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "LenderBitmapsSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "account",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "isAdmin",
-        "type": "bool"
-      }
-    ],
-    "name": "PermissionAdminSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "poolManager",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "bytes32[]",
-        "name": "functionIds",
-        "type": "bytes32[]"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256[]",
-        "name": "bitmaps",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "PoolBitmapsSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "poolManager",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "permissionLevel",
-        "type": "uint256"
-      }
-    ],
-    "name": "PoolPermissionLevelSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
         "name": "implementation",
         "type": "address"
       },
@@ -139,333 +32,440 @@
     "type": "event"
   },
   {
-    "inputs": [],
+    "type": "function",
     "name": "admin",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "address",
         "name": "admin_",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "stateMutability": "view"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "poolManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "permissionLevel_",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes32[]",
-        "name": "functionIds_",
-        "type": "bytes32[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "poolBitmaps_",
-        "type": "uint256[]"
-      }
-    ],
+    "type": "function",
     "name": "configurePool",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "globals",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
-        "internalType": "address",
         "name": "poolManager_",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       },
       {
-        "internalType": "address[]",
-        "name": "lenders_",
-        "type": "address[]"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "functionId_",
-        "type": "bytes32"
-      }
-    ],
-    "name": "hasPermission",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "hasPermission_",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "poolManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "lender_",
-        "type": "address"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "functionId_",
-        "type": "bytes32"
-      }
-    ],
-    "name": "hasPermission",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "hasPermission_",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "implementation",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "implementation_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "lenderAllowlist",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "lenderBitmaps",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "permissionAdmins",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "permissionLevels",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "poolBitmaps",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "poolManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "address[]",
-        "name": "lenders_",
-        "type": "address[]"
-      },
-      {
-        "internalType": "bool[]",
-        "name": "booleans_",
-        "type": "bool[]"
-      }
-    ],
-    "name": "setLenderAllowlist",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address[]",
-        "name": "lenders_",
-        "type": "address[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "bitmaps_",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "setLenderBitmaps",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "permissionAdmin_",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "isPermissionAdmin_",
-        "type": "bool"
-      }
-    ],
-    "name": "setPermissionAdmin",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "poolManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "bytes32[]",
-        "name": "functionIds_",
-        "type": "bytes32[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "bitmaps_",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "setPoolBitmaps",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "poolManager_",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
         "name": "permissionLevel_",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "functionIds_",
+        "type": "bytes32[]",
+        "internalType": "bytes32[]"
+      },
+      {
+        "name": "poolBitmaps_",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
       }
     ],
-    "name": "setPoolPermissionLevel",
     "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "globals",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "hasPermission",
+    "inputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "lenders_",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "functionId_",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "hasPermission_",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "hasPermission",
+    "inputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "lender_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "functionId_",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "hasPermission_",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "implementation",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "implementation_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "lenderAllowlist",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "lenderBitmaps",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "permissionAdmins",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "permissionLevels",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "poolBitmaps",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setLenderAllowlist",
+    "inputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "lenders_",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "booleans_",
+        "type": "bool[]",
+        "internalType": "bool[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setLenderBitmaps",
+    "inputs": [
+      {
+        "name": "lenders_",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "bitmaps_",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setPermissionAdmin",
+    "inputs": [
+      {
+        "name": "permissionAdmin_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "isPermissionAdmin_",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setPoolBitmaps",
+    "inputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "functionIds_",
+        "type": "bytes32[]",
+        "internalType": "bytes32[]"
+      },
+      {
+        "name": "bitmaps_",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setPoolPermissionLevel",
+    "inputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "permissionLevel_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "LenderAllowlistSet",
+    "inputs": [
+      {
+        "name": "poolManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "lenders",
+        "type": "address[]",
+        "indexed": false,
+        "internalType": "address[]"
+      },
+      {
+        "name": "booleans",
+        "type": "bool[]",
+        "indexed": false,
+        "internalType": "bool[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LenderBitmapsSet",
+    "inputs": [
+      {
+        "name": "lenders",
+        "type": "address[]",
+        "indexed": false,
+        "internalType": "address[]"
+      },
+      {
+        "name": "bitmaps",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PermissionAdminSet",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "isAdmin",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PoolBitmapsSet",
+    "inputs": [
+      {
+        "name": "poolManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "functionIds",
+        "type": "bytes32[]",
+        "indexed": false,
+        "internalType": "bytes32[]"
+      },
+      {
+        "name": "bitmaps",
+        "type": "uint256[]",
+        "indexed": false,
+        "internalType": "uint256[]"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PoolPermissionLevelSet",
+    "inputs": [
+      {
+        "name": "poolManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "permissionLevel",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
   }
 ]
