@@ -61,9 +61,9 @@ export default {
   MapleGlobalsV201: '0xdabfac74c5567f47f6d5cf94253f4dc6e6a6ce25',
   MapleGlobalsV3: '0xd7ebf5d1b10cf3c6bb8521cd65b0d9ba5654c308',
   MapleToken: '0x0000000000000000000000000000000000000000',
-  MapleTokenV2: '0x0000000000000000000000000000000000000000',
-  MapleTokenV2Implementation: '0x0000000000000000000000000000000000000000',
-  MapleTokenV2Initializer: '0x0000000000000000000000000000000000000000',
+  MapleTokenV2: '0x15843716c8c1a4d1066e471de01aef4e2438f6bf',
+  MapleTokenV2Implementation: '0x5c0074699fe904654e8731f47e5cc507c81d1bc7',
+  MapleTokenV2Initializer: '0x6bc090f086ab1374cba9f6cff513177010952028',
   MapleTokenV2Migrator: '0x0000000000000000000000000000000000000000',
   MapleTreasury: '0x6f030b552cbd535ff1a2e7a2613fb59c858c4178',
   MigrationHelper: '0x0000000000000000000000000000000000000000',
@@ -125,7 +125,7 @@ export default {
   manifest: {
     network: 'sepolia',
     project: 'sepolia-dev',
-    blockheight: 0, // manifest file wasn't generated during protocol deployment
+    blockheight: 5047691,
     date: '2024-01-08'
   }
 }
