@@ -19,19 +19,25 @@ A JavaScript SDK for interacting with Maple Protocol's smart contracts.
 
 ### Installation
 
-Install the SDK using npm or yarn:
+Install the SDK using `npm`:
 
 ```
-npm install --save @maplelabs/maple-js
+npm install @maplelabs/maple-js
+```
 
-// or if using yarn
+Or, if using `yarn`:
 
+```
 yarn add @maplelabs/maple-js
 ```
 
 ### Addresses
 
-`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet`, `Sepolia` & `Goerli`. Valid network values are: `'mainnet' | 'sepolia' | 'goerli' | 'base-mainnet' | 'base-goerli`. Valid project values are `'mainnet-prod' | 'mainnet-dev' | 'sepolia-dev' | 'goerli-prod' | 'goerli-dev' | 'base-mainnet-prod' | 'base-goerli-dev'`.
+`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet`, `Sepolia` & `Goerli`.
+
+Valid network values are: `'mainnet' | 'sepolia' | 'goerli' | 'base-mainnet' | 'base-goerli`.
+
+Valid project values are `'mainnet-prod' | 'mainnet-dev' | 'sepolia-dev' | 'goerli-prod' | 'goerli-dev' | 'base-mainnet-prod' | 'base-goerli-dev'`.
 
 Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
 
@@ -46,7 +52,7 @@ const contractAddress = addresses.mainnet.MapleToken
 
 ### Connecting to a Contract
 
-To connect to a contract, you'll need its address and a signer. Refer to the [ethers docs](https://docs.ethers.io/v5/) (or your choice of web3 library) for further assistance.
+To connect to a contract, you'll need its address and a signer. The `signer` should be an instance of a wallet that can sign transactions. Refer to the [ethers docs](https://docs.ethers.io/v5/) (or your choice of web3 library) for further assistance.
 
 **Connecting to a Contract Usage**
 
@@ -84,4 +90,14 @@ const method = await (await poolContract.deposit(depositAmount)).wait()
 
 ## Additional Resources
 
-- For technical infomration about Maple Protocol, visit [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
+For technical infomration about Maple Protocol, visit [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
+
+## About Maple
+
+[Maple Finance](https://maple.finance/) is a decentralized corporate credit market. Maple provides capital to institutional borrowers through globally accessible fixed-income yield opportunities.
+
+---
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/44272939/196706799-fe96d294-f700-41e7-a65f-2d754d0a6eac.gif" height="100" />
+</p>
