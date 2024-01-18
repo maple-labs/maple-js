@@ -40,6 +40,7 @@ import goerliDevAddresses from './addresses/goerli-dev'
 import mainnetDevAddresses from './addresses/mainnet-dev'
 import mainnetProdAddresses from './addresses/mainnet-prod'
 import sepoliaDevAddresses from './addresses/sepolia-dev'
+import sepoliaProdAddresses from './addresses/sepolia-prod'
 
 const debtLockerV2 = {
   core: debtLockerV2Imports.DebtLockerV2Abi__factory,
@@ -240,7 +241,8 @@ const addresses: Record<string, MapleAddressMapping> = {
   'goerli-prod': goerliProdAddresses,
   'mainnet-dev': mainnetDevAddresses,
   'mainnet-prod': mainnetProdAddresses,
-  'sepolia-dev': sepoliaDevAddresses
+  'sepolia-dev': sepoliaDevAddresses,
+  'sepolia-prod': sepoliaProdAddresses
 }
 
 interface ContractTypes {

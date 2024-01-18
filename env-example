@@ -1,4 +1,4 @@
-# base-goerli-dev | goerli-dev | goerli-prod | base-mainnet-prod | mainnet-dev | mainnet-prod | sepolia-dev
+# base-goerli-dev | goerli-dev | goerli-prod | base-mainnet-prod | mainnet-dev | mainnet-prod | sepolia-dev | sepolia-prod
 PROJECT=
 
 BASE_GOERLI_RPC_URL=
