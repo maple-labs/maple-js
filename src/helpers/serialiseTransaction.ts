@@ -8,7 +8,7 @@ export interface UnsignedTransactionBundle {
 }
 
 // Creates unsigned transaction object for arbitrary function call
-const createUnsignedTransactionObject = async (
+const createUnsignedTransactionBundle = async (
   provider: providers.Provider,
   wallet: string,
   chainId: number,
@@ -92,5 +92,5 @@ export const serialiseTransaction = async (args: TxParams) => {
 
   const { abi, functionName, params } = getTransactionParams()
 
-  return await createUnsignedTransactionObject(provider, walletAddress, chainId, contractAddress, abi, functionName, params)
+  return await createUnsignedTransactionBundle(provider, walletAddress, chainId, contractAddress, abi, functionName, params)
 }
