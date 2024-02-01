@@ -1,6 +1,6 @@
 import { ethers } from 'ethers'
 
-import { UnsignedTransactionBundle, serialiseTransaction } from 'helpers/serialiseTransaction'
+import { UnsignedTransactionBundle, generateTransactionData } from 'helpers/serialiseTransaction'
 
 type SignatureLike = {
   r: string
@@ -20,7 +20,7 @@ async function main() {
   const walletAddress = '0x00000001'
 
   // Serialize the transaction (unsigned)
-  const { unsignedTx, serialisedString }: UnsignedTransactionBundle = await serialiseTransaction({
+  const { unsignedTx, serialisedString }: UnsignedTransactionBundle = await generateTransactionData({
     provider,
     walletAddress,
     chainId: 0,

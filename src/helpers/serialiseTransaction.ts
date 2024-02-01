@@ -69,7 +69,7 @@ interface PoolWithdrawalParams extends CommonParams {
 
 type TxParams = PoolDepositParams | PoolWithdrawalParams
 
-export const serialiseTransaction = async (args: TxParams) => {
+export const generateTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, chainId } = args
 
   const getTransactionParams = (): { abi: ContractInterface; params: any[]; functionName: string } => {
