@@ -1,48 +1,58 @@
-import { ethers, ContractInterface, providers, UnsignedTransaction } from 'ethers'
+import { BigNumberish, Contract, InterfaceAbi, parseEther, Provider, Transaction, TransactionLike } from 'ethers'
 
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
 export interface UnsignedTransactionBundle {
-  unsignedTx: UnsignedTransaction
-  serialisedString: string
+  txInstance: Transaction
+  txBytes: string
+}
+
+async function estimateGasForFunction(contract: Contract, functionName: string, args: any[], from: string): Promise<BigNumberish> {
+  const method = contract.estimateGas[functionName as keyof typeof contract.estimateGas]
+  if (typeof method === 'function') {
+    return await method(...args, { from })
+  } else {
+    throw new Error('Function not found in contract')
+  }
 }
 
 // Creates unsigned transaction object for arbitrary function call
 const createUnsignedTransactionBundle = async (
-  provider: providers.Provider,
+  provider: Provider,
   wallet: string,
   chainId: number,
   contractAddress: string,
-  abi: ContractInterface,
+  abi: InterfaceAbi,
   functionName: string,
   functionArgs: any[]
 ): Promise<UnsignedTransactionBundle> => {
   try {
-    const contract = new ethers.Contract(contractAddress, abi, provider)
+    const contract = new Contract(contractAddress, abi, provider)
 
     // Estimate gas price and limit
-    const gasPrice = await provider.getGasPrice()
-    const gasLimit = await contract.estimateGas[functionName](...functionArgs, { from: wallet })
+    const gasPrice = (await provider.getFeeData()).gasPrice
+    const gasLimit = await estimateGasForFunction(contract, functionName, functionArgs, wallet)
 
     // Get current nonce
     const nonce = await provider.getTransactionCount(wallet)
 
     // Construct the transaction
-    const unsignedTx: ethers.utils.UnsignedTransaction = {
+    const unsignedTx: TransactionLike = {
       to: contractAddress,
       data: contract.interface.encodeFunctionData(functionName, functionArgs),
       gasLimit,
       gasPrice,
       nonce,
-      value: ethers.utils.parseEther('0'), // temp,
+      value: parseEther('0'),
       chainId
     }
 
-    const serialisedString = ethers.utils.serializeTransaction(unsignedTx)
+    const txInstance = Transaction.from(unsignedTx)
+    const txBytes = txInstance.serialized
 
     return {
-      unsignedTx,
-      serialisedString
+      txInstance,
+      txBytes
     }
   } catch (error) {
     console.error('Error in serialiseTransaction:', error)
@@ -51,7 +61,7 @@ const createUnsignedTransactionBundle = async (
 }
 
 interface CommonParams {
-  provider: providers.Provider
+  provider: Provider
   walletAddress: string
   contractAddress: string
   chainId: number
@@ -59,12 +69,12 @@ interface CommonParams {
 
 interface PoolDepositParams extends CommonParams {
   type: 'poolDeposit'
-  depositAmount: ethers.BigNumberish
+  depositAmount: BigNumberish
 }
 
 interface PoolWithdrawalParams extends CommonParams {
   type: 'poolWithdrawal'
-  withdrawalAmount: ethers.BigNumberish
+  withdrawalAmount: BigNumberish
 }
 
 type TxParams = PoolDepositParams | PoolWithdrawalParams
@@ -72,7 +82,7 @@ type TxParams = PoolDepositParams | PoolWithdrawalParams
 export const generateTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, chainId } = args
 
-  const getTransactionParams = (): { abi: ContractInterface; params: any[]; functionName: string } => {
+  const getTransactionParams = (): { abi: InterfaceAbi; params: any[]; functionName: string } => {
     if (args.type === 'poolDeposit') {
       return {
         abi: PoolV2PoolAbi,
