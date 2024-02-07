@@ -1,16 +1,17 @@
-import { BigNumberish, Contract, InterfaceAbi, parseEther, Provider, Transaction, TransactionLike } from 'ethers'
+import { BigNumberish, Contract, InterfaceAbi, parseEther, Provider, Transaction, TransactionLike, formatUnits } from 'ethers'
 
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
 export interface UnsignedTransactionBundle {
-  txInstance: Transaction
+  txInstance: TransactionLike
   txBytes: string
 }
 
 async function estimateGasForFunction(contract: Contract, functionName: string, args: any[], from: string): Promise<BigNumberish> {
-  const method = contract.estimateGas[functionName as keyof typeof contract.estimateGas]
+  const method = contract[functionName]
+
   if (typeof method === 'function') {
-    return await method(...args, { from })
+    return await method.estimateGas(...args, { from })
   } else {
     throw new Error('Function not found in contract')
   }
@@ -48,10 +49,10 @@ const createUnsignedTransactionBundle = async (
     }
 
     const txInstance = Transaction.from(unsignedTx)
-    const txBytes = txInstance.serialized
+    const txBytes = txInstance.unsignedSerialized
 
     return {
-      txInstance,
+      txInstance: unsignedTx,
       txBytes
     }
   } catch (error) {
@@ -60,40 +61,48 @@ const createUnsignedTransactionBundle = async (
   }
 }
 
-interface CommonParams {
+interface CommonInputs {
   provider: Provider
   walletAddress: string
   contractAddress: string
   chainId: number
 }
 
-interface PoolDepositParams extends CommonParams {
-  type: 'poolDeposit'
+interface PoolDepositParams {
   depositAmount: BigNumberish
 }
-
-interface PoolWithdrawalParams extends CommonParams {
-  type: 'poolWithdrawal'
-  withdrawalAmount: BigNumberish
+export interface PoolDepositInputs extends CommonInputs {
+  type: 'poolDeposit'
+  params: PoolDepositParams
 }
 
-type TxParams = PoolDepositParams | PoolWithdrawalParams
+interface PoolQueueWithdrawalParams {
+  withdrawalAmount: BigNumberish
+}
+export interface PoolQueueWithdrawalInputs extends CommonInputs {
+  type: 'poolWithdrawal'
+  params: PoolQueueWithdrawalParams
+}
+
+type TxParams = PoolDepositInputs | PoolQueueWithdrawalInputs
 
 export const generateTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, chainId } = args
 
   const getTransactionParams = (): { abi: InterfaceAbi; params: any[]; functionName: string } => {
     if (args.type === 'poolDeposit') {
+      const { depositAmount } = args.params
       return {
         abi: PoolV2PoolAbi,
         functionName: 'deposit',
-        params: [args.depositAmount]
+        params: [depositAmount, walletAddress] // [assets_, receiver_]
       }
     } else if (args.type === 'poolWithdrawal') {
+      const { withdrawalAmount } = args.params
       return {
         abi: PoolV2PoolAbi,
-        functionName: 'withdrawal',
-        params: [args.withdrawalAmount]
+        functionName: 'requestRedeem',
+        params: [withdrawalAmount, walletAddress] // sharesToRequestRedeem, account
       }
     } else {
       throw new Error('Invalid transaction type')
