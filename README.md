@@ -129,7 +129,7 @@ interface CommonInputs {
   }
 ```
 
-`poolWithdrawal` requires the following `params`:
+`poolQueueWithdrawal` requires the following `params`:
 
 ```
   params: {

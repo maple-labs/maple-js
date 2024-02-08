@@ -41,7 +41,7 @@ async function main() {
   //   walletAddress,
   //   chainId: chainIds.goerli,
   //   contractAddress: poolAddress,
-  //   type: 'poolWithdrawal',
+  //   type: 'poolQueueWithdrawal',
   //   params: {
   //     withdrawalAmount: amount
   //   }

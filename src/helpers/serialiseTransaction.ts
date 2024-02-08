@@ -85,7 +85,7 @@ interface PoolQueueWithdrawalParams {
   withdrawalAmount: BigNumberish
 }
 export interface PoolQueueWithdrawalInputs extends CommonInputs {
-  type: 'poolWithdrawal'
+  type: 'poolQueueWithdrawal'
   params: PoolQueueWithdrawalParams
 }
 
@@ -102,7 +102,7 @@ export const generateTransactionData = async (args: TxParams) => {
         functionName: 'deposit',
         params: [depositAmount, walletAddress] // [assets_, receiver_]
       }
-    } else if (args.type === 'poolWithdrawal') {
+    } else if (args.type === 'poolQueueWithdrawal') {
       const { withdrawalAmount } = args.params
       return {
         abi: PoolV2PoolAbi,
