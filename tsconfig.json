@@ -1,8 +1,6 @@
 {
   "include": ["src", "types"],
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES2018",
     "types": ["jest", "node"],
     "importHelpers": true,
     "rootDir": "/", // match output dir to input dir. e.g. dist/index instead of dist/src/index
