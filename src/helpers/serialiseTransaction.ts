@@ -1,9 +1,12 @@
-import { BigNumberish, Contract, InterfaceAbi, parseEther, Provider, Transaction, TransactionLike } from 'ethers'
+import { BigNumber, BigNumberish, Contract, ContractInterface, UnsignedTransaction } from 'ethers'
+import { serialize } from '@ethersproject/transactions'
+import { Provider } from '@ethersproject/providers'
+import { parseEther } from '@ethersproject/units'
 
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
 export interface UnsignedTransactionBundle {
-  txInstance: TransactionLike
+  txInstance: UnsignedTransaction
   txBytes: string
 }
 
@@ -12,23 +15,24 @@ async function estimateGasForFunction(
   functionName: string,
   args: any[],
   from: string
-): Promise<BigNumberish> {
-  const method = contract[functionName]
-
-  if (typeof method === 'function') {
-    return await method.estimateGas(...args, { from })
-  } else {
+): Promise<BigNumber> {
+  // Ensure the contract has the function
+  if (typeof contract.functions[functionName] !== 'function') {
     throw new Error('Function not found in contract')
   }
+
+  // Estimate gas for the function call
+  const estimateGas = await contract.estimateGas[functionName](...args, { from })
+
+  return estimateGas
 }
 
 // Creates unsigned transaction object for arbitrary function call
 const createUnsignedTransactionBundle = async (
   provider: Provider,
   wallet: string,
-  chainId: number,
   contractAddress: string,
-  abi: InterfaceAbi,
+  abi: ContractInterface,
   functionName: string,
   functionArgs: any[]
 ): Promise<UnsignedTransactionBundle> => {
@@ -36,25 +40,26 @@ const createUnsignedTransactionBundle = async (
     const contract = new Contract(contractAddress, abi, provider)
 
     // Estimate gas price and limit
-    const gasPrice = (await provider.getFeeData()).gasPrice
+    const gasPrice = await provider.getGasPrice()
     const gasLimit = await estimateGasForFunction(contract, functionName, functionArgs, wallet)
 
     // Get current nonce
     const nonce = await provider.getTransactionCount(wallet)
 
+    const { chainId } = await provider.getNetwork()
+
     // Construct the transaction
-    const unsignedTx: TransactionLike = {
+    const unsignedTx: UnsignedTransaction = {
       to: contractAddress,
       data: contract.interface.encodeFunctionData(functionName, functionArgs),
-      gasLimit,
-      gasPrice,
+      gasLimit: gasLimit.toHexString(),
+      gasPrice: gasPrice.toHexString(),
       nonce,
-      value: parseEther('0'),
+      value: parseEther('0').toHexString(),
       chainId
     }
 
-    const txInstance = Transaction.from(unsignedTx)
-    const txBytes = txInstance.unsignedSerialized
+    const txBytes = serialize(unsignedTx)
 
     return {
       txInstance: unsignedTx,
@@ -70,7 +75,6 @@ interface CommonInputs {
   provider: Provider
   walletAddress: string
   contractAddress: string
-  chainId: number
 }
 
 interface PoolDepositParams {
@@ -92,17 +96,17 @@ export interface PoolQueueWithdrawalInputs extends CommonInputs {
 type TxParams = PoolDepositInputs | PoolQueueWithdrawalInputs
 
 export const generateTransactionData = async (args: TxParams) => {
-  const { provider, walletAddress, contractAddress, chainId } = args
+  const { provider, walletAddress, contractAddress, type } = args
 
-  const getTransactionParams = (): { abi: InterfaceAbi; params: any[]; functionName: string } => {
-    if (args.type === 'poolDeposit') {
+  const getTransactionParams = (): { abi: ContractInterface; params: any[]; functionName: string } => {
+    if (type === 'poolDeposit') {
       const { depositAmount } = args.params
       return {
         abi: PoolV2PoolAbi,
         functionName: 'deposit',
         params: [depositAmount, walletAddress] // [assets_, receiver_]
       }
-    } else if (args.type === 'poolQueueWithdrawal') {
+    } else if (type === 'poolQueueWithdrawal') {
       const { withdrawalAmount } = args.params
       return {
         abi: PoolV2PoolAbi,
@@ -116,13 +120,5 @@ export const generateTransactionData = async (args: TxParams) => {
 
   const { abi, functionName, params } = getTransactionParams()
 
-  return await createUnsignedTransactionBundle(
-    provider,
-    walletAddress,
-    chainId,
-    contractAddress,
-    abi,
-    functionName,
-    params
-  )
+  return await createUnsignedTransactionBundle(provider, walletAddress, contractAddress, abi, functionName, params)
 }
