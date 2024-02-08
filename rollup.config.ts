@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import dts from 'rollup-plugin-dts'
 
 const production = process.env.NODE_ENV === 'production'
@@ -18,7 +19,12 @@ export default [
       { file: 'dist/index.js', format: 'cjs', sourcemap: !production },
       { file: 'dist/index.esm.js', format: 'es', sourcemap: !production }
     ],
-    plugins: [typescript({ sourceMap: !production }), nodeResolve(), commonjs()]
+    plugins: [
+      json(),
+      typescript({ sourceMap: !production, tsconfig: './tsconfig.typechain.json' }),
+      nodeResolve(),
+      commonjs()
+    ]
   },
   {
     input: 'src/index.ts',
