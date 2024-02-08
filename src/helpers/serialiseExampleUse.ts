@@ -1,8 +1,7 @@
 import { JsonRpcProvider, Transaction } from 'ethers'
+import { Wallet } from 'ethers'
 
 import { UnsignedTransactionBundle, generateTransactionData } from './serialiseTransaction'
-
-import { Wallet } from 'ethers'
 
 const chainIds = {
   mainnet: 1,
@@ -13,19 +12,17 @@ const chainIds = {
   localhost: 31337
 }
 
-const mnemonic = ''
-
 async function main() {
   // 🚨 1) Setup 🚨
+
   // 📋 Need to parametise all this
-  const provider = new JsonRpcProvider('https://eth-goerli.g.alchemy.com/v2/FImNHlvh-EzuzzK02dMWi6TBt9xh6mGM')
-  const wallet = Wallet.fromPhrase(mnemonic)
+  const provider = new JsonRpcProvider(process.env.RPC_URL)
+  const wallet = Wallet.fromPhrase(process.env.WALLET_MNEMONIC as string)
 
   const walletWithProvider = wallet.connect(provider)
-  const poolAddress = '0x4ff5637548e48abaf07baf4a5769b8abbe03a322'
-  // const poolAddress = '0x5d522516d9119a6e44d8d47224274e7b5b648649'
+  const poolAddress = ''
   const amount = BigInt('1000000')
-  const walletAddress = '0xaA5aA072369A3F34fcA3926DDf31977fAD95022D'
+  const walletAddress = ''
 
   // 🚨 2) Serialize the transaction (unsigned) 🚨
   const { txBytes, txInstance }: UnsignedTransactionBundle = await generateTransactionData({
@@ -50,16 +47,14 @@ async function main() {
   //   }
   // })
 
-  console.log('🚨 :::', { txBytes, txInstance })
-
-  // Sign the transaction
+  // 🚨 3) Sign the transaction 🚨
   const deserializeTx = Transaction.from(txBytes)
   const signedTx = await walletWithProvider.signTransaction(deserializeTx)
   console.log('✍🏼 :::', { signedTx })
 
   // 🚨 4) Broadcast the transaction 🚨
   const txResponse = await provider.broadcastTransaction(signedTx)
-  console.log('#️⃣ :::', { trasnactionHash: txResponse.hash })
+  console.log('#️⃣ :::', { transactionHash: txResponse.hash })
 }
 
 main()
