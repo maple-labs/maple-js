@@ -1,4 +1,4 @@
-import { BigNumberish, Contract, InterfaceAbi, parseEther, Provider, Transaction, TransactionLike, formatUnits } from 'ethers'
+import { BigNumberish, Contract, InterfaceAbi, parseEther, Provider, Transaction, TransactionLike } from 'ethers'
 
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
@@ -7,7 +7,12 @@ export interface UnsignedTransactionBundle {
   txBytes: string
 }
 
-async function estimateGasForFunction(contract: Contract, functionName: string, args: any[], from: string): Promise<BigNumberish> {
+async function estimateGasForFunction(
+  contract: Contract,
+  functionName: string,
+  args: any[],
+  from: string
+): Promise<BigNumberish> {
   const method = contract[functionName]
 
   if (typeof method === 'function') {
@@ -102,7 +107,7 @@ export const generateTransactionData = async (args: TxParams) => {
       return {
         abi: PoolV2PoolAbi,
         functionName: 'requestRedeem',
-        params: [withdrawalAmount, walletAddress] // sharesToRequestRedeem, account
+        params: [withdrawalAmount, walletAddress] // [sharesToRequestRedeem, account]
       }
     } else {
       throw new Error('Invalid transaction type')
@@ -111,5 +116,13 @@ export const generateTransactionData = async (args: TxParams) => {
 
   const { abi, functionName, params } = getTransactionParams()
 
-  return await createUnsignedTransactionBundle(provider, walletAddress, chainId, contractAddress, abi, functionName, params)
+  return await createUnsignedTransactionBundle(
+    provider,
+    walletAddress,
+    chainId,
+    contractAddress,
+    abi,
+    functionName,
+    params
+  )
 }
