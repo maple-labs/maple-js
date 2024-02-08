@@ -1,8 +1,8 @@
-# base-goerli-dev | goerli-dev | goerli-prod | base-mainnet-prod | mainnet-dev | mainnet-prod | sepolia-dev | sepolia-prod
-PROJECT=
+# RPC URLs
 
-BASE_GOERLI_RPC_URL=
+RPC_URL=
 GOERLI_RPC_URL=
-BASE_MAINNET_RPC_URL=
-MAINNET_RPC_URL=
-SEPOLIA_RPC_URL=
+
+# Wallets
+
+WALLET_MNEMONIC=
