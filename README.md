@@ -88,6 +88,59 @@ const poolContract = pool.core.connect(poolAddress, signer)
 const method = await (await poolContract.deposit(depositAmount)).wait()
 ```
 
+## Utils
+
+**Generating Unsigned Transaction Data**
+
+This feature allows you to generate unsigned transaction data, facilitating the creation of transactions that can later be signed and sent to the network. This is particularly useful for offline transaction preparation or when keys are managed externally.
+Usage
+
+```
+import { utils } from '@maplelabs/maple-js'
+
+const { txBytes, txInstance } = utils.generateTransactionData(parameters)
+```
+
+The `generateTransactionData` function supports creating unsigned transactions for specific actions, currently including `poolDeposit` and `poolQueueWithdrawal`. Depending on the action, parameters must be provided accordingly:
+
+- For `poolDeposit`, specify the deposit amount in assets.
+- For `poolQueueWithdrawal`, specify the withdrawal amount in shares.
+
+**_Parameters_**
+
+All calls to `generateTransactionData` require the following parameters:
+
+```
+interface CommonInputs {
+  provider: Provider
+  walletAddress: string
+  contractAddress: string
+  chainId: number
+  type: `poolDeposit` | `poolQueueWithdrawal`
+  params: {}
+}
+```
+
+`poolDeposit` requires the following `params`:
+
+```
+  params: {
+    depositAmount: BigNumberish // denominated in assets
+  }
+```
+
+`poolQueueWithdrawal` requires the following `params`:
+
+```
+  params: {
+    withdrawalAmount: BigNumberish // denominated in shares
+  }
+```
+
+**_Example_**
+
+An example usage of this feature, including parameter setup and function calls, can be found in the repository at `src/helpers/serialiseExampleUse`.
+
 ## Additional Resources
 
 For technical infomration about Maple Protocol, visit [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).

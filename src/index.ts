@@ -42,6 +42,9 @@ import mainnetProdAddresses from './addresses/mainnet-prod'
 import sepoliaDevAddresses from './addresses/sepolia-dev'
 import sepoliaProdAddresses from './addresses/sepolia-prod'
 
+// utils
+import { generateTransactionData } from 'helpers/serialiseTransaction'
+
 const debtLockerV2 = {
   core: debtLockerV2Imports.DebtLockerV2Abi__factory,
   factory: debtLockerV2Imports.DebtLockerV2FactoryAbi__factory
@@ -360,6 +363,11 @@ interface ContractTypes {
   xmpl: xmplImports.XMPLAbi
 }
 
+// Utils
+const utils = {
+  generateTransactionData
+}
+
 export {
   addresses,
   ContractTypes,
@@ -398,5 +406,6 @@ export {
   withdrawalManager,
   withdrawalManagerCyclical,
   withdrawalManagerQueue,
-  xmpl
+  xmpl,
+  utils
 }

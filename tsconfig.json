@@ -1,8 +1,8 @@
 {
   "include": ["src", "types"],
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
+    "module": "CommonJS",
+    "target": "ES2018",
     "types": ["jest", "node"],
     "importHelpers": true,
     "rootDir": "/", // match output dir to input dir. e.g. dist/index instead of dist/src/index
@@ -15,14 +15,15 @@
     "sourceMap": true, // output .js.map sourcemap files for consumers
     "noImplicitReturns": true, // linter checks for common issues
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true, // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
-    "noUnusedParameters": true,
+    "noUnusedLocals": false, // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
+    "noUnusedParameters": false,
     "resolveJsonModule": true,
     "moduleResolution": "node", // use Node's module resolution algorithm, instead of the legacy TS one
     "esModuleInterop": true, // interop between ESM and CJS modules. Recommended by TS
     "skipLibCheck": true, // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
     "forceConsistentCasingInFileNames": true, // error out if import and file system have a casing mismatch. Recommended by TS
     "noEmit": true, // `tsdx build` ignores this option, but it is commonly used when type-checking separately with `tsc`
+
     "paths": {
       "*": ["src/*", "node_modules/*", "scripts/*"]
     }
