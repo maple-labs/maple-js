@@ -30,17 +30,19 @@
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet",
     "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
     "format": "prettier --write '*/**/*.ts'",
-    "rebuild": "yarn unlink && yarn build && yarn link"
+    "rebuild": "yarn unlink && yarn build && yarn link",
+    "env:node": "npx ts-node --project ./tsconfig.node.json"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.12",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.4.1",
     "eslint": "^8.8.0",
     "jest": "^27.5.0",
     "rollup": "^2.52.8",
@@ -50,8 +52,8 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@typechain/ethers-v5": "^9.0.0",
-    "ethers": "^6.10.0",
-    "typechain": "^7.0.0"
+    "@typechain/ethers-v5": "^11.1.2",
+    "ethers": "^5.5.3",
+    "typechain": "^8.3.2"
   }
 }
