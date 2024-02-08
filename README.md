@@ -115,7 +115,6 @@ interface CommonInputs {
   provider: Provider
   walletAddress: string
   contractAddress: string
-  chainId: number
   type: `poolDeposit` | `poolQueueWithdrawal`
   params: {}
 }
