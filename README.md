@@ -133,7 +133,7 @@ interface CommonInputs {
 
 ```
   params: {
-    depositAmount: BigNumberish // denominated in shares
+    withdrawalAmount: BigNumberish // denominated in shares
   }
 ```
 
