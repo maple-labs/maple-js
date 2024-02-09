@@ -14,6 +14,8 @@ A JavaScript SDK for interacting with Maple Protocol's smart contracts.
     - [Usage for Queries](#usage-for-queries)
     - [Usage for Transactions](#usage-for-transactions)
 - [Additional Resources](#additional-resources)
+- [Utils](#utils)
+     - [Generating Unsigned Transaction Data](#generating-unsigned-transaction-data)
 
 ## Getting Started
 
