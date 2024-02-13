@@ -11,7 +11,7 @@ A JavaScript SDK for interacting with Maple Protocol's smart contracts.
   - [Interacting with a Contract](#interacting-with-a-contract)
 - [Additional Resources](#additional-resources)
 - [Utils](#utils)
-   - [Generating Unsigned Transaction Data](#generating-unsigned-transaction-data)
+  - [Generating Unsigned Transaction Data](#generating-unsigned-transaction-data)
 
 ## Getting Started
 
@@ -31,11 +31,11 @@ yarn add @maplelabs/maple-js
 
 ### Addresses
 
-`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet`, `Sepolia` & `Goerli`.
+`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet`, `Base Mainnet` & `Sepolia`.
 
-Valid network values are: `'mainnet' | 'sepolia' | 'goerli' | 'base-mainnet' | 'base-goerli`.
+Valid network values are: `'mainnet' | 'sepolia' | 'base-mainnet'`.
 
-Valid project values are `'mainnet-prod' | 'mainnet-dev' | 'sepolia-dev' | 'goerli-prod' | 'goerli-dev' | 'base-mainnet-prod' | 'base-goerli-dev'`.
+Valid project values are `'mainnet-prod' | 'mainnet-dev' | 'sepolia-dev' | 'base-mainnet-prod'`.
 
 Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
 

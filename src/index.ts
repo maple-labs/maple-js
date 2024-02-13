@@ -33,10 +33,7 @@ import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQue
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
-import baseGoerliDevAddresses from './addresses/base-goerli-dev'
 import baseMainnetProdAddresses from './addresses/base-mainnet-prod'
-import goerliProdAddresses from './addresses/goerli-prod'
-import goerliDevAddresses from './addresses/goerli-dev'
 import mainnetDevAddresses from './addresses/mainnet-dev'
 import mainnetProdAddresses from './addresses/mainnet-prod'
 import sepoliaDevAddresses from './addresses/sepolia-dev'
@@ -238,10 +235,7 @@ type MapleAddressMapping = {
 }
 
 const addresses: Record<string, MapleAddressMapping> = {
-  'base-goerli-dev': baseGoerliDevAddresses,
   'base-mainnet-prod': baseMainnetProdAddresses,
-  'goerli-dev': goerliDevAddresses,
-  'goerli-prod': goerliProdAddresses,
   'mainnet-dev': mainnetDevAddresses,
   'mainnet-prod': mainnetProdAddresses,
   'sepolia-dev': sepoliaDevAddresses,
