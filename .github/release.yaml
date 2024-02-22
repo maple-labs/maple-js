@@ -17,8 +17,27 @@ jobs:
         with:
           fetch-depth: 0 # Ensures tags are also fetched
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.18.2
+
       - name: Extract package version
         run: echo "PACKAGE_VERSION=$(cat package.json | jq -r .version)" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run: |
+          yarn build-typechain
+          yarn build
+
+      - name: Publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+        run: |
+          npm config set scope maplelabs
+          npm publish
 
       - name: Create and Push Tag
         env:
@@ -36,5 +55,5 @@ jobs:
           tag=$(git describe --tags `git rev-list --tags --max-count=1`)
           gh release create "$tag" \
           --repo="$GITHUB_REPOSITORY" \
-          --title="Maple-JS $tag" \
+          --title="$tag" \
           --generate-notes
