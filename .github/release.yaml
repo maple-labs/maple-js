@@ -34,8 +34,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           tag=$(git describe --tags `git rev-list --tags --max-count=1`)
-          release_name: 'Maple-JS <RELEASE_TAG>'
           gh release create "$tag" \
           --repo="$GITHUB_REPOSITORY" \
-          --title="${GITHUB_REPOSITORY#*/} $tag" \
+          --title="Maple-JS $tag" \
           --generate-notes
