@@ -22,7 +22,6 @@
   "engines": {
     "node": ">=16.4.2"
   },
-  "packageManager": "yarn@4.1.0",
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rm -rf dist/ && rollup -c && cp -R src/abis dist/abis",
