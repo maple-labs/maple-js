@@ -140,7 +140,7 @@ An example usage of this feature, including parameter setup and function calls, 
 
 ## Additional Resources
 
-For technical infomration about Maple Protocol, visit [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
+For technical infomration about Maple Protocol, visit: [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
 
 ## About Maple
 
