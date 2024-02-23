@@ -48,7 +48,7 @@ jobs:
           git tag -a $PACKAGE_VERSION -m "Release $PACKAGE_VERSION"
           git push https://x-access-token:$PAT@github.com/${{ github.repository }} $PACKAGE_VERSION
 
-      - id: Create GitHub Release
+      - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
