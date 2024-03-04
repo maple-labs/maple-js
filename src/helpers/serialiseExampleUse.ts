@@ -1,9 +1,14 @@
-import { utils } from 'ethers'
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { Wallet } from '@ethersproject/wallet'
+import { joinSignature, parseTransaction } from 'ethers/lib/utils'
 import * as dotenv from 'dotenv'
 
-import { UnsignedTransactionBundle, generateTransactionData } from './serialiseTransaction'
+import {
+  UnsignedTransactionBundle,
+  generateUnsignedTransactionData,
+  generateSignedTransactionData,
+  broadcastSignedTransaction
+} from './serialiseTransaction'
 
 dotenv.config()
 
@@ -24,7 +29,7 @@ async function main() {
   const walletWithProvider = wallet.connect(provider)
 
   // 🚨 2) Serialize the transaction (unsigned) 🚨
-  const { txBytes, txInstance }: UnsignedTransactionBundle = await generateTransactionData({
+  const { txBytes }: UnsignedTransactionBundle = await generateUnsignedTransactionData({
     provider,
     walletAddress,
     contractAddress: poolAddress,
@@ -45,26 +50,39 @@ async function main() {
   // })
 
   // 🚨 3) Sign the transaction 🚨
-  const deserializeTx = utils.parseTransaction(txBytes)
-  const { nonce, gasPrice, gasLimit, to, value, data, chainId } = deserializeTx
+  const deserializeTx = parseTransaction(txBytes)
+  const { nonce, gasPrice, gasLimit, to, value, data, chainId, accessList, type } = deserializeTx
+
+  if (!type) return
 
   const transactionRequest = {
     nonce,
+    // maxPriorityFeePerGas,
+    // maxFeePerGas,
     gasPrice,
     gasLimit,
     to,
     value: value.toHexString(),
     data,
-    chainId
+    chainId,
+    accessList,
+    type
   }
 
   const signedTx = await walletWithProvider.signTransaction(transactionRequest)
+  const transactionParsed = parseTransaction(signedTx)
+  const { r, s, v } = transactionParsed
 
-  console.log('✍🏼 :::', { signedTx })
+  if (!r) return
+
+  const joinedSignature = joinSignature({ r, s, v })
+
+  const signedTxData = await generateSignedTransactionData({ txBytes, signature: joinedSignature })
 
   // 🚨 4) Broadcast the transaction 🚨
-  const txResponse = await provider.sendTransaction(signedTx)
-  console.log('#️⃣ :::', { transactionHash: txResponse.hash })
+  const rpcUrl = process.env.RPC_URL as string
+  const txReceipt = await broadcastSignedTransaction(signedTxData, rpcUrl)
+  console.log({ txReceipt })
 }
 
 main()
