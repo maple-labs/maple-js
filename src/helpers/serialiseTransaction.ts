@@ -50,8 +50,6 @@ const createUnsignedTransactionBundle = async (
     // const maxPriorityFeePerGas = feeData.maxPriorityFeePerGas || ZERO
     // const maxFeePerGas = feeData.maxFeePerGas || ZERO
 
-    // console.log('🐸', { feeData, maxPriorityFeePerGas, maxFeePerGas })
-
     // Get current nonce
     const nonce = await provider.getTransactionCount(wallet)
 
