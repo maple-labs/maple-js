@@ -6,7 +6,8 @@ import * as dotenv from 'dotenv'
 import {
   UnsignedTransactionBundle,
   generateUnsignedTransactionData,
-  generateSignedTransactionData
+  generateSignedTransactionData,
+  broadcastSignedTransaction
 } from './serialiseTransaction'
 
 dotenv.config()
@@ -28,7 +29,7 @@ async function main() {
   const walletWithProvider = wallet.connect(provider)
 
   // 🚨 2) Serialize the transaction (unsigned) 🚨
-  const { txBytes, txInstance }: UnsignedTransactionBundle = await generateUnsignedTransactionData({
+  const { txBytes }: UnsignedTransactionBundle = await generateUnsignedTransactionData({
     provider,
     walletAddress,
     contractAddress: poolAddress,
@@ -53,46 +54,42 @@ async function main() {
 
   // 🚨 3) Sign the transaction 🚨
   const deserializeTx = parseTransaction(txBytes)
-  const { nonce, gasPrice, gasLimit, to, value, data, chainId } = deserializeTx
+  const { nonce, gasPrice, gasLimit, to, value, data, chainId, accessList, type } = deserializeTx
+
+  if (!type) return
 
   const transactionRequest = {
     nonce,
+    // maxPriorityFeePerGas,
+    // maxFeePerGas,
     gasPrice,
     gasLimit,
     to,
     value: value.toHexString(),
     data,
-    chainId
+    chainId,
+    accessList,
+    type
   }
 
+  console.log('🐶 :::', { transactionRequest })
+
   const signedTx = await walletWithProvider.signTransaction(transactionRequest)
-  // console.log('✍🏼 :::', { signedTx })
-
   const transactionParsed = parseTransaction(signedTx)
-
   const { r, s, v } = transactionParsed
-  console.log('🐰 ::: ', { r, s, v })
 
-  if (!r || !s || !v) return
+  if (!r) return
 
   const joinedSignature = joinSignature({ r, s, v })
 
-  console.log({ joinedSignature })
-
   const signedTxData = await generateSignedTransactionData({ txBytes, signature: joinedSignature })
 
-  console.log('❌', { signedTxData })
+  console.log({ signedTxData })
 
-  // Use ethers to parse the transaction
-  const parsedSignedTx = parseTransaction(signedTxData)
-
-  console.log('🐸 ::: ', { parsedSignedTx })
-
-  // // 🚨 4) Broadcast the transaction 🚨
-  // const txResponse = await provider.sendTransaction(signedTxData)
-
-  // const txResponse = await walletWithProvider.sendTransaction(signedTxData)
-  // console.log('#️⃣ :::', { transactionHash: txResponse.hash })
+  // 🚨 4) Broadcast the transaction 🚨
+  const rpcUrl = process.env.RPC_URL as string
+  const txReceipt = await broadcastSignedTransaction(signedTxData, rpcUrl)
+  console.log({ txReceipt })
 }
 
 main()
