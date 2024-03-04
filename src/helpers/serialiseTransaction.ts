@@ -2,7 +2,8 @@ import { BigNumber, BigNumberish, Contract, ContractInterface, UnsignedTransacti
 import { serialize } from '@ethersproject/transactions'
 import { Provider } from '@ethersproject/providers'
 import { parseEther } from '@ethersproject/units'
-import { parseTransaction, serializeTransaction, splitSignature } from 'ethers/lib/utils'
+import { parseTransaction, splitSignature } from 'ethers/lib/utils'
+import { JsonRpcProvider } from '@ethersproject/providers'
 
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
@@ -44,6 +45,13 @@ const createUnsignedTransactionBundle = async (
     const gasPrice = await provider.getGasPrice()
     const gasLimit = await estimateGasForFunction(contract, functionName, functionArgs, wallet)
 
+    // todo: get fee data so can use type 2: eip-1559
+    // const feeData = await provider.getFeeData()
+    // const maxPriorityFeePerGas = feeData.maxPriorityFeePerGas || ZERO
+    // const maxFeePerGas = feeData.maxFeePerGas || ZERO
+
+    // console.log('🐸', { feeData, maxPriorityFeePerGas, maxFeePerGas })
+
     // Get current nonce
     const nonce = await provider.getTransactionCount(wallet)
 
@@ -55,9 +63,14 @@ const createUnsignedTransactionBundle = async (
       data: contract.interface.encodeFunctionData(functionName, functionArgs),
       gasLimit: gasLimit.toHexString(),
       gasPrice: gasPrice.toHexString(),
+      // maxPriorityFeePerGas: maxPriorityFeePerGas.toHexString(),
+      // maxFeePerGas: maxFeePerGas.toHexString(),
       nonce,
       value: parseEther('0').toHexString(),
-      chainId
+      chainId,
+      type: 1,
+
+      accessList: []
     }
 
     const txBytes = serialize(unsignedTx)
@@ -126,34 +139,28 @@ export const generateUnsignedTransactionData = async (args: TxParams) => {
 
 interface GenerateSignedTransactionInput {
   txBytes: string // Serialized unsigned transaction
-  signature: string
-  // signature: Uint8Array // Signature in byte format
+  signature: string // Hexidecimal string
 }
 
 export function generateSignedTransactionData({ txBytes, signature }: GenerateSignedTransactionInput) {
   const decodedTx = parseTransaction(txBytes)
-
   const splitSig = splitSignature(signature)
 
-  console.log('🚨 generateSignedTransactionData :::', { decodedTx, splitSig })
-
-  const theTxBytes: UnsignedTransaction = {
-    ...decodedTx,
-    type: 1,
-    accessList: []
-  }
-
-  theTxBytes.data = '0x'
-
-  // console.log({ theTxBytes })
-
-  // const siggg = {
-  //   r: '0x74cacbb340e16754b06d90d2f2b548bd04b4c481618b770a85aa9bfe7d3a1b33',
-  //   s: '0x63d45752113f627e66e074c5a028628e665324fbba37ebde90a160f5eaee6c57',
-  //   v: 62709
-  // }
-
   // Serialize the signed transaction
-  const serializedSignedTx = serializeTransaction(theTxBytes, splitSig) // theSignature
+  const serializedSignedTx = serialize(decodedTx, splitSig)
   return serializedSignedTx
+}
+
+export async function broadcastSignedTransaction(signedTxData: string, rpcUrl: string) {
+  const provider = new JsonRpcProvider(rpcUrl)
+
+  const txResponse = await provider.sendTransaction(signedTxData)
+
+  console.log({ txResponse })
+
+  const txReceipt = await txResponse.wait()
+
+  console.log({ txReceipt })
+
+  return txReceipt
 }
