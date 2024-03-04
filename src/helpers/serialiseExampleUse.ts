@@ -1,9 +1,13 @@
-import { utils } from 'ethers'
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { Wallet } from '@ethersproject/wallet'
+import { joinSignature, parseTransaction } from 'ethers/lib/utils'
 import * as dotenv from 'dotenv'
 
-import { UnsignedTransactionBundle, generateTransactionData } from './serialiseTransaction'
+import {
+  UnsignedTransactionBundle,
+  generateUnsignedTransactionData,
+  generateSignedTransactionData
+} from './serialiseTransaction'
 
 dotenv.config()
 
@@ -24,7 +28,7 @@ async function main() {
   const walletWithProvider = wallet.connect(provider)
 
   // 🚨 2) Serialize the transaction (unsigned) 🚨
-  const { txBytes, txInstance }: UnsignedTransactionBundle = await generateTransactionData({
+  const { txBytes, txInstance }: UnsignedTransactionBundle = await generateUnsignedTransactionData({
     provider,
     walletAddress,
     contractAddress: poolAddress,
@@ -33,6 +37,7 @@ async function main() {
       depositAmount: amount
     }
   })
+  console.log({ txBytes })
 
   // const { txBytes, txInstance }: UnsignedTransactionBundle = await generateTransactionData({
   //   provider,
@@ -44,8 +49,10 @@ async function main() {
   //   }
   // })
 
+  // console.log({ txBytes })
+
   // 🚨 3) Sign the transaction 🚨
-  const deserializeTx = utils.parseTransaction(txBytes)
+  const deserializeTx = parseTransaction(txBytes)
   const { nonce, gasPrice, gasLimit, to, value, data, chainId } = deserializeTx
 
   const transactionRequest = {
@@ -59,12 +66,33 @@ async function main() {
   }
 
   const signedTx = await walletWithProvider.signTransaction(transactionRequest)
+  // console.log('✍🏼 :::', { signedTx })
 
-  console.log('✍🏼 :::', { signedTx })
+  const transactionParsed = parseTransaction(signedTx)
 
-  // 🚨 4) Broadcast the transaction 🚨
-  const txResponse = await provider.sendTransaction(signedTx)
-  console.log('#️⃣ :::', { transactionHash: txResponse.hash })
+  const { r, s, v } = transactionParsed
+  console.log('🐰 ::: ', { r, s, v })
+
+  if (!r || !s || !v) return
+
+  const joinedSignature = joinSignature({ r, s, v })
+
+  console.log({ joinedSignature })
+
+  const signedTxData = await generateSignedTransactionData({ txBytes, signature: joinedSignature })
+
+  console.log('❌', { signedTxData })
+
+  // Use ethers to parse the transaction
+  const parsedSignedTx = parseTransaction(signedTxData)
+
+  console.log('🐸 ::: ', { parsedSignedTx })
+
+  // // 🚨 4) Broadcast the transaction 🚨
+  // const txResponse = await provider.sendTransaction(signedTxData)
+
+  // const txResponse = await walletWithProvider.sendTransaction(signedTxData)
+  // console.log('#️⃣ :::', { transactionHash: txResponse.hash })
 }
 
 main()

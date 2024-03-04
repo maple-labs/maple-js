@@ -2,6 +2,7 @@ import { BigNumber, BigNumberish, Contract, ContractInterface, UnsignedTransacti
 import { serialize } from '@ethersproject/transactions'
 import { Provider } from '@ethersproject/providers'
 import { parseEther } from '@ethersproject/units'
+import { parseTransaction, serializeTransaction, splitSignature } from 'ethers/lib/utils'
 
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
@@ -95,7 +96,7 @@ export interface PoolQueueWithdrawalInputs extends CommonInputs {
 
 type TxParams = PoolDepositInputs | PoolQueueWithdrawalInputs
 
-export const generateTransactionData = async (args: TxParams) => {
+export const generateUnsignedTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, type } = args
 
   const getTransactionParams = (): { abi: ContractInterface; params: any[]; functionName: string } => {
@@ -121,4 +122,38 @@ export const generateTransactionData = async (args: TxParams) => {
   const { abi, functionName, params } = getTransactionParams()
 
   return await createUnsignedTransactionBundle(provider, walletAddress, contractAddress, abi, functionName, params)
+}
+
+interface GenerateSignedTransactionInput {
+  txBytes: string // Serialized unsigned transaction
+  signature: string
+  // signature: Uint8Array // Signature in byte format
+}
+
+export function generateSignedTransactionData({ txBytes, signature }: GenerateSignedTransactionInput) {
+  const decodedTx = parseTransaction(txBytes)
+
+  const splitSig = splitSignature(signature)
+
+  console.log('🚨 generateSignedTransactionData :::', { decodedTx, splitSig })
+
+  const theTxBytes: UnsignedTransaction = {
+    ...decodedTx,
+    type: 1,
+    accessList: []
+  }
+
+  theTxBytes.data = '0x'
+
+  // console.log({ theTxBytes })
+
+  // const siggg = {
+  //   r: '0x74cacbb340e16754b06d90d2f2b548bd04b4c481618b770a85aa9bfe7d3a1b33',
+  //   s: '0x63d45752113f627e66e074c5a028628e665324fbba37ebde90a160f5eaee6c57',
+  //   v: 62709
+  // }
+
+  // Serialize the signed transaction
+  const serializedSignedTx = serializeTransaction(theTxBytes, splitSig) // theSignature
+  return serializedSignedTx
 }
