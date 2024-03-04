@@ -38,7 +38,7 @@ async function main() {
       depositAmount: amount
     }
   })
-  console.log({ txBytes })
+  // console.log({ txBytes })
 
   // const { txBytes, txInstance }: UnsignedTransactionBundle = await generateTransactionData({
   //   provider,
@@ -72,8 +72,6 @@ async function main() {
     type
   }
 
-  console.log('🐶 :::', { transactionRequest })
-
   const signedTx = await walletWithProvider.signTransaction(transactionRequest)
   const transactionParsed = parseTransaction(signedTx)
   const { r, s, v } = transactionParsed
@@ -83,8 +81,6 @@ async function main() {
   const joinedSignature = joinSignature({ r, s, v })
 
   const signedTxData = await generateSignedTransactionData({ txBytes, signature: joinedSignature })
-
-  console.log({ signedTxData })
 
   // 🚨 4) Broadcast the transaction 🚨
   const rpcUrl = process.env.RPC_URL as string
