@@ -38,7 +38,6 @@ async function main() {
       depositAmount: amount
     }
   })
-  // console.log({ txBytes })
 
   // const { txBytes, txInstance }: UnsignedTransactionBundle = await generateTransactionData({
   //   provider,
@@ -49,8 +48,6 @@ async function main() {
   //     withdrawalAmount: amount
   //   }
   // })
-
-  // console.log({ txBytes })
 
   // 🚨 3) Sign the transaction 🚨
   const deserializeTx = parseTransaction(txBytes)
