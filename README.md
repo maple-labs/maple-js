@@ -158,7 +158,7 @@ This function returns the serialized signed transaction data, ready for broadcas
 
 ### Broadcasting Signed Transactions
 
-This utilit allows you to broadcast a signed transaction to the Ethereum network. This step is the final stage in submitting transactions, where the transaction is sent to a node in the network for processing and inclusion in the blockchain.
+This utility allows you to broadcast a signed transaction to the Ethereum network. This step is the final stage in submitting transactions, where the transaction is sent to a node in the network for processing and inclusion in the blockchain.
 
 ```
 import { utils } from '@maplelabs/maple-js'
