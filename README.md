@@ -90,7 +90,7 @@ const method = await (await poolContract.deposit(depositAmount)).wait()
 
 ## Utils
 
-**Generating Unsigned Transaction Data**
+### Generating Unsigned Transaction Data
 
 This utility allows you to generate unsigned transaction data, facilitating the creation of transactions that can later be signed and sent to the network. This is particularly useful for offline transaction preparation or when keys are managed externally.
 Usage
@@ -106,7 +106,7 @@ The `generateUnsignedTransactionData` function supports creating unsigned transa
 - For `poolDeposit`, specify the deposit amount in assets.
 - For `poolQueueWithdrawal`, specify the withdrawal amount in shares.
 
-**_Parameters_**
+**Parameters**
 
 All calls to `generateUnsignedTransactionData` require the following parameters:
 
@@ -136,9 +136,9 @@ interface CommonInputs {
   }
 ```
 
-**Generating Signed Transaction Data**
+### Generating Signed Transaction Data
+
 This utility provides the functionality to combine unsigned transaction with a signature to create a signed transaction string. This is crucial for scenarios where transactions are prepared offline or in secure environments.
-Usage
 
 ```
 import { utils } from '@maplelabs/maple-js'
@@ -149,17 +149,16 @@ const signedTxData = utils.generateSignedTransactionData({
 })
 ```
 
-**_Parameters_**
+**Parameters**
 
 - `txBytes`: The serialized unsigned transaction data.
-- ``signature`: The signature obtained from signing the transaction hash.
+- `signature`: The signature obtained from signing the transaction hash.
 
 This function returns the serialized signed transaction data, ready for broadcasting to the Ethereum network.
 
-**Broadcasting Signed Transactions**
-This utilit allows you to broadcast a signed transaction to the Ethereum network. This step is the final stage in submitting transactions, where the transaction is sent to a node in the network for processing and inclusion in the blockchain.
+### Broadcasting Signed Transactions
 
-Usage
+This utilit allows you to broadcast a signed transaction to the Ethereum network. This step is the final stage in submitting transactions, where the transaction is sent to a node in the network for processing and inclusion in the blockchain.
 
 ```
 import { utils } from '@maplelabs/maple-js'
@@ -170,14 +169,14 @@ const txReceipt = await utils.broadcastSignedTransaction(
 )
 ```
 
-**_Parameters_**
+**Parameters**
 
 - `signedTxData`: The serialized signed transaction data.
 - `rpcUrl`: The URL of the Ethereum JSON-RPC endpoint to which you are broadcasting the transaction.
 
 This function sends the signed transaction to the network and returns the transaction receipt once the transaction has been processed.
 
-**_Example_**
+**Utils Example**
 
 An example usage of these utilities, including parameter setup and function calls, can be found in the repository at `src/helpers/serialiseExampleUse`.
 
