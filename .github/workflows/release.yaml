@@ -1,9 +1,10 @@
 name: Release Version
 
 on:
-  push:
-    branches:
-      - 'main'
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - 'main'
 
 jobs:
   release-api:
@@ -20,11 +21,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.18.2
+          corepack: true
 
       - name: Extract package version
         run: echo "PACKAGE_VERSION=v$(cat package.json | jq -r .version)" >> $GITHUB_ENV
 
       - name: Install dependencies
+        run: corepack enable
         run: yarn
 
       - name: Build
