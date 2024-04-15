@@ -7,26 +7,11 @@ import { JsonRpcProvider } from '@ethersproject/providers'
 
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
+const ZERO = BigNumber.from(0)
+
 export interface UnsignedTransactionBundle {
   txInstance: UnsignedTransaction
   txBytes: string
-}
-
-async function estimateGasForFunction(
-  contract: Contract,
-  functionName: string,
-  args: any[],
-  from: string
-): Promise<BigNumber> {
-  // Ensure the contract has the function
-  if (typeof contract.functions[functionName] !== 'function') {
-    throw new Error('Function not found in contract')
-  }
-
-  // Estimate gas for the function call
-  const estimateGas = await contract.estimateGas[functionName](...args, { from })
-
-  return estimateGas
 }
 
 // Creates unsigned transaction object for arbitrary function call
@@ -41,14 +26,11 @@ const createUnsignedTransactionBundle = async (
   try {
     const contract = new Contract(contractAddress, abi, provider)
 
-    // Estimate gas price and limit
-    const gasPrice = await provider.getGasPrice()
-    const gasLimit = await estimateGasForFunction(contract, functionName, functionArgs, wallet)
+    const feeData = await provider.getFeeData()
+    const maxPriorityFeePerGas = feeData.maxPriorityFeePerGas || ZERO
+    const maxFeePerGas = feeData.maxFeePerGas || ZERO
 
-    // todo: get fee data so can use type 2: eip-1559
-    // const feeData = await provider.getFeeData()
-    // const maxPriorityFeePerGas = feeData.maxPriorityFeePerGas || ZERO
-    // const maxFeePerGas = feeData.maxFeePerGas || ZERO
+    const gasLimit = await contract.estimateGas[functionName](...functionArgs, { from: wallet })
 
     // Get current nonce
     const nonce = await provider.getTransactionCount(wallet)
@@ -59,16 +41,13 @@ const createUnsignedTransactionBundle = async (
     const unsignedTx: UnsignedTransaction = {
       to: contractAddress,
       data: contract.interface.encodeFunctionData(functionName, functionArgs),
-      gasLimit: gasLimit.toHexString(),
-      gasPrice: gasPrice.toHexString(),
-      // maxPriorityFeePerGas: maxPriorityFeePerGas.toHexString(),
-      // maxFeePerGas: maxFeePerGas.toHexString(),
+      maxPriorityFeePerGas: maxPriorityFeePerGas.toHexString(),
+      maxFeePerGas: maxFeePerGas.toHexString(),
       nonce,
       value: parseEther('0').toHexString(),
       chainId,
-      type: 1,
-
-      accessList: []
+      type: 2,
+      gasLimit
     }
 
     const txBytes = serialize(unsignedTx)
