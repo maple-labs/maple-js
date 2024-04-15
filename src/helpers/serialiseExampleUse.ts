@@ -12,8 +12,8 @@ import {
 
 dotenv.config()
 
-const poolAddress = '0x4ff5637548e48abaf07baf4a5769b8abbe03a322'
-const amount = BigInt('1000000')
+const poolAddress = '0xa5dfe2bae4cb3b34e1a8df2e85350e5d5ba7bc44'
+const amount = BigInt(1e6) // 1 USDC / micro eth amount
 const walletAddress = '0xaA5aA072369A3F34fcA3926DDf31977fAD95022D'
 
 async function main() {
@@ -51,15 +51,15 @@ async function main() {
 
   // 🚨 3) Sign the transaction 🚨
   const deserializeTx = parseTransaction(txBytes)
-  const { nonce, gasPrice, gasLimit, to, value, data, chainId, accessList, type } = deserializeTx
+  const { nonce, maxPriorityFeePerGas, maxFeePerGas, gasLimit, to, value, data, chainId, accessList, type } =
+    deserializeTx
 
   if (!type) return
 
   const transactionRequest = {
     nonce,
-    // maxPriorityFeePerGas,
-    // maxFeePerGas,
-    gasPrice,
+    maxPriorityFeePerGas,
+    maxFeePerGas,
     gasLimit,
     to,
     value: value.toHexString(),
