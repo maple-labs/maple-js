@@ -1,6 +1,8 @@
+import { BigNumber } from '@ethersproject/bignumber'
+import { joinSignature } from '@ethersproject/bytes'
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { Wallet } from '@ethersproject/wallet'
-import { joinSignature, parseTransaction } from 'ethers/lib/utils'
+import { parseTransaction } from 'ethers/lib/utils'
 import * as dotenv from 'dotenv'
 
 import {
@@ -12,8 +14,8 @@ import {
 
 dotenv.config()
 
-const poolAddress = '0xa5dfe2bae4cb3b34e1a8df2e85350e5d5ba7bc44'
-const amount = BigInt(1e6) // 1 USDC / micro eth amount
+const poolAddress = '0x722da756e3f615dc1fc8d84061e25bf0f181bdfb' // example pool in sepolia-prod
+const amount = BigNumber.from(1e6) // 1 USDC / micro eth amount
 const walletAddress = '0xaA5aA072369A3F34fcA3926DDf31977fAD95022D'
 
 async function main() {
@@ -72,11 +74,9 @@ async function main() {
   const signedTx = await walletWithProvider.signTransaction(transactionRequest)
   const transactionParsed = parseTransaction(signedTx)
   const { r, s, v } = transactionParsed
-
   if (!r) return
 
   const joinedSignature = joinSignature({ r, s, v })
-
   const signedTxData = await generateSignedTransactionData({ txBytes, signature: joinedSignature })
 
   // 🚨 4) Broadcast the transaction 🚨

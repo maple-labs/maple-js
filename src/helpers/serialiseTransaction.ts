@@ -1,8 +1,10 @@
-import { BigNumber, BigNumberish, Contract, ContractInterface, UnsignedTransaction } from 'ethers'
-import { serialize } from '@ethersproject/transactions'
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
+import { splitSignature } from '@ethersproject/bytes'
+import { Contract, ContractInterface } from '@ethersproject/contracts'
 import { Provider } from '@ethersproject/providers'
+import { serialize, UnsignedTransaction } from '@ethersproject/transactions'
 import { parseEther } from '@ethersproject/units'
-import { parseTransaction, splitSignature } from 'ethers/lib/utils'
+import { parseTransaction } from 'ethers/lib/utils'
 import { JsonRpcProvider } from '@ethersproject/providers'
 
 import ERC20Abi from '../abis/ERC20.abi.json'
