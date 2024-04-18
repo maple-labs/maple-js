@@ -71,14 +71,14 @@ interface CommonInputs {
   contractAddress: string
 }
 
-interface ApproveParams {
+interface PoolApproveParams {
   spender: string
   amount: BigNumberish
 }
 
-export interface ApproveInputs extends CommonInputs {
-  type: 'approve'
-  params: ApproveParams
+export interface PoolApproveInputs extends CommonInputs {
+  type: 'poolApprove'
+  params: PoolApproveParams
 }
 
 interface PoolDepositParams {
@@ -97,15 +97,15 @@ export interface PoolQueueWithdrawalInputs extends CommonInputs {
   params: PoolQueueWithdrawalParams
 }
 
-type TxParams = ApproveInputs | PoolDepositInputs | PoolQueueWithdrawalInputs
+type TxParams = PoolApproveInputs | PoolDepositInputs | PoolQueueWithdrawalInputs
 
 export const generateUnsignedTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, type } = args
 
   const getTransactionParams = (): { abi: ContractInterface; params: any[]; functionName: string } => {
     switch (type) {
-      case 'approve': {
-        const { spender, amount } = args.params as ApproveParams
+      case 'poolApprove': {
+        const { spender, amount } = args.params as PoolApproveParams
         return {
           abi: ERC20Abi,
           functionName: 'approve',
