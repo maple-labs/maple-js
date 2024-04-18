@@ -76,6 +76,16 @@ export interface PoolDepositInputs extends CommonInputs {
   params: PoolDepositParams
 }
 
+interface PoolApproveParams {
+  spender: string
+  amount: BigNumberish
+}
+
+export interface PoolApproveInputs extends CommonInputs {
+  type: 'approve'
+  params: PoolApproveParams
+}
+
 interface PoolQueueWithdrawalParams {
   withdrawalAmount: BigNumberish
 }
@@ -84,7 +94,7 @@ export interface PoolQueueWithdrawalInputs extends CommonInputs {
   params: PoolQueueWithdrawalParams
 }
 
-type TxParams = PoolDepositInputs | PoolQueueWithdrawalInputs
+type TxParams = PoolDepositInputs | PoolApproveInputs | PoolQueueWithdrawalInputs
 
 export const generateUnsignedTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, type } = args
@@ -96,6 +106,13 @@ export const generateUnsignedTransactionData = async (args: TxParams) => {
         abi: PoolV2PoolAbi,
         functionName: 'deposit',
         params: [depositAmount, walletAddress] // [assets_, receiver_]
+      }
+    } else if (type === 'approve') {
+      const { spender, amount } = args.params
+      return {
+        abi: PoolV2PoolAbi,
+        functionName: 'approve',
+        params: [spender, amount] // [spender, amount]
       }
     } else if (type === 'poolQueueWithdrawal') {
       const { withdrawalAmount } = args.params
