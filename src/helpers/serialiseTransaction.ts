@@ -1,10 +1,13 @@
-import { BigNumber, BigNumberish, Contract, ContractInterface, UnsignedTransaction } from 'ethers'
-import { serialize } from '@ethersproject/transactions'
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
+import { splitSignature } from '@ethersproject/bytes'
+import { Contract, ContractInterface } from '@ethersproject/contracts'
 import { Provider } from '@ethersproject/providers'
+import { serialize, UnsignedTransaction } from '@ethersproject/transactions'
 import { parseEther } from '@ethersproject/units'
-import { parseTransaction, splitSignature } from 'ethers/lib/utils'
+import { parseTransaction } from 'ethers/lib/utils'
 import { JsonRpcProvider } from '@ethersproject/providers'
 
+import ERC20Abi from '../abis/ERC20.abi.json'
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
 
 const ZERO = BigNumber.from(0)
@@ -57,7 +60,7 @@ const createUnsignedTransactionBundle = async (
       txBytes
     }
   } catch (error) {
-    console.error('Error in serialiseTransaction:', error)
+    console.error('Error in createUnsignedTransactionBundle:', error)
     throw error
   }
 }
@@ -66,6 +69,16 @@ interface CommonInputs {
   provider: Provider
   walletAddress: string
   contractAddress: string
+}
+
+interface PoolApproveParams {
+  spender: string
+  amount: BigNumberish
+}
+
+export interface PoolApproveInputs extends CommonInputs {
+  type: 'poolApprove'
+  params: PoolApproveParams
 }
 
 interface PoolDepositParams {
@@ -84,28 +97,39 @@ export interface PoolQueueWithdrawalInputs extends CommonInputs {
   params: PoolQueueWithdrawalParams
 }
 
-type TxParams = PoolDepositInputs | PoolQueueWithdrawalInputs
+type TxParams = PoolApproveInputs | PoolDepositInputs | PoolQueueWithdrawalInputs
 
 export const generateUnsignedTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, type } = args
 
   const getTransactionParams = (): { abi: ContractInterface; params: any[]; functionName: string } => {
-    if (type === 'poolDeposit') {
-      const { depositAmount } = args.params
-      return {
-        abi: PoolV2PoolAbi,
-        functionName: 'deposit',
-        params: [depositAmount, walletAddress] // [assets_, receiver_]
+    switch (type) {
+      case 'poolApprove': {
+        const { spender, amount } = args.params as PoolApproveParams
+        return {
+          abi: ERC20Abi,
+          functionName: 'approve',
+          params: [spender, amount]
+        }
       }
-    } else if (type === 'poolQueueWithdrawal') {
-      const { withdrawalAmount } = args.params
-      return {
-        abi: PoolV2PoolAbi,
-        functionName: 'requestRedeem',
-        params: [withdrawalAmount, walletAddress] // [sharesToRequestRedeem, account]
+      case 'poolDeposit': {
+        const { depositAmount } = args.params as PoolDepositParams
+        return {
+          abi: PoolV2PoolAbi,
+          functionName: 'deposit',
+          params: [depositAmount, walletAddress]
+        }
       }
-    } else {
-      throw new Error('Invalid transaction type')
+      case 'poolQueueWithdrawal': {
+        const { withdrawalAmount } = args.params as PoolQueueWithdrawalParams
+        return {
+          abi: PoolV2PoolAbi,
+          functionName: 'requestRedeem',
+          params: [withdrawalAmount, walletAddress]
+        }
+      }
+      default:
+        throw new Error('Invalid transaction type')
     }
   }
 
@@ -116,7 +140,7 @@ export const generateUnsignedTransactionData = async (args: TxParams) => {
 
 interface GenerateSignedTransactionInput {
   txBytes: string // Serialized unsigned transaction
-  signature: string // Hexidecimal string
+  signature: string // Hexadecimal string
 }
 
 export function generateSignedTransactionData({ txBytes, signature }: GenerateSignedTransactionInput) {
@@ -132,11 +156,9 @@ export async function broadcastSignedTransaction(signedTxData: string, rpcUrl: s
   const provider = new JsonRpcProvider(rpcUrl)
 
   const txResponse = await provider.sendTransaction(signedTxData)
-
   console.log({ txResponse })
 
   const txReceipt = await txResponse.wait()
-
   console.log({ txReceipt })
 
   return txReceipt

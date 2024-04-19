@@ -103,6 +103,7 @@ const { txBytes, txInstance } = utils.generateUnsignedTransactionData(parameters
 
 The `generateUnsignedTransactionData` function supports creating unsigned transactions for specific actions, currently including `poolDeposit` and `poolQueueWithdrawal`. Depending on the action, parameters must be provided accordingly:
 
+- For `poolApprove`, specify the spender address and approve amount in assets.
 - For `poolDeposit`, specify the deposit amount in assets.
 - For `poolQueueWithdrawal`, specify the withdrawal amount in shares.
 
@@ -115,9 +116,18 @@ interface CommonInputs {
   provider: Provider
   walletAddress: string
   contractAddress: string
-  type: `poolDeposit` | `poolQueueWithdrawal`
+  type: poolApprove | poolDeposit | poolQueueWithdrawal
   params: {}
 }
+```
+
+`poolApprove` requires the following `params`:
+
+```
+  params: {
+    spender: string // address
+    amount: BigNumberish // denominated in assets
+  }
 ```
 
 `poolDeposit` requires the following `params`:

@@ -1,6 +1,8 @@
+import { BigNumber } from '@ethersproject/bignumber'
+import { joinSignature } from '@ethersproject/bytes'
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { Wallet } from '@ethersproject/wallet'
-import { joinSignature, parseTransaction } from 'ethers/lib/utils'
+import { parseTransaction } from 'ethers/lib/utils'
 import * as dotenv from 'dotenv'
 
 import {
@@ -10,11 +12,17 @@ import {
   broadcastSignedTransaction
 } from './serialiseTransaction'
 
+import addresses from '../addresses/sepolia-prod'
+
 dotenv.config()
 
-const poolAddress = '0xa5dfe2bae4cb3b34e1a8df2e85350e5d5ba7bc44'
-const amount = BigInt(1e6) // 1 USDC / micro eth amount
-const walletAddress = '0xaA5aA072369A3F34fcA3926DDf31977fAD95022D'
+// Amounts
+const AMOUNT = BigNumber.from(1e6) // 1 USDC / micro eth amount
+
+// Addresses
+const poolAddress = '0x722da756e3f615dc1fc8d84061e25bf0f181bdfb' // example pool in sepolia-prod
+const walletAddress = '0xfoo' // your wallet address
+const usdcAddress = addresses.USDC
 
 async function main() {
   // 🚨 1) Setup 🚨
@@ -32,12 +40,23 @@ async function main() {
   const { txBytes }: UnsignedTransactionBundle = await generateUnsignedTransactionData({
     provider,
     walletAddress,
-    contractAddress: poolAddress,
-    type: 'poolDeposit',
+    contractAddress: usdcAddress, // Asset to approve spending by pool (eg: usdc or weth)
+    type: 'poolApprove',
     params: {
-      depositAmount: amount
+      amount: AMOUNT,
+      spender: poolAddress
     }
   })
+
+  // const { txBytes }: UnsignedTransactionBundle = await generateUnsignedTransactionData({
+  //   provider,
+  //   walletAddress,
+  //   contractAddress: poolAddress, // address of the pool contract for depositing funds
+  //   type: 'poolDeposit',
+  //   params: {
+  //     depositAmount: AMOUNT
+  //   }
+  // })
 
   // const { txBytes, txInstance }: UnsignedTransactionBundle = await generateTransactionData({
   //   provider,
@@ -45,7 +64,7 @@ async function main() {
   //   contractAddress: poolAddress,
   //   type: 'poolQueueWithdrawal',
   //   params: {
-  //     withdrawalAmount: amount
+  //     withdrawalAmount: AMOUNT
   //   }
   // })
 
@@ -72,11 +91,9 @@ async function main() {
   const signedTx = await walletWithProvider.signTransaction(transactionRequest)
   const transactionParsed = parseTransaction(signedTx)
   const { r, s, v } = transactionParsed
-
   if (!r) return
 
   const joinedSignature = joinSignature({ r, s, v })
-
   const signedTxData = await generateSignedTransactionData({ txBytes, signature: joinedSignature })
 
   // 🚨 4) Broadcast the transaction 🚨
