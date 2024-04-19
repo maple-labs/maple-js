@@ -21,7 +21,7 @@ const AMOUNT = BigNumber.from(1e6) // 1 USDC / micro eth amount
 
 // Addresses
 const poolAddress = '0x722da756e3f615dc1fc8d84061e25bf0f181bdfb' // example pool in sepolia-prod
-const walletAddress = '0xfoo'
+const walletAddress = '0xfoo' // your wallet address
 const usdcAddress = addresses.USDC
 
 async function main() {
