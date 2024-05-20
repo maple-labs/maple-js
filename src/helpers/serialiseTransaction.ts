@@ -1,30 +1,20 @@
-import { BigNumber, BigNumberish, Contract, ContractInterface, UnsignedTransaction } from 'ethers'
-import { serialize } from '@ethersproject/transactions'
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
+import { splitSignature } from '@ethersproject/bytes'
+import { Contract, ContractInterface } from '@ethersproject/contracts'
 import { Provider } from '@ethersproject/providers'
+import { serialize, UnsignedTransaction } from '@ethersproject/transactions'
 import { parseEther } from '@ethersproject/units'
+import { parseTransaction } from 'ethers/lib/utils'
+import { JsonRpcProvider } from '@ethersproject/providers'
 
+import ERC20Abi from '../abis/ERC20.abi.json'
 import PoolV2PoolAbi from '../abis/PoolV2Pool.abi.json'
+
+const ZERO = BigNumber.from(0)
 
 export interface UnsignedTransactionBundle {
   txInstance: UnsignedTransaction
   txBytes: string
-}
-
-async function estimateGasForFunction(
-  contract: Contract,
-  functionName: string,
-  args: any[],
-  from: string
-): Promise<BigNumber> {
-  // Ensure the contract has the function
-  if (typeof contract.functions[functionName] !== 'function') {
-    throw new Error('Function not found in contract')
-  }
-
-  // Estimate gas for the function call
-  const estimateGas = await contract.estimateGas[functionName](...args, { from })
-
-  return estimateGas
 }
 
 // Creates unsigned transaction object for arbitrary function call
@@ -39,9 +29,11 @@ const createUnsignedTransactionBundle = async (
   try {
     const contract = new Contract(contractAddress, abi, provider)
 
-    // Estimate gas price and limit
-    const gasPrice = await provider.getGasPrice()
-    const gasLimit = await estimateGasForFunction(contract, functionName, functionArgs, wallet)
+    const feeData = await provider.getFeeData()
+    const maxPriorityFeePerGas = feeData.maxPriorityFeePerGas || ZERO
+    const maxFeePerGas = feeData.maxFeePerGas || ZERO
+
+    const gasLimit = await contract.estimateGas[functionName](...functionArgs, { from: wallet })
 
     // Get current nonce
     const nonce = await provider.getTransactionCount(wallet)
@@ -52,11 +44,13 @@ const createUnsignedTransactionBundle = async (
     const unsignedTx: UnsignedTransaction = {
       to: contractAddress,
       data: contract.interface.encodeFunctionData(functionName, functionArgs),
-      gasLimit: gasLimit.toHexString(),
-      gasPrice: gasPrice.toHexString(),
+      maxPriorityFeePerGas: maxPriorityFeePerGas.toHexString(),
+      maxFeePerGas: maxFeePerGas.toHexString(),
       nonce,
       value: parseEther('0').toHexString(),
-      chainId
+      chainId,
+      type: 2,
+      gasLimit
     }
 
     const txBytes = serialize(unsignedTx)
@@ -66,7 +60,7 @@ const createUnsignedTransactionBundle = async (
       txBytes
     }
   } catch (error) {
-    console.error('Error in serialiseTransaction:', error)
+    console.error('Error in createUnsignedTransactionBundle:', error)
     throw error
   }
 }
@@ -75,6 +69,16 @@ interface CommonInputs {
   provider: Provider
   walletAddress: string
   contractAddress: string
+}
+
+interface PoolApproveParams {
+  spender: string
+  amount: BigNumberish
+}
+
+export interface PoolApproveInputs extends CommonInputs {
+  type: 'poolApprove'
+  params: PoolApproveParams
 }
 
 interface PoolDepositParams {
@@ -93,32 +97,69 @@ export interface PoolQueueWithdrawalInputs extends CommonInputs {
   params: PoolQueueWithdrawalParams
 }
 
-type TxParams = PoolDepositInputs | PoolQueueWithdrawalInputs
+type TxParams = PoolApproveInputs | PoolDepositInputs | PoolQueueWithdrawalInputs
 
-export const generateTransactionData = async (args: TxParams) => {
+export const generateUnsignedTransactionData = async (args: TxParams) => {
   const { provider, walletAddress, contractAddress, type } = args
 
   const getTransactionParams = (): { abi: ContractInterface; params: any[]; functionName: string } => {
-    if (type === 'poolDeposit') {
-      const { depositAmount } = args.params
-      return {
-        abi: PoolV2PoolAbi,
-        functionName: 'deposit',
-        params: [depositAmount, walletAddress] // [assets_, receiver_]
+    switch (type) {
+      case 'poolApprove': {
+        const { spender, amount } = args.params as PoolApproveParams
+        return {
+          abi: ERC20Abi,
+          functionName: 'approve',
+          params: [spender, amount]
+        }
       }
-    } else if (type === 'poolQueueWithdrawal') {
-      const { withdrawalAmount } = args.params
-      return {
-        abi: PoolV2PoolAbi,
-        functionName: 'requestRedeem',
-        params: [withdrawalAmount, walletAddress] // [sharesToRequestRedeem, account]
+      case 'poolDeposit': {
+        const { depositAmount } = args.params as PoolDepositParams
+        return {
+          abi: PoolV2PoolAbi,
+          functionName: 'deposit',
+          params: [depositAmount, walletAddress]
+        }
       }
-    } else {
-      throw new Error('Invalid transaction type')
+      case 'poolQueueWithdrawal': {
+        const { withdrawalAmount } = args.params as PoolQueueWithdrawalParams
+        return {
+          abi: PoolV2PoolAbi,
+          functionName: 'requestRedeem',
+          params: [withdrawalAmount, walletAddress]
+        }
+      }
+      default:
+        throw new Error('Invalid transaction type')
     }
   }
 
   const { abi, functionName, params } = getTransactionParams()
 
   return await createUnsignedTransactionBundle(provider, walletAddress, contractAddress, abi, functionName, params)
+}
+
+interface GenerateSignedTransactionInput {
+  txBytes: string // Serialized unsigned transaction
+  signature: string // Hexadecimal string
+}
+
+export function generateSignedTransactionData({ txBytes, signature }: GenerateSignedTransactionInput) {
+  const decodedTx = parseTransaction(txBytes)
+  const splitSig = splitSignature(signature)
+
+  // Serialize the signed transaction
+  const serializedSignedTx = serialize(decodedTx, splitSig)
+  return serializedSignedTx
+}
+
+export async function broadcastSignedTransaction(signedTxData: string, rpcUrl: string) {
+  const provider = new JsonRpcProvider(rpcUrl)
+
+  const txResponse = await provider.sendTransaction(signedTxData)
+  console.log({ txResponse })
+
+  const txReceipt = await txResponse.wait()
+  console.log({ txReceipt })
+
+  return txReceipt
 }

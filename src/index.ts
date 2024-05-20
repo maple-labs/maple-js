@@ -41,7 +41,11 @@ import sepoliaDevAddresses from './addresses/sepolia-dev'
 import sepoliaProdAddresses from './addresses/sepolia-prod'
 
 // utils
-import { generateTransactionData } from 'helpers/serialiseTransaction'
+import {
+  generateUnsignedTransactionData,
+  generateSignedTransactionData,
+  broadcastSignedTransaction
+} from 'helpers/serialiseTransaction'
 
 const debtLockerV2 = {
   core: debtLockerV2Imports.DebtLockerV2Abi__factory,
@@ -367,7 +371,9 @@ interface ContractTypes {
 
 // Utils
 const utils = {
-  generateTransactionData
+  generateUnsignedTransactionData,
+  generateSignedTransactionData,
+  broadcastSignedTransaction
 }
 
 export {

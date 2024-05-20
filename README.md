@@ -12,6 +12,8 @@ A JavaScript SDK for interacting with Maple Protocol's smart contracts.
 - [Additional Resources](#additional-resources)
 - [Utils](#utils)
   - [Generating Unsigned Transaction Data](#generating-unsigned-transaction-data)
+  - [Generating Signed Transaction Data](#generating-signed-transaction-data)
+  - [Broadcasting Signed Transactions](#broadcasting-signed-transactions)
 
 ## Getting Started
 
@@ -88,34 +90,44 @@ const method = await (await poolContract.deposit(depositAmount)).wait()
 
 ## Utils
 
-**Generating Unsigned Transaction Data**
+### Generating Unsigned Transaction Data
 
-This feature allows you to generate unsigned transaction data, facilitating the creation of transactions that can later be signed and sent to the network. This is particularly useful for offline transaction preparation or when keys are managed externally.
+This utility allows you to generate unsigned transaction data, facilitating the creation of transactions that can later be signed and sent to the network. This is particularly useful for offline transaction preparation or when keys are managed externally.
 Usage
 
 ```
 import { utils } from '@maplelabs/maple-js'
 
-const { txBytes, txInstance } = utils.generateTransactionData(parameters)
+const { txBytes, txInstance } = utils.generateUnsignedTransactionData(parameters)
 ```
 
-The `generateTransactionData` function supports creating unsigned transactions for specific actions, currently including `poolDeposit` and `poolQueueWithdrawal`. Depending on the action, parameters must be provided accordingly:
+The `generateUnsignedTransactionData` function supports creating unsigned transactions for specific actions, currently including `poolDeposit` and `poolQueueWithdrawal`. Depending on the action, parameters must be provided accordingly:
 
+- For `poolApprove`, specify the spender address and approve amount in assets.
 - For `poolDeposit`, specify the deposit amount in assets.
 - For `poolQueueWithdrawal`, specify the withdrawal amount in shares.
 
-**_Parameters_**
+**Parameters**
 
-All calls to `generateTransactionData` require the following parameters:
+All calls to `generateUnsignedTransactionData` require the following parameters:
 
 ```
 interface CommonInputs {
   provider: Provider
   walletAddress: string
   contractAddress: string
-  type: `poolDeposit` | `poolQueueWithdrawal`
+  type: poolApprove | poolDeposit | poolQueueWithdrawal
   params: {}
 }
+```
+
+`poolApprove` requires the following `params`:
+
+```
+  params: {
+    spender: string // address
+    amount: BigNumberish // denominated in assets
+  }
 ```
 
 `poolDeposit` requires the following `params`:
@@ -134,9 +146,49 @@ interface CommonInputs {
   }
 ```
 
-**_Example_**
+### Generating Signed Transaction Data
 
-An example usage of this feature, including parameter setup and function calls, can be found in the repository at `src/helpers/serialiseExampleUse`.
+This utility provides the functionality to combine unsigned transaction with a signature to create a signed transaction string. This is crucial for scenarios where transactions are prepared offline or in secure environments.
+
+```
+import { utils } from '@maplelabs/maple-js'
+
+const signedTxData = utils.generateSignedTransactionData({
+  txBytes: 'unsignedTransactionBytes',
+  signature: 'signature'
+})
+```
+
+**Parameters**
+
+- `txBytes`: The serialized unsigned transaction data.
+- `signature`: The signature obtained from signing the transaction hash.
+
+This function returns the serialized signed transaction data, ready for broadcasting to the Ethereum network.
+
+### Broadcasting Signed Transactions
+
+This utility allows you to broadcast a signed transaction to the Ethereum network. This step is the final stage in submitting transactions, where the transaction is sent to a node in the network for processing and inclusion in the blockchain.
+
+```
+import { utils } from '@maplelabs/maple-js'
+
+const txReceipt = await utils.broadcastSignedTransaction(
+  'signedTransactionData',
+  'rpcUrl'
+)
+```
+
+**Parameters**
+
+- `signedTxData`: The serialized signed transaction data.
+- `rpcUrl`: The URL of the Ethereum JSON-RPC endpoint to which you are broadcasting the transaction.
+
+This function sends the signed transaction to the network and returns the transaction receipt once the transaction has been processed.
+
+**Utils Example**
+
+An example usage of these utilities, including parameter setup and function calls, can be found in the repository at `src/helpers/serialiseExampleUse`.
 
 ## Additional Resources
 

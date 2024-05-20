@@ -1,6 +1,6 @@
 {
   "name": "@maplelabs/maple-js",
-  "version": "1.5.5",
+  "version": "1.5.8",
   "description": "Maple SDK for JavaScript",
   "author": "Maple Labs",
   "license": "AGPL-3.0-only",
@@ -55,5 +55,6 @@
     "@typechain/ethers-v5": "^11.1.2",
     "ethers": "^5.5.3",
     "typechain": "^8.3.2"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
