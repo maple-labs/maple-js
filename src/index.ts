@@ -27,6 +27,7 @@ import * as poolV2Imports from './typechain/poolV2'
 import * as poolV201Imports from './typechain/poolV201'
 import * as poolV3Imports from './typechain/poolV3'
 import * as stakeLockerImports from './typechain/stakeLocker'
+import * as syrupRouterImports from './typechain/syrupRouter'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
 import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
@@ -209,6 +210,10 @@ const stakeLocker = {
   factory: stakeLockerImports.StakeLockerFactoryAbi__factory
 }
 
+const syrupRouter = {
+  core: syrupRouterImports.SyrupRouterAbi__factory
+}
+
 const withdrawalManager = {
   core: withdrawalManagerImports.WithdrawalManagerAbi__factory
 }
@@ -342,6 +347,9 @@ interface ContractTypes {
   stakeLocker: stakeLockerImports.StakeLockerAbi
   stakeLockerFactory: stakeLockerImports.StakeLockerFactoryAbi
 
+  // Syrup Router
+  syrupRouter: syrupRouterImports.SyrupRouterAbi
+
   // withdrawalManager
   withdrawalManager: withdrawalManagerImports.WithdrawalManagerAbi
 
@@ -397,6 +405,7 @@ export {
   poolManagerV3,
   poolPermissionManager,
   stakeLocker,
+  syrupRouter,
   withdrawalManager,
   withdrawalManagerCyclical,
   withdrawalManagerQueue,

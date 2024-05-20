@@ -90,6 +90,9 @@
     "stakeLocker": {
       "contracts": ["StakeLocker", "StakeLockerFactory"]
     },
+    "syrupRouter": {
+      "contracts": ["SyrupRouter"]
+    },
     "withdrawalManager": {
       "contracts": ["WithdrawalManager"]
     },
