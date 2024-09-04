@@ -1,0 +1,149 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "globals_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "oldToken_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "newToken_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "scalar_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "name": "active",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "name": "globals",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "name": "migrate",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "oldTokenAmount_",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "newTokenAmount_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "name": "migrate",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "recipient_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "oldTokenAmount_",
+        "type": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "newTokenAmount_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "name": "newToken",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "name": "oldToken",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "name": "setActive",
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "active_",
+        "type": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "name": "tokenSplitScalar",
+    "inputs": [],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
