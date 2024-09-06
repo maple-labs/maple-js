@@ -28,6 +28,7 @@ import * as poolV201Imports from './typechain/poolV201'
 import * as poolV3Imports from './typechain/poolV3'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as syrupRouterImports from './typechain/syrupRouter'
+import * as syrupTokenImports from './typechain/syrupToken'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
 import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
@@ -218,6 +219,13 @@ const syrupRouter = {
   core: syrupRouterImports.SyrupRouterAbi__factory
 }
 
+const syrupToken = {
+  core: syrupTokenImports.SyrupTokenAbi__factory,
+  initializer: syrupTokenImports.SyrupTokenInitializerAbi__factory,
+  migrator: syrupTokenImports.SyrupTokenMigratorAbi__factory,
+  recapModule: syrupTokenImports.RecapitalizationModuleAbi__factory
+}
+
 const withdrawalManager = {
   core: withdrawalManagerImports.WithdrawalManagerAbi__factory
 }
@@ -300,7 +308,6 @@ interface ContractTypes {
   mapleTokenV2: mapleTokenV2Imports.MapleTokenV2Abi
   mapleTokenV2Initializer: mapleTokenV2Imports.MapleTokenV2InitializerAbi
   mapleTokenV2Migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi
-  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi
 
   // Migration Helpers
   migrationHelpers: migrationHelpersImports.MigrationHelperAbi
@@ -353,6 +360,12 @@ interface ContractTypes {
 
   // Syrup Router
   syrupRouter: syrupRouterImports.SyrupRouterAbi
+
+  // Syrup Token
+  syrupToken: syrupTokenImports.SyrupTokenAbi
+  syrupTokenInitializer: syrupTokenImports.SyrupTokenInitializerAbi
+  syrupTokenMigrator: syrupTokenImports.SyrupTokenMigratorAbi
+  recapModule: syrupTokenImports.RecapitalizationModuleAbi
 
   // withdrawalManager
   withdrawalManager: withdrawalManagerImports.WithdrawalManagerAbi
@@ -412,6 +425,7 @@ export {
   poolPermissionManager,
   stakeLocker,
   syrupRouter,
+  syrupToken,
   withdrawalManager,
   withdrawalManagerCyclical,
   withdrawalManagerQueue,

@@ -93,6 +93,9 @@
     "syrupRouter": {
       "contracts": ["SyrupRouter"]
     },
+    "syrupToken": {
+      "contracts": ["SyrupToken", "SyrupTokenInitializer", "SyrupTokenMigrator", "RecapitalizationModule"]
+    },
     "withdrawalManager": {
       "contracts": ["WithdrawalManager"]
     },
