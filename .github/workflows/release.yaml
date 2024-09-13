@@ -42,7 +42,7 @@ jobs:
       - name: Publish to NPM
         run: |
           npm config set scope maplelabs
-          npm publish
+          npm publish --access=public
 
       - name: Create and Push Tag
         env:
