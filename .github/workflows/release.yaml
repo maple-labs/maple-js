@@ -36,8 +36,10 @@ jobs:
           yarn build-typechain
           yarn build
 
-      - name: Authenticate with private NPM package
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
+      - name: Authenticate with NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
+          npm whoami
 
       - name: Publish to NPM
         run: |
