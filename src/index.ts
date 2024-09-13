@@ -25,7 +25,7 @@ import * as poolV2Imports from './typechain/poolV2'
 import * as poolV201Imports from './typechain/poolV201'
 import * as poolV3Imports from './typechain/poolV3'
 import * as stakeLockerImports from './typechain/stakeLocker'
-import * as syrupRouterImports from './typechain/syrupRouter'
+import * as syrupUtilsImports from './typechain/syrupUtils'
 import * as syrupTokenImports from './typechain/syrupToken'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
@@ -206,8 +206,11 @@ const stakeLocker = {
   factory: stakeLockerImports.StakeLockerFactoryAbi__factory
 }
 
-const syrupRouter = {
-  core: syrupRouterImports.SyrupRouterAbi__factory
+const syrupUtils = {
+  syrupRouter: syrupUtilsImports.SyrupRouterAbi__factory,
+  mplUserActions: syrupUtilsImports.MplUserActionsAbi__factory,
+  syrupDrip: syrupUtilsImports.SyrupDripAbi__factory,
+  syrupUserActions: syrupUtilsImports.SyrupUserActionsAbi__factory
 }
 
 const syrupToken = {
@@ -346,8 +349,11 @@ interface ContractTypes {
   stakeLocker: stakeLockerImports.StakeLockerAbi
   stakeLockerFactory: stakeLockerImports.StakeLockerFactoryAbi
 
-  // Syrup Router
-  syrupRouter: syrupRouterImports.SyrupRouterAbi
+  // Syrup Utils Private
+  mplUserActions: syrupUtilsImports.MplUserActionsAbi
+  syrupRouter: syrupUtilsImports.SyrupRouterAbi
+  syrupDrip: syrupUtilsImports.SyrupDripAbi
+  syrupUserActions: syrupUtilsImports.SyrupUserActionsAbi
 
   // Syrup Token
   syrupToken: syrupTokenImports.SyrupTokenAbi
@@ -411,7 +417,7 @@ export {
   poolManagerV3,
   poolPermissionManager,
   stakeLocker,
-  syrupRouter,
+  syrupUtils,
   syrupToken,
   withdrawalManager,
   withdrawalManagerCyclical,

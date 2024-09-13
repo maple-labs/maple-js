@@ -87,11 +87,11 @@
     "stakeLocker": {
       "contracts": ["StakeLocker", "StakeLockerFactory"]
     },
-    "syrupRouter": {
-      "contracts": ["SyrupRouter"]
-    },
     "syrupToken": {
       "contracts": ["SyrupToken", "SyrupTokenInitializer", "SyrupTokenMigrator", "RecapitalizationModule"]
+    },
+    "syrupUtils": {
+      "contracts": ["MplUserActions", "SyrupRouter", "SyrupDrip", "SyrupUserActions"]
     },
     "withdrawalManager": {
       "contracts": ["WithdrawalManager"]
