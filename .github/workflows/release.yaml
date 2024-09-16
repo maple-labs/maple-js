@@ -51,7 +51,6 @@ jobs:
       - name: Authenticate with NPM
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
-          npm whoami
 
       - name: Publish to NPM
         run: |
@@ -64,7 +63,7 @@ jobs:
         run: |
           CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
           echo "Pushing changes to branch: $CURRENT_BRANCH"
-          git push https://x-access-token:$PAT@github.com/${{ github.repository }} HEAD:$CURRENT_BRANCH --follow-tags
+          git push --force https://x-access-token:$PAT@github.com/${{ github.repository }} HEAD:$CURRENT_BRANCH --follow-tags
 
       - name: Create GitHub Release
         env:
