@@ -1,5 +1,4 @@
 // Typechain entities
-
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as environmentMocksImports from './typechain/environmentMocks'
@@ -17,7 +16,6 @@ import * as mapleGlobalsV201Imports from './typechain/mapleGlobalsV201'
 import * as mapleGlobalsV3Imports from './typechain/mapleGlobalsV3'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
-import * as mapleTokenV2Imports from './typechain/mapleTokenV2'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
 import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
@@ -124,13 +122,6 @@ const mapleGlobalsV201 = {
 
 const mapleToken = {
   core: mapleTokenImports.MapleTokenAbi__factory
-}
-
-const mapleTokenV2 = {
-  core: mapleTokenV2Imports.MapleTokenV2Abi__factory,
-  initializer: mapleTokenV2Imports.MapleTokenV2InitializerAbi__factory,
-  migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi__factory,
-  recapModule: mapleTokenV2Imports.RecapitalizationModuleAbi__factory
 }
 
 const migrationHelpers = {
@@ -308,9 +299,6 @@ interface ContractTypes {
 
   // Maple Token
   mapleToken: mapleTokenImports.MapleTokenAbi
-  mapleTokenV2: mapleTokenV2Imports.MapleTokenV2Abi
-  mapleTokenV2Initializer: mapleTokenV2Imports.MapleTokenV2InitializerAbi
-  mapleTokenV2Migrator: mapleTokenV2Imports.MapleTokenV2MigratorAbi
 
   // Migration Helpers
   migrationHelpers: migrationHelpersImports.MigrationHelperAbi
@@ -417,7 +405,6 @@ export {
   mapleGlobalsV3,
   mapleRewards,
   mapleToken,
-  mapleTokenV2,
   migrationHelpers,
   openTermLoan,
   openTermLoanManager,
