@@ -2,9 +2,16 @@ name: Release Version
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - 'main'
+    inputs:
+      version_type:
+        description: 'Version update type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
 
 jobs:
   release-api:
@@ -18,13 +25,11 @@ jobs:
         with:
           fetch-depth: 0 # Ensures tags are also fetched
 
-      - uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 18.18.2
           corepack: true
-
-      - name: Extract package version
-        run: echo "PACKAGE_VERSION=v$(cat package.json | jq -r .version)" >> $GITHUB_ENV
 
       - name: Enable corepack and install dependencies
         run: |
@@ -36,29 +41,36 @@ jobs:
           yarn build-typechain
           yarn build
 
-      - name: Authenticate with private NPM package
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
+      - name: Bump version
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          npm version ${{ github.event.inputs.version_type }} -m "Bump version to %s"
+          echo "NEW_VERSION=v$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+
+      - name: Authenticate with NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
+          npm whoami
 
       - name: Publish to NPM
         run: |
           npm config set scope maplelabs
-          npm publish
+          npm publish --access=public
 
-      - name: Create and Push Tag
+      - name: Push changes
         env:
           PAT: ${{ secrets.PAT }}
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git tag -a $PACKAGE_VERSION -m "Release $PACKAGE_VERSION"
-          git push https://x-access-token:$PAT@github.com/${{ github.repository }} $PACKAGE_VERSION
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          echo "Pushing changes to branch: $CURRENT_BRANCH"
+          git push https://x-access-token:$PAT@github.com/${{ github.repository }} HEAD:$CURRENT_BRANCH --follow-tags
 
       - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          tag=$(git describe --tags `git rev-list --tags --max-count=1`)
-          gh release create "$tag" \
+          gh release create "$NEW_VERSION" \
           --repo="$GITHUB_REPOSITORY" \
-          --title="$tag" \
+          --title="$NEW_VERSION" \
           --generate-notes
