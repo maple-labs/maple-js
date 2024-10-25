@@ -125,7 +125,7 @@ export default {
   WithdrawalManagerQueue: '0x06823746c0919f46cec0fe35979e9a38184a5849',
   WithdrawalManagerQueueFactory: '0xf6230e021fcb3bf767a668f8c5c66926cc8249df',
   WithdrawalManagerQueueInitializer: '0x54b6bcfa750dabf8a48bf63733ce175e12319daa',
-  xMPL: '0xf3f0fb6d82181daba6baa592e07ba8da14425d13',
+  xMPL: '0x23b2c26f1021ec01e41f4b08c790821167056110',
   manifest: {
     network: 'sepolia',
     project: 'sepolia-dev',
