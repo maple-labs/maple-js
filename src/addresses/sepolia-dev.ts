@@ -101,7 +101,7 @@ export default {
   RecapitalizationModule: '0x5228c6bf3cdc6947745c361f476a958f2038ff5f',
   RepaymentCalc: '0x0000000000000000000000000000000000000000',
   StakeLockerFactory: '0x0000000000000000000000000000000000000000',
-  stSyrup: '0xc16467ca1c98bdcb2a97768b83706d56311b029c',
+  stSyrup: '0x8c95a3b4080677bec4d8731c09a8ec7bc50d00a7',
   SyrupDrip: '0x0000000000000000000000000000000000000000',
   SyrupToken: '0xfdd51bd2dc09933b5f8c9ea2533c02849a64c484',
   SyrupTokenImplementation: '0x513297d5728629639156d6cb602f8dcb6253b3c3',
@@ -125,7 +125,7 @@ export default {
   WithdrawalManagerQueue: '0x06823746c0919f46cec0fe35979e9a38184a5849',
   WithdrawalManagerQueueFactory: '0xf6230e021fcb3bf767a668f8c5c66926cc8249df',
   WithdrawalManagerQueueInitializer: '0x54b6bcfa750dabf8a48bf63733ce175e12319daa',
-  xMPL: '0xf3f0fb6d82181daba6baa592e07ba8da14425d13',
+  xMPL: '0x23b2c26f1021ec01e41f4b08c790821167056110',
   manifest: {
     network: 'sepolia',
     project: 'sepolia-dev',
