@@ -20,7 +20,7 @@
     "config.json"
   ],
   "engines": {
-    "node": ">=16.4.2"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "rollup -c -w",
