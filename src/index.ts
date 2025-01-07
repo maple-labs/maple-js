@@ -3,6 +3,7 @@ import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as fixedTermLoanImports from './typechain/fixedTermLoan'
+import * as fixedTermLoanV6Imports from './typechain/fixedTermLoanV6'
 import * as fixedTermLoanManagerImports from './typechain/fixedTermLoanManager'
 import * as loanV1Imports from './typechain/loanV1'
 import * as loanV2Imports from './typechain/loanV2'
@@ -18,6 +19,7 @@ import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
+import * as openTermLoanV2Imports from './typechain/openTermLoanV2'
 import * as openTermLoanManagerImports from './typechain/openTermLoanManager'
 import * as poolPermissionManagerImports from './typechain/poolPermissionManager'
 import * as poolV1Imports from './typechain/poolV1'
@@ -239,6 +241,20 @@ const xmpl = {
   factory: xmplImports.XMPLAbi__factory
 }
 
+// Delegate Initiated Loans Start
+const fixedTermLoanV6 = {
+  core: fixedTermLoanV6Imports.FixedTermLoanV6Abi__factory,
+  initializer: fixedTermLoanV6Imports.FixedTermLoanV6InitializerAbi__factory,
+  refinancer: fixedTermLoanV6Imports.FixedTermLoanV6RefinancerAbi__factory
+}
+
+const openTermLoanV2 = {
+  core: openTermLoanV2Imports.OpenTermLoanV2Abi__factory,
+  initializer: openTermLoanV2Imports.OpenTermLoanV2InitializerAbi__factory,
+  refinancer: openTermLoanV2Imports.OpenTermLoanV2RefinancerAbi__factory
+}
+// Delegate Initiated Loans End
+
 type AddressKey = typeof mainnetProdAddresses
 
 type MapleAddressMapping = {
@@ -264,12 +280,17 @@ interface ContractTypes {
   kycerc20: environmentMocksImports.KycERC20Abi
   usdt: environmentMocksImports.USDTAbi
 
-  // Fixed Term Loans & Managers
+  // Fixed Term Loans & Managers (V1)
   fixedTermLoan: fixedTermLoanImports.FixedTermLoanAbi
   fixedTermLoanFactoryV2: fixedTermLoanImports.FixedTermLoanFactoryV2Abi
   fixedTermLoanInitializer: fixedTermLoanImports.FixedTermLoanInitializerAbi
   fixedTermLoanRefinancer: fixedTermLoanImports.FixedTermLoanRefinancerAbi
   fixedTermLoanManager: fixedTermLoanManagerImports.FixedTermLoanManagerAbi
+
+  // Fixed Term Loans (V6 - Delegate Initiated Loans)
+  fixedTermLoanV6: fixedTermLoanV6Imports.FixedTermLoanV6Abi
+  fixedTermLoanV6Initializer: fixedTermLoanV6Imports.FixedTermLoanV6InitializerAbi
+  fixedTermLoanV6Refinancer: fixedTermLoanV6Imports.FixedTermLoanV6RefinancerAbi
 
   // Loan V2
   loanV2: loanV2Imports.LoanV2Abi
@@ -307,7 +328,7 @@ interface ContractTypes {
   mapleRewards: mapleRewardsImports.MplRewardsAbi
   mapleRewardsFactory: mapleRewardsImports.MplRewardsFactoryAbi
 
-  // Open Term Loans & Managers
+  // Open Term Loans & Managers (V1)
   openTermLoan: openTermLoanImports.OpenTermLoanAbi
   openTermLoanFactory: openTermLoanImports.OpenTermLoanFactoryAbi
   openTermLoanInitializer: openTermLoanImports.OpenTermLoanInitializerAbi
@@ -315,6 +336,11 @@ interface ContractTypes {
 
   openTermLoanManager: openTermLoanManagerImports.OpenTermLoanManagerAbi
   openTermLoanManagerFactory: openTermLoanManagerImports.OpenTermLoanManagerFactoryAbi
+
+  // Open Term Loans (V2 - Delegate Initiated Loans)
+  openTermLoanV2: openTermLoanV2Imports.OpenTermLoanV2Abi
+  openTermLoanV2Initializer: openTermLoanV2Imports.OpenTermLoanV2InitializerAbi
+  openTermLoanV2Refinancer: openTermLoanV2Imports.OpenTermLoanV2RefinancerAbi
 
   // Pool V1
   poolV1: poolV1Imports.PoolV1Abi
@@ -390,6 +416,7 @@ export {
   debtLockerV3,
   environmentMocks,
   fixedTermLoan,
+  fixedTermLoanV6,
   fixedTermLoanManager,
   loanManager,
   loanV1,
@@ -407,6 +434,7 @@ export {
   mapleToken,
   migrationHelpers,
   openTermLoan,
+  openTermLoanV2,
   openTermLoanManager,
   poolV1,
   poolV2,

@@ -12,6 +12,9 @@
     "fixedTermLoan": {
       "contracts": ["FixedTermLoan", "FixedTermLoanFactoryV2", "FixedTermLoanInitializer", "FixedTermLoanRefinancer"]
     },
+    "fixedTermLoanV6": {
+      "contracts": ["FixedTermLoanV6", "FixedTermLoanV6Initializer", "FixedTermLoanV6Refinancer"]
+    },
     "fixedTermLoanManager": {
       "contracts": ["FixedTermLoanManager"]
     },
@@ -56,6 +59,9 @@
     },
     "openTermLoan": {
       "contracts": ["OpenTermLoan", "OpenTermLoanFactory", "OpenTermLoanInitializer", "OpenTermLoanRefinancer"]
+    },
+    "openTermLoanV2": {
+      "contracts": ["OpenTermLoanV2", "OpenTermLoanV2Initializer", "OpenTermLoanV2Refinancer"]
     },
     "openTermLoanManager": {
       "contracts": ["OpenTermLoanManager", "OpenTermLoanManagerFactory"]
