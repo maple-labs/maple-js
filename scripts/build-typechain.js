@@ -121,6 +121,20 @@ async function buildTypechain() {
     src: 'WithdrawalManagerQueueInitializer.abi.json',
     dst: 'WithdrawalManagerQueue.abi.json'
   })
+
+  mergeEvents({
+    src: 'MapleAaveStrategyInitializerAbi.abi.json',
+    dst: 'MapleAaveStrategyAbi.abi.json'
+  })
+  mergeEvents({
+    src: 'MapleBasicStrategyInitializerAbi.abi.json',
+    dst: 'MapleBasicStrategyAbi.abi.json'
+  })
+  mergeEvents({
+    src: 'MapleSkyStrategyInitializerAbi.abi.json',
+    dst: 'MapleSkyStrategyAbi.abi.json'
+  })
+
   overwriteEventParams({
     file: 'PoolV1',
     events: [
