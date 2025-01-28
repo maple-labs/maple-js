@@ -43,7 +43,13 @@ function mergeEvents({ src, dst }) {
   const dstJson = JSON.parse(readFileSync(path.join(pathDir, `${dst}`)).toString())
 
   // Create a set of event names already in dst
-  const dstEventNames = new Set(dstJson.filter((entry) => entry.type === 'event').map((entry) => entry.name))
+  const dstEventNames = new Set(
+    dstJson
+      .filter((entry) => {
+        return entry.type === 'event'
+      })
+      .map((entry) => entry.name)
+  )
 
   // Filter out events from src that already exist in dst
   const newEvents = events.filter((event) => !dstEventNames.has(event.name))
@@ -89,6 +95,23 @@ function overwriteEventParams({ file, events }) {
   writeFileSync(filePath, JSON.stringify(json, null, 2))
 }
 
+function addEventParams({ file, events }) {
+  console.log(`✏️ Adding new event to ${file}`)
+
+  const filePath = path.join(pathDir, `${file}.abi.json`)
+  let json = JSON.parse(readFileSync(filePath).toString())
+
+  for (const newEvent of events) {
+    // Remove duplicates of event
+    json = json.filter((el) => !(el.type === 'event' && el.name === newEvent.name))
+
+    // Add new event
+    json.push(newEvent)
+  }
+
+  writeFileSync(filePath, JSON.stringify(json, null, 2))
+}
+
 async function buildTypechain() {
   console.log('⏳ Building Typechain...')
   const config = getParsedConfig()
@@ -120,19 +143,6 @@ async function buildTypechain() {
   mergeEvents({
     src: 'WithdrawalManagerQueueInitializer.abi.json',
     dst: 'WithdrawalManagerQueue.abi.json'
-  })
-
-  mergeEvents({
-    src: 'MapleAaveStrategyInitializer.abi.json',
-    dst: 'MapleAaveStrategy.abi.json'
-  })
-  mergeEvents({
-    src: 'MapleBasicStrategyInitializer.abi.json',
-    dst: 'MapleBasicStrategy.abi.json'
-  })
-  mergeEvents({
-    src: 'MapleSkyStrategyInitializer.abi.json',
-    dst: 'MapleSkyStrategy.abi.json'
   })
 
   overwriteEventParams({
@@ -236,6 +246,7 @@ async function buildTypechain() {
       }
     ]
   })
+
   overwriteEventParams({
     file: 'StakeLocker',
     events: [
@@ -264,6 +275,124 @@ async function buildTypechain() {
       }
     ]
   })
+
+  addEventParams({
+    file: 'MapleAaveStrategy',
+    events: [
+      {
+        type: 'event',
+        name: 'Initialized',
+        inputs: [
+          {
+            name: 'aavePool',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'aaveToken',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'pool',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'fundsAsset',
+            type: 'address',
+            indexed: false,
+            internalType: 'address'
+          },
+          {
+            name: 'poolManager',
+            type: 'address',
+            indexed: false,
+            internalType: 'address'
+          }
+        ],
+        anonymous: false
+      }
+    ]
+  })
+
+  addEventParams({
+    file: 'MapleBasicStrategy',
+    events: [
+      {
+        type: 'event',
+        name: 'Initialized',
+        inputs: [
+          {
+            name: 'pool',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'poolManager',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'strategyVault',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          }
+        ],
+        anonymous: false
+      }
+    ]
+  })
+
+  addEventParams({
+    file: 'MapleSkyStrategy',
+    events: [
+      {
+        type: 'event',
+        name: 'Initialized',
+        inputs: [
+          {
+            name: 'pool',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'poolManager',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'psm',
+            type: 'address',
+            indexed: true,
+            internalType: 'address'
+          },
+          {
+            name: 'savingsUsds',
+            type: 'address',
+            indexed: false,
+            internalType: 'address'
+          },
+          {
+            name: 'usds',
+            type: 'address',
+            indexed: false,
+            internalType: 'address'
+          }
+        ],
+        anonymous: false
+      }
+    ]
+  })
+
   await generateTypechainBindings(config)
 }
 
