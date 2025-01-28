@@ -48,6 +48,17 @@
     "mapleGlobalsV3": {
       "contracts": ["MapleGlobalsV3"]
     },
+    "mapleStrategies": {
+      "contracts": [
+        "MapleAaveStrategy",
+        "MapleAaveStrategyInitializer",
+        "MapleBasicStrategy",
+        "MapleBasicStrategyInitializer",
+        "MapleSkyStrategy",
+        "MapleSkyStrategyInitializer",
+        "MapleStrategyFactory"
+      ]
+    },
     "mapleToken": {
       "contracts": ["MapleToken"]
     },
