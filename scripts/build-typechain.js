@@ -123,16 +123,16 @@ async function buildTypechain() {
   })
 
   mergeEvents({
-    src: 'MapleAaveStrategyInitializerAbi.abi.json',
-    dst: 'MapleAaveStrategyAbi.abi.json'
+    src: 'MapleAaveStrategyInitializer.abi.json',
+    dst: 'MapleAaveStrategy.abi.json'
   })
   mergeEvents({
-    src: 'MapleBasicStrategyInitializerAbi.abi.json',
-    dst: 'MapleBasicStrategyAbi.abi.json'
+    src: 'MapleBasicStrategyInitializer.abi.json',
+    dst: 'MapleBasicStrategy.abi.json'
   })
   mergeEvents({
-    src: 'MapleSkyStrategyInitializerAbi.abi.json',
-    dst: 'MapleSkyStrategyAbi.abi.json'
+    src: 'MapleSkyStrategyInitializer.abi.json',
+    dst: 'MapleSkyStrategy.abi.json'
   })
 
   overwriteEventParams({
