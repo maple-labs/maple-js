@@ -16,6 +16,7 @@ import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleGlobalsV201Imports from './typechain/mapleGlobalsV201'
 import * as mapleGlobalsV3Imports from './typechain/mapleGlobalsV3'
 import * as mapleRewardsImports from './typechain/mplRewards'
+import * as mapleStrategiesImports from './typechain/mapleStrategies'
 import * as mapleTokenImports from './typechain/mapleToken'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
@@ -255,6 +256,17 @@ const openTermLoanV2 = {
 }
 // Delegate Initiated Loans End
 
+// Maple Strategies
+const mapleStrategies = {
+  factory: mapleStrategiesImports.MapleStrategyFactoryAbi__factory,
+  aaveStrategy: mapleStrategiesImports.MapleAaveStrategyAbi__factory,
+  aaveStrategyInitializer: mapleStrategiesImports.MapleAaveStrategyInitializerAbi__factory,
+  basicStrategy: mapleStrategiesImports.MapleBasicStrategyAbi__factory,
+  basicStrategyInitializer: mapleStrategiesImports.MapleBasicStrategyInitializerAbi__factory,
+  skyStrategy: mapleStrategiesImports.MapleSkyStrategyAbi__factory,
+  skyStrategyInitializer: mapleStrategiesImports.MapleSkyStrategyInitializerAbi__factory
+}
+
 type AddressKey = typeof mainnetProdAddresses
 
 type MapleAddressMapping = {
@@ -327,6 +339,15 @@ interface ContractTypes {
   // MplRewards
   mapleRewards: mapleRewardsImports.MplRewardsAbi
   mapleRewardsFactory: mapleRewardsImports.MplRewardsFactoryAbi
+
+  // MapleStrategies
+  mapleAaveStrategy: mapleStrategiesImports.MapleAaveStrategyAbi
+  mapleAaveStrategyInitializer: mapleStrategiesImports.MapleAaveStrategyInitializerAbi
+  mapleBasicStrategy: mapleStrategiesImports.MapleBasicStrategyAbi
+  mapleBasicStrategyInitializer: mapleStrategiesImports.MapleBasicStrategyInitializerAbi
+  mapleSkyStrategy: mapleStrategiesImports.MapleSkyStrategyAbi
+  mapleSkyStrategyInitializer: mapleStrategiesImports.MapleSkyStrategyInitializerAbi
+  mapleStrategyFactory: mapleStrategiesImports.MapleStrategyFactoryAbi
 
   // Open Term Loans & Managers (V1)
   openTermLoan: openTermLoanImports.OpenTermLoanAbi
@@ -431,6 +452,7 @@ export {
   mapleGlobalsV201,
   mapleGlobalsV3,
   mapleRewards,
+  mapleStrategies,
   mapleToken,
   migrationHelpers,
   openTermLoan,
