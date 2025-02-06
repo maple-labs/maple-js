@@ -27,6 +27,7 @@ import * as poolV1Imports from './typechain/poolV1'
 import * as poolV2Imports from './typechain/poolV2'
 import * as poolV201Imports from './typechain/poolV201'
 import * as poolV3Imports from './typechain/poolV3'
+import * as poolV400Imports from './typechain/poolV400'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as syrupUtilsImports from './typechain/syrupUtils'
 import * as syrupTokenImports from './typechain/syrupToken'
@@ -198,6 +199,18 @@ const poolManagerV3 = {
 
 // Pool V3 end
 // --------------------
+
+// Pool V400 start
+const poolV400 = {
+  deployer: poolV400Imports.PoolDeployerV400Abi__factory
+}
+
+const poolManagerV400 = {
+  core: poolV400Imports.PoolManagerV400Abi__factory,
+  initializer: poolV400Imports.PoolManagerV400InitializerAbi__factory
+}
+// --------------------
+// Pool V400 end
 
 const poolPermissionManager = {
   core: poolPermissionManagerImports.PoolPermissionManagerAbi__factory,
@@ -388,6 +401,11 @@ interface ContractTypes {
   poolManagerV3: poolV3Imports.PoolManagerV3Abi
   poolManagerV3Initializer: poolV3Imports.PoolManagerV3InitializerAbi
 
+  // Pool V400 / PoolManagerV400
+  poolDeployerV400: poolV400Imports.PoolDeployerV400Abi
+  poolManagerV400: poolV400Imports.PoolManagerV400Abi
+  poolManagerV400Initializer: poolV400Imports.PoolManagerV400InitializerAbi
+
   // Pool Permission Manager
   poolPermissionManager: poolPermissionManagerImports.PoolPermissionManagerAbi
   poolPermissionManagerInitializer: poolPermissionManagerImports.PoolPermissionManagerInitializerAbi
@@ -465,6 +483,8 @@ export {
   poolV3,
   poolManagerV2,
   poolManagerV3,
+  poolV400,
+  poolManagerV400,
   poolPermissionManager,
   stakeLocker,
   syrupUtils,

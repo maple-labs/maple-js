@@ -101,6 +101,9 @@
     "poolV3": {
       "contracts": ["PoolDeployerV3", "PoolManagerV3", "PoolManagerV3Initializer"]
     },
+    "poolV400": {
+      "contracts": ["PoolDeployerV400", "PoolManagerV400", "PoolManagerV400Initializer"]
+    },
     "stakeLocker": {
       "contracts": ["StakeLocker", "StakeLockerFactory"]
     },

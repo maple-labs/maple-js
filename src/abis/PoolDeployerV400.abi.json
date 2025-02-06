@@ -1,0 +1,331 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "globals_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "deployPool",
+    "inputs": [
+      {
+        "name": "poolManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "withdrawalManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyFactories_",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "strategyDeploymentData_",
+        "type": "bytes[]",
+        "internalType": "bytes[]"
+      },
+      {
+        "name": "asset_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "poolPermissionManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "name_",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "symbol_",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "configParams_",
+        "type": "uint256[7]",
+        "internalType": "uint256[7]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "deployPool",
+    "inputs": [
+      {
+        "name": "poolManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "withdrawalManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyFactories_",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "strategyDeploymentData_",
+        "type": "bytes[]",
+        "internalType": "bytes[]"
+      },
+      {
+        "name": "asset_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "poolPermissionManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "name_",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "symbol_",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "configParams_",
+        "type": "uint256[4]",
+        "internalType": "uint256[4]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getCyclicalWithdrawalManagerAddress",
+    "inputs": [
+      {
+        "name": "withdrawalManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "pool_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "startTime_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "cycleDuration_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "windowDuration_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "withdrawalManager_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPoolDeploymentAddresses",
+    "inputs": [
+      {
+        "name": "poolManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "poolDelegate_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "asset_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "initialSupply_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "name_",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "symbol_",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "pool_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "poolDelegateCover_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getQueueWithdrawalManagerAddress",
+    "inputs": [
+      {
+        "name": "withdrawalManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "pool_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "withdrawalManager_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getStrategiesAddresses",
+    "inputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyFactories_",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "strategyDeploymentData_",
+        "type": "bytes[]",
+        "internalType": "bytes[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "strategies_",
+        "type": "address[]",
+        "internalType": "address[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "globals",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "PoolDeployed",
+    "inputs": [
+      {
+        "name": "pool_",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "withdrawalManager_",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "strategies_",
+        "type": "address[]",
+        "indexed": false,
+        "internalType": "address[]"
+      }
+    ],
+    "anonymous": false
+  }
+]

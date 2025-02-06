@@ -129,6 +129,7 @@ async function buildTypechain() {
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV2PoolManager.abi.json' })
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
   mergeEvents({ src: 'PoolManagerV3Initializer.abi.json', dst: 'PoolManagerV3.abi.json' })
+  mergeEvents({ src: 'PoolManagerV400Initializer.abi.json', dst: 'PoolManagerV400.abi.json' })
   mergeEvents({ src: 'PoolPermissionManagerInitializer.abi.json', dst: 'PoolPermissionManager.abi.json' })
   mergeEvents({ src: 'NonTransparentProxyV2.abi.json', dst: 'PoolPermissionManager.abi.json' })
   mergeEvents({ src: 'SyrupTokenInitializer.abi.json', dst: 'SyrupToken.abi.json' })
