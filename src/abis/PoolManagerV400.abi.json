@@ -1,5 +1,30 @@
 [
   {
+    "type": "event",
+    "name": "Initialized",
+    "inputs": [
+      {
+        "name": "owner_",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "asset_",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "pool_",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
     "type": "function",
     "name": "HUNDRED_PERCENT",
     "inputs": [],
