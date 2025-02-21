@@ -226,7 +226,8 @@ const syrupUtils = {
   syrupRouter: syrupUtilsImports.SyrupRouterAbi__factory,
   mplUserActions: syrupUtilsImports.MplUserActionsAbi__factory,
   syrupDrip: syrupUtilsImports.SyrupDripAbi__factory,
-  syrupUserActions: syrupUtilsImports.SyrupUserActionsAbi__factory
+  syrupUserActions: syrupUtilsImports.SyrupUserActionsAbi__factory,
+  borrowerActions: syrupUtilsImports.BorrowerActionsAbi__factory
 }
 
 const syrupToken = {
@@ -258,14 +259,12 @@ const xmpl = {
 // Delegate Initiated Loans Start
 const fixedTermLoanV6 = {
   core: fixedTermLoanV6Imports.FixedTermLoanV6Abi__factory,
-  initializer: fixedTermLoanV6Imports.FixedTermLoanV6InitializerAbi__factory,
-  refinancer: fixedTermLoanV6Imports.FixedTermLoanV6RefinancerAbi__factory
+  initializer: fixedTermLoanV6Imports.FixedTermLoanV6InitializerAbi__factory
 }
 
 const openTermLoanV2 = {
   core: openTermLoanV2Imports.OpenTermLoanV2Abi__factory,
-  initializer: openTermLoanV2Imports.OpenTermLoanV2InitializerAbi__factory,
-  refinancer: openTermLoanV2Imports.OpenTermLoanV2RefinancerAbi__factory
+  initializer: openTermLoanV2Imports.OpenTermLoanV2InitializerAbi__factory
 }
 // Delegate Initiated Loans End
 
@@ -315,7 +314,6 @@ interface ContractTypes {
   // Fixed Term Loans (V6 - Delegate Initiated Loans)
   fixedTermLoanV6: fixedTermLoanV6Imports.FixedTermLoanV6Abi
   fixedTermLoanV6Initializer: fixedTermLoanV6Imports.FixedTermLoanV6InitializerAbi
-  fixedTermLoanV6Refinancer: fixedTermLoanV6Imports.FixedTermLoanV6RefinancerAbi
 
   // Loan V2
   loanV2: loanV2Imports.LoanV2Abi
@@ -374,7 +372,6 @@ interface ContractTypes {
   // Open Term Loans (V2 - Delegate Initiated Loans)
   openTermLoanV2: openTermLoanV2Imports.OpenTermLoanV2Abi
   openTermLoanV2Initializer: openTermLoanV2Imports.OpenTermLoanV2InitializerAbi
-  openTermLoanV2Refinancer: openTermLoanV2Imports.OpenTermLoanV2RefinancerAbi
 
   // Pool V1
   poolV1: poolV1Imports.PoolV1Abi
@@ -419,6 +416,7 @@ interface ContractTypes {
   syrupRouter: syrupUtilsImports.SyrupRouterAbi
   syrupDrip: syrupUtilsImports.SyrupDripAbi
   syrupUserActions: syrupUtilsImports.SyrupUserActionsAbi
+  borrowerActions: syrupUtilsImports.BorrowerActionsAbi
 
   // Syrup Token
   syrupToken: syrupTokenImports.SyrupTokenAbi
