@@ -1,0 +1,41 @@
+[
+  {
+    "type": "function",
+    "name": "acceptLoanTerms",
+    "inputs": [
+      {
+        "name": "loan_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "admin",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "admin_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "implementation",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "implementation_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  }
+]
