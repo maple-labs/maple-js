@@ -57,7 +57,8 @@
     "typechain": "^8.3.2"
   },
   "resolutions": {
-    "ws": "^7.5.10"
+    "ws": "^7.5.10",
+    "elliptic": "^6.6.1"
   },
   "packageManager": "yarn@4.1.1"
 }
