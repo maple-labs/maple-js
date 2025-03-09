@@ -69,16 +69,16 @@ export default {
   MapleGlobalsV2: '0x0ad92cb3Fc4cd6697E0f14Fb75F3d7da3Bb2e056',
   MapleGlobalsV201: '0x562374079a8A07417ec4A69d5d52F9CBa796d364',
   MapleGlobalsV3: '0x5A64417823E8382a7e8957E4411873FE758E73a8',
-  MapleGlobalsV301: '0x62AC1190A3c2cd80fda74Cc432991F1902cFdC76', // virtual, TODO: remove when deployed
-  MapleStrategyFactoryAave: '0x2aa234bC74Bb56E8C41ee96E343e5F405e15EC36', // virtual, TODO: remove when deployed
-  MapleStrategyInitializerAave: '0x4a8Ce3FB4adAACE64330FE9d1bcbFeA72f096443', // virtual, TODO: remove when deployed
-  MapleStrategyAave: '0x45EBBD7D0ddF27FefA335a5Ebe7eB3B3e8577e3D', // virtual, TODO: remove when deployed
-  MapleStrategyFactoryBasic: '0xC1bb1530827781eB7d10D3594d334f7Ab862673B', // virtual, TODO: remove when deployed
-  MapleStrategyInitializerBasic: '0xFF09d4f18Bfa352d09eC53B3D92CBE61DFE0a058', // virtual, TODO: remove when deployed
-  MapleStrategyBasic: '0x4bbe10ae441C7d13fD7FA43EF86E9aAD9580573D', // virtual, TODO: remove when deployed
-  MapleStrategyFactorySky: '0x0e31c543db24c598a01D76ffC59F033268ACC0B5', // virtual, TODO: remove when deployed
-  MapleStrategyInitializerSky: '0x6Af80F5AA782f51c7b38E9C54922B83B26BA1517', // virtual, TODO: remove when deployed
-  MapleStrategySky: '0x1a10BF4e8981AE39523aDA07B86b90B280251399', // virtual, TODO: remove when deployed
+  MapleGlobalsV301: '0x9BeAbb1B6F3ad1DdB87b65148BA5Eb6102334956',
+  MapleStrategyFactoryAave: '0x01ab799f77F9a9f4dd0D2b6E7C83DCF3F48D5650',
+  MapleStrategyInitializerAave: '0x0d2dBb28B1c7d225132722FAdb2402E93A35c1Be',
+  MapleStrategyAave: '0xFc8F7F97165d446B02Cc95363d2cA31154BBe9F9',
+  MapleStrategyFactoryBasic: '0x876D54DBF61473cA169b89B95344A14E81F37afe',
+  MapleStrategyInitializerBasic: '0x2b9aDDb5244548f126e59FA5483040efc102f69e',
+  MapleStrategyBasic: '0x7a1E281Ec29F3A861f211a28a23161762BD55B73',
+  MapleStrategyFactorySky: '0x27327E08de810c687687F95bfCE92088089b56dB',
+  MapleStrategyInitializerSky: '0x29199d071717c72baab50eEf9adD6736A18A1d1d',
+  MapleStrategySky: '0xBBEe42621499005Ff0dDEF947BBDeFfBBeE77730',
   MapleToken: '0x33349B282065b0284d756F0577FB39c158F935e6',
   MapleTreasury: '0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19',
   MigrationHelper: '0xd8B74109916C0bBFDbE5e4345fF9584bDE47044a',
@@ -109,9 +109,9 @@ export default {
   PoolManagerV301Migrator: '0x9d07A8373E9ABE5A430cCD161d6373e248D7778F',
   PoolManagerV3Initializer: '0x252C44A1630095504E3D3972b9b296f5ED494911',
   PoolManagerV3Migrator: '0x9450d0D19802Ae0aDD44565752CDAB70E0A1C6ed',
-  PoolManagerV400Initializer: '0x3E9d1b45BdeC846505161Ca3C52C2F7e262e1de8', // virtual, TODO: remove when deployed
-  PoolManagerV400: '0x8E0128806309E3d2Ff18Fa2f6DBA99F8Ce7ad374', // virtual, TODO: remove when deployed
-  PoolDeployerV400: '0xD8486369F1Fc5C444872Ede8a6e24016B7C44160', // virtual, TODO: remove when deployed
+  PoolManagerV400Initializer: '0xB33Bfa00E1d92fDaC5AeCB2976d6998C2ecca759',
+  PoolManagerV400: '0xfE02Be1aD28EdFd8e3dD6F29C402B244C2A258B8',
+  PoolDeployerV400: '0xdaF005B31B10F33EE42cEB1A4b983434FE947488',
   PoolPermissionManager: '0xBe10aDcE8B6E3E02Db384E7FaDA5395DD113D8b3',
   PoolPermissionManagerImplementation: '0xC3530358e54bC81EfCe4A2e12A898E996B091753',
   PoolPermissionManagerInitializer: '0x73A53fcECE63D4C0098535f6f62Df0F5d12A5175',
