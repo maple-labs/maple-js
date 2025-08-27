@@ -154,6 +154,7 @@ export default {
   WithdrawalManagerFactory: '0x0434FC9e7D88294dAac40dDF316754B2053D613b',
   WithdrawalManagerInitializer: '0x899b7d637e35B2C57E845dB1064a4e58639D3A8D',
   WithdrawalManagerQueue: '0x899B57Bbd8597aa2d1898476504f479c982c5c2c',
+  WithdrawalManagerQueueV2: '0x0000000000000000000000000000000000000000',
   WithdrawalManagerQueueFactory: '0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5',
   WithdrawalManagerQueueInitializer: '0x637f8dC4C4d07D1CC30ae131fA94A060dee6be96',
   xMPL: '0x0000000000000000000000000000000000000000',

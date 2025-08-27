@@ -34,6 +34,7 @@ import * as syrupTokenImports from './typechain/syrupToken'
 import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
 import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
+import * as withdrawalManagerQueueV2Imports from './typechain/withdrawalManagerQueueV2'
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
@@ -250,6 +251,10 @@ const withdrawalManagerQueue = {
   core: withdrawalManagerQueueImports.WithdrawalManagerQueueAbi__factory,
   initializer: withdrawalManagerQueueImports.WithdrawalManagerQueueInitializerAbi__factory,
   factory: withdrawalManagerQueueImports.WithdrawalManagerQueueFactoryAbi__factory
+}
+
+const withdrawalManagerQueueV2 = {
+  core: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2Abi__factory
 }
 
 const xmpl = {
