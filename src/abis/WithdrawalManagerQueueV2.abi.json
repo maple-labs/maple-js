@@ -33,7 +33,13 @@
         "internalType": "address"
       }
     ],
-    "outputs": [],
+    "outputs": [
+      {
+        "name": "lastRequestId_",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ],
     "stateMutability": "nonpayable"
   },
   {
@@ -373,6 +379,11 @@
         "name": "owner_",
         "type": "address",
         "internalType": "address"
+      },
+      {
+        "name": "requestIds_",
+        "type": "uint128[]",
+        "internalType": "uint128[]"
       }
     ],
     "outputs": [],
@@ -407,14 +418,14 @@
     "name": "requestIds",
     "inputs": [
       {
-        "name": "",
+        "name": "owner_",
         "type": "address",
         "internalType": "address"
       }
     ],
     "outputs": [
       {
-        "name": "",
+        "name": "requestId_",
         "type": "uint128",
         "internalType": "uint128"
       }
@@ -441,6 +452,30 @@
         "name": "shares_",
         "type": "uint256",
         "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "requestsByOwner",
+    "inputs": [
+      {
+        "name": "owner_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "requestIds_",
+        "type": "uint128[]",
+        "internalType": "uint128[]"
+      },
+      {
+        "name": "shares_",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
       }
     ],
     "stateMutability": "view"
@@ -504,6 +539,54 @@
   },
   {
     "type": "function",
+    "name": "updateShares",
+    "inputs": [
+      {
+        "name": "requestId_",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "newSharesTotal_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "updatedRequestId_",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateSharesBatch",
+    "inputs": [
+      {
+        "name": "requestIds_",
+        "type": "uint128[]",
+        "internalType": "uint128[]"
+      },
+      {
+        "name": "newSharesTotals_",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "updatedRequestIds_",
+        "type": "uint128[]",
+        "internalType": "uint128[]"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "upgrade",
     "inputs": [
       {
@@ -519,6 +602,25 @@
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "userEscrowedShares",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
     "type": "event",
