@@ -122,6 +122,9 @@
     "withdrawalManagerQueue": {
       "contracts": ["WithdrawalManagerQueue", "WithdrawalManagerQueueInitializer", "WithdrawalManagerQueueFactory"]
     },
+    "withdrawalManagerQueueV2": {
+      "contracts": ["WithdrawalManagerQueueV2"]
+    },
     "xmpl": {
       "contracts": ["xMPL"]
     }

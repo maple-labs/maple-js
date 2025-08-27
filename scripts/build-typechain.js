@@ -145,6 +145,10 @@ async function buildTypechain() {
     src: 'WithdrawalManagerQueueInitializer.abi.json',
     dst: 'WithdrawalManagerQueue.abi.json'
   })
+  mergeEvents({
+    src: 'WithdrawalManagerQueueInitializer.abi.json',
+    dst: 'WithdrawalManagerQueueV2.abi.json'
+  })
 
   overwriteEventParams({
     file: 'PoolV1',
