@@ -149,6 +149,10 @@ async function buildTypechain() {
     src: 'WithdrawalManagerQueueInitializer.abi.json',
     dst: 'WithdrawalManagerQueueV2.abi.json'
   })
+  mergeEvents({ src: 'SyrupBitcoinRouterInitializer.abi.json', dst: 'SyrupBitcoinRouter.abi.json' })
+  mergeEvents({ src: 'AssetControllerInitializer.abi.json', dst: 'AssetController.abi.json' })
+  mergeEvents({ src: 'CompositeTokenInitializer.abi.json', dst: 'CompositeToken.abi.json' })
+  mergeEvents({ src: 'MapleBitcoinStrategyInitializer.abi.json', dst: 'MapleBitcoinStrategy.abi.json' })
 
   overwriteEventParams({
     file: 'PoolV1',
