@@ -1,4 +1,6 @@
 // Typechain entities
+import * as assetControllerImports from './typechain/assetController'
+import * as compositeTokenImports from './typechain/compositeToken'
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
 import * as environmentMocksImports from './typechain/environmentMocks'
@@ -50,6 +52,16 @@ import {
   generateSignedTransactionData,
   broadcastSignedTransaction
 } from 'helpers/serialiseTransaction'
+
+const assetController = {
+  core: assetControllerImports.AssetControllerAbi__factory,
+  initializer: assetControllerImports.AssetControllerInitializerAbi__factory
+}
+
+const compositeToken = {
+  core: compositeTokenImports.CompositeTokenAbi__factory,
+  initializer: compositeTokenImports.CompositeTokenInitializerAbi__factory
+}
 
 const debtLockerV2 = {
   core: debtLockerV2Imports.DebtLockerV2Abi__factory,
@@ -225,6 +237,8 @@ const stakeLocker = {
 
 const syrupUtils = {
   syrupRouter: syrupUtilsImports.SyrupRouterAbi__factory,
+  syrupBitcoinRouter: syrupUtilsImports.SyrupBitcoinRouterAbi__factory,
+  syrupBitcoinRouterInitializer: syrupUtilsImports.SyrupBitcoinRouterInitializerAbi__factory,
   mplUserActions: syrupUtilsImports.MplUserActionsAbi__factory,
   syrupDrip: syrupUtilsImports.SyrupDripAbi__factory,
   syrupUserActions: syrupUtilsImports.SyrupUserActionsAbi__factory,
@@ -280,6 +294,8 @@ const mapleStrategies = {
   aaveStrategyInitializer: mapleStrategiesImports.MapleAaveStrategyInitializerAbi__factory,
   basicStrategy: mapleStrategiesImports.MapleBasicStrategyAbi__factory,
   basicStrategyInitializer: mapleStrategiesImports.MapleBasicStrategyInitializerAbi__factory,
+  bitcoinStrategy: mapleStrategiesImports.MapleBitcoinStrategyAbi__factory,
+  bitcoinStrategyInitializer: mapleStrategiesImports.MapleBitcoinStrategyInitializerAbi__factory,
   skyStrategy: mapleStrategiesImports.MapleSkyStrategyAbi__factory,
   skyStrategyInitializer: mapleStrategiesImports.MapleSkyStrategyInitializerAbi__factory
 }
@@ -299,6 +315,10 @@ const addresses: Record<string, MapleAddressMapping> = {
 }
 
 interface ContractTypes {
+  assetController: assetControllerImports.AssetControllerAbi
+  assetControllerInitializer: assetControllerImports.AssetControllerInitializerAbi
+  compositeToken: compositeTokenImports.CompositeTokenAbi
+  compositeTokenInitializer: compositeTokenImports.CompositeTokenInitializerAbi
   debtLockerV2: debtLockerV2Imports.DebtLockerV2Abi
   debtLockerV2Factory: debtLockerV2Imports.DebtLockerV2FactoryAbi
   debtLockerV3: debtLockerV3Imports.DebtLockerV3Abi
@@ -361,6 +381,8 @@ interface ContractTypes {
   mapleAaveStrategyInitializer: mapleStrategiesImports.MapleAaveStrategyInitializerAbi
   mapleBasicStrategy: mapleStrategiesImports.MapleBasicStrategyAbi
   mapleBasicStrategyInitializer: mapleStrategiesImports.MapleBasicStrategyInitializerAbi
+  mapleBitcoinStrategy: mapleStrategiesImports.MapleBitcoinStrategyAbi
+  mapleBitcoinStrategyInitializer: mapleStrategiesImports.MapleBitcoinStrategyInitializerAbi
   mapleSkyStrategy: mapleStrategiesImports.MapleSkyStrategyAbi
   mapleSkyStrategyInitializer: mapleStrategiesImports.MapleSkyStrategyInitializerAbi
   mapleStrategyFactory: mapleStrategiesImports.MapleStrategyFactoryAbi
@@ -419,6 +441,8 @@ interface ContractTypes {
   // Syrup Utils Private
   mplUserActions: syrupUtilsImports.MplUserActionsAbi
   syrupRouter: syrupUtilsImports.SyrupRouterAbi
+  syrupBitcoinRouter: syrupUtilsImports.SyrupBitcoinRouterAbi
+  syrupBitcoinRouterInitializer: syrupUtilsImports.SyrupBitcoinRouterInitializerAbi
   syrupDrip: syrupUtilsImports.SyrupDripAbi
   syrupUserActions: syrupUtilsImports.SyrupUserActionsAbi
   borrowerActions: syrupUtilsImports.BorrowerActionsAbi
@@ -453,6 +477,8 @@ const utils = {
 
 export {
   addresses,
+  assetController,
+  compositeToken,
   ContractTypes,
   debtLockerV2,
   debtLockerV3,
