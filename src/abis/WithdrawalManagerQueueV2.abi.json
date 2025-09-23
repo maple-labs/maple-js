@@ -36,8 +36,8 @@
     "outputs": [
       {
         "name": "lastRequestId_",
-        "type": "uint128",
-        "internalType": "uint128"
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "stateMutability": "nonpayable"
@@ -382,8 +382,8 @@
       },
       {
         "name": "requestIds_",
-        "type": "uint128[]",
-        "internalType": "uint128[]"
+        "type": "uint256[]",
+        "internalType": "uint256[]"
       }
     ],
     "outputs": [],
@@ -415,6 +415,35 @@
   },
   {
     "type": "function",
+    "name": "removeSharesById",
+    "inputs": [
+      {
+        "name": "requestId_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "sharesToRemove_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "sharesReturned_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "sharesRemaining_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "requestIds",
     "inputs": [
       {
@@ -426,8 +455,8 @@
     "outputs": [
       {
         "name": "requestId_",
-        "type": "uint128",
-        "internalType": "uint128"
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "stateMutability": "view"
@@ -438,8 +467,8 @@
     "inputs": [
       {
         "name": "requestId_",
-        "type": "uint128",
-        "internalType": "uint128"
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "outputs": [
@@ -469,8 +498,8 @@
     "outputs": [
       {
         "name": "requestIds_",
-        "type": "uint128[]",
-        "internalType": "uint128[]"
+        "type": "uint256[]",
+        "internalType": "uint256[]"
       },
       {
         "name": "shares_",
@@ -536,54 +565,6 @@
       }
     ],
     "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "updateShares",
-    "inputs": [
-      {
-        "name": "requestId_",
-        "type": "uint128",
-        "internalType": "uint128"
-      },
-      {
-        "name": "newSharesTotal_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "updatedRequestId_",
-        "type": "uint128",
-        "internalType": "uint128"
-      }
-    ],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "updateSharesBatch",
-    "inputs": [
-      {
-        "name": "requestIds_",
-        "type": "uint128[]",
-        "internalType": "uint128[]"
-      },
-      {
-        "name": "newSharesTotals_",
-        "type": "uint256[]",
-        "internalType": "uint256[]"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "updatedRequestIds_",
-        "type": "uint128[]",
-        "internalType": "uint128[]"
-      }
-    ],
-    "stateMutability": "nonpayable"
   },
   {
     "type": "function",
@@ -685,9 +666,9 @@
     "inputs": [
       {
         "name": "requestId",
-        "type": "uint128",
+        "type": "uint256",
         "indexed": true,
-        "internalType": "uint128"
+        "internalType": "uint256"
       },
       {
         "name": "owner",
@@ -710,9 +691,9 @@
     "inputs": [
       {
         "name": "requestId",
-        "type": "uint128",
+        "type": "uint256",
         "indexed": true,
-        "internalType": "uint128"
+        "internalType": "uint256"
       },
       {
         "name": "shares",
@@ -729,9 +710,9 @@
     "inputs": [
       {
         "name": "requestId",
-        "type": "uint128",
+        "type": "uint256",
         "indexed": true,
-        "internalType": "uint128"
+        "internalType": "uint256"
       },
       {
         "name": "owner",
@@ -760,9 +741,9 @@
     "inputs": [
       {
         "name": "requestId",
-        "type": "uint128",
+        "type": "uint256",
         "indexed": true,
-        "internalType": "uint128"
+        "internalType": "uint256"
       }
     ],
     "anonymous": false

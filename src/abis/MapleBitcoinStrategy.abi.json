@@ -59,16 +59,24 @@
   },
   {
     "type": "function",
+    "name": "accruedFees",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "accruedFees_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "accruedYield",
     "inputs": [],
     "outputs": [
       {
         "name": "accruedYield_",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "accruedFees_",
         "type": "uint256",
         "internalType": "uint256"
       }
@@ -192,19 +200,6 @@
   },
   {
     "type": "function",
-    "name": "lifetimeFees",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
     "name": "locked",
     "inputs": [],
     "outputs": [
@@ -317,6 +312,19 @@
   },
   {
     "type": "function",
+    "name": "realizedFees",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "reconcile",
     "inputs": [
       {
@@ -338,7 +346,7 @@
     "name": "schedule",
     "inputs": [
       {
-        "name": "newYield_",
+        "name": "yield_",
         "type": "uint256",
         "internalType": "uint256"
       },
@@ -346,11 +354,6 @@
         "name": "deadline_",
         "type": "uint32",
         "internalType": "uint32"
-      },
-      {
-        "name": "rollover_",
-        "type": "bool",
-        "internalType": "bool"
       }
     ],
     "outputs": [],
@@ -722,12 +725,6 @@
       },
       {
         "name": "yield",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      },
-      {
-        "name": "rollover",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
