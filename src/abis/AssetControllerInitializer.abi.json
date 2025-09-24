@@ -1,7 +1,7 @@
 [
   {
     "type": "function",
-    "name": "canDeposit",
+    "name": "canDeploy",
     "inputs": [
       {
         "name": "",
@@ -20,7 +20,45 @@
   },
   {
     "type": "function",
-    "name": "canWithdraw",
+    "name": "canReconcile",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "canUnwrap",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "canWrap",
     "inputs": [
       {
         "name": "",

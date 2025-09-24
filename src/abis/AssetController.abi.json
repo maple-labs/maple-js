@@ -38,7 +38,7 @@
   },
   {
     "type": "function",
-    "name": "canDeposit",
+    "name": "canDeploy",
     "inputs": [
       {
         "name": "",
@@ -57,7 +57,45 @@
   },
   {
     "type": "function",
-    "name": "canWithdraw",
+    "name": "canReconcile",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "canUnwrap",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "canWrap",
     "inputs": [
       {
         "name": "",
@@ -315,12 +353,22 @@
         "internalType": "address[]"
       },
       {
-        "name": "canDeposit_",
+        "name": "canWrap_",
         "type": "bool[]",
         "internalType": "bool[]"
       },
       {
-        "name": "canWithdraw_",
+        "name": "canUnwrap_",
+        "type": "bool[]",
+        "internalType": "bool[]"
+      },
+      {
+        "name": "canDeploy_",
+        "type": "bool[]",
+        "internalType": "bool[]"
+      },
+      {
+        "name": "canReconcile_",
         "type": "bool[]",
         "internalType": "bool[]"
       }
@@ -481,13 +529,25 @@
         "internalType": "address[]"
       },
       {
-        "name": "canDeposit",
+        "name": "canWrap",
         "type": "bool[]",
         "indexed": false,
         "internalType": "bool[]"
       },
       {
-        "name": "canWithdraw",
+        "name": "canUnwrap",
+        "type": "bool[]",
+        "indexed": false,
+        "internalType": "bool[]"
+      },
+      {
+        "name": "canDeploy",
+        "type": "bool[]",
+        "indexed": false,
+        "internalType": "bool[]"
+      },
+      {
+        "name": "canReconcile",
         "type": "bool[]",
         "indexed": false,
         "internalType": "bool[]"

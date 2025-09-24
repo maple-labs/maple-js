@@ -65,7 +65,7 @@
       {
         "name": "permit_",
         "type": "tuple",
-        "internalType": "struct ISyrupBitcoinRouter.Permit",
+        "internalType": "struct Permit",
         "components": [
           {
             "name": "enabled",
@@ -251,6 +251,30 @@
   },
   {
     "type": "function",
+    "name": "removeSharesById",
+    "inputs": [
+      {
+        "name": "requestId_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "sharesToRemove_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "sharesReturned_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "requestRedeem",
     "inputs": [
       {
@@ -271,7 +295,7 @@
       {
         "name": "permit_",
         "type": "tuple",
-        "internalType": "struct ISyrupBitcoinRouter.Permit",
+        "internalType": "struct Permit",
         "components": [
           {
             "name": "enabled",
@@ -357,62 +381,6 @@
     "stateMutability": "nonpayable"
   },
   {
-    "type": "function",
-    "name": "updateRequest",
-    "inputs": [
-      {
-        "name": "requestId_",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "shares_",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "permit_",
-        "type": "tuple",
-        "internalType": "struct ISyrupBitcoinRouter.Permit",
-        "components": [
-          {
-            "name": "enabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "deadline",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "v",
-            "type": "uint8",
-            "internalType": "uint8"
-          },
-          {
-            "name": "r",
-            "type": "bytes32",
-            "internalType": "bytes32"
-          },
-          {
-            "name": "s",
-            "type": "bytes32",
-            "internalType": "bytes32"
-          }
-        ]
-      }
-    ],
-    "outputs": [
-      {
-        "name": "currentRequestId_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable"
-  },
-  {
     "type": "event",
     "name": "AssetControllerSet",
     "inputs": [
@@ -492,6 +460,25 @@
       },
       {
         "name": "redemptionFee",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RedeemRequestSharesRemoved",
+    "inputs": [
+      {
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "sharesRemoved",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
