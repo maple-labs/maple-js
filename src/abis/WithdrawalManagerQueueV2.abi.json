@@ -1,24 +1,5 @@
 [
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "pool",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "poolManager",
-        "type": "address"
-      }
-    ],
-    "name": "Initialized",
-    "type": "event"
-  },
-  {
     "type": "function",
     "name": "addShares",
     "inputs": [
@@ -626,6 +607,12 @@
     "type": "event",
     "name": "ManualSharesIncreased",
     "inputs": [
+      {
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
       {
         "name": "owner",
         "type": "address",

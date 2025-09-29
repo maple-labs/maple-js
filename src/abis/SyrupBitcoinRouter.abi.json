@@ -1,30 +1,5 @@
 [
   {
-    "type": "event",
-    "name": "Initialized",
-    "inputs": [
-      {
-        "name": "implementation",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "globals",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "pool",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      }
-    ],
-    "anonymous": false
-  },
-  {
     "type": "function",
     "name": "assetController",
     "inputs": [
@@ -48,12 +23,12 @@
     "name": "deposit",
     "inputs": [
       {
-        "name": "depositAsset_",
+        "name": "assetIn_",
         "type": "address",
         "internalType": "address"
       },
       {
-        "name": "depositAmount_",
+        "name": "amountIn_",
         "type": "uint256",
         "internalType": "uint256"
       },
@@ -278,7 +253,7 @@
     "name": "requestRedeem",
     "inputs": [
       {
-        "name": "depositAsset_",
+        "name": "assetOut_",
         "type": "address",
         "internalType": "address"
       },
@@ -404,13 +379,19 @@
     "name": "Deposit",
     "inputs": [
       {
-        "name": "depositAsset",
+        "name": "receiver",
         "type": "address",
         "indexed": true,
         "internalType": "address"
       },
       {
-        "name": "depositAmount",
+        "name": "assetIn",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amountIn",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
@@ -510,13 +491,19 @@
     "name": "RedemptionProcessed",
     "inputs": [
       {
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
         "name": "owner",
         "type": "address",
         "indexed": false,
         "internalType": "address"
       },
       {
-        "name": "depositAsset",
+        "name": "assetOut",
         "type": "address",
         "indexed": false,
         "internalType": "address"
@@ -534,7 +521,7 @@
         "internalType": "uint256"
       },
       {
-        "name": "redemptionAmount",
+        "name": "amountOut",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
@@ -565,7 +552,7 @@
         "internalType": "uint256"
       },
       {
-        "name": "depositAsset",
+        "name": "assetOut",
         "type": "address",
         "indexed": true,
         "internalType": "address"

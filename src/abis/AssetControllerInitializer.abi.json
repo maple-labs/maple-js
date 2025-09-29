@@ -130,11 +130,6 @@
         "internalType": "address"
       },
       {
-        "name": "poolAsset_",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
         "name": "router_",
         "type": "address",
         "internalType": "address"
