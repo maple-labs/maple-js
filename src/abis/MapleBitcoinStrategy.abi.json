@@ -120,12 +120,12 @@
     "name": "deploy",
     "inputs": [
       {
-        "name": "depositAsset_",
+        "name": "assetOut_",
         "type": "address",
         "internalType": "address"
       },
       {
-        "name": "depositAssetAmount_",
+        "name": "amountOut_",
         "type": "uint256",
         "internalType": "uint256"
       }
@@ -328,12 +328,12 @@
     "name": "reconcile",
     "inputs": [
       {
-        "name": "depositAsset_",
+        "name": "assetIn_",
         "type": "address",
         "internalType": "address"
       },
       {
-        "name": "depositAssetAmount_",
+        "name": "amountIn_",
         "type": "uint256",
         "internalType": "uint256"
       }
@@ -346,7 +346,7 @@
     "name": "schedule",
     "inputs": [
       {
-        "name": "yield_",
+        "name": "yieldAmount_",
         "type": "uint256",
         "internalType": "uint256"
       },

@@ -1,22 +1,22 @@
 [
   {
-    "anonymous": false,
+    "type": "event",
+    "name": "Initialized",
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "address",
         "name": "pool",
-        "type": "address"
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
       },
       {
-        "indexed": false,
-        "internalType": "address",
         "name": "poolManager",
-        "type": "address"
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
       }
     ],
-    "name": "Initialized",
-    "type": "event"
+    "anonymous": false
   },
   {
     "type": "function",
@@ -626,6 +626,12 @@
     "type": "event",
     "name": "ManualSharesIncreased",
     "inputs": [
+      {
+        "name": "requestId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
       {
         "name": "owner",
         "type": "address",
