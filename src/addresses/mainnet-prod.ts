@@ -83,6 +83,7 @@ export default {
   MapleStrategySky: '0xBBEe42621499005Ff0dDEF947BBDeFfBBeE77730',
   MapleBitcoinStrategy: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   MapleBitcoinStrategyInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
+  MapleBitcoinStrategyFactory: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   MapleToken: '0x33349B282065b0284d756F0577FB39c158F935e6',
   MapleTreasury: '0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19',
   MigrationHelper: '0xd8B74109916C0bBFDbE5e4345fF9584bDE47044a',
