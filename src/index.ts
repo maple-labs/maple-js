@@ -268,7 +268,9 @@ const withdrawalManagerQueue = {
 }
 
 const withdrawalManagerQueueV2 = {
-  core: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2Abi__factory
+  core: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2Abi__factory,
+  initializer: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2InitializerAbi__factory,
+  migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi__factory
 }
 
 const xmpl = {
