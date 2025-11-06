@@ -466,6 +466,10 @@ interface ContractTypes {
   withdrawalManagerQueueInitializer: withdrawalManagerQueueImports.WithdrawalManagerQueueInitializerAbi
   withdrawalManagerQueueFactory: withdrawalManagerQueueImports.WithdrawalManagerQueueFactoryAbi
 
+  // Withdrawal Manager Queue V2
+  withdrawalManagerQueueV2: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2Abi
+  withdrawalManagerQueueV2Initializer: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2InitializerAbi
+  withdrawalManagerQueueV2Migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi
   // xMPL
   xmpl: xmplImports.XMPLAbi
 }
@@ -523,6 +527,7 @@ export {
   withdrawalManager,
   withdrawalManagerCyclical,
   withdrawalManagerQueue,
+  withdrawalManagerQueueV2,
   xmpl,
   utils
 }
