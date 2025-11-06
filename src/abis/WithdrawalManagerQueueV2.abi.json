@@ -313,6 +313,19 @@
   },
   {
     "type": "function",
+    "name": "processEmptyRedemptions",
+    "inputs": [
+      {
+        "name": "numberOfRequests_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "processExit",
     "inputs": [
       {
@@ -602,6 +615,19 @@
       }
     ],
     "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "EmptyRedemptionsProcessed",
+    "inputs": [
+      {
+        "name": "numberOfRequestsProcessed",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
   },
   {
     "type": "event",

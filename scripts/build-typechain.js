@@ -146,7 +146,7 @@ async function buildTypechain() {
     dst: 'WithdrawalManagerQueue.abi.json'
   })
   mergeEvents({
-    src: 'WithdrawalManagerQueueInitializer.abi.json',
+    src: 'WithdrawalManagerQueueV2Initializer.abi.json',
     dst: 'WithdrawalManagerQueueV2.abi.json'
   })
   mergeEvents({ src: 'SyrupBitcoinRouterInitializer.abi.json', dst: 'SyrupBitcoinRouter.abi.json' })
