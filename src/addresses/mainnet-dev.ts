@@ -2,8 +2,8 @@ export default {
   AAVE: '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9',
   AAVEPool: '0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2',
   AccountingChecker: '0x4c9CEa7f6aCE3Dc0D85b86c1925542AdeCE1eF15',
-  AssetController: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  AssetControllerInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
+  AssetController: '0x4911fA884Bb6Ba1Fc3bc9f6798006ED6aBB7d5f5', // TODO: Update this address
+  AssetControllerInitializer: '0xA15cee00b256b9e5cC66c624E882629458549638', // TODO: Update this address
   ATokenUSDC: '0x98c23e9d8f34fefb1b7bd6a91b7ff122f4e16f5c',
   ATokenUSDT: '0x23878914efe38d27c4d67ab83ed1b93a74d4086a',
   BFactory: '0x9424B1412450D0f8Fc2255FAf6046b98213B76Bd',
@@ -81,9 +81,9 @@ export default {
   MapleStrategyFactorySky: '0x27327E08de810c687687F95bfCE92088089b56dB',
   MapleStrategyInitializerSky: '0x29199d071717c72baab50eEf9adD6736A18A1d1d',
   MapleStrategySky: '0xBBEe42621499005Ff0dDEF947BBDeFfBBeE77730',
-  MapleBitcoinStrategy: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  MapleBitcoinStrategyInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  MapleBitcoinStrategyFactory: '0x0000000000000000000000000000000000000000', // TODO: Update this address
+  MapleBitcoinStrategy: '0x88B040042Eb95Aa46Fd95971bBCd7ea2ebd4b149', // TODO: Update this address
+  MapleBitcoinStrategyInitializer: '0xC345266f92b81BA3D4ed11848878eEbe72471b6f', // TODO: Update this address
+  MapleBitcoinStrategyFactory: '0x9a05C78e021B15841D50DDFd92dde8Ef7d14508D', // TODO: Update this address
   MapleToken: '0x33349B282065b0284d756F0577FB39c158F935e6',
   MapleTreasury: '0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19',
   MigrationHelper: '0xd8B74109916C0bBFDbE5e4345fF9584bDE47044a',
@@ -134,10 +134,10 @@ export default {
   StakeLockerFactory: '0x53a597A4730Eb02095dD798B203Dcc306348B8d6',
   stSyrup: '0xc7E8b36E0766D9B04c93De68A9D47dD11f260B45',
   sUSDS: '0xa3931d71877c0e7a3148cb7eb4463524fec27fbd',
-  SynthBTC: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  SynthBTCInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  SyrupBTCRouter: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  SyrupBTCRouterInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
+  SynthBTC: '0x4Aa3466B78baD18F87fe2a510a1eff65eed5F1CC', // TODO: Update this address
+  SynthBTCInitializer: '0x94F3f443086b0B2C8E72896a9AE82De499e8393d', // TODO: Update this address
+  SyrupBTCRouter: '0xCFb0C41791CBA35691670Da366f4E2e0FA175DAA', // TODO: Update this address
+  SyrupBTCRouterInitializer: '0x9633c4304dDbBadb8f6F035490a86B72C4911cB2', // TODO: Update this address
   SyrupDrip: '0x509712F368255E92410893Ba2E488f40f7E986EA',
   SyrupToken: '0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66',
   SyrupTokenImplementation: '0x6eD767EBCfF51533E5181f7bf818F2b9bD767aec',
