@@ -81,9 +81,9 @@ export default {
   MapleStrategyFactorySky: '0x27327E08de810c687687F95bfCE92088089b56dB',
   MapleStrategyInitializerSky: '0x29199d071717c72baab50eEf9adD6736A18A1d1d',
   MapleStrategySky: '0xBBEe42621499005Ff0dDEF947BBDeFfBBeE77730',
-  MapleBitcoinStrategy: '0x88B040042Eb95Aa46Fd95971bBCd7ea2ebd4b149', // TODO: Update this address
-  MapleBitcoinStrategyInitializer: '0xC345266f92b81BA3D4ed11848878eEbe72471b6f', // TODO: Update this address
-  MapleBitcoinStrategyFactory: '0x9a05C78e021B15841D50DDFd92dde8Ef7d14508D', // TODO: Update this address
+  MapleBitcoinStrategy: '0x88B040042Eb95Aa46Fd95971bBCd7ea2ebd4b149',
+  MapleBitcoinStrategyInitializer: '0xC345266f92b81BA3D4ed11848878eEbe72471b6f',
+  MapleBitcoinStrategyFactory: '0x9a05C78e021B15841D50DDFd92dde8Ef7d14508D',
   MapleToken: '0x33349B282065b0284d756F0577FB39c158F935e6',
   MapleTreasury: '0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19',
   MigrationHelper: '0xd8B74109916C0bBFDbE5e4345fF9584bDE47044a',
@@ -134,8 +134,9 @@ export default {
   StakeLockerFactory: '0x53a597A4730Eb02095dD798B203Dcc306348B8d6',
   stSyrup: '0xc7E8b36E0766D9B04c93De68A9D47dD11f260B45',
   sUSDS: '0xa3931d71877c0e7a3148cb7eb4463524fec27fbd',
-  SynthBTC: '0x4Aa3466B78baD18F87fe2a510a1eff65eed5F1CC', // TODO: Update this address
-  SynthBTCInitializer: '0x94F3f443086b0B2C8E72896a9AE82De499e8393d', // TODO: Update this address
+  SynthBTCImplementation: '0x4Aa3466B78baD18F87fe2a510a1eff65eed5F1CC',
+  SynthBTCInitializer: '0x94F3f443086b0B2C8E72896a9AE82De499e8393d',
+  SynthBTCProxy: '0x67685C6c39E862c57895d5782206829d5cc0aD8C',
   SyrupBTCRouter: '0xCFb0C41791CBA35691670Da366f4E2e0FA175DAA', // TODO: Update this address
   SyrupBTCRouterInitializer: '0x9633c4304dDbBadb8f6F035490a86B72C4911cB2', // TODO: Update this address
   SyrupDrip: '0x509712F368255E92410893Ba2E488f40f7E986EA',
@@ -163,9 +164,9 @@ export default {
   WithdrawalManagerFactory: '0xb9e25B584dc4a7C9d47aEF577f111fBE5705773B',
   WithdrawalManagerInitializer: '0x1063dCa836894b12f29003CA2899ff806A2B0B31',
   WithdrawalManagerQueue: '0x899B57Bbd8597aa2d1898476504f479c982c5c2c',
-  WithdrawalManagerQueueV2: '0xF95E5722226a1018d058CD757B75F1D10289e967', // TODO: Update this address
-  WithdrawalManagerQueueV2Initializer: '0xD389BFE4A129525b486B098411336a4fCecF3024', // TODO: Update this address
-  WithdrawalManagerQueueV2Migrator: '0x327ec27a6D898D865D7759D47d36a2c3FBbD23a5', // TODO: Update this address
+  WithdrawalManagerQueueV2: '0xF95E5722226a1018d058CD757B75F1D10289e967',
+  WithdrawalManagerQueueV2Initializer: '0xD389BFE4A129525b486B098411336a4fCecF3024',
+  WithdrawalManagerQueueV2Migrator: '0x327ec27a6D898D865D7759D47d36a2c3FBbD23a5',
   WithdrawalManagerQueueFactory: '0xca33105902E8d232DDFb9f71Ff3D79C7E7f2C4e5',
   WithdrawalManagerQueueInitializer: '0x637f8dC4C4d07D1CC30ae131fA94A060dee6be96',
   xMPL: '0x4937a209d4cdbd3ecd48857277cfd4da4d82914c',

@@ -134,8 +134,9 @@ export default {
   StakeLockerFactory: '0x0000000000000000000000000000000000000000',
   stSyrup: '0xc5f044f026a43cf1144a173e2f0567443f3a70f7',
   sUSDS: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  SynthBTC: '0xf02b29f984a0e9aab98c47f972a88f2b607af7c1',
+  SynthBTCImplementation: '0xf02b29f984a0e9aab98c47f972a88f2b607af7c1',
   SynthBTCInitializer: '0xd94fe9aad38c107e1fc2ed214a2b953beb45e178',
+  SynthBTCProxy: '0x13d9f54c835537a0b3A6fdD2355FA5A1766E35E5',
   SyrupBTCRouter: '0x958c09e13eecd7a43a68a3e3ce11d16ae1f23475',
   SyrupBTCRouterInitializer: '0x7568520692e4944e0083a121bdeb629e25692708',
   SyrupDrip: '0xc84d052fcd94cad965fbdf4d576e1bcb14539363',
