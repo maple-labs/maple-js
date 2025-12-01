@@ -3,6 +3,7 @@ import * as assetControllerImports from './typechain/assetController'
 import * as compositeTokenImports from './typechain/compositeToken'
 import * as debtLockerV2Imports from './typechain/debtLockerV2'
 import * as debtLockerV3Imports from './typechain/debtLockerV3'
+import * as ccipReceiverImports from './typechain/ccipReceiver'
 import * as environmentMocksImports from './typechain/environmentMocks'
 import * as fixedTermLoanImports from './typechain/fixedTermLoan'
 import * as fixedTermLoanV6Imports from './typechain/fixedTermLoanV6'
@@ -56,6 +57,10 @@ import {
 const assetController = {
   core: assetControllerImports.AssetControllerAbi__factory,
   initializer: assetControllerImports.AssetControllerInitializerAbi__factory
+}
+
+const ccipReceiver = {
+  core: ccipReceiverImports.CCIPReceiverAbi__factory
 }
 
 const compositeToken = {
@@ -319,6 +324,7 @@ const addresses: Record<string, MapleAddressMapping> = {
 interface ContractTypes {
   assetController: assetControllerImports.AssetControllerAbi
   assetControllerInitializer: assetControllerImports.AssetControllerInitializerAbi
+  ccipReceiver: ccipReceiverImports.CCIPReceiverAbi
   compositeToken: compositeTokenImports.CompositeTokenAbi
   compositeTokenInitializer: compositeTokenImports.CompositeTokenInitializerAbi
   debtLockerV2: debtLockerV2Imports.DebtLockerV2Abi
