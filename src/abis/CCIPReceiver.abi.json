@@ -969,7 +969,7 @@
       {
         "name": "redeemToken",
         "type": "address",
-        "indexed": true,
+        "indexed": false,
         "internalType": "address"
       },
       {
@@ -983,6 +983,18 @@
         "type": "bytes32",
         "indexed": true,
         "internalType": "bytes32"
+      },
+      {
+        "name": "feeAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "sourceChainSelector",
+        "type": "uint64",
+        "indexed": true,
+        "internalType": "uint64"
       },
       {
         "name": "metaData",
