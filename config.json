@@ -12,6 +12,9 @@
     "debtLockerV3": {
       "contracts": ["DebtLockerV3"]
     },
+    "ccipReceiver": {
+      "contracts": ["CCIPReceiver"]
+    },
     "environmentMocks": {
       "contracts": ["BPool", "ERC20", "kycERC20", "USDT", "MintSpecialToken"]
     },
