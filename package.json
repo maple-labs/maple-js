@@ -60,5 +60,5 @@
     "ws": "^7.5.10",
     "elliptic": "^6.6.1"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.13.0"
 }
