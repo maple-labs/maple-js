@@ -13,11 +13,20 @@ on:
           - minor
           - major
 
+# Least-privilege defaults; the release job below grants only what it needs.
+permissions: {}
+
 jobs:
   release-api:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Gate the deployment behind a GitHub Environment so it can carry
+    # protection rules (required reviewers, branch restrictions, secrets).
+    environment: npm
+
+    permissions:
+      contents: write   # push the version bump commit/tag and create the release
+      id-token: write   # mint the OIDC token for npm trusted publishing + provenance
 
     steps:
       - name: Checkout Repo
@@ -29,6 +38,7 @@ jobs:
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: 24.14.1
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Enable corepack and install dependencies
         run: |
@@ -47,22 +57,19 @@ jobs:
           npm version ${{ github.event.inputs.version_type }} -m "Bump version to %s"
           echo "NEW_VERSION=v$(node -p "require('./package.json').version")" >> $GITHUB_ENV
 
-      - name: Authenticate with NPM
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
-
       - name: Publish to NPM
+        # No NPM_ACCESS_TOKEN: authentication is via OIDC trusted publishing,
+        # which also signs and attaches a provenance attestation.
         run: |
           npm config set scope maplelabs
-          npm publish --access=public
+          npm publish --provenance --access=public
 
       - name: Push changes
-        env:
-          PAT: ${{ secrets.PAT }}
         run: |
           CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
           echo "Pushing changes to branch: $CURRENT_BRANCH"
-          git push --force https://x-access-token:$PAT@github.com/${{ github.repository }} HEAD:$CURRENT_BRANCH --follow-tags
+          # Uses the GITHUB_TOKEN credentials persisted by actions/checkout.
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" HEAD:$CURRENT_BRANCH --follow-tags
 
       - name: Create GitHub Release
         env:
