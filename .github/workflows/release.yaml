@@ -1,104 +1,109 @@
-name: Release Version
+name: Publish Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      version_type:
-        description: 'Version update type'
-        required: true
-        default: 'patch'
-        type: choice
-        options:
-          - patch
-          - minor
-          - major
+  release:
+    types: [published]
 
-# Least-privilege default; the release job below grants only what it needs.
 permissions: {}
 
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
 jobs:
-  release-api:
+  publish:
     runs-on: ubuntu-latest
 
-    # Gate publishing behind a protected GitHub Environment. Configure a
-    # required reviewer (and branch restriction) on the `npm` environment in
-    # repo settings so every publish needs a manual approval.
     environment: npm
 
     permissions:
-      contents: write   # create the GitHub release
+      contents: read    # actions/checkout
       id-token: write   # mint the OIDC token for npm trusted publishing + provenance
 
     steps:
-      # Socket Firewall blocks installation of known-malicious packages by
-      # proxying the install. Added to the runner before any install runs.
-      - name: Set up Socket Firewall
-        uses: socketdev/action@ba6de6cc0565af1f42295590380973573297e31f # v1
-        with:
-          mode: firewall-free
+      ## Uncomment once separate ticket on hardening is done. When flipping to
+      ## egress-policy: block, the allowlist MUST include the Sigstore endpoints
+      ## (fulcio.sigstore.dev, rekor.sigstore.dev, tuf-repo-cdn.sigstore.dev)
+      ## and *.actions.githubusercontent.com (the Actions OIDC token service),
+      ## or provenance signing fails.
+      # - name: Harden runner
+      #   uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+      #   with:
+      #     egress-policy: audit
 
-      # Short-lived, scoped GitHub App token replaces the long-lived PAT.
-      # The App must have contents:write on this repo and be added to any
-      # branch-protection bypass list so it can push the version-bump commit.
-      - name: Generate GitHub App token
-        id: app-token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+      - name: Set up Socket Firewall
+        uses: socketdev/action@ba6de6cc0565af1f42295590380973573297e31f # v1.3.2
         with:
-          app-id: ${{ secrets.RELEASE_APP_ID }}
-          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          mode: firewall
 
       - name: Checkout Repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          fetch-depth: 0 # Ensures tags are also fetched
-          # Persist the App token so the push step below is authenticated by it.
-          token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 0 # full history: the guard below checks tag ancestry
+          persist-credentials: false # no git writes in this workflow
 
       - name: Set up Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: 24.14.1
-          registry-url: 'https://registry.npmjs.org'
+
+      - name: Guard - tag matches package.json and is on main
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          PKG_VERSION="v$(node -p "require('./package.json').version")"
+          if [ "$TAG" != "$PKG_VERSION" ]; then
+            echo "::error::Release tag $TAG does not match package.json version $PKG_VERSION"
+            exit 1
+          fi
+          if ! git merge-base --is-ancestor HEAD origin/main; then
+            echo "::error::Release tag $TAG does not point to a commit on main"
+            exit 1
+          fi
 
       - name: Enable corepack and install dependencies
-        # Install is routed through Socket Firewall (`sfw`).
         run: |
           corepack enable
-          sfw yarn install
+          sfw yarn install --immutable
 
       - name: Build
         run: |
           yarn build-typechain
           yarn build
 
-      - name: Bump version
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          npm version ${{ github.event.inputs.version_type }} -m "Bump version to %s"
-          echo "NEW_VERSION=v$(node -p "require('./package.json').version")" >> $GITHUB_ENV
-
       - name: Publish to NPM
-        # No NPM_ACCESS_TOKEN and no ~/.npmrc write: authentication is via OIDC
-        # trusted publishing, which also signs and attaches a provenance
-        # attestation. Configure the trusted publisher for @maplelabs/maple-js
-        # on npmjs.com (this repo + workflow + `npm` environment).
-        run: |
-          npm config set scope maplelabs
-          npm publish --provenance --access=public
-
-      - name: Push changes
-        run: |
-          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          echo "Pushing changes to branch: $CURRENT_BRANCH"
-          # Fast-forward push via the persisted App-token credentials; no --force.
-          git push --follow-tags origin HEAD:"$CURRENT_BRANCH"
-
-      - name: Create GitHub Release
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          PRERELEASE: ${{ github.event.release.prerelease }}
         run: |
-          gh release create "$NEW_VERSION" \
-          --repo="$GITHUB_REPOSITORY" \
-          --title="$NEW_VERSION" \
-          --generate-notes
+          if [ "$PRERELEASE" = "true" ]; then
+            npm publish --ignore-scripts --dry-run
+          else
+            npm publish --ignore-scripts
+          fi
+
+      - name: Verify published package and provenance
+        if: ${{ !github.event.release.prerelease }}
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          VERSION="${TAG#v}"
+          # npm audit signatures verifies the *installed* tree, so install the
+          # freshly published version in a clean directory and verify there.
+          VERIFY_DIR="$RUNNER_TEMP/verify-publish"
+          mkdir -p "$VERIFY_DIR" && cd "$VERIFY_DIR"
+          npm init -y > /dev/null
+          # The registry can lag a few seconds behind a publish.
+          for i in 1 2 3 4 5; do
+            npm install --ignore-scripts "@maplelabs/maple-js@$VERSION" && break
+            if [ "$i" = "5" ]; then
+              echo "::error::@maplelabs/maple-js@$VERSION not installable from the registry"
+              exit 1
+            fi
+            sleep 15
+          done
+          ATTESTATION="$(npm view "@maplelabs/maple-js@$VERSION" dist.attestations.url || true)"
+          if [ -z "$ATTESTATION" ]; then
+            echo "::error::No provenance attestation attached to @maplelabs/maple-js@$VERSION"
+            exit 1
+          fi
+          npm audit signatures

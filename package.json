@@ -22,6 +22,10 @@
   "engines": {
     "node": ">=22"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rm -rf dist/ && rollup -c && cp -R src/abis dist/abis",
