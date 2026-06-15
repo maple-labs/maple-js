@@ -92,18 +92,20 @@ jobs:
           VERIFY_DIR="$RUNNER_TEMP/verify-publish"
           mkdir -p "$VERIFY_DIR" && cd "$VERIFY_DIR"
           npm init -y > /dev/null
-          # The registry can lag a few seconds behind a publish.
-          for i in 1 2 3 4 5; do
-            npm install --ignore-scripts "@maplelabs/maple-js@$VERSION" && break
-            if [ "$i" = "5" ]; then
-              echo "::error::@maplelabs/maple-js@$VERSION not installable from the registry"
+          # The registry lags a few seconds behind a publish, and the provenance
+          # attestation propagates slower than the tarball. Retry the whole path
+          # (install + attestation + audit) under one budget so neither lag fails
+          # an otherwise-good publish; only audit once the package installs.
+          for i in 1 2 3 4 5 6 7 8; do
+            if npm install --ignore-scripts "@maplelabs/maple-js@$VERSION"; then
+              ATTESTATION="$(npm view "@maplelabs/maple-js@$VERSION" dist.attestations.url || true)"
+              if [ -n "$ATTESTATION" ] && npm audit signatures; then
+                exit 0
+              fi
+            fi
+            if [ "$i" = "8" ]; then
+              echo "::error::@maplelabs/maple-js@$VERSION failed install/signature/provenance verification after retries"
               exit 1
             fi
             sleep 15
           done
-          ATTESTATION="$(npm view "@maplelabs/maple-js@$VERSION" dist.attestations.url || true)"
-          if [ -z "$ATTESTATION" ]; then
-            echo "::error::No provenance attestation attached to @maplelabs/maple-js@$VERSION"
-            exit 1
-          fi
-          npm audit signatures
