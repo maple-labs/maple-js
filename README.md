@@ -53,7 +53,7 @@ To connect to a contract, you'll need its address and a signer. The `signer` sho
 **Connecting to a Contract Usage**
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js'
+import { addresses, mapleGlobals } from '@maplelabs/maple-js'
 
 const contractAddress = addresses['mainnet-prod'].MapleToken
 const signer = 'yourSigner'
@@ -208,14 +208,14 @@ Releases publish to npm as `@maplelabs/maple-js` via [OIDC trusted publishing](h
 1. Bump `version` in `package.json` on a branch, then merge to `main`.
 2. Create a GitHub Release tagged `vX.Y.Z` (the tag must match `package.json`).
 3. The **Publish Release** workflow runs in the `npm` environment.
-4. A different Offchain dev approves the deployment.
+4. A different member of the `offchain` team approves the deployment.
 5. The package is published with `npm publish --provenance` (SLSA provenance); the workflow then re-installs the published version and verifies its attestation.
 
 The `npm` environment requires a `v*` tag, `offchain` team approval, prevent-self-review, and no admin bypass. Prereleases run a dry-run publish only.
 
 ## Additional Resources
 
-For technical infomration about Maple Protocol, visit: [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
+For technical information about Maple Protocol, visit: [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
 
 ## About Maple
 

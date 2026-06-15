@@ -26,7 +26,7 @@ yarn test                  # jest — integration tests that hit live contracts 
 
 ## Structure
 
-```
+```text
 src/
 ├── abis/        # Contract ABI JSON — source of truth, committed
 ├── addresses/   # Deployed addresses per project: {network}-{env}.ts
