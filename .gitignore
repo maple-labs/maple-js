@@ -23,3 +23,7 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Agent context — personal overrides
+AGENTS.local.md
+CLAUDE.local.md
