@@ -9,11 +9,13 @@ A JavaScript SDK for interacting with Maple Protocol's smart contracts.
   - [Addresses](#addresses)
   - [Connecting to a Contract](#connecting-to-a-contract)
   - [Interacting with a Contract](#interacting-with-a-contract)
-- [Additional Resources](#additional-resources)
 - [Utils](#utils)
   - [Generating Unsigned Transaction Data](#generating-unsigned-transaction-data)
   - [Generating Signed Transaction Data](#generating-signed-transaction-data)
   - [Broadcasting Signed Transactions](#broadcasting-signed-transactions)
+- [Development](#development)
+- [Releasing](#releasing)
+- [Additional Resources](#additional-resources)
 
 ## Getting Started
 
@@ -33,21 +35,15 @@ yarn add @maplelabs/maple-js
 
 ### Addresses
 
-`maple-js` provides smart contract addresses for the following networks: `Ethereum Mainnet`, `Base Mainnet` & `Sepolia`.
-
-Valid network values are: `'mainnet' | 'sepolia' | 'base-mainnet'`.
-
-Valid project values are `'mainnet-prod' | 'mainnet-dev' | 'sepolia-dev' | 'base-mainnet-prod'`.
-
-Access addresses from the `addresses` object exported from `maple-js`. See a list of available contracts in `src/addresses/*.ts`.
+`maple-js` ships deployed contract addresses keyed by project. Valid projects are `'mainnet-prod' | 'mainnet-dev' | 'sepolia-prod' | 'sepolia-dev' | 'base-mainnet-prod'` (Base Mainnet is deprecated). See the available contracts per project in `src/addresses/*.ts`.
 
 **Addresses Usage**
 
 ```js
 import { addresses } from '@maplelabs/maple-js'
 
-// Returns the contract address for MapleToken on Ethereum Mainnet
-const contractAddress = addresses.mainnet.MapleToken
+// Returns the contract address for MapleToken on Ethereum Mainnet (prod)
+const contractAddress = addresses['mainnet-prod'].MapleToken
 ```
 
 ### Connecting to a Contract
@@ -57,9 +53,9 @@ To connect to a contract, you'll need its address and a signer. The `signer` sho
 **Connecting to a Contract Usage**
 
 ```js
-import { mapleGlobals } from '@maplelabs/maple-js'
+import { addresses, mapleGlobals } from '@maplelabs/maple-js'
 
-const contractAddress = addresses.mainnet.MapleToken
+const contractAddress = addresses['mainnet-prod'].MapleToken
 const signer = 'yourSigner'
 
 const contract = mapleGlobals.core.connect(contractAddress, signer)
@@ -190,9 +186,36 @@ This function sends the signed transaction to the network and returns the transa
 
 An example usage of these utilities, including parameter setup and function calls, can be found in the repository at `src/helpers/serialiseExampleUse`.
 
+## Development
+
+Use the Node version pinned in `.nvmrc` (also enforced via `engines` in `package.json`); the repo uses Yarn 4 via corepack.
+
+```bash
+corepack enable            # activate the pinned Yarn
+yarn install --immutable   # install dependencies
+yarn build-typechain       # generate src/typechain from src/abis (run before build)
+yarn build                 # rollup bundle -> dist/
+yarn lint                  # tsc --noEmit + eslint
+yarn format                # prettier --write
+```
+
+`yarn test` runs the jest suites, which are integration tests that call live contracts over an RPC endpoint — they are not run in CI.
+
+## Releasing
+
+Releases publish to npm as `@maplelabs/maple-js` via [OIDC trusted publishing](https://docs.npmjs.com/trusted-publishers) — no long-lived npm tokens.
+
+1. Bump `version` in `package.json` on a branch, then merge to `main`.
+2. Create a GitHub Release tagged `vX.Y.Z` (the tag must match `package.json`).
+3. The **Publish Release** workflow runs in the `npm` environment.
+4. A different member of the `offchain` team approves the deployment.
+5. The package is published with `npm publish --provenance` (SLSA provenance); the workflow then re-installs the published version and verifies its attestation.
+
+The `npm` environment requires a `v*` tag, `offchain` team approval, prevent-self-review, and no admin bypass. Prereleases run a dry-run publish only.
+
 ## Additional Resources
 
-For technical infomration about Maple Protocol, visit: [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
+For technical information about Maple Protocol, visit: [our GitBook](https://maplefinance.gitbook.io/maple/technical-resources/protocol-overview).
 
 ## About Maple
 
