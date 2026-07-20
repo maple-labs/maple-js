@@ -2,7 +2,7 @@
 
 TypeScript SDK for Maple Protocol's smart contracts. Ships contract ABIs, generated ethers v5 typings (typechain), and deployed addresses per network. Published to npm as `@maplelabs/maple-js` and consumed by Maple's offchain apps and bots.
 
-> **Convention**: `AGENTS.md` is canonical. Edit this file for repo context; `CLAUDE.md`, `.cursorrules`, and `GEMINI.md` all point here. See the workspace-level `AGENTS.md` for the full file convention used across Maple repos.
+> **Convention**: `AGENTS.md` is canonical. Edit this file for repo context; `CLAUDE.md` and `.cursorrules` point here. See the workspace-level `AGENTS.md` for the full file convention used across Maple repos.
 
 ## Stack
 
