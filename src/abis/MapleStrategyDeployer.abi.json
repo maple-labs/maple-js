@@ -1,0 +1,134 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "globals_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "deploy",
+    "inputs": [
+      {
+        "name": "strategyManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyLiquidityCap_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "strategyDeploymentData_",
+        "type": "bytes",
+        "internalType": "bytes"
+      },
+      {
+        "name": "bootstrapFundingData_",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "strategyManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "underlyingStrategy_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getDeploymentAddresses",
+    "inputs": [
+      {
+        "name": "strategyDelegate_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyManagerFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyFactory_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "strategyDeploymentData_",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "strategyManager_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "underlyingStrategy_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "globals",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "StrategyManagerDeployed",
+    "inputs": [
+      {
+        "name": "strategyDelegate",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "strategyManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "underlyingStrategy",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  }
+]

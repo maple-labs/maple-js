@@ -21,6 +21,7 @@ import * as mapleGlobalsV3Imports from './typechain/mapleGlobalsV3'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleStrategiesImports from './typechain/mapleStrategies'
 import * as mapleTokenImports from './typechain/mapleToken'
+import * as modularStrategiesImports from './typechain/modularStrategies'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
 import * as openTermLoanV2Imports from './typechain/openTermLoanV2'
@@ -307,6 +308,18 @@ const mapleStrategies = {
   skyStrategyInitializer: mapleStrategiesImports.MapleSkyStrategyInitializerAbi__factory
 }
 
+// Modular Strategies
+const modularStrategies = {
+  globalsV5: modularStrategiesImports.MapleGlobalsV5Abi__factory,
+  liquidityRouter: modularStrategiesImports.MapleLiquidityRouterAbi__factory,
+  strategyDeployer: modularStrategiesImports.MapleStrategyDeployerAbi__factory,
+  strategyManager: modularStrategiesImports.MapleStrategyManagerAbi__factory,
+  strategyManagerFactory: modularStrategiesImports.StrategyManagerFactoryAbi__factory,
+  tradingStrategy: modularStrategiesImports.MapleTradingStrategyAbi__factory,
+  tradingStrategyFactory: modularStrategiesImports.TradingStrategyFactoryAbi__factory,
+  poolManagerV500: modularStrategiesImports.PoolManagerV500Abi__factory
+}
+
 type AddressKey = typeof mainnetProdAddresses
 
 type MapleAddressMapping = {
@@ -512,6 +525,7 @@ export {
   mapleGlobalsV3,
   mapleRewards,
   mapleStrategies,
+  modularStrategies,
   mapleToken,
   migrationHelpers,
   openTermLoan,
