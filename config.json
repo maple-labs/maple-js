@@ -276,6 +276,7 @@
         "MapleTradingStrategyInitializer",
         "PoolManagerV500",
         "PoolManagerV500Initializer",
+        "PoolManagerV500Migrator",
         "SkyStrategyFactory",
         "StrategyManagerFactory",
         "TradingStrategyFactory"
