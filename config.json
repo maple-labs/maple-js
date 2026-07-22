@@ -262,12 +262,21 @@
     },
     "modularStrategies": {
       "contracts": [
+        "AaveV3StrategyFactory",
+        "MapleAaveV3Strategy",
+        "MapleAaveV3StrategyInitializer",
         "MapleGlobalsV5",
         "MapleLiquidityRouter",
+        "MapleSkyStrategyV2",
+        "MapleSkyStrategyV2Initializer",
         "MapleStrategyDeployer",
         "MapleStrategyManager",
+        "MapleStrategyManagerInitializer",
         "MapleTradingStrategy",
+        "MapleTradingStrategyInitializer",
         "PoolManagerV500",
+        "PoolManagerV500Initializer",
+        "SkyStrategyFactory",
         "StrategyManagerFactory",
         "TradingStrategyFactory"
       ]

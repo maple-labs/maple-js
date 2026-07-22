@@ -4,15 +4,46 @@
     "name": "Initialized",
     "inputs": [
       {
+        "name": "strategyManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
         "name": "params",
         "type": "tuple",
         "indexed": false,
-        "internalType": "struct IMapleStrategyManagerInitializer.Parameters",
+        "internalType": "struct SkyStrategyInitializerParams",
         "components": [
           {
-            "name": "strategyDelegate",
+            "name": "fundsAsset",
             "type": "address",
             "internalType": "address"
+          },
+          {
+            "name": "psm",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "savingsUsds",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strategyDelegateFeeRate",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "strategyProtocolFeeRate",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "referralCode",
+            "type": "uint16",
+            "internalType": "uint16"
           }
         ]
       }
@@ -21,39 +52,26 @@
   },
   {
     "type": "function",
-    "name": "acceptStrategyDelegate",
-    "inputs": [],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "active",
+    "name": "HUNDRED_PERCENT",
     "inputs": [],
     "outputs": [
       {
         "name": "",
-        "type": "bool",
-        "internalType": "bool"
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "stateMutability": "view"
   },
   {
     "type": "function",
-    "name": "assetsOf",
-    "inputs": [
-      {
-        "name": "poolManager_",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
+    "name": "STRATEGY_TYPE",
+    "inputs": [],
     "outputs": [
       {
-        "name": "assets_",
-        "type": "uint256",
-        "internalType": "uint256"
+        "name": "",
+        "type": "string",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"
@@ -86,131 +104,6 @@
   },
   {
     "type": "function",
-    "name": "cancelRedemption",
-    "inputs": [
-      {
-        "name": "poolManager_",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "shares_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "completeConfiguration",
-    "inputs": [
-      {
-        "name": "bootstrapAssets_",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "bootstrapFundingData_",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "configured",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool",
-        "internalType": "bool"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "convertToAssets",
-    "inputs": [
-      {
-        "name": "shares_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "assets_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "convertToExitAssets",
-    "inputs": [
-      {
-        "name": "shares_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "assets_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "convertToExitShares",
-    "inputs": [
-      {
-        "name": "assets_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "shares_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "convertToShares",
-    "inputs": [
-      {
-        "name": "assets_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "shares_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
     "name": "factory",
     "inputs": [],
     "outputs": [
@@ -224,26 +117,53 @@
   },
   {
     "type": "function",
-    "name": "fundStrategyManager",
-    "inputs": [
+    "name": "fallbackTout",
+    "inputs": [],
+    "outputs": [
       {
-        "name": "poolManager_",
-        "type": "address",
-        "internalType": "address"
-      },
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "fundUnderlyingStrategy",
+    "inputs": [
       {
         "name": "assetsIn_",
         "type": "uint256",
         "internalType": "uint256"
       },
       {
-        "name": "data_",
+        "name": "",
         "type": "bytes",
         "internalType": "bytes"
       }
     ],
-    "outputs": [],
+    "outputs": [
+      {
+        "name": "deployedAssets_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "fundsAsset",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -254,6 +174,32 @@
         "name": "globals_",
         "type": "address",
         "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "impair",
+    "inputs": [
+      {
+        "name": "assets_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "impairedAssets",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "stateMutability": "view"
@@ -273,19 +219,39 @@
   },
   {
     "type": "function",
-    "name": "isAssetSupported",
-    "inputs": [
-      {
-        "name": "asset_",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
+    "name": "isLossRecognized",
+    "inputs": [],
     "outputs": [
       {
-        "name": "isSupported_",
+        "name": "",
         "type": "bool",
         "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "lastRecordedTotalAssets",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "mapleTreasury",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "mapleTreasury_",
+        "type": "address",
+        "internalType": "address"
       }
     ],
     "stateMutability": "view"
@@ -323,26 +289,7 @@
   },
   {
     "type": "function",
-    "name": "pendingSharesOf",
-    "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "pendingStrategyDelegate",
+    "name": "psm",
     "inputs": [],
     "outputs": [
       {
@@ -355,41 +302,39 @@
   },
   {
     "type": "function",
-    "name": "poolManagerCapOf",
-    "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
+    "name": "recognizeLoss",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "recoverPosition",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "referralCode",
+    "inputs": [],
     "outputs": [
       {
         "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
+        "type": "uint16",
+        "internalType": "uint16"
       }
     ],
     "stateMutability": "view"
   },
   {
     "type": "function",
-    "name": "processRedemption",
+    "name": "removeImpairment",
     "inputs": [
       {
-        "name": "poolManager_",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "shares_",
+        "name": "assets_",
         "type": "uint256",
         "internalType": "uint256"
-      },
-      {
-        "name": "data_",
-        "type": "bytes",
-        "internalType": "bytes"
       }
     ],
     "outputs": [],
@@ -397,21 +342,16 @@
   },
   {
     "type": "function",
-    "name": "requestRedeem",
-    "inputs": [
+    "name": "savingsUsds",
+    "inputs": [],
+    "outputs": [
       {
-        "name": "poolManager_",
+        "name": "",
         "type": "address",
         "internalType": "address"
-      },
-      {
-        "name": "shares_",
-        "type": "uint256",
-        "internalType": "uint256"
       }
     ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -428,12 +368,12 @@
   },
   {
     "type": "function",
-    "name": "setActive",
+    "name": "setFallbackTout",
     "inputs": [
       {
-        "name": "active_",
-        "type": "bool",
-        "internalType": "bool"
+        "name": "fallbackTout_",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "outputs": [],
@@ -454,10 +394,10 @@
   },
   {
     "type": "function",
-    "name": "setPendingStrategyDelegate",
+    "name": "setPsm",
     "inputs": [
       {
-        "name": "pendingStrategyDelegate_",
+        "name": "newPsm_",
         "type": "address",
         "internalType": "address"
       }
@@ -467,17 +407,12 @@
   },
   {
     "type": "function",
-    "name": "setPoolManagerCap",
+    "name": "setReferralCode",
     "inputs": [
       {
-        "name": "poolManager_",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "cap_",
-        "type": "uint256",
-        "internalType": "uint256"
+        "name": "referralCode_",
+        "type": "uint16",
+        "internalType": "uint16"
       }
     ],
     "outputs": [],
@@ -485,12 +420,12 @@
   },
   {
     "type": "function",
-    "name": "setStrategyLiquidityCap",
+    "name": "setStrategyDelegateFeeRate",
     "inputs": [
       {
-        "name": "cap_",
-        "type": "uint256",
-        "internalType": "uint256"
+        "name": "strategyDelegateFeeRate_",
+        "type": "uint32",
+        "internalType": "uint32"
       }
     ],
     "outputs": [],
@@ -498,35 +433,16 @@
   },
   {
     "type": "function",
-    "name": "setUnderlyingStrategy",
+    "name": "setStrategyProtocolFeeRate",
     "inputs": [
       {
-        "name": "underlyingStrategy_",
-        "type": "address",
-        "internalType": "address"
+        "name": "strategyProtocolFeeRate_",
+        "type": "uint32",
+        "internalType": "uint32"
       }
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "sharesOf",
-    "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -534,6 +450,32 @@
     "inputs": [],
     "outputs": [
       {
+        "name": "strategyDelegate_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "strategyDelegateFeeRate",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "strategyManager",
+    "inputs": [],
+    "outputs": [
+      {
         "name": "",
         "type": "address",
         "internalType": "address"
@@ -543,52 +485,13 @@
   },
   {
     "type": "function",
-    "name": "strategyLiquidityCap",
+    "name": "strategyProtocolFeeRate",
     "inputs": [],
     "outputs": [
       {
         "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "totalPendingShares",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "totalShares",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "underlyingStrategy",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
+        "type": "uint32",
+        "internalType": "uint32"
       }
     ],
     "stateMutability": "view"
@@ -597,25 +500,6 @@
     "type": "function",
     "name": "unrealizedLosses",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "unrealizedLosses_",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "unrealizedLossesOf",
-    "inputs": [
-      {
-        "name": "poolManager_",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
     "outputs": [
       {
         "name": "unrealizedLosses_",
@@ -644,49 +528,47 @@
     "stateMutability": "nonpayable"
   },
   {
-    "type": "event",
-    "name": "PendingStrategyDelegateAccepted",
-    "inputs": [
+    "type": "function",
+    "name": "usds",
+    "inputs": [],
+    "outputs": [
       {
-        "name": "previousStrategyDelegate",
+        "name": "",
         "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "newStrategyDelegate",
-        "type": "address",
-        "indexed": true,
         "internalType": "address"
       }
     ],
-    "anonymous": false
+    "stateMutability": "view"
   },
   {
-    "type": "event",
-    "name": "PendingStrategyDelegateSet",
+    "type": "function",
+    "name": "withdrawFromUnderlyingStrategy",
     "inputs": [
       {
-        "name": "pendingStrategyDelegate",
+        "name": "destination_",
         "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "PoolManagerCapSet",
-    "inputs": [
-      {
-        "name": "poolManager",
-        "type": "address",
-        "indexed": true,
         "internalType": "address"
       },
       {
-        "name": "cap",
+        "name": "assets_",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "FallbackToutSet",
+    "inputs": [
+      {
+        "name": "fallbackTout",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
@@ -696,16 +578,10 @@
   },
   {
     "type": "event",
-    "name": "RedemptionCancelled",
+    "name": "Impaired",
     "inputs": [
       {
-        "name": "poolManager",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "sharesCancelled",
+        "name": "assets",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
@@ -715,22 +591,10 @@
   },
   {
     "type": "event",
-    "name": "RedemptionProcessed",
+    "name": "ImpairmentRemoved",
     "inputs": [
       {
-        "name": "poolManager",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "sharesProcessed",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      },
-      {
-        "name": "assetsWithdrawn",
+        "name": "assets",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
@@ -740,61 +604,87 @@
   },
   {
     "type": "event",
-    "name": "RedemptionRequested",
-    "inputs": [
-      {
-        "name": "poolManager",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "sharesRequested",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "SetAsActive",
-    "inputs": [
-      {
-        "name": "active",
-        "type": "bool",
-        "indexed": false,
-        "internalType": "bool"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "StrategyLiquidityCapSet",
-    "inputs": [
-      {
-        "name": "cap",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "StrategyManagerConfigurationComplete",
+    "name": "LossRecognized",
     "inputs": [],
     "anonymous": false
   },
   {
     "type": "event",
-    "name": "StrategyManagerFunded",
+    "name": "PositionRecovered",
     "inputs": [
       {
-        "name": "poolManager",
+        "name": "shares",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PsmSet",
+    "inputs": [
+      {
+        "name": "psm",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ReferralCodeSet",
+    "inputs": [
+      {
+        "name": "referralCode",
+        "type": "uint16",
+        "indexed": false,
+        "internalType": "uint16"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StrategyDelegateFeeRateSet",
+    "inputs": [
+      {
+        "name": "strategyDelegateFeeRate",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StrategyFeesCollected",
+    "inputs": [
+      {
+        "name": "delegateFee",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "protocolFee",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StrategyFunded",
+    "inputs": [
+      {
+        "name": "strategyManager",
         "type": "address",
         "indexed": true,
         "internalType": "address"
@@ -806,13 +696,13 @@
         "internalType": "uint256"
       },
       {
-        "name": "assetsDeposited",
+        "name": "sharesMinted",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
       },
       {
-        "name": "sharesMinted",
+        "name": "deployedAssets",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
@@ -822,13 +712,38 @@
   },
   {
     "type": "event",
-    "name": "UnderlyingStrategySet",
+    "name": "StrategyProtocolFeeRateSet",
     "inputs": [
       {
-        "name": "underlyingStrategy",
+        "name": "strategyProtocolFeeRate",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StrategyWithdrawal",
+    "inputs": [
+      {
+        "name": "destination",
         "type": "address",
         "indexed": true,
         "internalType": "address"
+      },
+      {
+        "name": "sharesBurned",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetsOut",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
     "anonymous": false

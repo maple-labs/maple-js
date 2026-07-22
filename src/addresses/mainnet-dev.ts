@@ -1,6 +1,7 @@
 export default {
   AAVE: '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9',
   AAVEPool: '0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2',
+  AaveV3StrategyFactory: '0x0000000000000000000000000000000000000000',
   AccountingChecker: '0x4c9CEa7f6aCE3Dc0D85b86c1925542AdeCE1eF15',
   AssetController: '0x4911fA884Bb6Ba1Fc3bc9f6798006ED6aBB7d5f5', // TODO: Update this address
   AssetControllerInitializer: '0xA15cee00b256b9e5cC66c624E882629458549638', // TODO: Update this address
@@ -134,6 +135,7 @@ export default {
   PriceOracleWETH: '0x40db4461402125fd848ccf89f39166d42db0aa47',
   RecapitalizationModule: '0x5dfe0460f66fa06bFCbB3211e723556be6B3f69D',
   RepaymentCalc: '0x7d622bB6Ed13a599ec96366Fa95f2452c64ce602',
+  SkyStrategyFactory: '0x0000000000000000000000000000000000000000',
   StakeLockerFactory: '0x53a597A4730Eb02095dD798B203Dcc306348B8d6',
   StrategyManagerFactory: '0x0000000000000000000000000000000000000000',
   stSyrup: '0xc7E8b36E0766D9B04c93De68A9D47dD11f260B45',

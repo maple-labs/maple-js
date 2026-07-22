@@ -1,5 +1,46 @@
 [
   {
+    "type": "event",
+    "name": "Initialized",
+    "inputs": [
+      {
+        "name": "strategyManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "params",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct TradingStrategyInitializerParams",
+        "components": [
+          {
+            "name": "fundsAsset",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strategyMetadata",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "strategyDelegateFeeRate",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "strategyProtocolFeeRate",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  {
     "type": "function",
     "name": "STRATEGY_TYPE",
     "inputs": [],

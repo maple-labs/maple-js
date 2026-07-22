@@ -314,10 +314,19 @@ const modularStrategies = {
   liquidityRouter: modularStrategiesImports.MapleLiquidityRouterAbi__factory,
   strategyDeployer: modularStrategiesImports.MapleStrategyDeployerAbi__factory,
   strategyManager: modularStrategiesImports.MapleStrategyManagerAbi__factory,
+  strategyManagerInitializer: modularStrategiesImports.MapleStrategyManagerInitializerAbi__factory,
   strategyManagerFactory: modularStrategiesImports.StrategyManagerFactoryAbi__factory,
   tradingStrategy: modularStrategiesImports.MapleTradingStrategyAbi__factory,
+  tradingStrategyInitializer: modularStrategiesImports.MapleTradingStrategyInitializerAbi__factory,
   tradingStrategyFactory: modularStrategiesImports.TradingStrategyFactoryAbi__factory,
-  poolManagerV500: modularStrategiesImports.PoolManagerV500Abi__factory
+  aaveV3Strategy: modularStrategiesImports.MapleAaveV3StrategyAbi__factory,
+  aaveV3StrategyInitializer: modularStrategiesImports.MapleAaveV3StrategyInitializerAbi__factory,
+  aaveV3StrategyFactory: modularStrategiesImports.AaveV3StrategyFactoryAbi__factory,
+  skyStrategy: modularStrategiesImports.MapleSkyStrategyV2Abi__factory,
+  skyStrategyInitializer: modularStrategiesImports.MapleSkyStrategyV2InitializerAbi__factory,
+  skyStrategyFactory: modularStrategiesImports.SkyStrategyFactoryAbi__factory,
+  poolManagerV500: modularStrategiesImports.PoolManagerV500Abi__factory,
+  poolManagerV500Initializer: modularStrategiesImports.PoolManagerV500InitializerAbi__factory
 }
 
 type AddressKey = typeof mainnetProdAddresses
