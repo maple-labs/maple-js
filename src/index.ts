@@ -143,6 +143,10 @@ const mapleGlobalsV201 = {
   core: mapleGlobalsV201Imports.MapleGlobalsV201Abi__factory
 }
 
+const mapleGlobalsV5 = {
+  core: modularStrategiesImports.MapleGlobalsV5Abi__factory
+}
+
 const mapleToken = {
   core: mapleTokenImports.MapleTokenAbi__factory
 }
@@ -231,6 +235,11 @@ const poolManagerV400 = {
 // --------------------
 // Pool V400 end
 
+const poolManagerV500 = {
+  core: modularStrategiesImports.PoolManagerV500Abi__factory,
+  initializer: modularStrategiesImports.PoolManagerV500InitializerAbi__factory
+}
+
 const poolPermissionManager = {
   core: poolPermissionManagerImports.PoolPermissionManagerAbi__factory,
   initializer: poolPermissionManagerImports.PoolPermissionManagerInitializerAbi__factory
@@ -310,7 +319,6 @@ const mapleStrategies = {
 
 // Modular Strategies
 const modularStrategies = {
-  globalsV5: modularStrategiesImports.MapleGlobalsV5Abi__factory,
   liquidityRouter: modularStrategiesImports.MapleLiquidityRouterAbi__factory,
   strategyDeployer: modularStrategiesImports.MapleStrategyDeployerAbi__factory,
   strategyManager: modularStrategiesImports.MapleStrategyManagerAbi__factory,
@@ -324,9 +332,7 @@ const modularStrategies = {
   aaveV3StrategyFactory: modularStrategiesImports.AaveV3StrategyFactoryAbi__factory,
   skyStrategy: modularStrategiesImports.MapleSkyStrategyV2Abi__factory,
   skyStrategyInitializer: modularStrategiesImports.MapleSkyStrategyV2InitializerAbi__factory,
-  skyStrategyFactory: modularStrategiesImports.SkyStrategyFactoryAbi__factory,
-  poolManagerV500: modularStrategiesImports.PoolManagerV500Abi__factory,
-  poolManagerV500Initializer: modularStrategiesImports.PoolManagerV500InitializerAbi__factory
+  skyStrategyFactory: modularStrategiesImports.SkyStrategyFactoryAbi__factory
 }
 
 type AddressKey = typeof mainnetProdAddresses
@@ -532,6 +538,7 @@ export {
   mapleGlobalsV2,
   mapleGlobalsV201,
   mapleGlobalsV3,
+  mapleGlobalsV5,
   mapleRewards,
   mapleStrategies,
   modularStrategies,
@@ -549,6 +556,7 @@ export {
   poolManagerV3,
   poolV400,
   poolManagerV400,
+  poolManagerV500,
   poolPermissionManager,
   stakeLocker,
   syrupUtils,

@@ -131,10 +131,8 @@ async function buildTypechain() {
   mergeEvents({ src: 'PoolManagerV3Initializer.abi.json', dst: 'PoolManagerV3.abi.json' })
   mergeEvents({ src: 'PoolManagerV400Initializer.abi.json', dst: 'PoolManagerV400.abi.json' })
   mergeEvents({ src: 'PoolManagerV500Initializer.abi.json', dst: 'PoolManagerV500.abi.json' })
-  // The v4->v5 migrator emits StrategyRemoved from the pool manager's address during upgrade.
-  mergeEvents({ src: 'PoolManagerV500Migrator.abi.json', dst: 'PoolManagerV500.abi.json' })
-  // V4's template must also decode it: the migrator fires during the v4->v5 upgrade tx,
-  // before the v5 template exists (same pattern as PoolPermissionManagerSet on V3).
+  // The v4->v5 migrator emits StrategyRemoved during the upgrade tx, which decodes
+  // against the V4 template (same pattern as PoolPermissionManagerSet on V3).
   mergeEvents({ src: 'PoolManagerV500Migrator.abi.json', dst: 'PoolManagerV400.abi.json' })
   mergeEvents({ src: 'MapleStrategyManagerInitializer.abi.json', dst: 'MapleStrategyManager.abi.json' })
   mergeEvents({ src: 'MapleTradingStrategyInitializer.abi.json', dst: 'MapleTradingStrategy.abi.json' })

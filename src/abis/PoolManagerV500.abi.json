@@ -25,19 +25,6 @@
     "anonymous": false
   },
   {
-    "type": "event",
-    "name": "StrategyRemoved",
-    "inputs": [
-      {
-        "name": "strategy",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      }
-    ],
-    "anonymous": false
-  },
-  {
     "type": "function",
     "name": "HUNDRED_PERCENT",
     "inputs": [],
