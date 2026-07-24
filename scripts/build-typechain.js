@@ -130,6 +130,14 @@ async function buildTypechain() {
   mergeEvents({ src: 'PoolV2PoolManagerInitializer.abi.json', dst: 'PoolV201PoolManager.abi.json' })
   mergeEvents({ src: 'PoolManagerV3Initializer.abi.json', dst: 'PoolManagerV3.abi.json' })
   mergeEvents({ src: 'PoolManagerV400Initializer.abi.json', dst: 'PoolManagerV400.abi.json' })
+  mergeEvents({ src: 'PoolManagerV500Initializer.abi.json', dst: 'PoolManagerV500.abi.json' })
+  // The v4->v5 migrator emits StrategyRemoved during the upgrade tx, which decodes
+  // against the V4 template (same pattern as PoolPermissionManagerSet on V3).
+  mergeEvents({ src: 'PoolManagerV500Migrator.abi.json', dst: 'PoolManagerV400.abi.json' })
+  mergeEvents({ src: 'MapleStrategyManagerInitializer.abi.json', dst: 'MapleStrategyManager.abi.json' })
+  mergeEvents({ src: 'MapleTradingStrategyInitializer.abi.json', dst: 'MapleTradingStrategy.abi.json' })
+  mergeEvents({ src: 'MapleAaveV3StrategyInitializer.abi.json', dst: 'MapleAaveV3Strategy.abi.json' })
+  mergeEvents({ src: 'MapleSkyStrategyV2Initializer.abi.json', dst: 'MapleSkyStrategyV2.abi.json' })
   mergeEvents({ src: 'PoolPermissionManagerInitializer.abi.json', dst: 'PoolPermissionManager.abi.json' })
   mergeEvents({ src: 'NonTransparentProxyV2.abi.json', dst: 'PoolPermissionManager.abi.json' })
   mergeEvents({ src: 'SyrupTokenInitializer.abi.json', dst: 'SyrupToken.abi.json' })

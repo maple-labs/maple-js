@@ -1,0 +1,108 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "globals_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "executeActions",
+    "inputs": [
+      {
+        "name": "actions_",
+        "type": "tuple[]",
+        "internalType": "struct Action[]",
+        "components": [
+          {
+            "name": "actionType",
+            "type": "uint8",
+            "internalType": "enum ActionType"
+          },
+          {
+            "name": "strategyManager",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "poolManager",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "amount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "strategyData",
+            "type": "bytes",
+            "internalType": "bytes"
+          }
+        ]
+      },
+      {
+        "name": "deadline_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "globals",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "ActionExecuted",
+    "inputs": [
+      {
+        "name": "actionIndex",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "actionType",
+        "type": "uint8",
+        "indexed": true,
+        "internalType": "enum ActionType"
+      },
+      {
+        "name": "strategyManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "poolManager",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  }
+]

@@ -21,6 +21,7 @@ import * as mapleGlobalsV3Imports from './typechain/mapleGlobalsV3'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleStrategiesImports from './typechain/mapleStrategies'
 import * as mapleTokenImports from './typechain/mapleToken'
+import * as modularStrategiesImports from './typechain/modularStrategies'
 import * as migrationHelpersImports from './typechain/migrationHelpers'
 import * as openTermLoanImports from './typechain/openTermLoan'
 import * as openTermLoanV2Imports from './typechain/openTermLoanV2'
@@ -142,6 +143,10 @@ const mapleGlobalsV201 = {
   core: mapleGlobalsV201Imports.MapleGlobalsV201Abi__factory
 }
 
+const mapleGlobalsV5 = {
+  core: modularStrategiesImports.MapleGlobalsV5Abi__factory
+}
+
 const mapleToken = {
   core: mapleTokenImports.MapleTokenAbi__factory
 }
@@ -230,6 +235,11 @@ const poolManagerV400 = {
 // --------------------
 // Pool V400 end
 
+const poolManagerV500 = {
+  core: modularStrategiesImports.PoolManagerV500Abi__factory,
+  initializer: modularStrategiesImports.PoolManagerV500InitializerAbi__factory
+}
+
 const poolPermissionManager = {
   core: poolPermissionManagerImports.PoolPermissionManagerAbi__factory,
   initializer: poolPermissionManagerImports.PoolPermissionManagerInitializerAbi__factory
@@ -305,6 +315,24 @@ const mapleStrategies = {
   bitcoinStrategyInitializer: mapleStrategiesImports.MapleBitcoinStrategyInitializerAbi__factory,
   skyStrategy: mapleStrategiesImports.MapleSkyStrategyAbi__factory,
   skyStrategyInitializer: mapleStrategiesImports.MapleSkyStrategyInitializerAbi__factory
+}
+
+// Modular Strategies
+const modularStrategies = {
+  liquidityRouter: modularStrategiesImports.MapleLiquidityRouterAbi__factory,
+  strategyDeployer: modularStrategiesImports.MapleStrategyDeployerAbi__factory,
+  strategyManager: modularStrategiesImports.MapleStrategyManagerAbi__factory,
+  strategyManagerInitializer: modularStrategiesImports.MapleStrategyManagerInitializerAbi__factory,
+  strategyManagerFactory: modularStrategiesImports.StrategyManagerFactoryAbi__factory,
+  tradingStrategy: modularStrategiesImports.MapleTradingStrategyAbi__factory,
+  tradingStrategyInitializer: modularStrategiesImports.MapleTradingStrategyInitializerAbi__factory,
+  tradingStrategyFactory: modularStrategiesImports.TradingStrategyFactoryAbi__factory,
+  aaveV3Strategy: modularStrategiesImports.MapleAaveV3StrategyAbi__factory,
+  aaveV3StrategyInitializer: modularStrategiesImports.MapleAaveV3StrategyInitializerAbi__factory,
+  aaveV3StrategyFactory: modularStrategiesImports.AaveV3StrategyFactoryAbi__factory,
+  skyStrategy: modularStrategiesImports.MapleSkyStrategyV2Abi__factory,
+  skyStrategyInitializer: modularStrategiesImports.MapleSkyStrategyV2InitializerAbi__factory,
+  skyStrategyFactory: modularStrategiesImports.SkyStrategyFactoryAbi__factory
 }
 
 type AddressKey = typeof mainnetProdAddresses
@@ -510,8 +538,10 @@ export {
   mapleGlobalsV2,
   mapleGlobalsV201,
   mapleGlobalsV3,
+  mapleGlobalsV5,
   mapleRewards,
   mapleStrategies,
+  modularStrategies,
   mapleToken,
   migrationHelpers,
   openTermLoan,
@@ -526,6 +556,7 @@ export {
   poolManagerV3,
   poolV400,
   poolManagerV400,
+  poolManagerV500,
   poolPermissionManager,
   stakeLocker,
   syrupUtils,
