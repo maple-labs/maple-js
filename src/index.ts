@@ -39,6 +39,7 @@ import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
 import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
 import * as withdrawalManagerQueueV2Imports from './typechain/withdrawalManagerQueueV2'
+import * as withdrawalManagerQueueV3Imports from './typechain/withdrawalManagerQueueV3'
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
@@ -235,6 +236,10 @@ const poolManagerV400 = {
 // --------------------
 // Pool V400 end
 
+const poolV500 = {
+  deployer: modularStrategiesImports.PoolDeployerV500Abi__factory
+}
+
 const poolManagerV500 = {
   core: modularStrategiesImports.PoolManagerV500Abi__factory,
   initializer: modularStrategiesImports.PoolManagerV500InitializerAbi__factory
@@ -286,6 +291,12 @@ const withdrawalManagerQueueV2 = {
   core: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2Abi__factory,
   initializer: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2InitializerAbi__factory,
   migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi__factory
+}
+
+const withdrawalManagerQueueV3 = {
+  core: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3Abi__factory,
+  initializer: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3InitializerAbi__factory,
+  migrator: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3MigratorAbi__factory
 }
 
 const xmpl = {
@@ -504,6 +515,11 @@ interface ContractTypes {
   withdrawalManagerQueueV2: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2Abi
   withdrawalManagerQueueV2Initializer: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2InitializerAbi
   withdrawalManagerQueueV2Migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi
+
+  // Withdrawal Manager Queue V3
+  withdrawalManagerQueueV3: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3Abi
+  withdrawalManagerQueueV3Initializer: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3InitializerAbi
+  withdrawalManagerQueueV3Migrator: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3MigratorAbi
   // xMPL
   xmpl: xmplImports.XMPLAbi
 }
@@ -556,6 +572,7 @@ export {
   poolManagerV3,
   poolV400,
   poolManagerV400,
+  poolV500,
   poolManagerV500,
   poolPermissionManager,
   stakeLocker,
@@ -565,6 +582,7 @@ export {
   withdrawalManagerCyclical,
   withdrawalManagerQueue,
   withdrawalManagerQueueV2,
+  withdrawalManagerQueueV3,
   xmpl,
   utils
 }

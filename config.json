@@ -255,6 +255,13 @@
         "WithdrawalManagerQueueV2Migrator"
       ]
     },
+    "withdrawalManagerQueueV3": {
+      "contracts": [
+        "WithdrawalManagerQueueV3",
+        "WithdrawalManagerQueueV3Initializer",
+        "WithdrawalManagerQueueV3Migrator"
+      ]
+    },
     "xmpl": {
       "contracts": [
         "xMPL"
@@ -274,6 +281,7 @@
         "MapleStrategyManagerInitializer",
         "MapleTradingStrategy",
         "MapleTradingStrategyInitializer",
+        "PoolDeployerV500",
         "PoolManagerV500",
         "PoolManagerV500Initializer",
         "PoolManagerV500Migrator",

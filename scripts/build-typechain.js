@@ -157,6 +157,10 @@ async function buildTypechain() {
     src: 'WithdrawalManagerQueueV2Initializer.abi.json',
     dst: 'WithdrawalManagerQueueV2.abi.json'
   })
+  mergeEvents({
+    src: 'WithdrawalManagerQueueV3Initializer.abi.json',
+    dst: 'WithdrawalManagerQueueV3.abi.json'
+  })
   mergeEvents({ src: 'SyrupBitcoinRouterInitializer.abi.json', dst: 'SyrupBitcoinRouter.abi.json' })
   mergeEvents({ src: 'AssetControllerInitializer.abi.json', dst: 'AssetController.abi.json' })
   mergeEvents({ src: 'CompositeTokenInitializer.abi.json', dst: 'CompositeToken.abi.json' })
