@@ -18,6 +18,7 @@ import * as mapleGlobalsImports from './typechain/mapleGlobals'
 import * as mapleGlobalsV2Imports from './typechain/mapleGlobalsV2'
 import * as mapleGlobalsV201Imports from './typechain/mapleGlobalsV201'
 import * as mapleGlobalsV3Imports from './typechain/mapleGlobalsV3'
+import * as mapleGlobalsV5Imports from './typechain/mapleGlobalsV5'
 import * as mapleRewardsImports from './typechain/mplRewards'
 import * as mapleStrategiesImports from './typechain/mapleStrategies'
 import * as mapleTokenImports from './typechain/mapleToken'
@@ -32,6 +33,7 @@ import * as poolV2Imports from './typechain/poolV2'
 import * as poolV201Imports from './typechain/poolV201'
 import * as poolV3Imports from './typechain/poolV3'
 import * as poolV400Imports from './typechain/poolV400'
+import * as poolV500Imports from './typechain/poolV500'
 import * as stakeLockerImports from './typechain/stakeLocker'
 import * as syrupUtilsImports from './typechain/syrupUtils'
 import * as syrupTokenImports from './typechain/syrupToken'
@@ -145,7 +147,7 @@ const mapleGlobalsV201 = {
 }
 
 const mapleGlobalsV5 = {
-  core: modularStrategiesImports.MapleGlobalsV5Abi__factory
+  core: mapleGlobalsV5Imports.MapleGlobalsV5Abi__factory
 }
 
 const mapleToken = {
@@ -236,14 +238,18 @@ const poolManagerV400 = {
 // --------------------
 // Pool V400 end
 
+// Pool V500 start
 const poolV500 = {
-  deployer: modularStrategiesImports.PoolDeployerV500Abi__factory
+  deployer: poolV500Imports.PoolDeployerV500Abi__factory
 }
 
 const poolManagerV500 = {
-  core: modularStrategiesImports.PoolManagerV500Abi__factory,
-  initializer: modularStrategiesImports.PoolManagerV500InitializerAbi__factory
+  core: poolV500Imports.PoolManagerV500Abi__factory,
+  initializer: poolV500Imports.PoolManagerV500InitializerAbi__factory,
+  migrator: poolV500Imports.PoolManagerV500MigratorAbi__factory
 }
+// --------------------
+// Pool V500 end
 
 const poolPermissionManager = {
   core: poolPermissionManagerImports.PoolPermissionManagerAbi__factory,
@@ -412,6 +418,7 @@ interface ContractTypes {
   mapleGlobalsV2: mapleGlobalsV2Imports.MapleGlobalsV2Abi
   mapleGlobalsV201: mapleGlobalsV201Imports.MapleGlobalsV201Abi
   mapleGlobalsV3: mapleGlobalsV3Imports.MapleGlobalsV3Abi
+  mapleGlobalsV5: mapleGlobalsV5Imports.MapleGlobalsV5Abi
 
   // Maple Token
   mapleToken: mapleTokenImports.MapleTokenAbi
@@ -433,6 +440,22 @@ interface ContractTypes {
   mapleSkyStrategy: mapleStrategiesImports.MapleSkyStrategyAbi
   mapleSkyStrategyInitializer: mapleStrategiesImports.MapleSkyStrategyInitializerAbi
   mapleStrategyFactory: mapleStrategiesImports.MapleStrategyFactoryAbi
+
+  // Modular Strategies
+  mapleLiquidityRouter: modularStrategiesImports.MapleLiquidityRouterAbi
+  mapleStrategyDeployer: modularStrategiesImports.MapleStrategyDeployerAbi
+  mapleStrategyManager: modularStrategiesImports.MapleStrategyManagerAbi
+  mapleStrategyManagerInitializer: modularStrategiesImports.MapleStrategyManagerInitializerAbi
+  strategyManagerFactory: modularStrategiesImports.StrategyManagerFactoryAbi
+  mapleTradingStrategy: modularStrategiesImports.MapleTradingStrategyAbi
+  mapleTradingStrategyInitializer: modularStrategiesImports.MapleTradingStrategyInitializerAbi
+  tradingStrategyFactory: modularStrategiesImports.TradingStrategyFactoryAbi
+  mapleAaveV3Strategy: modularStrategiesImports.MapleAaveV3StrategyAbi
+  mapleAaveV3StrategyInitializer: modularStrategiesImports.MapleAaveV3StrategyInitializerAbi
+  aaveV3StrategyFactory: modularStrategiesImports.AaveV3StrategyFactoryAbi
+  mapleSkyStrategyV2: modularStrategiesImports.MapleSkyStrategyV2Abi
+  mapleSkyStrategyV2Initializer: modularStrategiesImports.MapleSkyStrategyV2InitializerAbi
+  skyStrategyFactory: modularStrategiesImports.SkyStrategyFactoryAbi
 
   // Open Term Loans & Managers (V1)
   openTermLoan: openTermLoanImports.OpenTermLoanAbi
@@ -477,6 +500,12 @@ interface ContractTypes {
   poolManagerV400: poolV400Imports.PoolManagerV400Abi
   poolManagerV400Initializer: poolV400Imports.PoolManagerV400InitializerAbi
 
+  // Pool V500 / PoolManagerV500
+  poolDeployerV500: poolV500Imports.PoolDeployerV500Abi
+  poolManagerV500: poolV500Imports.PoolManagerV500Abi
+  poolManagerV500Initializer: poolV500Imports.PoolManagerV500InitializerAbi
+  poolManagerV500Migrator: poolV500Imports.PoolManagerV500MigratorAbi
+
   // Pool Permission Manager
   poolPermissionManager: poolPermissionManagerImports.PoolPermissionManagerAbi
   poolPermissionManagerInitializer: poolPermissionManagerImports.PoolPermissionManagerInitializerAbi
@@ -520,6 +549,7 @@ interface ContractTypes {
   withdrawalManagerQueueV3: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3Abi
   withdrawalManagerQueueV3Initializer: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3InitializerAbi
   withdrawalManagerQueueV3Migrator: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3MigratorAbi
+
   // xMPL
   xmpl: xmplImports.XMPLAbi
 }

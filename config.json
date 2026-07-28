@@ -112,6 +112,11 @@
         "MapleGlobalsV3"
       ]
     },
+    "mapleGlobalsV5": {
+      "contracts": [
+        "MapleGlobalsV5"
+      ]
+    },
     "mapleStrategies": {
       "contracts": [
         "MapleAaveStrategy",
@@ -205,6 +210,14 @@
         "PoolManagerV400Initializer"
       ]
     },
+    "poolV500": {
+      "contracts": [
+        "PoolDeployerV500",
+        "PoolManagerV500",
+        "PoolManagerV500Initializer",
+        "PoolManagerV500Migrator"
+      ]
+    },
     "stakeLocker": {
       "contracts": [
         "StakeLocker",
@@ -272,7 +285,6 @@
         "AaveV3StrategyFactory",
         "MapleAaveV3Strategy",
         "MapleAaveV3StrategyInitializer",
-        "MapleGlobalsV5",
         "MapleLiquidityRouter",
         "MapleSkyStrategyV2",
         "MapleSkyStrategyV2Initializer",
@@ -281,10 +293,6 @@
         "MapleStrategyManagerInitializer",
         "MapleTradingStrategy",
         "MapleTradingStrategyInitializer",
-        "PoolDeployerV500",
-        "PoolManagerV500",
-        "PoolManagerV500Initializer",
-        "PoolManagerV500Migrator",
         "SkyStrategyFactory",
         "StrategyManagerFactory",
         "TradingStrategyFactory"
