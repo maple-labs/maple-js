@@ -41,7 +41,6 @@ import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
 import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
 import * as withdrawalManagerQueueV2Imports from './typechain/withdrawalManagerQueueV2'
-import * as withdrawalManagerQueueV3Imports from './typechain/withdrawalManagerQueueV3'
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
@@ -341,9 +340,9 @@ const modularStrategies = {
   strategyManager: modularStrategiesImports.MapleStrategyManagerAbi__factory,
   strategyManagerInitializer: modularStrategiesImports.MapleStrategyManagerInitializerAbi__factory,
   strategyManagerFactory: modularStrategiesImports.StrategyManagerFactoryAbi__factory,
-  tradingStrategy: modularStrategiesImports.MapleTradingStrategyAbi__factory,
-  tradingStrategyInitializer: modularStrategiesImports.MapleTradingStrategyInitializerAbi__factory,
-  tradingStrategyFactory: modularStrategiesImports.TradingStrategyFactoryAbi__factory,
+  allocationStrategy: modularStrategiesImports.MapleAllocationStrategyAbi__factory,
+  allocationStrategyInitializer: modularStrategiesImports.MapleAllocationStrategyInitializerAbi__factory,
+  allocationStrategyFactory: modularStrategiesImports.AllocationStrategyFactoryAbi__factory,
   aaveV3Strategy: modularStrategiesImports.MapleAaveV3StrategyAbi__factory,
   aaveV3StrategyInitializer: modularStrategiesImports.MapleAaveV3StrategyInitializerAbi__factory,
   aaveV3StrategyFactory: modularStrategiesImports.AaveV3StrategyFactoryAbi__factory,
@@ -447,9 +446,9 @@ interface ContractTypes {
   mapleStrategyManager: modularStrategiesImports.MapleStrategyManagerAbi
   mapleStrategyManagerInitializer: modularStrategiesImports.MapleStrategyManagerInitializerAbi
   strategyManagerFactory: modularStrategiesImports.StrategyManagerFactoryAbi
-  mapleTradingStrategy: modularStrategiesImports.MapleTradingStrategyAbi
-  mapleTradingStrategyInitializer: modularStrategiesImports.MapleTradingStrategyInitializerAbi
-  tradingStrategyFactory: modularStrategiesImports.TradingStrategyFactoryAbi
+  mapleAllocationStrategy: modularStrategiesImports.MapleAllocationStrategyAbi
+  mapleAllocationStrategyInitializer: modularStrategiesImports.MapleAllocationStrategyInitializerAbi
+  allocationStrategyFactory: modularStrategiesImports.AllocationStrategyFactoryAbi
   mapleAaveV3Strategy: modularStrategiesImports.MapleAaveV3StrategyAbi
   mapleAaveV3StrategyInitializer: modularStrategiesImports.MapleAaveV3StrategyInitializerAbi
   aaveV3StrategyFactory: modularStrategiesImports.AaveV3StrategyFactoryAbi

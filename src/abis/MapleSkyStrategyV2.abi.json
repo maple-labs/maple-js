@@ -44,6 +44,11 @@
             "name": "referralCode",
             "type": "uint16",
             "internalType": "uint16"
+          },
+          {
+            "name": "strategyMetadata",
+            "type": "string",
+            "internalType": "string"
           }
         ]
       }
@@ -394,6 +399,19 @@
   },
   {
     "type": "function",
+    "name": "setMetadata",
+    "inputs": [
+      {
+        "name": "metadata_",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "setPsm",
     "inputs": [
       {
@@ -479,6 +497,19 @@
         "name": "",
         "type": "address",
         "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "strategyMetadata",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"
@@ -706,6 +737,19 @@
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StrategyMetadataSet",
+    "inputs": [
+      {
+        "name": "strategyMetadata",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
       }
     ],
     "anonymous": false

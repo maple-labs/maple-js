@@ -13,7 +13,7 @@
         "name": "params",
         "type": "tuple",
         "indexed": false,
-        "internalType": "struct TradingStrategyInitializerParams",
+        "internalType": "struct AllocationStrategyInitializerParams",
         "components": [
           {
             "name": "fundsAsset",
@@ -34,6 +34,11 @@
             "name": "strategyProtocolFeeRate",
             "type": "uint32",
             "internalType": "uint32"
+          },
+          {
+            "name": "yieldCap",
+            "type": "uint256",
+            "internalType": "uint256"
           }
         ]
       }
@@ -407,6 +412,19 @@
   },
   {
     "type": "function",
+    "name": "recordedAssets",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "removeImpairment",
     "inputs": [
       {
@@ -567,6 +585,32 @@
   },
   {
     "type": "function",
+    "name": "setYieldCap",
+    "inputs": [
+      {
+        "name": "yieldCap_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "skim",
+    "inputs": [
+      {
+        "name": "recipient_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "strategyDelegate",
     "inputs": [],
     "outputs": [
@@ -671,6 +715,19 @@
   },
   {
     "type": "function",
+    "name": "unrecordedAssets",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "unrecordedAssets_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "upgrade",
     "inputs": [
       {
@@ -712,7 +769,46 @@
   },
   {
     "type": "function",
+    "name": "yieldCap",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "yieldCooldown",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "cooldown_",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "yieldDeadline",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "yieldLastRealized",
     "inputs": [],
     "outputs": [
       {
@@ -753,6 +849,12 @@
         "internalType": "uint256"
       },
       {
+        "name": "recordedAssets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
         "name": "metadata",
         "type": "bytes",
         "indexed": false,
@@ -784,10 +886,35 @@
         "internalType": "uint256"
       },
       {
+        "name": "recordedAssets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
         "name": "metadata",
         "type": "bytes",
         "indexed": false,
         "internalType": "bytes"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "AssetsSkimmed",
+    "inputs": [
+      {
+        "name": "recipient",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "assets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
     "anonymous": false
@@ -921,6 +1048,12 @@
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
+      },
+      {
+        "name": "recordedAssets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
     "anonymous": false
@@ -972,6 +1105,12 @@
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
+      },
+      {
+        "name": "recordedAssets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
     "anonymous": false
@@ -1016,6 +1155,25 @@
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
+      },
+      {
+        "name": "recordedAssets",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "YieldCapSet",
+    "inputs": [
+      {
+        "name": "yieldCap",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       }
     ],
     "anonymous": false
@@ -1050,6 +1208,12 @@
       },
       {
         "name": "protocolFee",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "recordedAssets",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
