@@ -122,6 +122,19 @@
   },
   {
     "type": "function",
+    "name": "strategyMetadata",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "strategyProtocolFeeRate",
     "inputs": [],
     "outputs": [
@@ -186,6 +199,11 @@
             "name": "useVirtualUnderlyingBalance",
             "type": "bool",
             "internalType": "bool"
+          },
+          {
+            "name": "strategyMetadata",
+            "type": "string",
+            "internalType": "string"
           }
         ]
       }

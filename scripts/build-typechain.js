@@ -135,7 +135,7 @@ async function buildTypechain() {
   // against the V4 template (same pattern as PoolPermissionManagerSet on V3).
   mergeEvents({ src: 'PoolManagerV500Migrator.abi.json', dst: 'PoolManagerV400.abi.json' })
   mergeEvents({ src: 'MapleStrategyManagerInitializer.abi.json', dst: 'MapleStrategyManager.abi.json' })
-  mergeEvents({ src: 'MapleTradingStrategyInitializer.abi.json', dst: 'MapleTradingStrategy.abi.json' })
+  mergeEvents({ src: 'MapleAllocationStrategyInitializer.abi.json', dst: 'MapleAllocationStrategy.abi.json' })
   mergeEvents({ src: 'MapleAaveV3StrategyInitializer.abi.json', dst: 'MapleAaveV3Strategy.abi.json' })
   mergeEvents({ src: 'MapleSkyStrategyV2Initializer.abi.json', dst: 'MapleSkyStrategyV2.abi.json' })
   mergeEvents({ src: 'PoolPermissionManagerInitializer.abi.json', dst: 'PoolPermissionManager.abi.json' })
@@ -156,10 +156,6 @@ async function buildTypechain() {
   mergeEvents({
     src: 'WithdrawalManagerQueueV2Initializer.abi.json',
     dst: 'WithdrawalManagerQueueV2.abi.json'
-  })
-  mergeEvents({
-    src: 'WithdrawalManagerQueueV3Initializer.abi.json',
-    dst: 'WithdrawalManagerQueueV3.abi.json'
   })
   mergeEvents({ src: 'SyrupBitcoinRouterInitializer.abi.json', dst: 'SyrupBitcoinRouter.abi.json' })
   mergeEvents({ src: 'AssetControllerInitializer.abi.json', dst: 'AssetController.abi.json' })

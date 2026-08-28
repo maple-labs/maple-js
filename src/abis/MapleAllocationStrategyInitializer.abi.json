@@ -98,6 +98,19 @@
   },
   {
     "type": "function",
+    "name": "recordedAssets",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "scheduledYieldAssets",
     "inputs": [],
     "outputs": [
@@ -176,7 +189,33 @@
   },
   {
     "type": "function",
+    "name": "yieldCap",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "yieldDeadline",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "yieldLastRealized",
     "inputs": [],
     "outputs": [
       {
@@ -214,7 +253,7 @@
         "name": "params",
         "type": "tuple",
         "indexed": false,
-        "internalType": "struct TradingStrategyInitializerParams",
+        "internalType": "struct AllocationStrategyInitializerParams",
         "components": [
           {
             "name": "fundsAsset",
@@ -235,6 +274,11 @@
             "name": "strategyProtocolFeeRate",
             "type": "uint32",
             "internalType": "uint32"
+          },
+          {
+            "name": "yieldCap",
+            "type": "uint256",
+            "internalType": "uint256"
           }
         ]
       }

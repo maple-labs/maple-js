@@ -268,13 +268,6 @@
         "WithdrawalManagerQueueV2Migrator"
       ]
     },
-    "withdrawalManagerQueueV3": {
-      "contracts": [
-        "WithdrawalManagerQueueV3",
-        "WithdrawalManagerQueueV3Initializer",
-        "WithdrawalManagerQueueV3Migrator"
-      ]
-    },
     "xmpl": {
       "contracts": [
         "xMPL"
@@ -283,19 +276,19 @@
     "modularStrategies": {
       "contracts": [
         "AaveV3StrategyFactory",
+        "AllocationStrategyFactory",
         "MapleAaveV3Strategy",
         "MapleAaveV3StrategyInitializer",
+        "MapleAllocationStrategy",
+        "MapleAllocationStrategyInitializer",
         "MapleLiquidityRouter",
         "MapleSkyStrategyV2",
         "MapleSkyStrategyV2Initializer",
         "MapleStrategyDeployer",
         "MapleStrategyManager",
         "MapleStrategyManagerInitializer",
-        "MapleTradingStrategy",
-        "MapleTradingStrategyInitializer",
         "SkyStrategyFactory",
-        "StrategyManagerFactory",
-        "TradingStrategyFactory"
+        "StrategyManagerFactory"
       ]
     }
   }

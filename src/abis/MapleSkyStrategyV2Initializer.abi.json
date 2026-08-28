@@ -135,6 +135,19 @@
   },
   {
     "type": "function",
+    "name": "strategyMetadata",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "string",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "strategyProtocolFeeRate",
     "inputs": [],
     "outputs": [
@@ -204,6 +217,11 @@
             "name": "referralCode",
             "type": "uint16",
             "internalType": "uint16"
+          },
+          {
+            "name": "strategyMetadata",
+            "type": "string",
+            "internalType": "string"
           }
         ]
       }
