@@ -298,12 +298,6 @@ const withdrawalManagerQueueV2 = {
   migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi__factory
 }
 
-const withdrawalManagerQueueV3 = {
-  core: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3Abi__factory,
-  initializer: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3InitializerAbi__factory,
-  migrator: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3MigratorAbi__factory
-}
-
 const xmpl = {
   factory: xmplImports.XMPLAbi__factory
 }
@@ -544,11 +538,6 @@ interface ContractTypes {
   withdrawalManagerQueueV2Initializer: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2InitializerAbi
   withdrawalManagerQueueV2Migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi
 
-  // Withdrawal Manager Queue V3
-  withdrawalManagerQueueV3: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3Abi
-  withdrawalManagerQueueV3Initializer: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3InitializerAbi
-  withdrawalManagerQueueV3Migrator: withdrawalManagerQueueV3Imports.WithdrawalManagerQueueV3MigratorAbi
-
   // xMPL
   xmpl: xmplImports.XMPLAbi
 }
@@ -611,7 +600,6 @@ export {
   withdrawalManagerCyclical,
   withdrawalManagerQueue,
   withdrawalManagerQueueV2,
-  withdrawalManagerQueueV3,
   xmpl,
   utils
 }

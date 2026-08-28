@@ -268,13 +268,6 @@
         "WithdrawalManagerQueueV2Migrator"
       ]
     },
-    "withdrawalManagerQueueV3": {
-      "contracts": [
-        "WithdrawalManagerQueueV3",
-        "WithdrawalManagerQueueV3Initializer",
-        "WithdrawalManagerQueueV3Migrator"
-      ]
-    },
     "xmpl": {
       "contracts": [
         "xMPL"
