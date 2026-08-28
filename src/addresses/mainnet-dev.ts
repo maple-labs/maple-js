@@ -3,6 +3,7 @@ export default {
   AAVEPool: '0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2',
   AaveV3StrategyFactory: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   AccountingChecker: '0x4c9CEa7f6aCE3Dc0D85b86c1925542AdeCE1eF15',
+  AllocationStrategyFactory: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   AssetController: '0x4911fA884Bb6Ba1Fc3bc9f6798006ED6aBB7d5f5', // TODO: Update this address
   AssetControllerInitializer: '0xA15cee00b256b9e5cC66c624E882629458549638', // TODO: Update this address
   ATokenUSDC: '0x98C23E9d8f34FEFb1B7BD6a91B7FF122F4e16F5c',
@@ -71,6 +72,8 @@ export default {
   LoanV4Refinancer: '0xec90671c2c8f4cCBb6074938f893306a13402251',
   MapleAaveV3Strategy: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   MapleAaveV3StrategyInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
+  MapleAllocationStrategy: '0x0000000000000000000000000000000000000000', // TODO: Update this address
+  MapleAllocationStrategyInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   MapleBitcoinStrategy: '0x88B040042Eb95Aa46Fd95971bBCd7ea2ebd4b149',
   MapleBitcoinStrategyFactory: '0x9a05C78e021B15841D50DDFd92dde8Ef7d14508D',
   MapleBitcoinStrategyInitializer: '0xC345266f92b81BA3D4ed11848878eEbe72471b6f',
@@ -96,8 +99,6 @@ export default {
   MapleStrategyManagerInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   MapleStrategySky: '0xBBEe42621499005Ff0dDEF947BBDeFfBBeE77730',
   MapleToken: '0x33349B282065b0284d756F0577FB39c158F935e6',
-  MapleTradingStrategy: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  MapleTradingStrategyInitializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   MapleTreasury: '0xa9466EaBd096449d650D5AEB0dD3dA6F52FD0B19',
   MigrationHelper: '0xd8B74109916C0bBFDbE5e4345fF9584bDE47044a',
   MigrationHelperProxy: '0x580B1A894b9FbdBf7d29Ba9b492807Bf539dD508',
@@ -164,7 +165,6 @@ export default {
   SyrupTokenInitializer: '0xfE4a4fd3bd2E0Eb400355aeF5Aa1752bC54B30FC',
   SyrupTokenMigrator: '0x9c9499edD0cd2dCBc3C9Dd5070bAf54777AD8F2C',
   SyrupUserActions: '0x0000000000000000000000000000000000000000',
-  TradingStrategyFactory: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   TransitionLoanManager: '0x8057206A6C52e8d17e8c0EBE4C1Bb777d1876c8D',
   UniswapV2Router02: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
   USDC: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
@@ -190,9 +190,6 @@ export default {
   WithdrawalManagerQueueV2: '0xF95E5722226a1018d058CD757B75F1D10289e967',
   WithdrawalManagerQueueV2Initializer: '0xD389BFE4A129525b486B098411336a4fCecF3024',
   WithdrawalManagerQueueV2Migrator: '0x327ec27a6D898D865D7759D47d36a2c3FBbD23a5',
-  WithdrawalManagerQueueV3: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  WithdrawalManagerQueueV3Initializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
-  WithdrawalManagerQueueV3Migrator: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   xMPL: '0x4937A209D4cDbD3ecD48857277cfd4dA4D82914c',
   manifest: {
     network: 'mainnet',
