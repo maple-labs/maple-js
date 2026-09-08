@@ -199,7 +199,7 @@ yarn lint                  # tsc --noEmit + eslint
 yarn format                # prettier --write
 ```
 
-`yarn test` runs the jest suites, which are integration tests that call live contracts over an RPC endpoint — they are not run in CI.
+`yarn test` runs the jest suites, which are integration tests that call live contracts over an RPC endpoint — they are not run in CI. `npm test` runs `build-typechain` and `build` automatically via `pretest` before executing jest.
 
 ## Releasing
 
