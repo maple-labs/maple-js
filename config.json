@@ -268,6 +268,12 @@
         "WithdrawalManagerQueueV2Migrator"
       ]
     },
+    "withdrawalManagerQueueV201": {
+      "contracts": [
+        "WithdrawalManagerQueueV201",
+        "WithdrawalManagerQueueV201Initializer"
+      ]
+    },
     "xmpl": {
       "contracts": [
         "xMPL"

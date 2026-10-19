@@ -41,6 +41,7 @@ import * as withdrawalManagerImports from './typechain/withdrawalManager'
 import * as withdrawalManagerCyclicalImports from './typechain/withdrawalManagerCyclical'
 import * as withdrawalManagerQueueImports from './typechain/withdrawalManagerQueue'
 import * as withdrawalManagerQueueV2Imports from './typechain/withdrawalManagerQueueV2'
+import * as withdrawalManagerQueueV201Imports from './typechain/withdrawalManagerQueueV201'
 import * as xmplImports from './typechain/xmpl'
 
 // Addresses
@@ -298,6 +299,11 @@ const withdrawalManagerQueueV2 = {
   migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi__factory
 }
 
+const withdrawalManagerQueueV201 = {
+  core: withdrawalManagerQueueV201Imports.WithdrawalManagerQueueV201Abi__factory,
+  initializer: withdrawalManagerQueueV201Imports.WithdrawalManagerQueueV201InitializerAbi__factory
+}
+
 const xmpl = {
   factory: xmplImports.XMPLAbi__factory
 }
@@ -537,6 +543,8 @@ interface ContractTypes {
   withdrawalManagerQueueV2: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2Abi
   withdrawalManagerQueueV2Initializer: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2InitializerAbi
   withdrawalManagerQueueV2Migrator: withdrawalManagerQueueV2Imports.WithdrawalManagerQueueV2MigratorAbi
+  withdrawalManagerQueueV201: withdrawalManagerQueueV201Imports.WithdrawalManagerQueueV201Abi
+  withdrawalManagerQueueV201Initializer: withdrawalManagerQueueV201Imports.WithdrawalManagerQueueV201InitializerAbi
 
   // xMPL
   xmpl: xmplImports.XMPLAbi
@@ -600,6 +608,7 @@ export {
   withdrawalManagerCyclical,
   withdrawalManagerQueue,
   withdrawalManagerQueueV2,
+  withdrawalManagerQueueV201,
   xmpl,
   utils
 }
