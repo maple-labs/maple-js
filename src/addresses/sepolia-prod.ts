@@ -188,6 +188,8 @@ export default {
   WithdrawalManagerQueueFactory: '0x3E2a11FD07AcaFA6b2C48DA113925Cd0a736158C',
   WithdrawalManagerQueueInitializer: '0xB57CBc43F1b1aad439c5292d4f895D1dC7402E0D',
   WithdrawalManagerQueueV2: '0xC55f53285eaaA0399E79c58e8E905EFdA520983c',
+  WithdrawalManagerQueueV201: '0x0000000000000000000000000000000000000000', // TODO: Update this address
+  WithdrawalManagerQueueV201Initializer: '0x0000000000000000000000000000000000000000', // TODO: Update this address
   WithdrawalManagerQueueV2Initializer: '0xa1939895e5Ac03B182346b20Bc3491a804C57F4b',
   WithdrawalManagerQueueV2Migrator: '0x945d74bD889a6c3F89324161DAC30ef121e3aCe1',
   xMPL: '0x789B261518fD01E8A3E31716639174343AE92f19',
