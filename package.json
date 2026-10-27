@@ -24,6 +24,7 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
+    "pretest": "npm run build-typechain && npm run build",
     "build": "rm -rf dist/ && rollup -c && cp -R src/abis dist/abis",
     "build-typechain": "node ./scripts/build-typechain.js",
     "test": "jest --collectCoverage",
